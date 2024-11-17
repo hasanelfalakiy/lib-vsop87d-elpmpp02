@@ -29,6 +29,7 @@ import kotlin.math.sin
 import kotlin.math.cos
 import kotlin.math.tan
 import kotlin.math.pow
+import kotlin.math.sqrt
 import kotlin.mod
 import com.andihasan7.lib.vsop87d.elpmpp02.earthposition.EarthPosition
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.DistanceType
@@ -388,6 +389,110 @@ object SunPosition {
         val n = cos(Math.toRadians(lambda)) * cos(Math.toRadians(beta)) - x * sin(Math.toRadians(phi)) * cos(Math.toRadians(theta))
         
         return n
+    }
+    
+    /**
+    * Parallax in the Sun Right Ascension default in degree
+    *
+    * @param jd, Julian Day
+    * @param longitude of observer
+    * @param latitude of observer
+    * @param elevation of observer
+    * @param deltaT, in arcsecond
+    * @param unitType, degrees or radians
+    *
+    * @return deltaAlpha in degree or radian
+    */
+    fun parallaxInTheSunRightAscension(jd: Double, lon: Double, lat: Double, elev: Double = 0.0, deltaT: Double = 0.0, unitType: UnitType = UnitType.DEGREES): Double {
+        
+        val x = Correction.termX(lat, elev)
+        val phi = sunEquatorialHorizontalParallax(jd, deltaT)
+        val lha = sunGeoLocalHourAngle(jd, lon, deltaT)
+        val dec = sunApparentGeoDeclination(jd, deltaT)
+        
+        val deltaAlphaDeg = Math.toDegrees(atan2(-x * sin(Math.toRadians(phi)) * sin(Math.toRadians(lha)), cos(Math.toRadians(dec)) - x * sin(Math.toRadians(phi)) * cos(Math.toRadians(lha))))
+        val deltaAlphaRad = Math.toRadians(deltaAlphaDeg)
+        
+        return when (unitType) {
+            UnitType.DEGREES -> deltaAlphaDeg
+            UnitType.RADIANS -> deltaAlphaRad
+        }
+    }
+    
+    /**
+    * Parallax in the Sun Altitude default in degree
+    *
+    * @param jd, Julian Day
+    * @param longitude of observer
+    * @param latitude of observer
+    * @param elevation of observer
+    * @param deltaT, in arcsecond
+    * @param unitType
+    *
+    * @return p in degree or radian
+    */
+    fun parallaxInTheSunAltitude(jd: Double, lon: Double, lat: Double, elev: Double = 0.0, deltaT: Double = 0.0, unitType: UnitType = UnitType.DEGREES): Double {
+        
+        val x = Correction.termX(lat, elev)
+        val y = Correction.termY(lat, elev)
+        val h = sunGeoAltitude(jd, lon, lat, deltaT)
+        val phi = sunEquatorialHorizontalParallax(jd, deltaT)
+        
+        val pDeg = Math.toDegrees(asin(sqrt(y.pow(2) + x.pow(2)) * sin(Math.toRadians(phi)) * cos(Math.toRadians(h))))
+        val pRad = Math.toRadians(pDeg)
+        
+        return when (unitType) {
+            UnitType.DEGREES -> pDeg
+            UnitType.RADIANS -> pRad
+        }
+    }
+    
+    /**
+    * Atmospheric Refraction form Airless Altitude in arc minute
+    *
+    * @param airlessAltitude
+    * @param pressure, 
+    * @param temperature
+    *
+    * @return atmospheric refraction
+    */
+    fun atmosphericRefractionFromAirlessAltitude(airlessAltitude: Double, pressure: Double = 1010.0, temperature: Double = 10.0): Double {
+        
+        val rDeg = (1.02 / tan(Math.toRadians(airlessAltitude + 10.3 / (airlessAltitude + 5.11))) * pressure / 1010.0 * 283.0 / (273.0 + temperature) + 0.0019279204034639303) / 60.0
+        
+        return rDeg
+    }
+    
+    /**
+    * Sun Topocentric Longitude, lambda apostrophe
+    *
+    * @param jd, Julian Day
+    * @param longitude of observer
+    * @param latitude of observer
+    * @param elevation of observer
+    * @param deltaT, in arcsecond
+    * @param unitType
+    *
+    * @return lambdaP in degree or radian
+    */
+    fun sunTopoLongitude(jd: Double, lon: Double, lat: Double, elev: Double = 0.0, deltaT: Double = 0.0, unitType: UnitType = UnitType.DEGREES): Double {
+        
+        val lambda = sunApparentGeocentricLongitude(jd, deltaT)
+        val beta = sunTrueGeocentricLatitude(jd, deltaT)
+        val theta = localApparentSiderealTime(jd, lon, deltaT)
+        val phi = sunEquatorialHorizontalParallax(jd, deltaT)
+        val epsilon = Nutation.trueObliquityOfEcliptic(jd, deltaT)
+        val x = Correction.termX(lat, elev)
+        val y = Correction.termY(lat, elev)
+        val n = sunTermN(jd, lon, lat, elev, deltaT)
+        
+        val lambdaPDeg = (Math.toDegrees(atan2((sin(Math.toRadians(lambda)) * cos(Math.toRadians(beta)) - sin(Math.toRadians(phi)) * (y * sin(Math.toRadians(epsilon)) + x * cos(Math.toRadians(epsilon)) * sin(Math.toRadians(theta)))), n))).mod(360.0)
+        val lambdaPRad = Math.toRadians(lambdaPDeg)
+        return when (unitType) {
+            UnitType.DEGREES -> lambdaPDeg
+            UnitType.RADIANS -> lambdaPRad
+        }
+        
     }
     
     

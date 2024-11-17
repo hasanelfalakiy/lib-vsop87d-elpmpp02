@@ -28,6 +28,7 @@ import kotlin.math.tan
 import kotlin.math.sin
 import kotlin.math.cos
 import kotlin.math.pow
+import kotlin.math.sqrt
 import com.andihasan7.lib.vsop87d.elpmpp02.earthposition.EarthPosition
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.JulianType
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.DistanceType
@@ -118,5 +119,12 @@ object Correction {
         return y
     }
     
+    /**
+    * dip
+    *
+    * @param elevation
+    * @return dip
+    */
+    fun dip(elevation: Double): Double = 1.75 / 60 * sqrt(elevation)
     
 }

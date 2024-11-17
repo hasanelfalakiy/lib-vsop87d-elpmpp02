@@ -93,6 +93,10 @@ class LibraryTest {
         val termX = ephe.termX
         val termY = ephe.termY
         val sunTermN = ephe.sunTermN
+        val parallaxInTheSunRA = ephe.parallaxInTheSunRightAscension
+        val parallaxInTheSunAltitude = ephe.parallaxInTheSunAltitude
+        val atmosphericRefFromAirlessAlt = ephe.atmosphericRefractionFromAirlessAltitude
+        val sunTopoLongitude = ephe.sunTopoLongitude
         
         println("Ephemeris VSOP87D & ELPMPP02 Full Periodic Terms (38.326)")
         println("")
@@ -151,7 +155,10 @@ class LibraryTest {
         println("Term X: $termX")
         println("Term Y: $termY")
         println("Sun Term N: $sunTermN")
-        
+        println("Parallax in the Sun RA: $parallaxInTheSunRA, ${cv.toDegreeFullRound2(parallaxInTheSunRA)}")
+        println("Parallax in the Sun Alt: $parallaxInTheSunAltitude, ${cv.toDegreeFullRound2(parallaxInTheSunAltitude)}")
+        println("Atmospheric Ref from Airless Alt: $atmosphericRefFromAirlessAlt, ${cv.toDegreeFullRound2(atmosphericRefFromAirlessAlt)}")
+        println("Sun Topo Lon: $sunTopoLongitude, ${cv.toDegreeFullRound2(sunTopoLongitude)}")
     }
     
 }

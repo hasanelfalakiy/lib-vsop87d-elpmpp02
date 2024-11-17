@@ -312,4 +312,26 @@ class VSOP87DELPMPP02(
     */
     val sunTermN = SunPosition.sunTermN(jd, longitude, latitude, elevation, deltaT)
     
+    /**
+    * Parallax in the Sun Right Ascension, deltaAlpha
+    */
+    val parallaxInTheSunRightAscension = SunPosition.parallaxInTheSunRightAscension(jd, longitude, latitude, elevation, deltaT, UnitType.DEGREES)
+    
+    /**
+    * Parallax in the Sun Altitude
+    */
+    val parallaxInTheSunAltitude = SunPosition.parallaxInTheSunAltitude(jd, longitude, latitude, elevation, deltaT, UnitType.DEGREES)
+    
+    /**
+    * Atmospheric Refraction from Airless Altitude
+    */
+    val atmosphericRefractionFromAirlessAltitude = SunPosition.atmosphericRefractionFromAirlessAltitude(sunGeoAltitude, pressure, temperature)
+    
+    /**
+    * Sun Topocentric Longitude, lambda apostrophe
+    */
+    val sunTopoLongitude = SunPosition.sunTopoLongitude(jd, longitude, latitude, elevation, deltaT)
+    
+    
+    
 }
