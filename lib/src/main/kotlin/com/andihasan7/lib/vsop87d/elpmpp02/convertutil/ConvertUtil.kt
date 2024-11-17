@@ -28,9 +28,8 @@ import kotlin.math.round
 
 object ConvertUtil {
     
-    // 
     /**
-    * extension function to round numbers after the decimal point which can be customized
+    * Extension function to round numbers after the decimal point which can be customized
     * 
     * @param decimals
     * 
@@ -153,7 +152,6 @@ object ConvertUtil {
         return "$time:$minute:$second"
     }
     
-    // 
     /**
     * MM m SS s numbers rounded to seconds
     * function to change double data to MM m SS s format seconds rounded to minutes
@@ -398,6 +396,4 @@ object ConvertUtil {
                 else -> "Desember"
             }
     }
-
-    
 }

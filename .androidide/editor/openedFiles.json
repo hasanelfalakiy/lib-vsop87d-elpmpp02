@@ -4,74 +4,14 @@
       "file": "/storage/emulated/0/AndroidIDEProjects/lib-vsop87d-elpmpp02/lib/src/main/kotlin/com/andihasan7/lib/vsop87d/elpmpp02/VSOP87DELPMPP02.kt",
       "selection": {
         "end": {
-          "column": 34,
-          "index": 9027,
-          "line": 287
+          "column": 30,
+          "index": 9549,
+          "line": 312
         },
         "start": {
-          "column": 34,
-          "index": 9027,
-          "line": 287
-        }
-      }
-    },
-    {
-      "file": "/storage/emulated/0/AndroidIDEProjects/lib-vsop87d-elpmpp02/lib/src/main/kotlin/com/andihasan7/lib/vsop87d/elpmpp02/sunposition/SunPosition.kt",
-      "selection": {
-        "end": {
-          "column": 20,
-          "index": 5001,
-          "line": 125
-        },
-        "start": {
-          "column": 20,
-          "index": 5001,
-          "line": 125
-        }
-      }
-    },
-    {
-      "file": "/storage/emulated/0/AndroidIDEProjects/lib-vsop87d-elpmpp02/lib/src/test/kotlin/com/andihasan7/lib/vsop87d/elpmpp02/PositionTest.kt",
-      "selection": {
-        "end": {
-          "column": 33,
-          "index": 6124,
-          "line": 136
-        },
-        "start": {
-          "column": 33,
-          "index": 6124,
-          "line": 136
-        }
-      }
-    },
-    {
-      "file": "/storage/emulated/0/AndroidIDEProjects/lib-vsop87d-elpmpp02/lib/src/main/kotlin/com/andihasan7/lib/vsop87d/elpmpp02/timeutil/TimeUtil.kt",
-      "selection": {
-        "end": {
-          "column": 0,
-          "index": 0,
-          "line": 0
-        },
-        "start": {
-          "column": 0,
-          "index": 0,
-          "line": 0
-        }
-      }
-    },
-    {
-      "file": "/storage/emulated/0/AndroidIDEProjects/lib-vsop87d-elpmpp02/lib/src/main/kotlin/com/andihasan7/lib/vsop87d/elpmpp02/Nutation.kt",
-      "selection": {
-        "end": {
-          "column": 33,
-          "index": 1470,
-          "line": 48
-        },
-        "start": {
-          "column": 8,
-          "index": 1445,
-          "line": 48
+          "column": 30,
+          "index": 9549,
+          "line": 312
         }
       }
     }

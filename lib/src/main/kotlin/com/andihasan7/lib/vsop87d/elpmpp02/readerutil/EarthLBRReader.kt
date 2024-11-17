@@ -36,7 +36,7 @@ object EarthLBRReader {
     * @param t, t is the same as jme Julian Millenium Ephemeris 
     * @param path, periodic table file path
     *
-    * @return value: Double
+    * @return totalCoefficient: Double
     *
     */
     fun earthLBRTermsReader(t: Double, path: String): Double {

@@ -27,11 +27,10 @@ import com.andihasan7.lib.vsop87d.elpmpp02.enum.DateFormat
 import kotlin.math.pow
 
 /**
-* deltaT
-* Gregorian data input
+* Delta T in arcsecond
 * 
-* @param {date, month, year}
-* @return deltaT
+* @param jd, Julian Day
+* @return deltaT in arcsecond
 */
 fun deltaT(jd: Double): Double {
     
@@ -47,7 +46,7 @@ fun deltaT(jd: Double): Double {
     
     val y = thnI + totalDayOfTheYear / totalDayInTheYear
     
-    // val y = year + (month - 1).toDouble() / 12 + (date).toDouble() / 365
+    // rumus 2 -> val y = year + (month - 1).toDouble() / 12 + (date).toDouble() / 365
     
     when {
         

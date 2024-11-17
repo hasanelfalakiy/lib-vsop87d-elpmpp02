@@ -36,7 +36,7 @@ object TimeUtil {
     * @param date
     * @param month
     * @param year
-    * @param hourDouble
+    * @param hourDouble, hour decimal
     * @param timeZone
     *
     * @return jd
@@ -82,7 +82,7 @@ object TimeUtil {
     * @param jd, Julian Day
     * @param timeZone
     *
-    * @return
+    * @return DateFormat
     */
     inline fun <reified T> jdToGregorian(jd: Double, timeZone: Double, dateFormat: DateFormat): T? {
         

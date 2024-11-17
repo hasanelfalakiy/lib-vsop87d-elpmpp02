@@ -287,5 +287,29 @@ class VSOP87DELPMPP02(
     
     // Sun Topocentric Coordinate 
     
+    /**
+    * Sun Equatorial Horizontal Parallax, phi
+    */
+    val sunEquatorialHorizontalParallax = SunPosition.sunEquatorialHorizontalParallax(jd, deltaT)
+    
+    /**
+    * term u in radian
+    */
+    val termU = Correction.termU(latitude)
+    
+    /**
+    * term x in radian
+    */
+    val termX = Correction.termX(latitude, elevation)
+    
+    /**
+    * term y in radian
+    */
+    val termY = Correction.termY(latitude, elevation)
+    
+    /**
+    * Sun term n in radian
+    */
+    val sunTermN = SunPosition.sunTermN(jd, longitude, latitude, elevation, deltaT)
     
 }

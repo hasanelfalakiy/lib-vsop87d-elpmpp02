@@ -23,7 +23,10 @@
  
 package com.andihasan7.lib.vsop87d.elpmpp02.correction
 
+import kotlin.math.atan
+import kotlin.math.tan
 import kotlin.math.sin
+import kotlin.math.cos
 import kotlin.math.pow
 import com.andihasan7.lib.vsop87d.elpmpp02.earthposition.EarthPosition
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.JulianType
@@ -33,9 +36,11 @@ import com.andihasan7.lib.vsop87d.elpmpp02.timeutil.TimeUtil
 object Correction {
     
     /**
-    * Abration
+    * Abration in arcsecond
     * 
-    * @param {t: Double, r: earth radius vector distance AU: Double}) is the same as tau
+    * @param jd, Julian Day
+    * @param deltaT, in arcsecond
+    *
     * @return abr // in arcseconds (detik busur), Before displaying the DMS format, divide it by 3600 first.
     *
     */
@@ -70,4 +75,48 @@ object Correction {
         
         return abr
     }
+    
+    /**
+    * term u in radian
+    * 
+    * @param latitude of observer
+    * @return u in radian
+    */
+    fun termU(lat: Double): Double {
+        val u = atan(0.99664719 * tan(Math.toRadians(lat)))
+        return u
+    }
+    
+    /**
+    * term x in radian
+    * 
+    * @param latitude of observer
+    * @param elevation of observer
+    *
+    * @return x in radian
+    */
+    fun termX(lat: Double, elev: Double = 0.0): Double {
+        
+        val u = termU(lat)
+        val x = cos(u) + (elev / 6378140.0) * cos(Math.toRadians(lat))
+        return x
+    }
+    
+    /**
+    * term y in radian
+    * 
+    * @param latitude of observer
+    * @param elevation of observer
+    *
+    * @return y in radian
+    */
+    fun termY(lat: Double, elev: Double = 0.0): Double {
+        
+        val u = termU(lat)
+        val y = 0.99664719 * sin(u) + (elev / 6378140.0) * sin(Math.toRadians(lat))
+        
+        return y
+    }
+    
+    
 }

@@ -127,7 +127,7 @@ object SunPosition {
     *
     * @return sunApparentGeoSemidiameter
     */
-    fun sunApparentGeoSemidiameter(jd: Double, deltaT: Double): Double {
+    fun sunApparentGeoSemidiameter(jd: Double, deltaT: Double = 0.0): Double {
         
         val r = EarthPosition.earthRadiusVector(jd, deltaT, DistanceType.AU)
         val s = 0.266563888889 / r
@@ -348,6 +348,47 @@ object SunPosition {
     
     // Sun Topocentric Coordinate 
     
+    /**
+    * Sun Equatorial Horizontal Parallax 
+    * @param jd, Julian Day
+    * @param deltaT, in arcsecond
+    *
+    * @return phi Sun Equatorial Horizontal Parallax
+    */
+    fun sunEquatorialHorizontalParallax(jd: Double, deltaT: Double = 0.0, unitType: UnitType = UnitType.DEGREES): Double {
+        
+        val er = EarthPosition.earthRadiusVector(jd, deltaT, DistanceType.AU)
+        val phiDeg = 8.794 / (er * 3600)
+        val phiRad = Math.toRadians(phiDeg)
+        
+        return when (unitType) {
+            UnitType.DEGREES -> phiDeg
+            UnitType.RADIANS -> phiRad
+        }
+    }
+    
+    /**
+    * Sun term n in radian
+    *
+    * @param jd, Julian Day
+    * @param longitude of observer
+    * @param latitude of observer
+    * @param elevation of observer
+    * @param deltaT, in arcsecond
+    *
+    * @return n in radian
+    */
+    fun sunTermN(jd: Double, lon: Double, lat: Double, elev: Double = 0.0, deltaT: Double = 0.0): Double {
+        
+        val lambda = sunApparentGeocentricLongitude(jd, deltaT)
+        val beta = sunTrueGeocentricLatitude(jd, deltaT)
+        val theta = localApparentSiderealTime(jd, lon, deltaT)
+        val x = Correction.termX(lat, elev)
+        val phi = sunEquatorialHorizontalParallax(jd, deltaT)
+        val n = cos(Math.toRadians(lambda)) * cos(Math.toRadians(beta)) - x * sin(Math.toRadians(phi)) * cos(Math.toRadians(theta))
+        
+        return n
+    }
     
     
     

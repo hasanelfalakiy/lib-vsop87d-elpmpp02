@@ -37,16 +37,20 @@ class LibraryTest {
     
     @Test
     fun positionTest() {
-    
+        
+        val lat = -(7 + 1 / 60 + 44.6 / 3600)
+        val lon = (106.0 + 33.0 / 60 + 27.8 / 3600)
+        val hourD = (17 + 51.0 / 60 + 27.0 / 3600)
+        
         val ephe = VSOP87DELPMPP02(
             date = 20,
             month = 4,
             year = 2023,
-            latitude = -7.029055555556,
-            longitude = 106.557722222222,
+            latitude = lat, // -7.029055555556,
+            longitude = lon, //106.557722222222,
             elevation = 52.685,
             timeZone = 7.0,
-            hourDouble = 17.8575,
+            hourDouble = hourD, //17.8575,
             checkDeltaT = true
         )
         
@@ -83,6 +87,12 @@ class LibraryTest {
         val lha = ephe.sunGeoLocalHourAngle
         val sunGeoAzimuth = ephe.sunGeoAzimuth
         val sunGeoAltitude = ephe.sunGeoAltitude
+        
+        val sunEqHorizontalPlx = ephe.sunEquatorialHorizontalParallax
+        val termU = ephe.termU
+        val termX = ephe.termX
+        val termY = ephe.termY
+        val sunTermN = ephe.sunTermN
         
         println("Ephemeris VSOP87D & ELPMPP02 Full Periodic Terms (38.326)")
         println("")
@@ -136,6 +146,11 @@ class LibraryTest {
         println("")
         println("Sun Topocentric Coor:")
         println("")
+        println("Sun Eq Horizontal Parallax: $sunEqHorizontalPlx, ${cv.toDegreeFullRound2(sunEqHorizontalPlx)}")
+        println("Term U: $termU")
+        println("Term X: $termX")
+        println("Term Y: $termY")
+        println("Sun Term N: $sunTermN")
         
     }
     

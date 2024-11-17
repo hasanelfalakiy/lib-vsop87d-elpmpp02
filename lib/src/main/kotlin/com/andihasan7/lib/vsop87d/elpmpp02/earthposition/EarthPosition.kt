@@ -35,10 +35,10 @@ object EarthPosition {
     
     
     /**
-    * Earth Heliocentric Longitude default in degrees
+    * Earth Heliocentric Longitude L default in degrees
     * 
     * @param jd, Julian Day
-    * @param deltaT
+    * @param deltaT, in arcsecond
     *
     * @return eartHeliocentricLongitude
     */
@@ -70,10 +70,10 @@ object EarthPosition {
     }
     
     /**
-    * Earth Heliocentric Latitude default in degrees
+    * Earth Heliocentric Latitude B default in degrees
     * 
     * @param jd, Julian Day
-    * @param deltaT
+    * @param deltaT, in arcsecond
     *
     * @return eartHeliocentricLatitude
     */
@@ -102,10 +102,10 @@ object EarthPosition {
     }
     
     /**
-    * Earth Radius Vector is the same as Sun Geocentric Distance in AU unit
+    * Earth Radius Vector R is the same as Sun Geocentric Distance in AU unit
     * 
     * @param jd, Julian Day
-    * @param deltaT
+    * @param deltaT, in arcsecond
     *
     * @return eartRadiusVector
     */
