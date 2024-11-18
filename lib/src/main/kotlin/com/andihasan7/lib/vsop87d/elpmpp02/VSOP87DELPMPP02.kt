@@ -28,6 +28,7 @@ import com.andihasan7.lib.vsop87d.elpmpp02.timeutil.TimeUtil
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.JulianType
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.DateFormat
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.DistanceType
+import com.andihasan7.lib.vsop87d.elpmpp02.enum.SunAltType
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.UnitType
 import com.andihasan7.lib.vsop87d.elpmpp02.earthposition.EarthPosition
 import com.andihasan7.lib.vsop87d.elpmpp02.sunposition.SunPosition
@@ -325,13 +326,62 @@ class VSOP87DELPMPP02(
     /**
     * Atmospheric Refraction from Airless Altitude
     */
-    val atmosphericRefractionFromAirlessAltitude = SunPosition.atmosphericRefractionFromAirlessAltitude(sunGeoAltitude, pressure, temperature)
+    val atmosphericRefractionFromAirlessAltitude = Correction.atmosphericRefractionFromAirlessAltitude(sunGeoAltitude, temperature, pressure)
     
     /**
     * Sun Topocentric Longitude, lambda apostrophe
     */
     val sunTopoLongitude = SunPosition.sunTopoLongitude(jd, longitude, latitude, elevation, deltaT)
     
+    /**
+    * Sun Topocentric Latitude, beta apostrophe
+    */
+    val sunTopoLatitude = SunPosition.sunTopoLatitude(jd, longitude, latitude, elevation, deltaT)
+    
+    /**
+    * Sun Topocentric Right Ascension, alpha apostrophe
+    */
+    val sunTopoRightAscension = SunPosition.sunTopoRightAscension(jd, longitude, latitude, elevation, deltaT)
+    
+    /**
+    * Sun Topocentric Declination, delta apostrophe
+    */
+    val sunTopoDeclination = SunPosition.sunTopoDeclination(jd, longitude, latitude, elevation, deltaT)
+    
+    /**
+    * Sun Topocentric Local Hour Angle default in degree, H apostrophe
+    */
+    val sunTopoLocalHourAngle = SunPosition.sunTopoLocalHourAngle(jd, longitude, latitude, elevation, deltaT)
+    
+    /**
+    * Sun Topocentric Azimuth, A apostrophe 
+    */
+    val sunTopoAzimuth = SunPosition.sunTopoAzimuth(jd, longitude, latitude, elevation, deltaT)
+    
+    /**
+    * Sun Airless Topocentric Altitude, h'
+    */
+    val sunAirlessTopoAltitude = SunPosition.sunTopoAltitude(jd, longitude, latitude, elevation, deltaT, SunAltType.AIRLESS, UnitType.DEGREES, temperature, pressure)
+    
+    /**
+    * Sun Apparent Topocentric Altitude, ha'
+    */
+    val sunApparentTopoAltitude = SunPosition.sunTopoAltitude(jd, longitude, latitude, elevation, deltaT, SunAltType.APPARENT, UnitType.DEGREES, temperature, pressure)
+    
+    /**
+    * Sun Observer Topocentric Altitude, ho'
+    */
+    val sunObserverTopoAltitude = SunPosition.sunTopoAltitude(jd, longitude, latitude, elevation, deltaT, SunAltType.OBSERVER, UnitType.DEGREES, temperature, pressure)
+    
+    /**
+    * Sun Topocentric Semidiameter, s apostrophe
+    */
+    val sunTopoSemidiameter = SunPosition.sunTopoSemidiameter(jd, longitude, latitude, elevation, deltaT)
+    
+    /**
+    * Equation of Time, e
+    */
+    val equationOfTime = SunPosition.equationOfTime(jd, deltaT)
     
     
 }

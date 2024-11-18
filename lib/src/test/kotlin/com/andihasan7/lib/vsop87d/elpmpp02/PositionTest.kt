@@ -38,19 +38,19 @@ class LibraryTest {
     @Test
     fun positionTest() {
         
-        val lat = -(7 + 1 / 60 + 44.6 / 3600)
-        val lon = (106.0 + 33.0 / 60 + 27.8 / 3600)
-        val hourD = (17 + 51.0 / 60 + 27.0 / 3600)
+        // val lat = -(7 + 1 / 60 + 44.6 / 3600)
+        // val lon = (106.0 + 33.0 / 60 + 27.8 / 3600)
+        // val hourD = (17 + 51.0 / 60 + 27.0 / 3600)
         
         val ephe = VSOP87DELPMPP02(
             date = 20,
             month = 4,
             year = 2023,
-            latitude = lat, // -7.029055555556,
-            longitude = lon, //106.557722222222,
+            latitude = -7.029055555556,
+            longitude = 106.557722222222,
             elevation = 52.685,
             timeZone = 7.0,
-            hourDouble = hourD, //17.8575,
+            hourDouble = 17.8575,
             checkDeltaT = true
         )
         
@@ -97,6 +97,16 @@ class LibraryTest {
         val parallaxInTheSunAltitude = ephe.parallaxInTheSunAltitude
         val atmosphericRefFromAirlessAlt = ephe.atmosphericRefractionFromAirlessAltitude
         val sunTopoLongitude = ephe.sunTopoLongitude
+        val sunTopoLatitude = ephe.sunTopoLatitude
+        val sunTopoRA = ephe.sunTopoRightAscension
+        val sunTopoDec = ephe.sunTopoDeclination
+        val sunTopoLHA = ephe.sunTopoLocalHourAngle
+        val sunTopoAz = ephe.sunTopoAzimuth
+        val sunTopoAirlessAlt = ephe.sunAirlessTopoAltitude
+        val sunTopoApparentAlt = ephe.sunApparentTopoAltitude
+        val sunTopoObserverAlt = ephe.sunObserverTopoAltitude
+        val sunTopoSemidiameter = ephe.sunTopoSemidiameter
+        val equationOfTime = ephe.equationOfTime
         
         println("Ephemeris VSOP87D & ELPMPP02 Full Periodic Terms (38.326)")
         println("")
@@ -159,6 +169,16 @@ class LibraryTest {
         println("Parallax in the Sun Alt: $parallaxInTheSunAltitude, ${cv.toDegreeFullRound2(parallaxInTheSunAltitude)}")
         println("Atmospheric Ref from Airless Alt: $atmosphericRefFromAirlessAlt, ${cv.toDegreeFullRound2(atmosphericRefFromAirlessAlt)}")
         println("Sun Topo Lon: $sunTopoLongitude, ${cv.toDegreeFullRound2(sunTopoLongitude)}")
+        println("Sun Topo Lat: $sunTopoLatitude, ${cv.toDegreeFullRound2(sunTopoLatitude)}")
+        println("Sun Topo RA: $sunTopoRA, ${cv.toDegreeFullRound2(sunTopoRA)}")
+        println("Sun Topo Dec: $sunTopoDec, ${cv.toDegreeFullRound2(sunTopoDec)}")
+        println("Sun Topo LHA: $sunTopoLHA, ${cv.toDegreeFullRound2(sunTopoLHA)}")
+        println("Sun Topo Az: $sunTopoAz, ${cv.toDegreeFullRound2(sunTopoAz)}")
+        println("Sun Airless Topo Alt: $sunTopoAirlessAlt, ${cv.toDegreeFullRound2(sunTopoAirlessAlt)}")
+        println("Sun Apparent Topo Alt: $sunTopoApparentAlt, ${cv.toDegreeFullRound2(sunTopoApparentAlt)}")
+        println("Sun Observer Topo Alt: $sunTopoObserverAlt, ${cv.toDegreeFullRound2(sunTopoObserverAlt)}")
+        println("Sun Topo Semidiameter: $sunTopoSemidiameter, ${cv.toDegreeFullRound2(sunTopoSemidiameter)}")
+        println("Sun Equation of Time: $equationOfTime, ${cv.toTimeFullRound2(equationOfTime)}")
     }
     
 }

@@ -4,14 +4,14 @@
       "file": "/storage/emulated/0/AndroidIDEProjects/lib-vsop87d-elpmpp02/lib/src/main/kotlin/com/andihasan7/lib/vsop87d/elpmpp02/VSOP87DELPMPP02.kt",
       "selection": {
         "end": {
-          "column": 24,
-          "index": 10321,
-          "line": 332
+          "column": 22,
+          "index": 12283,
+          "line": 383
         },
         "start": {
           "column": 8,
-          "index": 10305,
-          "line": 332
+          "index": 12269,
+          "line": 383
         }
       }
     },
@@ -19,14 +19,14 @@
       "file": "/storage/emulated/0/AndroidIDEProjects/lib-vsop87d-elpmpp02/lib/src/main/kotlin/com/andihasan7/lib/vsop87d/elpmpp02/sunposition/SunPosition.kt",
       "selection": {
         "end": {
-          "column": 24,
-          "index": 17426,
-          "line": 477
+          "column": 46,
+          "index": 20645,
+          "line": 550
         },
         "start": {
-          "column": 8,
-          "index": 17410,
-          "line": 477
+          "column": 46,
+          "index": 20645,
+          "line": 550
         }
       }
     },
@@ -34,32 +34,17 @@
       "file": "/storage/emulated/0/AndroidIDEProjects/lib-vsop87d-elpmpp02/lib/src/test/kotlin/com/andihasan7/lib/vsop87d/elpmpp02/PositionTest.kt",
       "selection": {
         "end": {
-          "column": 90,
-          "index": 7543,
-          "line": 160
+          "column": 67,
+          "index": 8989,
+          "line": 180
         },
         "start": {
-          "column": 90,
-          "index": 7543,
-          "line": 160
-        }
-      }
-    },
-    {
-      "file": "/storage/emulated/0/AndroidIDEProjects/lib-vsop87d-elpmpp02/lib/src/main/kotlin/com/andihasan7/lib/vsop87d/elpmpp02/correction/Correction.kt",
-      "selection": {
-        "end": {
-          "column": 23,
-          "index": 1016,
-          "line": 30
-        },
-        "start": {
-          "column": 23,
-          "index": 1016,
-          "line": 30
+          "column": 67,
+          "index": 8989,
+          "line": 180
         }
       }
     }
   ],
-  "selectedFile": "/storage/emulated/0/AndroidIDEProjects/lib-vsop87d-elpmpp02/lib/src/main/kotlin/com/andihasan7/lib/vsop87d/elpmpp02/sunposition/SunPosition.kt"
+  "selectedFile": "/storage/emulated/0/AndroidIDEProjects/lib-vsop87d-elpmpp02/lib/src/main/kotlin/com/andihasan7/lib/vsop87d/elpmpp02/VSOP87DELPMPP02.kt"
 }

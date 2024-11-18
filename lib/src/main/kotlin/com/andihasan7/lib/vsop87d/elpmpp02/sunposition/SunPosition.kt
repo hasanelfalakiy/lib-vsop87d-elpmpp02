@@ -23,7 +23,9 @@
  
 package com.andihasan7.lib.vsop87d.elpmpp02.sunposition
 
+import kotlin.math.abs
 import kotlin.math.asin
+import kotlin.math.atan
 import kotlin.math.atan2
 import kotlin.math.sin
 import kotlin.math.cos
@@ -35,6 +37,7 @@ import com.andihasan7.lib.vsop87d.elpmpp02.earthposition.EarthPosition
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.DistanceType
 import com.andihasan7.lib.vsop87d.elpmpp02.timeutil.TimeUtil
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.JulianType
+import com.andihasan7.lib.vsop87d.elpmpp02.enum.SunAltType
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.UnitType
 import com.andihasan7.lib.vsop87d.elpmpp02.Nutation
 import com.andihasan7.lib.vsop87d.elpmpp02.correction.Correction
@@ -448,23 +451,7 @@ object SunPosition {
     }
     
     /**
-    * Atmospheric Refraction form Airless Altitude in arc minute
-    *
-    * @param airlessAltitude
-    * @param pressure, 
-    * @param temperature
-    *
-    * @return atmospheric refraction
-    */
-    fun atmosphericRefractionFromAirlessAltitude(airlessAltitude: Double, pressure: Double = 1010.0, temperature: Double = 10.0): Double {
-        
-        val rDeg = (1.02 / tan(Math.toRadians(airlessAltitude + 10.3 / (airlessAltitude + 5.11))) * pressure / 1010.0 * 283.0 / (273.0 + temperature) + 0.0019279204034639303) / 60.0
-        
-        return rDeg
-    }
-    
-    /**
-    * Sun Topocentric Longitude, lambda apostrophe
+    * Sun Topocentric Longitude default in degree, lambda apostrophe
     *
     * @param jd, Julian Day
     * @param longitude of observer
@@ -492,7 +479,259 @@ object SunPosition {
             UnitType.DEGREES -> lambdaPDeg
             UnitType.RADIANS -> lambdaPRad
         }
+    }
+    
+    /**
+    * Sun Topocentric Latitude default in degree, beta apostrophe
+    *
+    * @param jd, Julian Day
+    * @param longitude of observer
+    * @param latitude of observer
+    * @param elevation of observer
+    * @param deltaT, in arcsecond
+    * @param unitType
+    *
+    * @return betaP in degree or radian
+    */
+    fun sunTopoLatitude(jd: Double, lon: Double, lat: Double, elev: Double = 0.0, deltaT: Double = 0.0, unitType: UnitType = UnitType.DEGREES): Double {
+        val lambdaP = sunTopoLongitude(jd, lon, lat, elev, deltaT)
+        val beta = sunTrueGeocentricLatitude(jd, deltaT)
+        val theta = localApparentSiderealTime(jd, lon, deltaT)
+        val phi = sunEquatorialHorizontalParallax(jd, deltaT)
+        val epsilon = Nutation.trueObliquityOfEcliptic(jd, deltaT)
+        val x = Correction.termX(lat, elev)
+        val y = Correction.termY(lat, elev)
+        val n = sunTermN(jd, lon, lat, elev, deltaT)
         
+        val betaPDeg = (Math.toDegrees(atan(cos(Math.toRadians(lambdaP)) * (sin(Math.toRadians(beta)) - sin(Math.toRadians(phi)) * (y * cos(Math.toRadians(epsilon)) - x * sin(Math.toRadians(epsilon)) * sin(Math.toRadians(theta)))) / n))).mod(360.0)
+        val betaPRad = Math.toRadians(betaPDeg)
+        return when (unitType) {
+            UnitType.DEGREES -> betaPDeg
+            UnitType.RADIANS -> betaPRad
+        }
+    }
+    
+    /**
+    * Sun Topocentric Right Ascension default in degree, alpha apostrophe
+    *
+    * @param jd, Julian Day
+    * @param longitude of observer
+    * @param latitude of observer
+    * @param elevation of observer
+    * @param deltaT, in arcsecond
+    * @param unitType
+    *
+    * @return alphaP in degree or radian
+    */
+    fun sunTopoRightAscension(jd: Double, lon: Double, lat: Double, elev: Double = 0.0, deltaT: Double = 0.0, unitType: UnitType = UnitType.DEGREES): Double {
+        
+        val alpha = sunApparentGeoRightAscension(jd, deltaT)
+        val deltaAlpha = parallaxInTheSunRightAscension(jd, lon, lat, elev, deltaT)
+        
+        val alphaPDeg = alpha + deltaAlpha
+        val alphaPRad = Math.toRadians(alphaPDeg)
+        return when (unitType) {
+            UnitType.DEGREES -> alphaPDeg
+            UnitType.RADIANS -> alphaPRad
+        }
+    }
+    
+    /**
+    * Sun Topocentric Declination default in degree, delta apostrophe
+    *
+    * @param jd, Julian Day
+    * @param longitude of observer
+    * @param latitude of observer
+    * @param elevation of observer
+    * @param deltaT, in arcsecond
+    * @param unitType
+    *
+    * @return deltaP in degree or radian
+    */
+    fun sunTopoDeclination(jd: Double, lon: Double, lat: Double, elev: Double = 0.0, deltaT: Double = 0.0, unitType: UnitType = UnitType.DEGREES): Double {
+        
+        val phi = sunEquatorialHorizontalParallax(jd, deltaT)
+        val dec = sunApparentGeoDeclination(jd, deltaT)
+        val x = Correction.termX(lat, elev)
+        val y = Correction.termY(lat, elev)
+        val parallaxRA = parallaxInTheSunRightAscension(jd, lon, lat, elev, deltaT)
+        val lha = sunGeoLocalHourAngle(jd, lon, deltaT)
+        
+        val deltaPDeg = Math.toDegrees(atan2((sin(Math.toRadians(dec)) - y * sin(Math.toRadians(phi))) * cos(Math.toRadians(parallaxRA)), cos(Math.toRadians(dec)) - x * sin(Math.toRadians(phi)) * cos(Math.toRadians(lha))))
+        val deltaPRad = Math.toRadians(deltaPDeg)
+        return when (unitType) {
+            UnitType.DEGREES -> deltaPDeg
+            UnitType.RADIANS -> deltaPRad
+        }
+    }
+    
+    /**
+    * Sun Topocentric Local Hour Angle default in degree, H apostrophe
+    *
+    * @param jd, Julian Day
+    * @param longitude of observer
+    * @param latitude of observer
+    * @param elevation of observer
+    * @param deltaT, in arcsecond
+    * @param unitType
+    *
+    * @return lhaP in degree or radian
+    */
+    fun sunTopoLocalHourAngle(jd: Double, lon: Double, lat: Double, elev: Double = 0.0, deltaT: Double = 0.0, unitType: UnitType = UnitType.DEGREES): Double {
+        
+        val lha = sunGeoLocalHourAngle(jd, lon, deltaT)
+        val parallaxRA = parallaxInTheSunRightAscension(jd, lon, lat, elev, deltaT)
+        
+        val lhaPDeg = (lha - parallaxRA)
+        val lhaPRad = Math.toRadians(lhaPDeg)
+        return when (unitType) {
+            UnitType.DEGREES -> lhaPDeg
+            UnitType.RADIANS -> lhaPRad
+        }
+    }
+    
+    /**
+    * Sun Topocentric Azimuth default in degree, A apostrophe
+    *
+    * @param jd, Julian Day
+    * @param longitude of observer
+    * @param latitude of observer
+    * @param elevation of observer
+    * @param deltaT, in arcsecond
+    * @param unitType
+    *
+    * @return azP in degree or radian
+    */
+    fun sunTopoAzimuth(jd: Double, lon: Double, lat: Double, elev: Double = 0.0, deltaT: Double = 0.0, unitType: UnitType = UnitType.DEGREES): Double {
+        
+        val lhaP = sunTopoLocalHourAngle(jd, lon, lat, elev, deltaT)
+        val decP = sunTopoDeclination(jd, lon, lat, elev, deltaT)
+        
+        val azPDeg = (Math.toDegrees(atan2(sin(Math.toRadians(lhaP)), cos(Math.toRadians(lhaP)) * sin(Math.toRadians(lat)) - tan(Math.toRadians(decP)) * cos(Math.toRadians(lat)))) + 180.0).mod(360.0)
+        val azPRad = Math.toRadians(azPDeg)
+        return when (unitType) {
+            UnitType.DEGREES -> azPDeg
+            UnitType.RADIANS -> azPRad
+        }
+    }
+    
+    /**
+    * Sun Topocentric Altitude default in degree, h apostrophe
+    *
+    * @param jd, Julian Day
+    * @param longitude of observer
+    * @param latitude of observer
+    * @param elevation of observer
+    * @param deltaT, in arcsecond
+    * @param temperature, in C°
+    * @param pressure, in millibars
+    * @param altitudeType, AIRLESS, APPARENT, or OBSERVER based in SunAltType enum class
+    * @param unitType
+    *
+    * @return altP in degree or radian in airless, apparent, or observer
+    */
+    fun sunTopoAltitude(jd: Double, lon: Double, lat: Double, elev: Double = 0.0, deltaT: Double = 0.0, sunAltitudeType: SunAltType = SunAltType.AIRLESS, unitType: UnitType = UnitType.DEGREES, temperature: Double = 10.0, pressure: Double = 1010.0): Double {
+        
+        val lhaP = sunTopoLocalHourAngle(jd, lon, lat, elev, deltaT)
+        val decP = sunTopoDeclination(jd, lon, lat, elev, deltaT)
+        val h = sunGeoAltitude(jd, lon, lat, deltaT)
+        val refc = Correction.atmosphericRefractionFromAirlessAltitude(h, temperature, pressure)
+        val dip = Correction.dip(elev)
+        
+        val hAirlessDeg = Math.toDegrees(asin(sin(Math.toRadians(lat)) * sin(Math.toRadians(decP)) + cos(Math.toRadians(lat)) * cos(Math.toRadians(decP)) * cos(Math.toRadians(lhaP))))
+        val hApparentDeg = hAirlessDeg + refc
+        val hObserverDeg = hApparentDeg + dip
+        
+        val hAirlessRad = Math.toRadians(hAirlessDeg)
+        val hApparentRad = Math.toRadians(hApparentDeg)
+        val hObserverRad = Math.toRadians(hObserverDeg)
+        
+        return when (unitType) {
+            UnitType.DEGREES -> when (sunAltitudeType) {
+                SunAltType.AIRLESS -> hAirlessDeg
+                SunAltType.APPARENT -> hApparentDeg
+                SunAltType.OBSERVER -> hObserverDeg
+            }
+            UnitType.RADIANS -> when (sunAltitudeType) {
+                SunAltType.AIRLESS -> hAirlessRad
+                SunAltType.APPARENT -> hApparentRad
+                SunAltType.OBSERVER -> hObserverRad
+            }
+        }
+    }
+    
+    /**
+    * Sun Topocentric Semidiameter default in degree, s apostrophe
+    *
+    * @param jd, Julian Day
+    * @param longitude of observer
+    * @param latitude of observer
+    * @param elevation of observer
+    * @param deltaT, in arcsecond
+    * @param unitType
+    *
+    * @return sP in degree or radian
+    */
+    fun sunTopoSemidiameter(jd: Double, lon: Double, lat: Double, elev: Double = 0.0, deltaT: Double = 0.0, unitType: UnitType = UnitType.DEGREES): Double {
+        
+        val lambdaP = sunTopoLongitude(jd, lon, lat, elev, deltaT)
+        val betaP = sunTopoLatitude(jd, lon, lat, elev, deltaT)
+        val s = sunApparentGeoSemidiameter(jd, deltaT)
+        val n = sunTermN(jd, lon, lat, elev, deltaT)
+        
+        val sPDeg = Math.toDegrees(asin(cos(Math.toRadians(lambdaP)) * cos(Math.toRadians(betaP)) * sin(Math.toRadians(s)) / n))
+        val sPRad = Math.toRadians(sPDeg)
+        return when (unitType) {
+            UnitType.DEGREES -> sPDeg
+            UnitType.RADIANS -> sPRad
+        }
+    }
+    
+    /**
+    * Sun Equation of Time default in degree, e
+    *
+    * @param jd, Julian Day
+    * @param deltaT, in arc second 
+    * 
+    * @return e in degree or radian
+    */
+    fun equationOfTime(jd: Double, deltaT: Double = 0.0, unitType: UnitType = UnitType.DEGREES): Double {
+        
+        val jme = TimeUtil.julianType(jd, deltaT, JulianType.JME)
+        val alpha = sunApparentGeoRightAscension(jd, deltaT)
+        val deltaPsi = Nutation.nutationInLonAndObliquity(jd, deltaT)[0]
+        val epsilon = Nutation.trueObliquityOfEcliptic(jd, deltaT)
+        
+        val lo = (280.4664567 + 360007.6982779 * jme + 0.03032028 * jme.pow(2) + jme.pow(3) / 49931 - jme.pow(4) / 15300 - jme.pow(5) / 2000000).mod(360.0)
+        val _e = (lo - 0.0057183 - alpha + deltaPsi * cos(Math.toRadians(epsilon)))
+        
+        val equationOfTimeMinute = _e * 4
+        
+        val equationOfTimeHour = when {
+    
+            abs(equationOfTimeMinute) < 20.0 -> {
+                _e / 15
+            }
+        
+            abs(equationOfTimeMinute) >= 20.0 && _e > 0.0 -> {
+                _e / 15 - 24
+            }
+        
+            abs(equationOfTimeMinute) >= 20.0 && _e < 0.0 -> {
+                _e / 15 + 24
+            }
+        
+            else -> {
+                _e / 15
+            }
+        }
+        
+        val eqRad = Math.toRadians(equationOfTimeHour)
+        
+        return when (unitType) {
+            UnitType.DEGREES -> equationOfTimeHour
+            UnitType.RADIANS -> eqRad
+        }
     }
     
     

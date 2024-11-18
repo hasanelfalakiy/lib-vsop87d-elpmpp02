@@ -127,4 +127,20 @@ object Correction {
     */
     fun dip(elevation: Double): Double = 1.75 / 60 * sqrt(elevation)
     
+    /**
+    * Atmospheric Refraction form Airless Altitude in arc minute
+    *
+    * @param airlessAltitude
+    * @param pressure, 
+    * @param temperature
+    *
+    * @return atmospheric refraction
+    */
+    fun atmosphericRefractionFromAirlessAltitude(airlessAltitude: Double, temperature: Double = 10.0, pressure: Double = 1010.0): Double {
+        
+        val rDeg = (1.02 / tan(Math.toRadians(airlessAltitude + 10.3 / (airlessAltitude + 5.11))) * pressure / 1010.0 * 283.0 / (273.0 + temperature) + 0.0019279204034639303) / 60.0
+        
+        return rDeg
+    }
+    
 }
