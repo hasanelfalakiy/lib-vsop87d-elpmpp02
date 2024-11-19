@@ -44,7 +44,7 @@ import com.andihasan7.lib.vsop87d.elpmpp02.correction.Correction
 
 object SunPosition {
     
-    // Sun Geocentric Coordinate 
+    // Sun Geocentric Coordinate
     
     /**
     * Sun True Geocentric Longitude FK5 System default in degree

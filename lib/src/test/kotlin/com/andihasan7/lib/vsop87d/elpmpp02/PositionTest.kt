@@ -108,6 +108,15 @@ class LibraryTest {
         val sunTopoSemidiameter = ephe.sunTopoSemidiameter
         val equationOfTime = ephe.equationOfTime
         
+        val moonTrueGeoLon = ephe.moonTrueGeocentricLongitude
+        val moonAppaGeoLon = ephe.moonApparentGeocentricLongitude
+        val moonTrueGeoLat = ephe.moonTrueGeocentricLatitude
+        val moonAppaGeoLat = ephe.moonApparentGeocentricLatitude
+        val moonTrueGeoDistanceKM = ephe.moonTrueGeocentricDistanceKM
+        val moonAppaGeoDistanceKM = ephe.moonAppaGeocentricDistanceKM
+        val moonAppaGeoDistanceAU = ephe.moonAppaGeocentricDistanceAU
+        val moonAppaGeoDistanceER = ephe.moonAppaGeocentricDistanceER
+        
         println("Ephemeris VSOP87D & ELPMPP02 Full Periodic Terms (38.326)")
         println("")
         println("this is unit test")
@@ -179,6 +188,19 @@ class LibraryTest {
         println("Sun Observer Topo Alt: $sunTopoObserverAlt, ${cv.toDegreeFullRound2(sunTopoObserverAlt)}")
         println("Sun Topo Semidiameter: $sunTopoSemidiameter, ${cv.toDegreeFullRound2(sunTopoSemidiameter)}")
         println("Sun Equation of Time: $equationOfTime, ${cv.toTimeFullRound2(equationOfTime)}")
+        println("")
+        println("Moon Geocentric Coor:")
+        println("")
+        println("Moon True Geo Lon: $moonTrueGeoLon, ${cv.toDegreeFullRound2(moonTrueGeoLon)}")
+        println("Moon Appa Geo Lon: $moonAppaGeoLon, ${cv.toDegreeFullRound2(moonAppaGeoLon)}")
+        println("Moon True Geo Lat: $moonTrueGeoLat, ${cv.toDegreeFullRound2(moonTrueGeoLat)}")
+        println("Moon Appa Geo Lat: $moonAppaGeoLat, ${cv.toDegreeFullRound2(moonAppaGeoLat)}")
+        println("Moon True Geo Distance KM: $moonTrueGeoDistanceKM")
+        println("Moon Appa Geo Distance KM: $moonAppaGeoDistanceKM")
+        println("Moon Appa Geo Distance AU: $moonAppaGeoDistanceAU")
+        println("Moon Appa Geo Distance ER: $moonAppaGeoDistanceER")
+        
+        
     }
     
 }

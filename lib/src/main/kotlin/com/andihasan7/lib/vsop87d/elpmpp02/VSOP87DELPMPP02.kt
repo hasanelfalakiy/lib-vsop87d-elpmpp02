@@ -28,11 +28,13 @@ import com.andihasan7.lib.vsop87d.elpmpp02.timeutil.TimeUtil
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.JulianType
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.DateFormat
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.DistanceType
+import com.andihasan7.lib.vsop87d.elpmpp02.enum.PositionType
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.SunAltType
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.UnitType
 import com.andihasan7.lib.vsop87d.elpmpp02.earthposition.EarthPosition
 import com.andihasan7.lib.vsop87d.elpmpp02.sunposition.SunPosition
 import com.andihasan7.lib.vsop87d.elpmpp02.correction.Correction
+import com.andihasan7.lib.vsop87d.elpmpp02.moonposition.MoonPosition
 import kotlin.mod
 
 /**
@@ -382,6 +384,58 @@ class VSOP87DELPMPP02(
     * Equation of Time, e
     */
     val equationOfTime = SunPosition.equationOfTime(jd, deltaT)
+    
+    // Moon Data
+    /**
+    * Moon True Geocentric Longitude in degree, lambda apostrophe
+    */
+    val moonTrueGeocentricLongitude = MoonPosition.moonGeocentricLongitude(jd, deltaT, PositionType.TRUE, UnitType.DEGREES)
+    
+    /**
+    * Moon Apparent Geocentric Longitude in degree, lambda
+    */
+    val moonApparentGeocentricLongitude = MoonPosition.moonGeocentricLongitude(jd, deltaT, PositionType.APPARENT, UnitType.DEGREES)
+    
+    /**
+    * Moon True Geocentric Latitude in degree, beta apostrophe
+    */
+    val moonTrueGeocentricLatitude = MoonPosition.moonGeocentricLatitude(jd, deltaT, PositionType.TRUE, UnitType.DEGREES)
+    
+    /**
+    * Moon Apparent Geocentric Latitude in degree, beta
+    */
+    val moonApparentGeocentricLatitude = MoonPosition.moonGeocentricLatitude(jd, deltaT, PositionType.APPARENT, UnitType.DEGREES)
+    
+    /**
+    * Moon True Geocentric Distance KM
+    */
+    val moonTrueGeocentricDistanceKM = MoonPosition.moonGeocentricDistance(jd, deltaT, PositionType.TRUE, DistanceType.KM)
+    
+    /**
+    * Moon True Geocentric Distance AU
+    */
+    val moonTrueGeocentricDistanceAU = MoonPosition.moonGeocentricDistance(jd, deltaT, PositionType.TRUE, DistanceType.AU)
+    
+    /**
+    * Moon True Geocentric Distance ER
+    */
+    val moonTrueGeocentricDistanceER = MoonPosition.moonGeocentricDistance(jd, deltaT, PositionType.TRUE, DistanceType.ER)
+    
+    /**
+    * Moon Apparent Geocentric Distance KM
+    */
+    val moonAppaGeocentricDistanceKM = MoonPosition.moonGeocentricDistance(jd, deltaT, PositionType.APPARENT, DistanceType.KM)
+    
+    /**
+    * Moon Apparent Geocentric Distance AU
+    */
+    val moonAppaGeocentricDistanceAU = MoonPosition.moonGeocentricDistance(jd, deltaT, PositionType.APPARENT, DistanceType.AU)
+    
+    /**
+    * Moon Apparent Geocentric Distance ER
+    */
+    val moonAppaGeocentricDistanceER = MoonPosition.moonGeocentricDistance(jd, deltaT, PositionType.APPARENT, DistanceType.ER)
+    
     
     
 }
