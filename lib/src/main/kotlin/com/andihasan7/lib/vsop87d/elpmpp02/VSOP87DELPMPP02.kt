@@ -28,6 +28,7 @@ import com.andihasan7.lib.vsop87d.elpmpp02.timeutil.TimeUtil
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.JulianType
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.DateFormat
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.DistanceType
+import com.andihasan7.lib.vsop87d.elpmpp02.enum.MoonAltType
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.PositionType
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.SunAltType
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.UnitType
@@ -436,6 +437,212 @@ class VSOP87DELPMPP02(
     */
     val moonAppaGeocentricDistanceER = MoonPosition.moonGeocentricDistance(jd, deltaT, PositionType.APPARENT, DistanceType.ER)
     
+    /**
+    * Moon Apparent Geocentric Right Ascension, alpha
+    */
+    val moonAppaGeocentricRightAscension = MoonPosition.moonAppaGeocentricRightAscension(jd, deltaT, UnitType.DEGREES)
+    
+    /**
+    * Moon Apparent Geocentric Declination, delta
+    */
+    val moonAppaGeocentricDeclination = MoonPosition.moonAppaGeocentricDeclination(jd, deltaT, UnitType.DEGREES)
+    
+    /**
+    * Moon Geocentric Greenwich Hour Angle default in degree
+    */
+    val moonGeoGreenwichHourAngle = MoonPosition.moonGeoGreenwichHourAngle(jd, deltaT, UnitType.DEGREES)
+    
+    /**
+    * Moon Geocentric Local Hour Angle default in degree
+    */
+    val moonGeoLocalHourAngle = MoonPosition.moonGeoLocalHourAngle(jd, longitude, deltaT, UnitType.DEGREES)
+    
+    /**
+    * Moon Geocentric Azimuth default in degree, A
+    */
+    val moonGeoAzimuth = MoonPosition.moonGeoAzimuth(jd, longitude, latitude, deltaT, UnitType.DEGREES)
+    
+    /**
+    * Moon Geocentric Altitude default in degree, h
+    */
+    val moonGeoAltitude = MoonPosition.moonGeoAltitude(jd, longitude, latitude, deltaT, UnitType.DEGREES)
+    
+    /**
+    * Moon Equatorial Horizontal Parallax default in degree, phi
+    */
+    val moonEquatorialHorizontalParallax = MoonPosition.moonEquatorialHorizontalParallax(jd, deltaT, UnitType.DEGREES)
+    
+    /**
+    * Moon Apparent Geocentric Semidiameter default in degree, s
+    */
+    val moonGeoSemidiameter = MoonPosition.moonGeoSemidiameter(jd, deltaT, UnitType.DEGREES)
+    
+    /**
+    * Moon-Sun Apparent Geocentric Elongation default in degree, d
+    */
+    val moonSunGeoElongation = MoonPosition.moonSunGeoElongation(jd, deltaT, UnitType.DEGREES)
+    
+    /**
+    * Moon Apparent Geocentric Phase Angle default in degree, i
+    */
+    val moonGeoPhaseAngle = MoonPosition.moonGeoPhaseAngle(jd, deltaT, UnitType.DEGREES)
+    
+    /**
+    * Moon Geocentric Disk Illuminated Fraction default in degree, k
+    */
+    val moonGeoDiskIlluminatedFraction = MoonPosition.moonGeoDiskIlluminatedFraction(jd, deltaT, UnitType.DEGREES)
+    
+    /**
+    * Moon Geocentric Disk Illuminated Fraction Percent, k
+    */
+    val moonGeoDiskIlluminatedFractionPercent = moonGeoDiskIlluminatedFraction * 100
+    
+    /**
+    * Moon Geocentric Bright Limb Angle default in degree, x
+    */
+    val moonGeoBrightLimbAngle = MoonPosition.moonGeoBrightLimbAngle(jd, deltaT, UnitType.DEGREES)
+    
+    /**
+    * Moon term n in radian, n
+    */
+    val moonTermN = MoonPosition.moonTermN(jd, longitude, latitude, elevation, deltaT)
+    
+    /**
+    * Parallax in the Moon Right Ascension default in degree, deltaAlpha
+    */
+    val parallaxInTheMoonRightAscension = MoonPosition.parallaxInTheMoonRightAscension(jd, longitude, latitude, elevation, deltaT, UnitType.DEGREES)
+    
+    /**
+    * Parallax in the Moon Altitude default in degree, P
+    */
+    val parallaxInTheMoonAltitude = MoonPosition.parallaxInTheMoonAltitude(jd, longitude, latitude, elevation, deltaT)
+    
+    /**
+    * Moon Topocentric Longitude default in degree
+    */
+    val moonTopoLongitude = MoonPosition.moonTopoLongitude(jd, longitude, latitude, elevation, deltaT)
+    
+    /**
+    * Moon Topocentric Latitude default in degree
+    */
+    val moonTopoLatitude = MoonPosition.moonTopoLatitude(jd, longitude, latitude, elevation, deltaT)
+    
+    /**
+    * Moon Topocentric Right Ascension default in degree, alpha apostrophe
+    */
+    val moonTopoRightAscension = MoonPosition.moonTopoRightAscension(jd, longitude, latitude, elevation, deltaT)
+    
+    /**
+    * Moon Topocentric Declination default in degree, delta apostrophe
+    */
+    val moonTopoDeclination = MoonPosition.moonTopoDeclination(jd, longitude, latitude, elevation, deltaT)
+    
+    /**
+    * Moon Topocentric Semidiameter, s apostrophe
+    */
+    val moonTopoSemidiameter = MoonPosition.moonTopoSemidiameter(jd, longitude, latitude, elevation, deltaT)
+    
+    /**
+    * Moon Topocentric Greenwich Hour Angle default in degree, GHA
+    */
+    val moonTopoGreenwichHourAngle = MoonPosition.moonTopoGreenwichHourAngle(jd, longitude, latitude, deltaT)
+    
+    /**
+    * Moon Topocentric Local Hour Angle default in degree, LHA
+    */
+    val moonTopoLocalHourAngle = MoonPosition.moonTopoLocalHourAngle(jd, longitude, latitude, elevation, deltaT)
+    
+    /**
+    * Moon Topocentric Azimuth default in degree, A apostrophe
+    */
+    val moonTopoAzimuth = MoonPosition.moonTopoAzimuth(jd, longitude, latitude, elevation, deltaT)
+    
+    /**
+    * Moon Airless Topocentric Altitude Center in degree
+    */
+    val moonAirlessTopoAltitudeCenterLimb = MoonPosition.moonTopoAltitude(jd, longitude, latitude, elevation, deltaT, MoonAltType.AIRLESS_CENTER, temperature, pressure)
+    
+    /**
+    * Moon Apparent Topocentric Altitude Center in degree
+    */
+    val moonApparentTopoAltitudeCenterLimb = MoonPosition.moonTopoAltitude(jd, longitude, latitude, elevation, deltaT, MoonAltType.APPARENT_CENTER, temperature, pressure)
+    
+    /**
+    * Moon Observed Topocentric Altitude Center in degree
+    */
+    val moonObservedTopoAltitudeCenterLimb = MoonPosition.moonTopoAltitude(jd, longitude, latitude, elevation, deltaT, MoonAltType.OBSERVED_CENTER, temperature, pressure)
+    
+    // Upper
+    /**
+    * Moon Airless Topocentric Altitude Upper in degree
+    */
+    val moonAirlessTopoAltitudeUpperLimb = MoonPosition.moonTopoAltitude(jd, longitude, latitude, elevation, deltaT, MoonAltType.AIRLESS_UPPER, temperature, pressure)
+    
+    /**
+    * Moon Apparent Topocentric Altitude Upper in degree
+    */
+    val moonApparentTopoAltitudeUpperLimb = MoonPosition.moonTopoAltitude(jd, longitude, latitude, elevation, deltaT, MoonAltType.APPARENT_UPPER, temperature, pressure)
+    
+    /**
+    * Moon Observed Topocentric Altitude Upper in degree
+    */
+    val moonObservedTopoAltitudeUpperLimb = MoonPosition.moonTopoAltitude(jd, longitude, latitude, elevation, deltaT, MoonAltType.OBSERVED_UPPER, temperature, pressure)
+    
+    // lower
+    /**
+    * Moon Airless Topocentric Altitude Lower in degree
+    */
+    val moonAirlessTopoAltitudeLowerLimb = MoonPosition.moonTopoAltitude(jd, longitude, latitude, elevation, deltaT, MoonAltType.AIRLESS_LOWER, temperature, pressure)
+    
+    /**
+    * Moon Apparent Topocentric Altitude Lower in degree
+    */
+    val moonApparentTopoAltitudeLowerLimb = MoonPosition.moonTopoAltitude(jd, longitude, latitude, elevation, deltaT, MoonAltType.APPARENT_LOWER, temperature, pressure)
+    
+    /**
+    * Moon Observed Topocentric Altitude Lower in degree
+    */
+    val moonObservedTopoAltitudeLowerLimb = MoonPosition.moonTopoAltitude(jd, longitude, latitude, elevation, deltaT, MoonAltType.OBSERVED_LOWER, temperature, pressure)
+    
+    /**
+    * Moon Atmospheric Refraction Topocentric Altitude Center in degree
+    */
+    val moonAtmosphericRefTopoAltitudeCenter = MoonPosition.moonTopoAltitude(jd, longitude, latitude, elevation, deltaT, MoonAltType.REFRACTION_CENTER, temperature, pressure)
+    
+    /**
+    * Moon Atmospheric Refraction Topocentric Altitude Upper in degree
+    */
+    val moonAtmosphericRefTopoAltitudeUpper = MoonPosition.moonTopoAltitude(jd, longitude, latitude, elevation, deltaT, MoonAltType.REFRACTION_UPPER, temperature, pressure)
+    
+    /**
+    * Moon Atmospheric Refraction Topocentric Altitude Lower in degree
+    */
+    val moonAtmosphericRefTopoAltitudeLower = MoonPosition.moonTopoAltitude(jd, longitude, latitude, elevation, deltaT, MoonAltType.REFRACTION_LOWER, temperature, pressure)
+    
+    /**
+    * Moon Sun Topocentric Elongation default in degree, d apostrophe 
+    */
+    val moonSunTopoElongation = MoonPosition.moonSunTopoElongation(jd, longitude, latitude, elevation, deltaT)
+    
+    /**
+    * Moon Topocentric Phase Angle in degree, i apostrophe
+    */
+    val moonTopoPhaseAngle = MoonPosition.moonTopoPhaseAngle(jd, longitude, latitude, elevation, deltaT)
+    
+    /**
+    * Moon Topocentric Disk Illuminated Fraction
+    */
+    val moonTopoDiskIlluminatedFraction = MoonPosition.moonTopoDiskIlluminatedFraction(jd, longitude, latitude, elevation, deltaT)
+    
+    /**
+    * Moon Topocentric Disk Illuminated Fraction Percent 
+    */
+    val moonTopoDiskIlluminatedFractionPercent = moonTopoDiskIlluminatedFraction * 100
+    
+    /**
+    * Moon Topocentric Bright Limb Angle
+    */
+    val moonTopoBrightLimbAngle = MoonPosition.moonTopoBrightLimbAngle(jd, longitude, latitude, elevation, deltaT)
     
     
 }

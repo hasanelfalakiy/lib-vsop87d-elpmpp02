@@ -143,4 +143,20 @@ object Correction {
         return rDeg
     }
     
+    /**
+    * Atmospheric Refraction form Apparent Altitude in arc minute
+    *
+    * @param apparentAltitude
+    * @param pressure, 
+    * @param temperature
+    *
+    * @return atmospheric refraction
+    */
+    fun atmosphericRefractionFromApparentAltitude(apparentAltitude: Double, temperature: Double = 10.0, pressure: Double = 1010.0): Double {
+        
+        val rDeg = (1.0 / tan(Math.toRadians(apparentAltitude + 7.31 / (apparentAltitude + 4.4))) * pressure / 1010.0 * 283.0 / (273.0 + temperature) + 0.0013515216737560731) / 60.0
+        
+        return rDeg
+    }
+    
 }

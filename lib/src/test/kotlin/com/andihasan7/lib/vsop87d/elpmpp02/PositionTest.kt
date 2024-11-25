@@ -38,9 +38,9 @@ class LibraryTest {
     @Test
     fun positionTest() {
         
-        // val lat = -(7 + 1 / 60 + 44.6 / 3600)
-        // val lon = (106.0 + 33.0 / 60 + 27.8 / 3600)
-        // val hourD = (17 + 51.0 / 60 + 27.0 / 3600)
+        val lat = -(7 + 1 / 60 + 44.6 / 3600)
+        val lon = (106.0 + 33.0 / 60 + 27.8 / 3600)
+        val hourD = (17 + 51.0 / 60 + 27.0 / 3600)
         
         val ephe = VSOP87DELPMPP02(
             date = 20,
@@ -116,6 +116,51 @@ class LibraryTest {
         val moonAppaGeoDistanceKM = ephe.moonAppaGeocentricDistanceKM
         val moonAppaGeoDistanceAU = ephe.moonAppaGeocentricDistanceAU
         val moonAppaGeoDistanceER = ephe.moonAppaGeocentricDistanceER
+        val moonAppaGeoRA = ephe.moonAppaGeocentricRightAscension
+        val moonAppaGeoDec = ephe.moonAppaGeocentricDeclination
+        val moonGeoGHA = ephe.moonGeoGreenwichHourAngle
+        val moonGeoLHA = ephe.moonGeoLocalHourAngle
+        val moonGeoAzimuth = ephe.moonGeoAzimuth
+        val moonGeoAltitude = ephe.moonGeoAltitude
+        val moonEqHorizontalParallax = ephe.moonEquatorialHorizontalParallax
+        val moonGeoSemidiameter = ephe.moonGeoSemidiameter
+        val moonSunGeoElongation = ephe.moonSunGeoElongation
+        val moonGeoPhaseAngle = ephe.moonGeoPhaseAngle
+        val moonGeoDiskIlluminatedFraction = ephe.moonGeoDiskIlluminatedFraction
+        val moonGeoDiskIlluminatedFractionPercent = ephe.moonGeoDiskIlluminatedFractionPercent
+        val moonGeoBrightLimbAngle = ephe.moonGeoBrightLimbAngle
+        
+        val moonTermN = ephe.moonTermN
+        val parallaxInTheMoonRightAscension = ephe.parallaxInTheMoonRightAscension
+        val parallaxInTheMoonAltitude = ephe.parallaxInTheMoonAltitude
+        val moonTopoLongitude = ephe.moonTopoLongitude
+        val moonTopoLatitude = ephe.moonTopoLatitude
+        val moonTopoRightAscension = ephe.moonTopoRightAscension
+        val moonTopoDeclination = ephe.moonTopoDeclination
+        val moonTopoSemidiameter = ephe.moonTopoSemidiameter
+        val moonTopoGHA = ephe.moonTopoGreenwichHourAngle
+        val moonTopoLHA = ephe.moonTopoLocalHourAngle
+        val moonTopoAzimuth = ephe.moonTopoAzimuth
+        
+        val moonAirlessTopoAltC = ephe.moonAirlessTopoAltitudeCenterLimb
+        val moonAppaTopoAltC = ephe.moonApparentTopoAltitudeCenterLimb
+        val moonObTopoAltC = ephe.moonObservedTopoAltitudeCenterLimb
+        
+        val moonAirlessTopoAltU = ephe.moonAirlessTopoAltitudeUpperLimb
+        val moonAppaTopoAltU = ephe.moonApparentTopoAltitudeUpperLimb
+        val moonObTopoAltU = ephe.moonObservedTopoAltitudeUpperLimb
+        
+        val moonAirlessTopoAltL = ephe.moonAirlessTopoAltitudeLowerLimb
+        val moonAppaTopoAltL = ephe.moonApparentTopoAltitudeLowerLimb
+        val moonObTopoAltL = ephe.moonObservedTopoAltitudeLowerLimb
+        
+        val moonAtmosphericRefTopoAltitudeCenter = ephe.moonAtmosphericRefTopoAltitudeCenter
+        val moonAtmosphericRefTopoAltitudeUpper = ephe.moonAtmosphericRefTopoAltitudeUpper
+        val moonAtmosphericRefTopoAltitudeLower = ephe.moonAtmosphericRefTopoAltitudeLower
+        val moonSunTopoElongation = ephe.moonSunTopoElongation
+        val moonTopoPhaseAngle = ephe.moonTopoPhaseAngle
+        val moonTopoDiskIlluminatedFraction = ephe.moonTopoDiskIlluminatedFraction
+        val moonTopoBrightLimbAngle = ephe.moonTopoBrightLimbAngle
         
         println("Ephemeris VSOP87D & ELPMPP02 Full Periodic Terms (38.326)")
         println("")
@@ -199,6 +244,52 @@ class LibraryTest {
         println("Moon Appa Geo Distance KM: $moonAppaGeoDistanceKM")
         println("Moon Appa Geo Distance AU: $moonAppaGeoDistanceAU")
         println("Moon Appa Geo Distance ER: $moonAppaGeoDistanceER")
+        println("Moon Appa Geo RA: $moonAppaGeoRA, ${cv.toDegreeFullRound2(moonAppaGeoRA)}")
+        println("Moon Appa Geo Dec: $moonAppaGeoDec, ${cv.toDegreeFullRound2(moonAppaGeoDec)}")
+        println("Moon Geo GHA: $moonGeoGHA, ${cv.toDegreeFullRound2(moonGeoGHA)}")
+        println("Moon Geo LHA: $moonGeoLHA, ${cv.toDegreeFullRound2(moonGeoLHA)}")
+        println("Moon Geo Az: $moonGeoAzimuth, ${cv.toDegreeFullRound2(moonGeoAzimuth)}")
+        println("Moon Geo Alt: $moonGeoAltitude, ${cv.toDegreeFullRound2(moonGeoAltitude)}")
+        println("Moon Eq Horizontal Plx: $moonEqHorizontalParallax, ${cv.toDegreeFullRound2(moonEqHorizontalParallax)}")
+        println("Moon Geo Semidiameter: $moonGeoSemidiameter, ${cv.toDegreeFullRound2(moonGeoSemidiameter)}")
+        println("Moon-Sun Geo Elongation: $moonSunGeoElongation, ${cv.toDegreeFullRound2(moonSunGeoElongation)}")
+        println("Moon Geo Phase Angle: $moonGeoPhaseAngle, ${cv.toDegreeFullRound2(moonGeoPhaseAngle)}")
+        println("Moon Geo Disk Illuminated Fraction: $moonGeoDiskIlluminatedFraction ")
+        println("Moon Geo Disk Illuminated Fraction Percent: $moonGeoDiskIlluminatedFractionPercent %")
+        println("Moon Geo Bright Limb Angle: $moonGeoBrightLimbAngle, ${cv.toDegreeFullRound2(moonGeoBrightLimbAngle)}")
+        println("Moon Term N: $moonTermN")
+        println("Parallax in the Moon RA: $parallaxInTheMoonRightAscension, ${cv.toDegreeFullRound2(parallaxInTheMoonRightAscension)}")
+        println("Parallax in the Moon Alt: $parallaxInTheMoonAltitude, ${cv.toDegreeFullRound2(parallaxInTheMoonAltitude)}")
+        println("Moon Topo Longitude: $moonTopoLongitude, ${cv.toDegreeFullRound2(moonTopoLongitude)}")
+        println("Moon Topo Latitude: $moonTopoLatitude, ${cv.toDegreeFullRound2(moonTopoLatitude)}")
+        println("Moon Topo RA: $moonTopoRightAscension, ${cv.toDegreeFullRound2(moonTopoRightAscension)}")
+        println("Moon Topo Dec: $moonTopoDeclination, ${cv.toDegreeFullRound2(moonTopoDeclination)}")
+        println("Moon Topo Semidimeter: $moonTopoSemidiameter, ${cv.toDegreeFullRound2(moonTopoSemidiameter)}")
+        println("Moon Topo GHA perlu dicek: $moonTopoGHA, ${cv.toDegreeFullRound2(moonTopoGHA)}")
+        println("Moon Topo LHA: $moonTopoLHA, ${cv.toDegreeFullRound2(moonTopoLHA)}")
+        println("Moon Topo Az: $moonTopoAzimuth, ${cv.toDegreeFullRound2(moonTopoAzimuth)}")
+        println("")
+        println("Moon Airless Topo Alt Center: $moonAirlessTopoAltC, ${cv.toDegreeFullRound2(moonAirlessTopoAltC)}")
+        println("Moon Apparent Topo Alt Center: $moonAppaTopoAltC, ${cv.toDegreeFullRound2(moonAppaTopoAltC)}")
+        println("Moon Observed Topo Alt Center: $moonObTopoAltC, ${cv.toDegreeFullRound2(moonObTopoAltC)}")
+        println("")
+        println("Moon Airless Topo Alt Upper: $moonAirlessTopoAltU, ${cv.toDegreeFullRound2(moonAirlessTopoAltU)}")
+        println("Moon Apparent Topo Alt Upper: $moonAppaTopoAltU, ${cv.toDegreeFullRound2(moonAppaTopoAltU)}")
+        println("Moon Observed Topo Alt Upper: $moonObTopoAltU, ${cv.toDegreeFullRound2(moonObTopoAltU)}")
+        println("")
+        println("Moon Airless Topo Alt Lower: $moonAirlessTopoAltL, ${cv.toDegreeFullRound2(moonAirlessTopoAltL)}")
+        println("Moon Apparent Topo Alt Lower: $moonAppaTopoAltL, ${cv.toDegreeFullRound2(moonAppaTopoAltL)}")
+        println("Moon Observed Topo Alt Lower: $moonObTopoAltL, ${cv.toDegreeFullRound2(moonObTopoAltL)}")
+        println("")
+        println("Moon Atmospheric Ref Topo Alt Center: $moonAtmosphericRefTopoAltitudeCenter, ${cv.toDegreeFullRound2(moonAtmosphericRefTopoAltitudeCenter)}")
+        println("Moon Atmospheric Ref Topo Alt Upper: $moonAtmosphericRefTopoAltitudeUpper, ${cv.toDegreeFullRound2(moonAtmosphericRefTopoAltitudeUpper)}")
+        println("Moon Atmospheric Ref Topo Alt Lower: $moonAtmosphericRefTopoAltitudeLower, ${cv.toDegreeFullRound2(moonAtmosphericRefTopoAltitudeLower)}")
+        println("")
+        println("Moon Sun Topo Elongation: $moonSunTopoElongation, ${cv.toDegreeFullRound2(moonSunTopoElongation)}")
+        println("Moon Topo Phase Angle: $moonTopoPhaseAngle, ${cv.toDegreeFullRound2(moonTopoPhaseAngle)}")
+        println("Moon Topo Disk Illuminated Fraction: $moonTopoDiskIlluminatedFraction ${ephe.moonTopoDiskIlluminatedFractionPercent} %")
+        println("Moon Topo Bright Limb Angle: $moonTopoBrightLimbAngle, ${cv.toDegreeFullRound2(moonTopoBrightLimbAngle)}")
+        
         
         
     }

@@ -26,13 +26,13 @@ package com.andihasan7.lib.vsop87d.elpmpp02.enum
 enum class MoonAltType {
     AIRLESS_CENTER,
     APPARENT_CENTER,
-    OBSERVER_CENTER,
+    OBSERVED_CENTER,
     AIRLESS_UPPER,
     APPARENT_UPPER,
-    OBSERVER_UPPER,
+    OBSERVED_UPPER,
     AIRLESS_LOWER,
     APPARENT_LOWER,
-    OBSERVER_LOWER,
+    OBSERVED_LOWER,
     REFRACTION_CENTER, // atmospheric refraction center
     REFRACTION_UPPER,
     REFRACTION_LOWER
