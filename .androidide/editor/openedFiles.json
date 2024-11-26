@@ -1,0 +1,80 @@
+{
+  "allFiles": [
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/lib-vsop87d-elpmpp02/lib/src/main/kotlin/com/andihasan7/lib/vsop87d/elpmpp02/earthposition/EarthPosition.kt",
+      "selection": {
+        "end": {
+          "column": 32,
+          "index": 3286,
+          "line": 85
+        },
+        "start": {
+          "column": 32,
+          "index": 3286,
+          "line": 85
+        }
+      }
+    },
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/lib-vsop87d-elpmpp02/lib/src/main/kotlin/com/andihasan7/lib/vsop87d/elpmpp02/moonposition/MoonPosition.kt",
+      "selection": {
+        "end": {
+          "column": 31,
+          "index": 2287,
+          "line": 62
+        },
+        "start": {
+          "column": 31,
+          "index": 2287,
+          "line": 62
+        }
+      }
+    },
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/lib-vsop87d-elpmpp02/lib/src/main/kotlin/com/andihasan7/lib/vsop87d/elpmpp02/readerutil/EarthLBRReader.kt",
+      "selection": {
+        "end": {
+          "column": 0,
+          "index": 0,
+          "line": 0
+        },
+        "start": {
+          "column": 0,
+          "index": 0,
+          "line": 0
+        }
+      }
+    },
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/lib-vsop87d-elpmpp02/lib/src/test/kotlin/com/andihasan7/lib/vsop87d/elpmpp02/PositionTest.kt",
+      "selection": {
+        "end": {
+          "column": 0,
+          "index": 0,
+          "line": 0
+        },
+        "start": {
+          "column": 0,
+          "index": 0,
+          "line": 0
+        }
+      }
+    },
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/lib-vsop87d-elpmpp02/lib/src/main/kotlin/com/andihasan7/lib/vsop87d/elpmpp02/Nutation.kt",
+      "selection": {
+        "end": {
+          "column": 37,
+          "index": 1591,
+          "line": 50
+        },
+        "start": {
+          "column": 37,
+          "index": 1591,
+          "line": 50
+        }
+      }
+    }
+  ],
+  "selectedFile": "/storage/emulated/0/AndroidIDEProjects/lib-vsop87d-elpmpp02/lib/src/test/kotlin/com/andihasan7/lib/vsop87d/elpmpp02/PositionTest.kt"
+}

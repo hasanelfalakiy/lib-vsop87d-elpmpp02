@@ -60,10 +60,10 @@ object MoonPosition {
     */
     fun moonGeocentricLongitude(jd: Double, deltaT: Double = 0.0, positionType: PositionType = PositionType.TRUE, unitType: UnitType = UnitType.DEGREES): Double {
         
-        val moonL0 = "src/main/assets/MOON-L0.csv"
-        val moonL1 = "src/main/assets/MOON-L1.csv"
-        val moonL2 = "src/main/assets/MOON-L2.csv"
-        val moonL3 = "src/main/assets/MOON-L3.csv"
+        val moonL0 = "src/main/resources/MOON-L0.csv"
+        val moonL1 = "src/main/resources/MOON-L1.csv"
+        val moonL2 = "src/main/resources/MOON-L2.csv"
+        val moonL3 = "src/main/resources/MOON-L3.csv"
         
         val t = TimeUtil.julianType(jd, deltaT, JulianType.JCE)
         val deltaPsi = Nutation.nutationInLonAndObliquity(jd, deltaT)[0]
@@ -120,9 +120,9 @@ object MoonPosition {
     */
     fun moonGeocentricLatitude(jd: Double, deltaT: Double = 0.0, positionType: PositionType = PositionType.TRUE, unitType: UnitType = UnitType.DEGREES): Double {
         
-        val moonB0 = "src/main/assets/MOON-B0.csv"
-        val moonB1 = "src/main/assets/MOON-B1.csv"
-        val moonB2 = "src/main/assets/MOON-B2.csv"
+        val moonB0 = "src/main/resources/MOON-B0.csv"
+        val moonB1 = "src/main/resources/MOON-B1.csv"
+        val moonB2 = "src/main/resources/MOON-B2.csv"
         
         val t = TimeUtil.julianType(jd, deltaT, JulianType.JCE)
         
@@ -162,10 +162,10 @@ object MoonPosition {
     */
     fun moonGeocentricDistance(jd: Double, deltaT: Double = 0.0, positionType: PositionType = PositionType.TRUE, distanceType: DistanceType = DistanceType.KM): Double {
         
-        val moonR0 = "src/main/assets/MOON-R0.csv"
-        val moonR1 = "src/main/assets/MOON-R1.csv"
-        val moonR2 = "src/main/assets/MOON-R2.csv"
-        val moonR3 = "src/main/assets/MOON-R3.csv"
+        val moonR0 = "src/main/resources/MOON-R0.csv"
+        val moonR1 = "src/main/resources/MOON-R1.csv"
+        val moonR2 = "src/main/resources/MOON-R2.csv"
+        val moonR3 = "src/main/resources/MOON-R3.csv"
         
         val t = TimeUtil.julianType(jd, deltaT, JulianType.JCE)
         

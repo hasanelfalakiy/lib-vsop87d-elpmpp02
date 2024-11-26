@@ -48,7 +48,7 @@ object Nutation {
     */
     fun nutationInLonAndObliquity(jd: Double, deltaT: Double = 0.0): DoubleArray {
         
-        val path = "src/main/assets/nutation-2000b.csv"
+        val path = "src/main/resources/nutation-2000b.csv"
         
         // t is the same as jce
         val t = TimeUtil.julianType(jd, deltaT, JulianType.JCE)

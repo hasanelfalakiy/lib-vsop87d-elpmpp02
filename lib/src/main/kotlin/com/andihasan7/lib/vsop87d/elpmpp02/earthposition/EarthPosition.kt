@@ -44,12 +44,12 @@ object EarthPosition {
     */
     fun earthHeliocentricLongitude(jd: Double, deltaT: Double = 0.0, unitType: UnitType = UnitType.DEGREES): Double {
     
-        val earthL0 = "src/main/assets/EARTH-L0.csv"
-        val earthL1 = "src/main/assets/EARTH-L1.csv"
-        val earthL2 = "src/main/assets/EARTH-L2.csv"
-        val earthL3 = "src/main/assets/EARTH-L3.csv"
-        val earthL4 = "src/main/assets/EARTH-L4.csv"
-        val earthL5 = "src/main/assets/EARTH-L5.csv"
+        val earthL0 = "src/main/resources/EARTH-L0.csv"
+        val earthL1 = "src/main/resources/EARTH-L1.csv"
+        val earthL2 = "src/main/resources/EARTH-L2.csv"
+        val earthL3 = "src/main/resources/EARTH-L3.csv"
+        val earthL4 = "src/main/resources/EARTH-L4.csv"
+        val earthL5 = "src/main/resources/EARTH-L5.csv"
         
         val t = TimeUtil.julianType(jd, deltaT, JulianType.JME)
         
@@ -79,11 +79,11 @@ object EarthPosition {
     */
     fun earthHeliocentricLatitude(jd: Double, deltaT: Double = 0.0, unitType: UnitType = UnitType.DEGREES): Double {
     
-        val earthB0 = "src/main/assets/EARTH-B0.csv"
-        val earthB1 = "src/main/assets/EARTH-B1.csv"
-        val earthB2 = "src/main/assets/EARTH-B2.csv"
-        val earthB3 = "src/main/assets/EARTH-B3.csv"
-        val earthB4 = "src/main/assets/EARTH-B4.csv"
+        val earthB0 = "src/main/resources/EARTH-B0.csv"
+        val earthB1 = "src/main/resources/EARTH-B1.csv"
+        val earthB2 = "src/main/resources/EARTH-B2.csv"
+        val earthB3 = "src/main/resources/EARTH-B3.csv"
+        val earthB4 = "src/main/resources/EARTH-B4.csv"
         
         val t = TimeUtil.julianType(jd, deltaT, JulianType.JME)
         
@@ -111,12 +111,12 @@ object EarthPosition {
     */
     fun earthRadiusVector(jd: Double, deltaT: Double = 0.0, distanceType: DistanceType): Double {
     
-        val earthR0 = "src/main/assets/EARTH-R0.csv"
-        val earthR1 = "src/main/assets/EARTH-R1.csv"
-        val earthR2 = "src/main/assets/EARTH-R2.csv"
-        val earthR3 = "src/main/assets/EARTH-R3.csv"
-        val earthR4 = "src/main/assets/EARTH-R4.csv"
-        val earthR5 = "src/main/assets/EARTH-R5.csv"
+        val earthR0 = "src/main/resources/EARTH-R0.csv"
+        val earthR1 = "src/main/resources/EARTH-R1.csv"
+        val earthR2 = "src/main/resources/EARTH-R2.csv"
+        val earthR3 = "src/main/resources/EARTH-R3.csv"
+        val earthR4 = "src/main/resources/EARTH-R4.csv"
+        val earthR5 = "src/main/resources/EARTH-R5.csv"
         
         val t = TimeUtil.julianType(jd, deltaT, JulianType.JME)
         
