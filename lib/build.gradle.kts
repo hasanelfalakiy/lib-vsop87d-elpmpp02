@@ -24,7 +24,7 @@ subprojects {
 }
 
 group = "com.andihasan7.lib-vsop87d-elpmpp02"
-version = "1.0.0"
+version = "2.0-SNAPSHOT"
 
 publishing {
 	publications {
