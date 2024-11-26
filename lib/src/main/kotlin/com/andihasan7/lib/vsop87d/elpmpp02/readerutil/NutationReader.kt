@@ -32,13 +32,13 @@ import java.io.InputStreamReader
 /**
 * function to read nutation in longitude terms for model IAU 2000B
 *
-* @param t, t is the same as jce
-* @param l, Mean Anomaly of the Moon, L in radian
-* @param l1, Anomaly of the Sun, L' in radian
-* @param f, Mean argument of the latitude of the Moon, F in radian
-* @param d, Mean Elongation of the Moon from the Sun, D in radian
-* @param omega, Mean Longitude of the Ascending Node of the Moon, omega in radian
-* @param path, nutation .csv file path string
+* @param t is the same as jce
+* @param l Mean Anomaly of the Moon, L in radian
+* @param l1 Anomaly of the Sun, L' in radian
+* @param f Mean argument of the latitude of the Moon, F in radian
+* @param d Mean Elongation of the Moon from the Sun, D in radian
+* @param omega Mean Longitude of the Ascending Node of the Moon, omega in radian
+* @param path nutation .csv file path string
 *
 * @return nutationInLongitude the unit is 0.0000001s
 */
@@ -83,13 +83,13 @@ fun readNutationInLongitude(t: Double, l: Double, l1: Double, f: Double, d: Doub
 /**
 * function to read nutation in obliquity terms for model IAU 2000B
 *
-* @param t, t is the same as jce
-* @param l, Mean Anomaly of the Moon, L in radian
-* @param l1, Anomaly of the Sun, L' in radian
-* @param f, Mean argument of the latitude of the Moon, F in radian
-* @param d, Mean Elongation of the Moon from the Sun, D in radian
-* @param omega, Mean Longitude of the Ascending Node of the Moon, omega in radian
-* @param path, nutation .csv file path string
+* @param t is the same as jce
+* @param l Mean Anomaly of the Moon, L in radian
+* @param l1 Anomaly of the Sun, L' in radian
+* @param f Mean argument of the latitude of the Moon, F in radian
+* @param d Mean Elongation of the Moon from the Sun, D in radian
+* @param omega Mean Longitude of the Ascending Node of the Moon, omega in radian
+* @param path nutation .csv file path string
 *
 * @return nutationInObliquity the unit is 0.0000001s
 */

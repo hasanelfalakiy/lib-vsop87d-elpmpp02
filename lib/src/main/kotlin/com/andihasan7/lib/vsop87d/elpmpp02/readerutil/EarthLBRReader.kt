@@ -33,8 +33,8 @@ object EarthLBRReader {
     /**
     * LBR periodic table reader for earth
     *
-    * @param t, t is the same as jme Julian Millenium Ephemeris 
-    * @param path, periodic table file path
+    * @param t is the same as jme Julian Millenium Ephemeris
+    * @param path periodic table .csv file path
     *
     * @return totalCoefficient: Double
     *

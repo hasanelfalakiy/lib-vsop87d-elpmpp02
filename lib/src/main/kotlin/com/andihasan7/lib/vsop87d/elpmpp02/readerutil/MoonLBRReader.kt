@@ -34,8 +34,8 @@ object MoonLBRReader {
     /**
     * LBR periodic table reader for moon
     *
-    * @param t, t is the same as jce Julian Ephemeris  Century
-    * @param path, periodic table file path
+    * @param t is the same as jce Julian Ephemeris  Century
+    * @param path periodic table .csv file path
     *
     * @return totalCoefficient: Double
     *

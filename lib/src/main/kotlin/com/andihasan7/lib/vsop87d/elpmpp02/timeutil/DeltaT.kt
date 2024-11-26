@@ -29,7 +29,7 @@ import kotlin.math.pow
 /**
 * Delta T in arcsecond
 * 
-* @param jd, Julian Day
+* @param jd Julian Day
 * @return deltaT in arcsecond
 */
 fun deltaT(jd: Double): Double {

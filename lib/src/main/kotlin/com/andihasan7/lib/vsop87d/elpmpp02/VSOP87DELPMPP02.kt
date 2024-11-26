@@ -36,7 +36,6 @@ import com.andihasan7.lib.vsop87d.elpmpp02.earthposition.EarthPosition
 import com.andihasan7.lib.vsop87d.elpmpp02.sunposition.SunPosition
 import com.andihasan7.lib.vsop87d.elpmpp02.correction.Correction
 import com.andihasan7.lib.vsop87d.elpmpp02.moonposition.MoonPosition
-import kotlin.mod
 
 /**
 * VSOP87DELPMPP02
@@ -69,8 +68,6 @@ class VSOP87DELPMPP02(
     pressure: Double = 1010.0, // annual average local air pressure (in millibars)
     checkDeltaT: Boolean = true // choice to use deltaT or not
 ) {
-    
-    
     /**
     * Julian Day
     */

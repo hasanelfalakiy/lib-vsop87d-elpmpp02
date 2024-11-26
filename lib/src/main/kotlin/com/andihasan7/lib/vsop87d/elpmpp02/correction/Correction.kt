@@ -39,11 +39,10 @@ object Correction {
     /**
     * Abration in arcsecond
     * 
-    * @param jd, Julian Day
-    * @param deltaT, in arcsecond
+    * @param jd Julian Day
+    * @param deltaT in arcsecond
     *
-    * @return abr // in arcseconds (detik busur), Before displaying the DMS format, divide it by 3600 first.
-    *
+    * @return abr in arcseconds (detik busur), Before displaying the DMS format, divide it by 3600 first.
     */
     fun abration(jd: Double, deltaT: Double = 0.0): Double {
         
@@ -80,7 +79,7 @@ object Correction {
     /**
     * term u in radian
     * 
-    * @param latitude of observer
+    * @param lat latitude of observer
     * @return u in radian
     */
     fun termU(lat: Double): Double {
@@ -91,8 +90,8 @@ object Correction {
     /**
     * term x in radian
     * 
-    * @param latitude of observer
-    * @param elevation of observer
+    * @param lat latitude of observer
+    * @param elev elevation of observer
     *
     * @return x in radian
     */
@@ -106,8 +105,8 @@ object Correction {
     /**
     * term y in radian
     * 
-    * @param latitude of observer
-    * @param elevation of observer
+    * @param lat latitude of observer
+    * @param elev elevation of observer
     *
     * @return y in radian
     */
@@ -131,8 +130,8 @@ object Correction {
     * Atmospheric Refraction form Airless Altitude in arc minute
     *
     * @param airlessAltitude
-    * @param pressure, 
-    * @param temperature
+    * @param pressure in millibars
+    * @param temperature in celsius of degree
     *
     * @return atmospheric refraction
     */
@@ -147,8 +146,8 @@ object Correction {
     * Atmospheric Refraction form Apparent Altitude in arc minute
     *
     * @param apparentAltitude
-    * @param pressure, 
-    * @param temperature
+    * @param pressure in millibars
+    * @param temperature in celsius
     *
     * @return atmospheric refraction
     */

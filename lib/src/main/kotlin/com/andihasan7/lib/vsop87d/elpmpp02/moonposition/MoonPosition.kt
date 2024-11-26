@@ -51,27 +51,27 @@ object MoonPosition {
     /**
     * Moon Geocentric Longitude default in true and degrees
     *
-    * @param jd, Julian Day
-    * @param deltaT, in arc second
-    * @param positionType, True or Apparent
-    * @param unitType, Degrees or Radians
+    * @param jd Julian Day
+    * @param deltaT in arc second
+    * @param positionType True or Apparent
+    * @param unitType Degrees or Radians
     *
     * @return 
     */
     fun moonGeocentricLongitude(jd: Double, deltaT: Double = 0.0, positionType: PositionType = PositionType.TRUE, unitType: UnitType = UnitType.DEGREES): Double {
         
-        val MOON_L0 = "src/main/assets/MOON-L0.csv"
-        val MOON_L1 = "src/main/assets/MOON-L1.csv"
-        val MOON_L2 = "src/main/assets/MOON-L2.csv"
-        val MOON_L3 = "src/main/assets/MOON-L3.csv"
+        val moonL0 = "src/main/assets/MOON-L0.csv"
+        val moonL1 = "src/main/assets/MOON-L1.csv"
+        val moonL2 = "src/main/assets/MOON-L2.csv"
+        val moonL3 = "src/main/assets/MOON-L3.csv"
         
         val t = TimeUtil.julianType(jd, deltaT, JulianType.JCE)
         val deltaPsi = Nutation.nutationInLonAndObliquity(jd, deltaT)[0]
         
-        val l0 = MoonLBRReader.moonLBRTermsReader(t, MOON_L0)
-        val l1 = MoonLBRReader.moonLBRTermsReader(t, MOON_L1)
-        val l2 = MoonLBRReader.moonLBRTermsReader(t, MOON_L2)
-        val l3 = MoonLBRReader.moonLBRTermsReader(t, MOON_L3)
+        val l0 = MoonLBRReader.moonLBRTermsReader(t, moonL0)
+        val l1 = MoonLBRReader.moonLBRTermsReader(t, moonL1)
+        val l2 = MoonLBRReader.moonLBRTermsReader(t, moonL2)
+        val l3 = MoonLBRReader.moonLBRTermsReader(t, moonL3)
         
         val l = l0 + l1 * t + l2 * t.pow(2) + l3 * t.pow(3)
         val w0 = 3.81034409083088
@@ -111,24 +111,24 @@ object MoonPosition {
     /**
     * Moon Geocentric Latitude default in true and degrees
     *
-    * @param jd, Julian Day
-    * @param deltaT, in arc second
-    * @param positionType, True or Apparent
-    * @param unitType, Degrees or Radians
+    * @param jd Julian Day
+    * @param deltaT in arc second
+    * @param positionType True or Apparent
+    * @param unitType Degrees or Radians
     *
     * @return 
     */
     fun moonGeocentricLatitude(jd: Double, deltaT: Double = 0.0, positionType: PositionType = PositionType.TRUE, unitType: UnitType = UnitType.DEGREES): Double {
         
-        val MOON_B0 = "src/main/assets/MOON-B0.csv"
-        val MOON_B1 = "src/main/assets/MOON-B1.csv"
-        val MOON_B2 = "src/main/assets/MOON-B2.csv"
+        val moonB0 = "src/main/assets/MOON-B0.csv"
+        val moonB1 = "src/main/assets/MOON-B1.csv"
+        val moonB2 = "src/main/assets/MOON-B2.csv"
         
         val t = TimeUtil.julianType(jd, deltaT, JulianType.JCE)
         
-        val b0 = MoonLBRReader.moonLBRTermsReader(t, MOON_B0)
-        val b1 = MoonLBRReader.moonLBRTermsReader(t, MOON_B1)
-        val b2 = MoonLBRReader.moonLBRTermsReader(t, MOON_B2)
+        val b0 = MoonLBRReader.moonLBRTermsReader(t, moonB0)
+        val b1 = MoonLBRReader.moonLBRTermsReader(t, moonB1)
+        val b2 = MoonLBRReader.moonLBRTermsReader(t, moonB2)
         
         val betaAp = (b0 + b1 * t + b2 * t.pow(2)) / 3600
         val betaApRad = Math.toRadians(betaAp)
@@ -153,26 +153,26 @@ object MoonPosition {
     /**
     * Moon Geocentric Distance default in true and KM
     *
-    * @param jd, Julian Day
-    * @param deltaT, in arc second
-    * @param positionType, True or Apparent
-    * @param distanceType, KM, AU, or ER
+    * @param jd Julian Day
+    * @param deltaT in arc second
+    * @param positionType True or Apparent
+    * @param distanceType KM, AU, or ER
     *
     * @return 
     */
     fun moonGeocentricDistance(jd: Double, deltaT: Double = 0.0, positionType: PositionType = PositionType.TRUE, distanceType: DistanceType = DistanceType.KM): Double {
         
-        val MOON_R0 = "src/main/assets/MOON-R0.csv"
-        val MOON_R1 = "src/main/assets/MOON-R1.csv"
-        val MOON_R2 = "src/main/assets/MOON-R2.csv"
-        val MOON_R3 = "src/main/assets/MOON-R3.csv"
+        val moonR0 = "src/main/assets/MOON-R0.csv"
+        val moonR1 = "src/main/assets/MOON-R1.csv"
+        val moonR2 = "src/main/assets/MOON-R2.csv"
+        val moonR3 = "src/main/assets/MOON-R3.csv"
         
         val t = TimeUtil.julianType(jd, deltaT, JulianType.JCE)
         
-        val r0 = MoonLBRReader.moonLBRTermsReader(t, MOON_R0)
-        val r1 = MoonLBRReader.moonLBRTermsReader(t, MOON_R1)
-        val r2 = MoonLBRReader.moonLBRTermsReader(t, MOON_R2)
-        val r3 = MoonLBRReader.moonLBRTermsReader(t, MOON_R3)
+        val r0 = MoonLBRReader.moonLBRTermsReader(t, moonR0)
+        val r1 = MoonLBRReader.moonLBRTermsReader(t, moonR1)
+        val r2 = MoonLBRReader.moonLBRTermsReader(t, moonR2)
+        val r3 = MoonLBRReader.moonLBRTermsReader(t, moonR3)
         
         // r true km
         val rTrueKM = r0 + r1 * t + r2 * t.pow(2) + r3 * t.pow(3)
@@ -205,9 +205,9 @@ object MoonPosition {
     /**
     * Moon Apparent Geocentric Right Ascension default in degree
     *
-    * @param jd, Julian Day
-    * @param deltaT, in arc second
-    * @param unitType, degree or radian
+    * @param jd Julian Day
+    * @param deltaT in arc second
+    * @param unitType degree or radian
     * 
     * @return alpha in degree or radian
     */
@@ -229,9 +229,9 @@ object MoonPosition {
     /**
     * Moon Apparent Geocentric Declination default in degree
     *
-    * @param jd, Julian Day
-    * @param deltaT, in arc second
-    * @param unitType, degree or radian
+    * @param jd Julian Day
+    * @param deltaT in arc second
+    * @param unitType degree or radian
     * 
     * @return delta in degree or radian
     */
@@ -253,9 +253,9 @@ object MoonPosition {
     /**
     * Moon Geocentric Greenwich Hour Angle default in degree
     *
-    * @param jd, Julian Day
-    * @param deltaT, in arc second
-    * @param unitType, degree or radian
+    * @param jd Julian Day
+    * @param deltaT in arc second
+    * @param unitType degree or radian
     * 
     * @return gha in degree or radian
     */
@@ -276,10 +276,10 @@ object MoonPosition {
     /**
     * Moon Geocentric Local Hour Angle FK5 System default in degree
     *
-    * @param jd, Julian Day
-    * @param lon, longitude of observer
-    * @param deltaT, in arc second
-    * @param unitType, degree or radian
+    * @param jd Julian Day
+    * @param lon longitude of observer
+    * @param deltaT in arc second
+    * @param unitType degree or radian
     * 
     * @return lha in degree or radian
     */
@@ -300,11 +300,11 @@ object MoonPosition {
     /**
     * Moon Geocentric Azimuth default in degree
     *
-    * @param jd, Julian Day
-    * @param lon, longitude of observer
-    * @param lat, latitude of observer
-    * @param deltaT, in arc second
-    * @param unitType, degree or radian
+    * @param jd Julian Day
+    * @param lon longitude of observer
+    * @param lat latitude of observer
+    * @param deltaT in arc second
+    * @param unitType degree or radian
     * 
     * @return az in degree or radian
     */
@@ -326,11 +326,11 @@ object MoonPosition {
     /**
     * Moon Geocentric Altitude default in degree
     *
-    * @param jd, Julian Day
-    * @param lon, longitude of observer
-    * @param lat, latitude of observer
-    * @param deltaT, in arc second
-    * @param unitType, degree or radian
+    * @param jd Julian Day
+    * @param lon longitude of observer
+    * @param lat latitude of observer
+    * @param deltaT in arc second
+    * @param unitType degree or radian
     * 
     * @return alt in degree or radian
     */
@@ -352,9 +352,9 @@ object MoonPosition {
     /**
     * Moon Equatorial Horizontal Parallax default in degree
     *
-    * @param jd, Julian Day
-    * @param deltaT, in arc second
-    * @param unitType, degree or radian
+    * @param jd Julian Day
+    * @param deltaT in arc second
+    * @param unitType degree or radian
     * 
     * @return phi in degree or radian
     */
@@ -374,9 +374,9 @@ object MoonPosition {
     /**
     * Moon Geocentric Semidiameter default in degree, s
     *
-    * @param jd, Julian Day
-    * @param deltaT, in arc second
-    * @param unitType, degree or radian
+    * @param jd Julian Day
+    * @param deltaT in arc second
+    * @param unitType degree or radian
     * 
     * @return s in degree or radian
     */
@@ -397,9 +397,9 @@ object MoonPosition {
     /**
     * Moon-Sun Geocentric Elongation default in degree, d
     *
-    * @param jd, Julian Day
-    * @param deltaT, in arc second
-    * @param unitType, degree or radian
+    * @param jd Julian Day
+    * @param deltaT in arc second
+    * @param unitType degree or radian
     * 
     * @return d in degree or radian
     */
@@ -422,9 +422,9 @@ object MoonPosition {
     /**
     * Moon Geocentric Phase Angle default in degree, i
     *
-    * @param jd, Julian Day
-    * @param deltaT, in arc second
-    * @param unitType, degree or radian
+    * @param jd Julian Day
+    * @param deltaT in arc second
+    * @param unitType degree or radian
     * 
     * @return i in degree or radian
     */
@@ -446,9 +446,9 @@ object MoonPosition {
     /**
     * Moon Geocentric Disk Illuminated Fraction default in degree, k
     *
-    * @param jd, Julian Day
-    * @param deltaT, in arc second
-    * @param unitType, degree or radian
+    * @param jd Julian Day
+    * @param deltaT in arc second
+    * @param unitType degree or radian
     * 
     * @return k in degree or radian
     */
@@ -468,9 +468,9 @@ object MoonPosition {
     /**
     * Moon Geocentric Bright Limb Angle default in degree, x
     *
-    * @param jd, Julian Day
-    * @param deltaT, in arc second
-    * @param unitType, degree or radian
+    * @param jd Julian Day
+    * @param deltaT in arc second
+    * @param unitType degree or radian
     * 
     * @return x in degree or radian
     */
@@ -493,11 +493,11 @@ object MoonPosition {
     /**
     * Moon term n in radian
     *
-    * @param jd, Julian Day
-    * @param longitude of observer
-    * @param latitude of observer
-    * @param elevation of observer
-    * @param deltaT, in arcsecond
+    * @param jd Julian Day
+    * @param lon longitude of observer
+    * @param lat latitude of observer
+    * @param elev elevation of observer
+    * @param deltaT in arcsecond
     *
     * @return n in radian
     */
@@ -516,12 +516,12 @@ object MoonPosition {
     /**
     * Parallax in the Moon Right Ascension default in degree, deltaAlpha
     *
-    * @param jd, Julian Day
-    * @param lon, longitude of observer
-    * @param lat, latitude of observer
-    * @param elev, elevation of observer
-    * @param deltaT, in arc second
-    * @param unitType, degree or radian
+    * @param jd Julian Day
+    * @param lon longitude of observer
+    * @param lat latitude of observer
+    * @param elev elevation of observer
+    * @param deltaT in arc second
+    * @param unitType degree or radian
     * 
     * @return deltaAlpha in degree or radian
     */
@@ -544,12 +544,12 @@ object MoonPosition {
     /**
     * Parallax in the Moon Altitude default in degree
     *
-    * @param jd, Julian Day
-    * @param longitude of observer
-    * @param latitude of observer
-    * @param elevation of observer
-    * @param deltaT, in arcsecond
-    * @param unitType
+    * @param jd Julian Day
+    * @param lon longitude of observer
+    * @param lat latitude of observer
+    * @param elev elevation of observer
+    * @param deltaT in arcsecond
+    * @param unitType degree or radian
     *
     * @return p in degree or radian
     */
@@ -574,12 +574,12 @@ object MoonPosition {
     /**
     * Moon Topocentric Longitude default in degree
     *
-    * @param jd, Julian Day
-    * @param longitude of observer
-    * @param latitude of observer
-    * @param elevation of observer
-    * @param deltaT, in arcsecond
-    * @param unitType
+    * @param jd Julian Day
+    * @param lon longitude of observer
+    * @param lat latitude of observer
+    * @param elev elevation of observer
+    * @param deltaT in arcsecond
+    * @param unitType degree or radian
     *
     * @return lambdaP in degree or radian
     */
@@ -606,12 +606,12 @@ object MoonPosition {
     /**
     * Moon Topocentric Latitude default in degree
     *
-    * @param jd, Julian Day
-    * @param longitude of observer
-    * @param latitude of observer
-    * @param elevation of observer
-    * @param deltaT, in arcsecond
-    * @param unitType
+    * @param jd Julian Day
+    * @param lon longitude of observer
+    * @param lat latitude of observer
+    * @param elev elevation of observer
+    * @param deltaT in arcsecond
+    * @param unitType degree or radian
     *
     * @return betaP in degree or radian
     */
@@ -638,12 +638,12 @@ object MoonPosition {
     /**
     * Moon Topocentric Right Ascension default in degree
     *
-    * @param jd, Julian Day
-    * @param longitude of observer
-    * @param latitude of observer
-    * @param elevation of observer
-    * @param deltaT, in arcsecond
-    * @param unitType
+    * @param jd Julian Day
+    * @param lon longitude of observer
+    * @param lat latitude of observer
+    * @param elev elevation of observer
+    * @param deltaT in arcsecond
+    * @param unitType degree or radian
     *
     * @return alphaP in degree or radian
     */
@@ -664,12 +664,12 @@ object MoonPosition {
     /**
     * Moon Topocentric Declination default in degree
     *
-    * @param jd, Julian Day
-    * @param longitude of observer
-    * @param latitude of observer
-    * @param elevation of observer
-    * @param deltaT, in arcsecond
-    * @param unitType
+    * @param jd Julian Day
+    * @param lon longitude of observer
+    * @param lat latitude of observer
+    * @param elev elevation of observer
+    * @param deltaT in arcsecond
+    * @param unitType degree or radian
     *
     * @return deltaP in degree or radian
     */
@@ -694,12 +694,12 @@ object MoonPosition {
     /**
     * Moon Topocentric Semidiameter default in degree
     *
-    * @param jd, Julian Day
-    * @param longitude of observer
-    * @param latitude of observer
-    * @param elevation of observer
-    * @param deltaT, in arcsecond
-    * @param unitType
+    * @param jd Julian Day
+    * @param lon longitude of observer
+    * @param lat latitude of observer
+    * @param elev elevation of observer
+    * @param deltaT in arcsecond
+    * @param unitType degree or radian
     *
     * @return sP in degree or radian
     */
@@ -722,11 +722,11 @@ object MoonPosition {
     /**
     * Moon Topocentric Greenwich Hour Angle default in degree
     *
-    * @param jd, Julian Day
-    * @param longitude of observer
-    * @param latitude of observer
-    * @param deltaT, in arcsecond
-    * @param unitType
+    * @param jd Julian Day
+    * @param lon longitude of observer
+    * @param lat latitude of observer
+    * @param deltaT in arcsecond
+    * @param unitType degree or radian
     *
     * @return gha in degree or radian
     */
@@ -747,12 +747,12 @@ object MoonPosition {
     /**
     * Moon Topocentric Local Hour Angle default in degree
     *
-    * @param jd, Julian Day
-    * @param longitude of observer
-    * @param latitude of observer
-    * @param elevation of observer
-    * @param deltaT, in arcsecond
-    * @param unitType
+    * @param jd Julian Day
+    * @param lon longitude of observer
+    * @param lat latitude of observer
+    * @param elev elevation of observer
+    * @param deltaT in arcsecond
+    * @param unitType degree or radian
     *
     * @return lhaP in degree or radian
     */
@@ -773,12 +773,12 @@ object MoonPosition {
     /**
     * Moon Topocentric Azimuth default in degree
     *
-    * @param jd, Julian Day
-    * @param longitude of observer
-    * @param latitude of observer
-    * @param elevation of observer
-    * @param deltaT, in arcsecond
-    * @param unitType
+    * @param jd Julian Day
+    * @param lon longitude of observer
+    * @param lat latitude of observer
+    * @param elev elevation of observer
+    * @param deltaT in arcsecond
+    * @param unitType degree or radian
     *
     * @return azmP in degree or radian
     */
@@ -799,25 +799,25 @@ object MoonPosition {
     /**
     * Moon Topocentric Altitude in degree
     *
-    * @param jd, Julian Day
-    * @param longitude of observer
-    * @param latitude of observer
-    * @param elevation of observer
-    * @param deltaT, in arcsecond
-    * @param moonAltType
-    * @param temperature, in celcius
-    * @param pressure, in millibars
+    * @param jd Julian Day
+    * @param lon longitude of observer
+    * @param lat latitude of observer
+    * @param elev elevation of observer
+    * @param deltaT in arcsecond
+    * @param moonAltType see MoonAltType enum class
+    * @param temperature in celcius
+    * @param pressure in millibars
     *
     * @return moonTopoAltitude in degree
     */
     fun moonTopoAltitude(jd: Double, lon: Double, lat: Double, elev: Double = 0.0, deltaT: Double = 0.0, moonAltType: MoonAltType = MoonAltType.AIRLESS_CENTER, temperature: Double = 10.0, pressure: Double = 1010.0): Double {
         
-        val h = moonGeoAltitude(jd, lon, lat, deltaT)
-        val plx = parallaxInTheMoonAltitude(jd, lon, lat, elev, deltaT)
+        val deltaP = moonTopoDeclination(jd, lon, lat, elev, deltaT)
+        val lhaP = moonTopoLocalHourAngle(jd, lon, lat, elev, deltaT)
         val dip = Correction.dip(elev)
         val s = moonTopoSemidiameter(jd, lon, lat, elev, deltaT)
         
-        val hc = h - plx
+        val hc = Math.toDegrees(asin(sin(Math.toRadians(lat)) * sin(Math.toRadians(deltaP)) + cos(Math.toRadians(lat)) * cos(Math.toRadians(deltaP)) * cos(Math.toRadians(lhaP))))
         val rhc = Correction.atmosphericRefractionFromAirlessAltitude(hc, temperature, pressure)
         val hac = hc + rhc
         val hoc = hac + dip
@@ -851,12 +851,12 @@ object MoonPosition {
     /**
     * Moon-Sun Topocentric Elongation default in degree
     *
-    * @param jd, Julian Day
-    * @param longitude of observer
-    * @param latitude of observer
-    * @param elevation of observer
-    * @param deltaT, in arcsecond
-    * @param unitType
+    * @param jd Julian Day
+    * @param lon longitude of observer
+    * @param lat latitude of observer
+    * @param elev elevation of observer
+    * @param deltaT in arcsecond
+    * @param unitType degree or radian
     *
     * @return dP in degree or radian
     */
@@ -879,12 +879,12 @@ object MoonPosition {
     /**
     * Moon Topocentric Phase Angle default in degree
     *
-    * @param jd, Julian Day
-    * @param longitude of observer
-    * @param latitude of observer
-    * @param elevation of observer
-    * @param deltaT, in arcsecond
-    * @param unitType
+    * @param jd Julian Day
+    * @param lon longitude of observer
+    * @param lat latitude of observer
+    * @param elev elevation of observer
+    * @param deltaT in arcsecond
+    * @param unitType degree or radian
     *
     * @return iP in degree or radian
     */
@@ -906,12 +906,12 @@ object MoonPosition {
     /**
     * Moon Topocentric Disk Illuminated Fraction default in degree
     *
-    * @param jd, Julian Day
-    * @param longitude of observer
-    * @param latitude of observer
-    * @param elevation of observer
-    * @param deltaT, in arcsecond
-    * @param unitType
+    * @param jd Julian Day
+    * @param lon longitude of observer
+    * @param lat latitude of observer
+    * @param elev elevation of observer
+    * @param deltaT in arcsecond
+    * @param unitType degree or radian
     *
     * @return kP in degree or radian
     */
@@ -931,12 +931,12 @@ object MoonPosition {
     /**
     * Moon Topocentric Bright Limb Angle default in degree
     *
-    * @param jd, Julian Day
-    * @param longitude of observer
-    * @param latitude of observer
-    * @param elevation of observer
-    * @param deltaT, in arcsecond
-    * @param unitType
+    * @param jd Julian Day
+    * @param lon longitude of observer
+    * @param lat latitude of observer
+    * @param elev elevation of observer
+    * @param deltaT in arcsecond
+    * @param unitType degree or radian
     *
     * @return xP in degree or radian
     */
@@ -955,8 +955,4 @@ object MoonPosition {
             UnitType.RADIANS -> xPRad
         }
     }
-    
-    
-    
-    
 }

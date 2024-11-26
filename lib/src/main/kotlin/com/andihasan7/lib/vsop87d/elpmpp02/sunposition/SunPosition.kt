@@ -47,11 +47,11 @@ object SunPosition {
     // Sun Geocentric Coordinate
     
     /**
-    * Sun True Geocentric Longitude FK5 System default in degree
+    * Sun True Geocentric Longitude FK5 System default in degree, theta
     *
-    * @param jd, Julian Day
-    * @param deltaT, in second 
-    * @param unitType, degree or radian
+    * @param jd Julian Day
+    * @param deltaT in second
+    * @param unitType degree or radian
     *
     * @return sunTrueGeocentricLongitude FK5 System degree or radian
     */
@@ -74,12 +74,12 @@ object SunPosition {
     }
     
     /**
-    * Sun True Geocentric Latitude FK5 System default in degree
+    * Sun True Geocentric Latitude FK5 System default in degree, beta
     * can be considered apparent 
     * 
-    * @param jd, Julian Day
-    * @param deltaT, in second 
-    * @param unitType, degree or radian
+    * @param jd Julian Day
+    * @param deltaT in second
+    * @param unitType degree or radian
     *
     * @return sunTrueGeocentricLatitude in degree or radian
     */
@@ -103,9 +103,9 @@ object SunPosition {
     /**
     * Sun Apparent Geocentric Longitude default in degree
     *
-    * @param jd, Julian Day
-    * @param deltaT, in second 
-    * @param unitType, degree or radian
+    * @param jd Julian Day
+    * @param deltaT in second
+    * @param unitType degree or radian
     * 
     * @return sunApparentGeocentricLongitude in degree or radian
     */
@@ -126,8 +126,8 @@ object SunPosition {
     /**
     * Sun Apparent Geocentric Semidiameter, s
     *
-    * @param jd, Julian Day
-    * @param deltaT, in second 
+    * @param jd Julian Day
+    * @param deltaT in second
     *
     * @return sunApparentGeoSemidiameter
     */
@@ -141,9 +141,9 @@ object SunPosition {
     /**
     * Sun Apparent Geocentric Right Ascension FK5 System default in degree, a
     *
-    * @param jd, Julian Day
-    * @param deltaT, in second 
-    * @param unitType, degree or radian
+    * @param jd Julian Day
+    * @param deltaT in second
+    * @param unitType degree or radian
     *
     * @return sunApparentGeoRightAscension in degree or radian
     */
@@ -165,9 +165,9 @@ object SunPosition {
     /**
     * Sun Apparent Geocentric Declination default in degree, d
     * 
-    * @param jd, Julian Day
-    * @param deltaT, in second
-    * @param unitType, degree or radian
+    * @param jd Julian Day
+    * @param deltaT in second
+    * @param unitType degree or radian
     *
     * @return sun geocentric declination in degree or radian
     */
@@ -189,10 +189,10 @@ object SunPosition {
     /**
     * Greenwich Mean Sidereal Time default in degree, GMST
     *
-    * @param jd, Julian Day
-    * @param unitType, degree or radian
+    * @param jd Julian Day
+    * @param unitType degree or radian
     *
-    * @return gmst, in degree or radian
+    * @return gmst in degree or radian
     */
     fun greenwichMeanSiderealTime(jd: Double, unitType: UnitType = UnitType.DEGREES): Double {
         
@@ -209,11 +209,11 @@ object SunPosition {
     /**
     * Greenwich Apparent Sidereal Time default in degree, GAST
     *
-    * @param jd, Julian Day
-    * @param deltaT, in second
-    * @param unitType, degree or radian
+    * @param jd Julian Day
+    * @param deltaT in second
+    * @param unitType degree or radian
     *
-    * @return gast, in degree or radian
+    * @return gast in degree or radian
     */
     fun greenwichApparentSiderealTime(jd: Double, deltaT: Double = 0.0, unitType: UnitType = UnitType.DEGREES): Double {
         
@@ -233,12 +233,12 @@ object SunPosition {
     /**
     * Local Apparent Sidereal Time default in degree, LAST
     *
-    * @param jd, Julian Day
-    * @param longitude, Longitude of Observer
+    * @param jd Julian Day
+    * @param lon Longitude of Observer
     * @param deltaT in second
-    * @param unitType, degree or radian
+    * @param unitType degree or radian
     *
-    * @return last, in degree or radian
+    * @return last in degree or radian
     */
     fun localApparentSiderealTime(jd: Double, lon: Double, deltaT: Double = 0.0, unitType: UnitType = UnitType.DEGREES): Double {
         
@@ -256,11 +256,11 @@ object SunPosition {
     /**
     * Sun Geocentric Greenwich Hour Angle default in degree, GHA, Ho
     *
-    * @param jd, Julian Day
+    * @param jd Julian Day
     * @param deltaT in second
-    * @param unitType, degree or radian
+    * @param unitType degree or radian
     *
-    * @return gha, in degree or radian
+    * @return gha in degree or radian
     */
     fun sunGeoGreenwichHourAngle(jd: Double, deltaT: Double = 0.0, unitType: UnitType = UnitType.DEGREES): Double {
         
@@ -279,12 +279,12 @@ object SunPosition {
     /**
     * Sun Geocentric Local Hour Angle FK5 System default in degree, LHA, H
     *
-    * @param jd, Julian Day
-    * @param longitude, Longitude of Observer
+    * @param jd Julian Day
+    * @param lon Longitude of Observer
     * @param deltaT in second
-    * @param unitType, degree or radian
+    * @param unitType degree or radian
     *
-    * @return lha, in degree or radian
+    * @return lha in degree or radian
     */
     fun sunGeoLocalHourAngle(jd: Double, lon: Double, deltaT: Double = 0.0, unitType: UnitType = UnitType.DEGREES): Double {
         
@@ -303,13 +303,13 @@ object SunPosition {
     /**
     * Sun Geocentric Azimuth Measured from True North default in degree, A
     *
-    * @param jd, Julian Day
-    * @param longitude, Longitude of Observer
-    * @param latitude, Latitude of Observer
-    * @param deltaT, in second
-    * @param unitType, degree or radian
+    * @param jd Julian Day
+    * @param lon Longitude of Observer
+    * @param lat Latitude of Observer
+    * @param deltaT in second
+    * @param unitType degree or radian
     *
-    * @return sunGeoAzimuth, in degree or radian
+    * @return sunGeoAzimuth in degree or radian
     */
     fun sunGeoAzimuth(jd: Double, lon: Double, lat: Double, deltaT: Double = 0.0, unitType: UnitType = UnitType.DEGREES): Double {
         
@@ -328,13 +328,13 @@ object SunPosition {
     /**
     * Sun Geocentric Altitude default in degree, h
     *
-    * @param jd, Julian Day
-    * @param longitude, Longitude of Observer
-    * @param latitude, Latitude of Observer
+    * @param jd Julian Day
+    * @param lon Longitude of Observer
+    * @param lat Latitude of Observer
     * @param deltaT in second
-    * @param unitType, degree or radian
+    * @param unitType degree or radian
     *
-    * @return sunGeoAzimuth, in degree or radian
+    * @return sunGeoAzimuth in degree or radian
     */
     fun sunGeoAltitude(jd: Double, lon: Double, lat: Double, deltaT: Double = 0.0, unitType: UnitType = UnitType.DEGREES): Double {
         
@@ -354,8 +354,9 @@ object SunPosition {
     
     /**
     * Sun Equatorial Horizontal Parallax 
-    * @param jd, Julian Day
-    * @param deltaT, in arcsecond
+    * @param jd Julian Day
+    * @param deltaT in arcsecond
+     * @param unitType degree or radian
     *
     * @return phi Sun Equatorial Horizontal Parallax
     */
@@ -374,11 +375,11 @@ object SunPosition {
     /**
     * Sun term n in radian
     *
-    * @param jd, Julian Day
-    * @param longitude of observer
-    * @param latitude of observer
-    * @param elevation of observer
-    * @param deltaT, in arcsecond
+    * @param jd Julian Day
+    * @param lon longitude of observer
+    * @param lat latitude of observer
+    * @param elev elevation of observer
+    * @param deltaT in arcsecond
     *
     * @return n in radian
     */
@@ -397,12 +398,12 @@ object SunPosition {
     /**
     * Parallax in the Sun Right Ascension default in degree
     *
-    * @param jd, Julian Day
-    * @param longitude of observer
-    * @param latitude of observer
-    * @param elevation of observer
-    * @param deltaT, in arcsecond
-    * @param unitType, degrees or radians
+    * @param jd Julian Day
+    * @param lon longitude of observer
+    * @param lat latitude of observer
+    * @param elev elevation of observer
+    * @param deltaT in arcsecond
+    * @param unitType degrees or radians
     *
     * @return deltaAlpha in degree or radian
     */
@@ -425,12 +426,12 @@ object SunPosition {
     /**
     * Parallax in the Sun Altitude default in degree
     *
-    * @param jd, Julian Day
-    * @param longitude of observer
-    * @param latitude of observer
-    * @param elevation of observer
-    * @param deltaT, in arcsecond
-    * @param unitType
+    * @param jd Julian Day
+    * @param lon longitude of observer
+    * @param lat latitude of observer
+    * @param elev elevation of observer
+    * @param deltaT in arcsecond
+    * @param unitType degree or radian
     *
     * @return p in degree or radian
     */
@@ -453,12 +454,12 @@ object SunPosition {
     /**
     * Sun Topocentric Longitude default in degree, lambda apostrophe
     *
-    * @param jd, Julian Day
-    * @param longitude of observer
-    * @param latitude of observer
-    * @param elevation of observer
-    * @param deltaT, in arcsecond
-    * @param unitType
+    * @param jd Julian Day
+    * @param lon longitude of observer
+    * @param lat latitude of observer
+    * @param elev elevation of observer
+    * @param deltaT in arcsecond
+    * @param unitType degree or radian
     *
     * @return lambdaP in degree or radian
     */
@@ -484,12 +485,12 @@ object SunPosition {
     /**
     * Sun Topocentric Latitude default in degree, beta apostrophe
     *
-    * @param jd, Julian Day
-    * @param longitude of observer
-    * @param latitude of observer
-    * @param elevation of observer
-    * @param deltaT, in arcsecond
-    * @param unitType
+    * @param jd Julian Day
+    * @param lon longitude of observer
+    * @param lat latitude of observer
+    * @param elev elevation of observer
+    * @param deltaT in arcsecond
+    * @param unitType degree or radian
     *
     * @return betaP in degree or radian
     */
@@ -514,12 +515,12 @@ object SunPosition {
     /**
     * Sun Topocentric Right Ascension default in degree, alpha apostrophe
     *
-    * @param jd, Julian Day
-    * @param longitude of observer
-    * @param latitude of observer
-    * @param elevation of observer
-    * @param deltaT, in arcsecond
-    * @param unitType
+    * @param jd Julian Day
+    * @param lon longitude of observer
+    * @param lat latitude of observer
+    * @param elev elevation of observer
+    * @param deltaT in arcsecond
+    * @param unitType degree or radian
     *
     * @return alphaP in degree or radian
     */
@@ -539,12 +540,12 @@ object SunPosition {
     /**
     * Sun Topocentric Declination default in degree, delta apostrophe
     *
-    * @param jd, Julian Day
-    * @param longitude of observer
-    * @param latitude of observer
-    * @param elevation of observer
-    * @param deltaT, in arcsecond
-    * @param unitType
+    * @param jd Julian Day
+    * @param lon longitude of observer
+    * @param lat latitude of observer
+    * @param elev elevation of observer
+    * @param deltaT in arcsecond
+    * @param unitType degree or radian
     *
     * @return deltaP in degree or radian
     */
@@ -568,12 +569,12 @@ object SunPosition {
     /**
     * Sun Topocentric Local Hour Angle default in degree, H apostrophe
     *
-    * @param jd, Julian Day
-    * @param longitude of observer
-    * @param latitude of observer
-    * @param elevation of observer
-    * @param deltaT, in arcsecond
-    * @param unitType
+    * @param jd Julian Day
+    * @param lon longitude of observer
+    * @param lat latitude of observer
+    * @param elev elevation of observer
+    * @param deltaT in arcsecond
+    * @param unitType degree or radian
     *
     * @return lhaP in degree or radian
     */
@@ -593,12 +594,12 @@ object SunPosition {
     /**
     * Sun Topocentric Azimuth default in degree, A apostrophe
     *
-    * @param jd, Julian Day
-    * @param longitude of observer
-    * @param latitude of observer
-    * @param elevation of observer
-    * @param deltaT, in arcsecond
-    * @param unitType
+    * @param jd Julian Day
+    * @param lon longitude of observer
+    * @param lat latitude of observer
+    * @param elev elevation of observer
+    * @param deltaT in arcsecond
+    * @param unitType degree or radian
     *
     * @return azP in degree or radian
     */
@@ -618,15 +619,15 @@ object SunPosition {
     /**
     * Sun Topocentric Altitude default in degree, h apostrophe
     *
-    * @param jd, Julian Day
-    * @param longitude of observer
-    * @param latitude of observer
-    * @param elevation of observer
-    * @param deltaT, in arcsecond
-    * @param temperature, in C°
-    * @param pressure, in millibars
-    * @param altitudeType, AIRLESS, APPARENT, or OBSERVER based in SunAltType enum class
-    * @param unitType
+    * @param jd Julian Day
+    * @param lon longitude of observer
+    * @param lat latitude of observer
+    * @param elev elevation of observer
+    * @param deltaT in arcsecond
+    * @param temperature in C°
+    * @param pressure in millibars
+    * @param sunAltitudeType AIRLESS, APPARENT, or OBSERVER based in SunAltType enum class
+    * @param unitType degree or radian
     *
     * @return altP in degree or radian in airless, apparent, or observer
     */
@@ -663,12 +664,12 @@ object SunPosition {
     /**
     * Sun Topocentric Semidiameter default in degree, s apostrophe
     *
-    * @param jd, Julian Day
-    * @param longitude of observer
-    * @param latitude of observer
-    * @param elevation of observer
-    * @param deltaT, in arcsecond
-    * @param unitType
+    * @param jd Julian Day
+    * @param lon longitude of observer
+    * @param lat latitude of observer
+    * @param elev elevation of observer
+    * @param deltaT in arcsecond
+    * @param unitType degree or radian
     *
     * @return sP in degree or radian
     */
@@ -690,39 +691,40 @@ object SunPosition {
     /**
     * Sun Equation of Time default in degree, e
     *
-    * @param jd, Julian Day
-    * @param deltaT, in arc second 
+    * @param jd Julian Day
+    * @param deltaT in arc second
+     * @param unitType  degree or radian
     * 
     * @return e in degree or radian
     */
     fun equationOfTime(jd: Double, deltaT: Double = 0.0, unitType: UnitType = UnitType.DEGREES): Double {
-        
+
         val jme = TimeUtil.julianType(jd, deltaT, JulianType.JME)
         val alpha = sunApparentGeoRightAscension(jd, deltaT)
         val deltaPsi = Nutation.nutationInLonAndObliquity(jd, deltaT)[0]
         val epsilon = Nutation.trueObliquityOfEcliptic(jd, deltaT)
         
         val lo = (280.4664567 + 360007.6982779 * jme + 0.03032028 * jme.pow(2) + jme.pow(3) / 49931 - jme.pow(4) / 15300 - jme.pow(5) / 2000000).mod(360.0)
-        val _e = (lo - 0.0057183 - alpha + deltaPsi * cos(Math.toRadians(epsilon)))
+        val e = (lo - 0.0057183 - alpha + deltaPsi * cos(Math.toRadians(epsilon)))
         
-        val equationOfTimeMinute = _e * 4
+        val equationOfTimeMinute = e * 4
         
         val equationOfTimeHour = when {
     
             abs(equationOfTimeMinute) < 20.0 -> {
-                _e / 15
+                e / 15
             }
         
-            abs(equationOfTimeMinute) >= 20.0 && _e > 0.0 -> {
-                _e / 15 - 24
+            abs(equationOfTimeMinute) >= 20.0 && e > 0.0 -> {
+                e / 15 - 24
             }
         
-            abs(equationOfTimeMinute) >= 20.0 && _e < 0.0 -> {
-                _e / 15 + 24
+            abs(equationOfTimeMinute) >= 20.0 && e < 0.0 -> {
+                e / 15 + 24
             }
         
             else -> {
-                _e / 15
+                e / 15
             }
         }
         
@@ -733,7 +735,5 @@ object SunPosition {
             UnitType.RADIANS -> eqRad
         }
     }
-    
-    
-    
+
 }

@@ -41,8 +41,8 @@ object Nutation {
     * Nutation of Obliquity, deltaEpsilon
     * model of IAU 2000B
     *
-    * @param jd
-    * @param deltaT
+    * @param jd Julian Day
+    * @param deltaT in arc second
     *
     * @return doubleArrayOf(deltaPsi, deltaEp) degree unit
     */
@@ -131,7 +131,7 @@ object Nutation {
     /**
     * Mean Obliquity of Ecliptic, epsilon zero
     *
-    * @param jme, Julian Millenium Ephemeris
+    * @param jme Julian Millenium Ephemeris
     *
     * @return mean obliquity of ecliptic
     */

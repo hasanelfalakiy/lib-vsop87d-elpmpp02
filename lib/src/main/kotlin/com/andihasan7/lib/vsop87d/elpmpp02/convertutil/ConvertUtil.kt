@@ -119,7 +119,7 @@ object ConvertUtil {
     * HH:MM:SS,ss rounded to 2 digits after the decimal point
     * function to change decimal data to HH:MM:SS,ss format, rounded to 2 digits behind the comma, seconds rounded to minutes, minutes rounded to hours
     * @param decimal
-    † @return String
+    * @return String
     */
     fun toTimeFullRound2(decimal: Double): String {
         var time = abs(decimal).toInt().toString()

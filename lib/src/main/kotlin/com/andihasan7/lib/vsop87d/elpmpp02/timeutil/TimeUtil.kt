@@ -79,7 +79,7 @@ object TimeUtil {
     /**
     * Convert Julian Day to Gregorian
     *
-    * @param jd, Julian Day
+    * @param jd Julian Day
     * @param timeZone
     *
     * @return DateFormat
