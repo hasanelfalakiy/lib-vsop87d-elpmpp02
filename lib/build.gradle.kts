@@ -8,9 +8,30 @@
 plugins {
     // Apply the org.jetbrains.kotlin.jvm Plugin to add support for Kotlin.
     alias(libs.plugins.jvm)
+    
+    // Aplly Dokka plugin
+    id("org.jetbrains.dokka") version "1.9.20"
 
     // Apply the java-library plugin for API and implementation separation.
     `java-library`
+    
+    // maven publish
+	`maven-publish`
+}
+
+subprojects {
+    apply(plugin = "org.jetbrains.dokka")
+}
+
+group = "com.andihasan7.lib-vsop87d-elpmpp02"
+version = "1.0.0"
+
+publishing {
+	publications {
+		create<MavenPublication>("Maven") {
+			from(components["java"])
+		}
+	}
 }
 
 repositories {
@@ -26,12 +47,6 @@ dependencies {
     testImplementation(libs.junit.jupiter.engine)
 
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
-
-    // This dependency is exported to consumers, that is to say found on their compile classpath.
-    api(libs.commons.math3)
-
-    // This dependency is used internally, and not exposed to consumers on their own compile classpath.
-    implementation(libs.guava)
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
@@ -44,4 +59,16 @@ java {
 tasks.named<Test>("test") {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
+}
+
+tasks.dokkaHtml.configure {
+    // custom dokka output directory
+    outputDirectory.set(file("../docs"))
+}
+
+tasks.withType<org.jetbrains.dokka.gradle.DokkaTask>().configureEach {
+    // Memisahkan member agar tampil menjadi tab
+    pluginsMapConfiguration.set(
+        mapOf("org.jetbrains.dokka.base.DokkaBase" to """{ "separateInheritedMembers": true }""")
+    )
 }
