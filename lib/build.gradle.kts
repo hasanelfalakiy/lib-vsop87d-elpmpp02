@@ -72,3 +72,9 @@ tasks.withType<org.jetbrains.dokka.gradle.DokkaTask>().configureEach {
         mapOf("org.jetbrains.dokka.base.DokkaBase" to """{ "separateInheritedMembers": true }""")
     )
 }
+
+tasks.withType<Jar> {
+    from(sourceSets.main.get().resources) {
+        into("resources") // Menambahkan resource ke dalam JAR di folder resources
+    }
+}
