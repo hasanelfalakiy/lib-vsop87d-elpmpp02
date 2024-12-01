@@ -1,0 +1,110 @@
+{
+  "allFiles": [
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/lib-vsop87d-elpmpp02/lib/src/main/kotlin/com/andihasan7/lib/vsop87d/elpmpp02/Nutation.kt",
+      "selection": {
+        "end": {
+          "column": 41,
+          "index": 3775,
+          "line": 115
+        },
+        "start": {
+          "column": 41,
+          "index": 3775,
+          "line": 115
+        }
+      }
+    },
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/lib-vsop87d-elpmpp02/lib/src/main/kotlin/com/andihasan7/lib/vsop87d/elpmpp02/readerutil/NutationReader.kt",
+      "selection": {
+        "end": {
+          "column": 22,
+          "index": 922,
+          "line": 26
+        },
+        "start": {
+          "column": 22,
+          "index": 922,
+          "line": 26
+        }
+      }
+    },
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/lib-vsop87d-elpmpp02/lib/src/main/kotlin/com/andihasan7/lib/vsop87d/elpmpp02/readerutil/EarthLBRReader.kt",
+      "selection": {
+        "end": {
+          "column": 22,
+          "index": 899,
+          "line": 25
+        },
+        "start": {
+          "column": 22,
+          "index": 899,
+          "line": 25
+        }
+      }
+    },
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/lib-vsop87d-elpmpp02/lib/src/main/kotlin/com/andihasan7/lib/vsop87d/elpmpp02/readerutil/MoonLBRReader.kt",
+      "selection": {
+        "end": {
+          "column": 22,
+          "index": 922,
+          "line": 26
+        },
+        "start": {
+          "column": 22,
+          "index": 922,
+          "line": 26
+        }
+      }
+    },
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/lib-vsop87d-elpmpp02/lib/src/main/kotlin/com/andihasan7/lib/vsop87d/elpmpp02/moonposition/MoonPosition.kt",
+      "selection": {
+        "end": {
+          "column": 0,
+          "index": 0,
+          "line": 0
+        },
+        "start": {
+          "column": 0,
+          "index": 0,
+          "line": 0
+        }
+      }
+    },
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/lib-vsop87d-elpmpp02/lib/src/main/kotlin/com/andihasan7/lib/vsop87d/elpmpp02/earthposition/EarthPosition.kt",
+      "selection": {
+        "end": {
+          "column": 0,
+          "index": 0,
+          "line": 0
+        },
+        "start": {
+          "column": 0,
+          "index": 0,
+          "line": 0
+        }
+      }
+    },
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/lib-vsop87d-elpmpp02/lib/build.gradle.kts",
+      "selection": {
+        "end": {
+          "column": 12,
+          "index": 764,
+          "line": 26
+        },
+        "start": {
+          "column": 12,
+          "index": 764,
+          "line": 26
+        }
+      }
+    }
+  ],
+  "selectedFile": "/storage/emulated/0/AndroidIDEProjects/lib-vsop87d-elpmpp02/lib/build.gradle.kts"
+}

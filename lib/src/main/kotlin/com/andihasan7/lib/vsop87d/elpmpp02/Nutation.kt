@@ -27,8 +27,7 @@ package com.andihasan7.lib.vsop87d.elpmpp02
 import com.andihasan7.lib.vsop87d.elpmpp02.timeutil.TimeUtil
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.JulianType
 import kotlin.math.pow
-import com.andihasan7.lib.vsop87d.elpmpp02.readerutil.readNutationInLongitude
-import com.andihasan7.lib.vsop87d.elpmpp02.readerutil.readNutationInObliquity
+import com.andihasan7.lib.vsop87d.elpmpp02.readerutil.NutationReader
 
 /**
 * Nutation
@@ -48,7 +47,7 @@ object Nutation {
     */
     fun nutationInLonAndObliquity(jd: Double, deltaT: Double = 0.0): DoubleArray {
         
-        val path = "src/main/resources/nutation-2000b.csv"
+        val path = "nutation-2000b.csv"
         
         // t is the same as jce
         val t = TimeUtil.julianType(jd, deltaT, JulianType.JCE)
@@ -104,7 +103,7 @@ object Nutation {
         */
         val omegaRad = Math.toRadians((omegaDeg).mod(360.0))
         
-        val deltaPsi = readNutationInLongitude(
+        val deltaPsi = NutationReader.readNutationInLongitude(
             t,
             lRad,
             l1Rad,
@@ -114,7 +113,7 @@ object Nutation {
             path
         ) / 36000000000.0
         
-        val deltaEpsilon = readNutationInObliquity(
+        val deltaEpsilon = NutationReader.readNutationInObliquity(
             t,
             lRad,
             l1Rad,

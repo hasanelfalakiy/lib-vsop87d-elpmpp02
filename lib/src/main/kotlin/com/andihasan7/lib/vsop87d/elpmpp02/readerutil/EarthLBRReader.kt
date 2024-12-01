@@ -24,7 +24,6 @@
 package com.andihasan7.lib.vsop87d.elpmpp02.readerutil
 
 import kotlin.math.cos
-import java.io.File
 import java.io.BufferedReader
 import java.io.InputStreamReader
 
@@ -41,8 +40,8 @@ object EarthLBRReader {
     */
     fun earthLBRTermsReader(t: Double, path: String): Double {
         
-        val file = File(path)
-        val reader = BufferedReader(InputStreamReader(file.inputStream()))
+        val inputStream = this::class.java.classLoader.getResourceAsStream(path)
+        val reader = BufferedReader(InputStreamReader(inputStream))
 
         var totalCoefficient = 0.0 // Variable to store total coefficients
 
