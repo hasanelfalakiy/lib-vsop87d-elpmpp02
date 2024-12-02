@@ -42,32 +42,32 @@ object MoonLBRReader {
     fun moonLBRTermsReader(t: Double, path: String): Double {
         
         val inputStream = this::class.java.classLoader.getResourceAsStream(path)
-        val reader = BufferedReader(InputStreamReader(inputStream))
-
-        var totalCoefficient = 0.0 // Variable to store total coefficients
-
-        // Skip the first line (header)
-        reader.readLine() // Skip header
-
-        // Loop to read CSV rows and calculate coefficients
-        reader.forEachLine { line ->
-            val columns = line.split(",")
-            val vVN = columns[1].toDouble()
-            val vA0 = columns[2].toDouble()
-            val vA1 = columns[3].toDouble()
-            val vA2 = columns[4].toDouble()
-            val vA3 = columns[5].toDouble()
-            val vA4 = columns[6].toDouble()
-
-            // Calculate the coefficient and add it to the total.
-            val coefficient = vVN * sin(vA0 + vA1 * t + vA2 * t.pow(2) + vA3 * t.pow(3) + vA4 * t.pow(4))
         
-            totalCoefficient += coefficient
+        // Reading files with bufferedReader and UTF-8 encoding
+        return inputStream.bufferedReader(Charsets.UTF_8).use { reader ->
+
+            var totalCoefficient = 0.0 // Variable to store total coefficients
+
+            // Skip the first line (header)
+            reader.readLine() // Skip header
+
+            // Loop to read CSV rows and calculate coefficients
+            reader.lineSequence().forEach { line ->
+                val columns = line.split(",")
+                val vVN = columns[1].toDouble()
+                val vA0 = columns[2].toDouble()
+                val vA1 = columns[3].toDouble()
+                val vA2 = columns[4].toDouble()
+                val vA3 = columns[5].toDouble()
+                val vA4 = columns[6].toDouble()
+
+                // Calculate the coefficient and add it to the total.
+                val coefficient = vVN * sin(vA0 + vA1 * t + vA2 * t.pow(2) + vA3 * t.pow(3) + vA4 * t.pow(4))
+        
+                totalCoefficient += coefficient
+            }
+
+            totalCoefficient // Return total coefficients
         }
-
-        reader.close() // Close the reader when finished
-
-        return totalCoefficient // Return total coefficients
-        
     }
 }

@@ -46,35 +46,39 @@ object NutationReader {
     fun readNutationInLongitude(t: Double, l: Double, l1: Double, f: Double, d: Double, omega: Double, path: String): Double {
     
         val inputStream = this::class.java.classLoader.getResourceAsStream(path)
-        val reader = BufferedReader(InputStreamReader(inputStream))
-
-        var totalCoefficient = 0.0 // Variable to store total coefficients
-
-        // Skip the first line (header)
-        reader.readLine() // Skip header
-
-        // Loop to read CSV rows and calculate coefficients
-        reader.forEachLine { line ->
-            val columns = line.split(",")
-            val vL = columns[1].toDouble()
-            val vL1 = columns[2].toDouble()
-            val vF = columns[3].toDouble()
-            val vD = columns[4].toDouble()
-            val vOmega = columns[5].toDouble()
         
-            val vA = columns[6].toDouble()
-            val vA1 = columns[7].toDouble()
-            val vA2 = columns[8].toDouble()
-
-            // Calculate the coefficient and add it to the total.
-            val coefficient = (vA + vA1 * t) * sin(vL * l + vL1 * l1 + vF * f + vD * d + vOmega * omega) + vA2 * cos(vL * l + vL1 * l1 + vF * f + vD * d + vOmega * omega)
+        // check if file exists
+        //if (!path.exists()) throw IllegalArgumentException("File $path not found.")
         
-            totalCoefficient += coefficient
+        // Reading files with bufferedReader and UTF-8 encoding
+        return inputStream.bufferedReader(Charsets.UTF_8).use { reader ->
+
+            var totalCoefficient = 0.0 // Variable to store total coefficients
+
+            // Skip the first line (header)
+            reader.readLine() // Skip header
+
+            // Loop to read CSV rows and calculate coefficients
+            reader.lineSequence().forEach { line ->
+                val columns = line.split(",")
+                val vL = columns[1].toDouble()
+                val vL1 = columns[2].toDouble()
+                val vF = columns[3].toDouble()
+                val vD = columns[4].toDouble()
+                val vOmega = columns[5].toDouble()
+        
+                val vA = columns[6].toDouble()
+                val vA1 = columns[7].toDouble()
+                val vA2 = columns[8].toDouble()
+
+                // Calculate the coefficient and add it to the total.
+                val coefficient = (vA + vA1 * t) * sin(vL * l + vL1 * l1 + vF * f + vD * d + vOmega * omega) + vA2 * cos(vL * l + vL1 * l1 + vF * f + vD * d + vOmega * omega)
+        
+                totalCoefficient += coefficient
+            }
+
+            totalCoefficient // Return total coefficients
         }
-
-        reader.close() // Close the reader when finished
-
-        return totalCoefficient // Return total coefficients
     }
 
     /**
@@ -93,34 +97,35 @@ object NutationReader {
     fun readNutationInObliquity(t: Double, l: Double, l1: Double, f: Double, d: Double, omega: Double, path: String): Double {
     
         val inputStream = this::class.java.classLoader.getResourceAsStream(path)
-        val reader = BufferedReader(InputStreamReader(inputStream))
-
-        var totalCoefficient = 0.0 // Variable to store total coefficients
-
-        // Skip the first line (header)
-        reader.readLine() // Skip header
-
-        // Loop to read CSV rows and calculate coefficients
-        reader.forEachLine { line ->
-            val columns = line.split(",")
-            val vL = columns[1].toDouble()
-            val vL1 = columns[2].toDouble()
-            val vF = columns[3].toDouble()
-            val vD = columns[4].toDouble()
-            val vOmega = columns[5].toDouble()
         
-            val vB = columns[9].toDouble()
-            val vB1 = columns[10].toDouble()
-            val vB2 = columns[11].toDouble()
+        // Reading files with bufferedReader and UTF-8 encoding
+        return inputStream.bufferedReader(Charsets.UTF_8).use { reader ->
 
-            // Calculate the coefficient and add it to the total.
-            val coefficient = (vB + vB1 * t) * cos(vL * l + vL1 * l1 + vF * f + vD * d + vOmega * omega) + vB2 * sin(vL * l + vL1 * l1 + vF * f + vD * d + vOmega * omega)
+            var totalCoefficient = 0.0 // Variable to store total coefficients
+
+            // Skip the first line (header)
+            reader.readLine() // Skip header
+
+            // Loop to read CSV rows and calculate coefficients
+            reader.lineSequence().forEach { line ->
+                val columns = line.split(",")
+                val vL = columns[1].toDouble()
+                val vL1 = columns[2].toDouble()
+                val vF = columns[3].toDouble()
+                val vD = columns[4].toDouble()
+                val vOmega = columns[5].toDouble()
         
-            totalCoefficient += coefficient
+                val vB = columns[9].toDouble()
+                val vB1 = columns[10].toDouble()
+                val vB2 = columns[11].toDouble()
+
+                // Calculate the coefficient and add it to the total.
+                val coefficient = (vB + vB1 * t) * cos(vL * l + vL1 * l1 + vF * f + vD * d + vOmega * omega) + vB2 * sin(vL * l + vL1 * l1 + vF * f + vD * d + vOmega * omega)
+        
+                totalCoefficient += coefficient
+            }
+
+            totalCoefficient // Return total coefficients
         }
-
-        reader.close() // Close the reader when finished
-
-        return totalCoefficient // Return total coefficients
     }
 }

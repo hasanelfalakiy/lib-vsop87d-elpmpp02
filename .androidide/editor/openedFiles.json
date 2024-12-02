@@ -1,0 +1,50 @@
+{
+  "allFiles": [
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/lib-vsop87d-elpmpp02/lib/src/main/kotlin/com/andihasan7/lib/vsop87d/elpmpp02/readerutil/NutationReader.kt",
+      "selection": {
+        "end": {
+          "column": 33,
+          "index": 2335,
+          "line": 61
+        },
+        "start": {
+          "column": 19,
+          "index": 2321,
+          "line": 61
+        }
+      }
+    },
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/lib-vsop87d-elpmpp02/lib/src/main/kotlin/com/andihasan7/lib/vsop87d/elpmpp02/readerutil/EarthLBRReader.kt",
+      "selection": {
+        "end": {
+          "column": 33,
+          "index": 1784,
+          "line": 53
+        },
+        "start": {
+          "column": 19,
+          "index": 1770,
+          "line": 53
+        }
+      }
+    },
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/lib-vsop87d-elpmpp02/lib/src/main/kotlin/com/andihasan7/lib/vsop87d/elpmpp02/readerutil/MoonLBRReader.kt",
+      "selection": {
+        "end": {
+          "column": 12,
+          "index": 2421,
+          "line": 69
+        },
+        "start": {
+          "column": 12,
+          "index": 2421,
+          "line": 69
+        }
+      }
+    }
+  ],
+  "selectedFile": "/storage/emulated/0/AndroidIDEProjects/lib-vsop87d-elpmpp02/lib/src/main/kotlin/com/andihasan7/lib/vsop87d/elpmpp02/readerutil/NutationReader.kt"
+}

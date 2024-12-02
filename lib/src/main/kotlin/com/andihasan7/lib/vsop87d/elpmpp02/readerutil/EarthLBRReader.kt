@@ -41,30 +41,30 @@ object EarthLBRReader {
     fun earthLBRTermsReader(t: Double, path: String): Double {
         
         val inputStream = this::class.java.classLoader.getResourceAsStream(path)
-        val reader = BufferedReader(InputStreamReader(inputStream))
-
-        var totalCoefficient = 0.0 // Variable to store total coefficients
-
-        // Skip the first line (header)
-        reader.readLine() // Skip header
-
-        // Loop to read CSV rows and calculate coefficients
-        reader.forEachLine { line ->
-            val columns = line.split(",")
-            val vA = columns[1].toDouble()
-            val vB = columns[2].toDouble()
-            val vC = columns[3].toDouble()
-
-            // Calculate the coefficient and add it to the total.
-            val coefficient = vA * cos(vB + vC * t)
         
-            totalCoefficient += coefficient
+        // Reading files with bufferedReader and UTF-8 encoding
+        return inputStream.bufferedReader(Charsets.UTF_8).use { reader ->
+
+            var totalCoefficient = 0.0 // Variable to store total coefficients
+
+            // Skip the first line (header)
+            reader.readLine() // Skip header
+
+            // Loop to read CSV rows and calculate coefficients
+            reader.lineSequence().forEach { line ->
+                val columns = line.split(",")
+                val vA = columns[1].toDouble()
+                val vB = columns[2].toDouble()
+                val vC = columns[3].toDouble()
+
+                // Calculate the coefficient and add it to the total.
+                val coefficient = vA * cos(vB + vC * t)
+        
+                totalCoefficient += coefficient
+            }
+
+            totalCoefficient // Return total coefficients
         }
-
-        reader.close() // Close the reader when finished
-
-        return totalCoefficient // Return total coefficients
-        
     }
     
 }
