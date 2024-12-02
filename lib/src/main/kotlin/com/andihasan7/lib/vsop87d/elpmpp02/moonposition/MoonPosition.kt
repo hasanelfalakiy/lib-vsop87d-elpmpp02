@@ -863,7 +863,7 @@ object MoonPosition {
     fun moonSunTopoElongation(jd: Double, lon: Double, lat: Double, elev: Double = 0.0, deltaT: Double = 0.0, unitType: UnitType = UnitType.DEGREES): Double {
         
         val deltaPS = SunPosition.sunTopoDeclination(jd, lon, lat, elev, deltaT)
-        val alphaPS = SunPosition.sunTopoRightAscension(jd, lon, elev, deltaT)
+        val alphaPS = SunPosition.sunTopoRightAscension(jd, lon, lat, elev, deltaT)
         val deltaPM = moonTopoDeclination(jd, lon, lat, elev, deltaT)
         val alphaPM = moonTopoRightAscension(jd, lon, lat, elev, deltaT)
         
@@ -943,7 +943,7 @@ object MoonPosition {
     fun moonTopoBrightLimbAngle(jd: Double, lon: Double, lat: Double, elev: Double = 0.0, deltaT: Double = 0.0, unitType: UnitType = UnitType.DEGREES): Double {
         
         val deltaSun = SunPosition.sunTopoDeclination(jd, lon, lat, elev, deltaT)
-        val alphaSun = SunPosition.sunTopoRightAscension(jd, lon, elev, deltaT)
+        val alphaSun = SunPosition.sunTopoRightAscension(jd, lon, lat, elev, deltaT)
         val deltaMoon = moonTopoDeclination(jd, lon, lat, elev, deltaT)
         val alphaMoon = moonTopoRightAscension(jd, lon, lat, elev, deltaT)
         
