@@ -23,6 +23,9 @@
  
 package com.andihasan7.lib.vsop87d.elpmpp02.readerutil
 
+import com.andihasan7.lib.vsop87d.elpmpp02.dataclass.Nutation2000bCsvRow
+import com.esotericsoftware.kryo.kryo5.Kryo
+import com.esotericsoftware.kryo.kryo5.io.Input
 import kotlin.math.cos
 import kotlin.math.sin
 import java.io.BufferedReader
@@ -39,46 +42,26 @@ object NutationReader {
     * @param f Mean argument of the latitude of the Moon, F in radian
     * @param d Mean Elongation of the Moon from the Sun, D in radian
     * @param omega Mean Longitude of the Ascending Node of the Moon, omega in radian
-    * @param path nutation .csv file path string
+    * @param path nutation .bin file path string
     *
     * @return nutationInLongitude the unit is 0.0000001s
     */
-    fun readNutationInLongitude(t: Double, l: Double, l1: Double, f: Double, d: Double, omega: Double, path: String): Double {
-    
-        val inputStream = this::class.java.classLoader.getResourceAsStream(path)
-        
-        // check if file exists
-        //if (!path.exists()) throw IllegalArgumentException("File $path not found.")
-        
-        // Reading files with bufferedReader and UTF-8 encoding
-        return inputStream.bufferedReader(Charsets.UTF_8).use { reader ->
+    fun nutationInLongitudeBinaryReader(t: Double, l: Double, l1: Double, f: Double, d: Double, omega: Double, resourcePath: String): Double {
 
-            var totalCoefficient = 0.0 // Variable to store total coefficients
+        val inputStream = this::class.java.getResourceAsStream(resourcePath) ?: throw IllegalArgumentException("Resource $resourcePath not found")
 
-            // Skip the first line (header)
-            reader.readLine() // Skip header
+        val kryo = Kryo()
+        kryo.register(Nutation2000bCsvRow::class.java)
+        var totalCoefficients = 0.0
 
-            // Loop to read CSV rows and calculate coefficients
-            reader.lineSequence().forEach { line ->
-                val columns = line.split(",")
-                val vL = columns[1].toDouble()
-                val vL1 = columns[2].toDouble()
-                val vF = columns[3].toDouble()
-                val vD = columns[4].toDouble()
-                val vOmega = columns[5].toDouble()
-        
-                val vA = columns[6].toDouble()
-                val vA1 = columns[7].toDouble()
-                val vA2 = columns[8].toDouble()
-
-                // Calculate the coefficient and add it to the total.
-                val coefficient = (vA + vA1 * t) * sin(vL * l + vL1 * l1 + vF * f + vD * d + vOmega * omega) + vA2 * cos(vL * l + vL1 * l1 + vF * f + vD * d + vOmega * omega)
-        
-                totalCoefficient += coefficient
+        Input(inputStream).use { input ->
+            while (input.available() > 0) {
+                val row = kryo.readObject(input, Nutation2000bCsvRow::class.java)
+                val coefficient = (row.vA + row.vA1 * t) * sin(row.vL * l + row.vL1 * l1 + row.vF * f + row.vD * d + row.vOmega * omega) + row.vA2 * cos(row.vL * l + row.vL1 * l1 + row.vF * f + row.vD * d + row.vOmega * omega)
+                totalCoefficients += coefficient
             }
-
-            totalCoefficient // Return total coefficients
         }
+        return totalCoefficients
     }
 
     /**
@@ -90,42 +73,25 @@ object NutationReader {
     * @param f Mean argument of the latitude of the Moon, F in radian
     * @param d Mean Elongation of the Moon from the Sun, D in radian
     * @param omega Mean Longitude of the Ascending Node of the Moon, omega in radian
-    * @param path nutation .csv file path string
+    * @param path nutation .bin file path string
     *
     * @return nutationInObliquity the unit is 0.0000001s
     */
-    fun readNutationInObliquity(t: Double, l: Double, l1: Double, f: Double, d: Double, omega: Double, path: String): Double {
-    
-        val inputStream = this::class.java.classLoader.getResourceAsStream(path)
-        
-        // Reading files with bufferedReader and UTF-8 encoding
-        return inputStream.bufferedReader(Charsets.UTF_8).use { reader ->
+    fun nutationInObliquityBinaryReader(t: Double, l: Double, l1: Double, f: Double, d: Double, omega: Double, resourcePath: String): Double {
 
-            var totalCoefficient = 0.0 // Variable to store total coefficients
+        val inputStream = this::class.java.getResourceAsStream(resourcePath) ?: throw IllegalArgumentException("Resource $resourcePath not found")
 
-            // Skip the first line (header)
-            reader.readLine() // Skip header
+        val kryo = Kryo()
+        kryo.register(Nutation2000bCsvRow::class.java)
+        var totalCoefficients = 0.0
 
-            // Loop to read CSV rows and calculate coefficients
-            reader.lineSequence().forEach { line ->
-                val columns = line.split(",")
-                val vL = columns[1].toDouble()
-                val vL1 = columns[2].toDouble()
-                val vF = columns[3].toDouble()
-                val vD = columns[4].toDouble()
-                val vOmega = columns[5].toDouble()
-        
-                val vB = columns[9].toDouble()
-                val vB1 = columns[10].toDouble()
-                val vB2 = columns[11].toDouble()
-
-                // Calculate the coefficient and add it to the total.
-                val coefficient = (vB + vB1 * t) * cos(vL * l + vL1 * l1 + vF * f + vD * d + vOmega * omega) + vB2 * sin(vL * l + vL1 * l1 + vF * f + vD * d + vOmega * omega)
-        
-                totalCoefficient += coefficient
+        Input(inputStream).use { input ->
+            while (input.available() > 0) {
+                val row = kryo.readObject(input, Nutation2000bCsvRow::class.java)
+                val coefficient = (row.vB + row.vB1 * t) * cos(row.vL * l + row.vL1 * l1 + row.vF * f + row.vD * d + row.vOmega * omega) + row.vB2 * sin(row.vL * l + row.vL1 * l1 + row.vF * f + row.vD * d + row.vOmega * omega)
+                totalCoefficients += coefficient
             }
-
-            totalCoefficient // Return total coefficients
         }
+        return totalCoefficients
     }
 }

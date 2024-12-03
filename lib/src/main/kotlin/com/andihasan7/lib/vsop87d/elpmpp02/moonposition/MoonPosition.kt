@@ -60,18 +60,18 @@ object MoonPosition {
     */
     fun moonGeocentricLongitude(jd: Double, deltaT: Double = 0.0, positionType: PositionType = PositionType.TRUE, unitType: UnitType = UnitType.DEGREES): Double {
         
-        val moonL0 = "MOON-L0.csv"
-        val moonL1 = "MOON-L1.csv"
-        val moonL2 = "MOON-L2.csv"
-        val moonL3 = "MOON-L3.csv"
+        val moonL0 = "/MOON-L0.bin"
+        val moonL1 = "/MOON-L1.bin"
+        val moonL2 = "/MOON-L2.bin"
+        val moonL3 = "/MOON-L3.bin"
         
         val t = TimeUtil.julianType(jd, deltaT, JulianType.JCE)
         val deltaPsi = Nutation.nutationInLonAndObliquity(jd, deltaT)[0]
         
-        val l0 = MoonLBRReader.moonLBRTermsReader(t, moonL0)
-        val l1 = MoonLBRReader.moonLBRTermsReader(t, moonL1)
-        val l2 = MoonLBRReader.moonLBRTermsReader(t, moonL2)
-        val l3 = MoonLBRReader.moonLBRTermsReader(t, moonL3)
+        val l0 = MoonLBRReader.moonLBRBinaryReader(t, moonL0)
+        val l1 = MoonLBRReader.moonLBRBinaryReader(t, moonL1)
+        val l2 = MoonLBRReader.moonLBRBinaryReader(t, moonL2)
+        val l3 = MoonLBRReader.moonLBRBinaryReader(t, moonL3)
         
         val l = l0 + l1 * t + l2 * t.pow(2) + l3 * t.pow(3)
         val w0 = 3.81034409083088
@@ -120,15 +120,15 @@ object MoonPosition {
     */
     fun moonGeocentricLatitude(jd: Double, deltaT: Double = 0.0, positionType: PositionType = PositionType.TRUE, unitType: UnitType = UnitType.DEGREES): Double {
         
-        val moonB0 = "MOON-B0.csv"
-        val moonB1 = "MOON-B1.csv"
-        val moonB2 = "MOON-B2.csv"
+        val moonB0 = "/MOON-B0.bin"
+        val moonB1 = "/MOON-B1.bin"
+        val moonB2 = "/MOON-B2.bin"
         
         val t = TimeUtil.julianType(jd, deltaT, JulianType.JCE)
         
-        val b0 = MoonLBRReader.moonLBRTermsReader(t, moonB0)
-        val b1 = MoonLBRReader.moonLBRTermsReader(t, moonB1)
-        val b2 = MoonLBRReader.moonLBRTermsReader(t, moonB2)
+        val b0 = MoonLBRReader.moonLBRBinaryReader(t, moonB0)
+        val b1 = MoonLBRReader.moonLBRBinaryReader(t, moonB1)
+        val b2 = MoonLBRReader.moonLBRBinaryReader(t, moonB2)
         
         val betaAp = (b0 + b1 * t + b2 * t.pow(2)) / 3600
         val betaApRad = Math.toRadians(betaAp)
@@ -162,17 +162,17 @@ object MoonPosition {
     */
     fun moonGeocentricDistance(jd: Double, deltaT: Double = 0.0, positionType: PositionType = PositionType.TRUE, distanceType: DistanceType = DistanceType.KM): Double {
         
-        val moonR0 = "MOON-R0.csv"
-        val moonR1 = "MOON-R1.csv"
-        val moonR2 = "MOON-R2.csv"
-        val moonR3 = "MOON-R3.csv"
+        val moonR0 = "/MOON-R0.bin"
+        val moonR1 = "/MOON-R1.bin"
+        val moonR2 = "/MOON-R2.bin"
+        val moonR3 = "/MOON-R3.bin"
         
         val t = TimeUtil.julianType(jd, deltaT, JulianType.JCE)
         
-        val r0 = MoonLBRReader.moonLBRTermsReader(t, moonR0)
-        val r1 = MoonLBRReader.moonLBRTermsReader(t, moonR1)
-        val r2 = MoonLBRReader.moonLBRTermsReader(t, moonR2)
-        val r3 = MoonLBRReader.moonLBRTermsReader(t, moonR3)
+        val r0 = MoonLBRReader.moonLBRBinaryReader(t, moonR0)
+        val r1 = MoonLBRReader.moonLBRBinaryReader(t, moonR1)
+        val r2 = MoonLBRReader.moonLBRBinaryReader(t, moonR2)
+        val r3 = MoonLBRReader.moonLBRBinaryReader(t, moonR3)
         
         // r true km
         val rTrueKM = r0 + r1 * t + r2 * t.pow(2) + r3 * t.pow(3)

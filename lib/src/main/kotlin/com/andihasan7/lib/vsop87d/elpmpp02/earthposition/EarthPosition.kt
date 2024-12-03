@@ -44,21 +44,21 @@ object EarthPosition {
     */
     fun earthHeliocentricLongitude(jd: Double, deltaT: Double = 0.0, unitType: UnitType = UnitType.DEGREES): Double {
     
-        val earthL0 = "EARTH-L0.csv"
-        val earthL1 = "EARTH-L1.csv"
-        val earthL2 = "EARTH-L2.csv"
-        val earthL3 = "EARTH-L3.csv"
-        val earthL4 = "EARTH-L4.csv"
-        val earthL5 = "EARTH-L5.csv"
+        val earthL0 = "/EARTH-L0.bin"
+        val earthL1 = "/EARTH-L1.bin"
+        val earthL2 = "/EARTH-L2.bin"
+        val earthL3 = "/EARTH-L3.bin"
+        val earthL4 = "/EARTH-L4.bin"
+        val earthL5 = "/EARTH-L5.bin"
         
         val t = TimeUtil.julianType(jd, deltaT, JulianType.JME)
         
-        val l0 = EarthLBRReader.earthLBRTermsReader(t, earthL0)
-        val l1 = EarthLBRReader.earthLBRTermsReader(t, earthL1)
-        val l2 = EarthLBRReader.earthLBRTermsReader(t, earthL2)
-        val l3 = EarthLBRReader.earthLBRTermsReader(t, earthL3)
-        val l4 = EarthLBRReader.earthLBRTermsReader(t, earthL4)
-        val l5 = EarthLBRReader.earthLBRTermsReader(t, earthL5)
+        val l0 = EarthLBRReader.earthLBRBinaryReader(t, earthL0)
+        val l1 = EarthLBRReader.earthLBRBinaryReader(t, earthL1)
+        val l2 = EarthLBRReader.earthLBRBinaryReader(t, earthL2)
+        val l3 = EarthLBRReader.earthLBRBinaryReader(t, earthL3)
+        val l4 = EarthLBRReader.earthLBRBinaryReader(t, earthL4)
+        val l5 = EarthLBRReader.earthLBRBinaryReader(t, earthL5)
         
         val eartHeliocentricLongitude = (l0 + l1 * t + l2 * t.pow(2) + l3 * t.pow(3) + l4 * t.pow(4) + l5 * t.pow(5)).mod(360.0)
         
@@ -79,19 +79,19 @@ object EarthPosition {
     */
     fun earthHeliocentricLatitude(jd: Double, deltaT: Double = 0.0, unitType: UnitType = UnitType.DEGREES): Double {
     
-        val earthB0 = "EARTH-B0.csv"
-        val earthB1 = "EARTH-B1.csv"
-        val earthB2 = "EARTH-B2.csv"
-        val earthB3 = "EARTH-B3.csv"
-        val earthB4 = "EARTH-B4.csv"
+        val earthB0 = "/EARTH-B0.bin"
+        val earthB1 = "/EARTH-B1.bin"
+        val earthB2 = "/EARTH-B2.bin"
+        val earthB3 = "/EARTH-B3.bin"
+        val earthB4 = "/EARTH-B4.bin"
         
         val t = TimeUtil.julianType(jd, deltaT, JulianType.JME)
         
-        val b0 = EarthLBRReader.earthLBRTermsReader(t, earthB0)
-        val b1 = EarthLBRReader.earthLBRTermsReader(t, earthB1)
-        val b2 = EarthLBRReader.earthLBRTermsReader(t, earthB2)
-        val b3 = EarthLBRReader.earthLBRTermsReader(t, earthB3)
-        val b4 = EarthLBRReader.earthLBRTermsReader(t, earthB4)
+        val b0 = EarthLBRReader.earthLBRBinaryReader(t, earthB0)
+        val b1 = EarthLBRReader.earthLBRBinaryReader(t, earthB1)
+        val b2 = EarthLBRReader.earthLBRBinaryReader(t, earthB2)
+        val b3 = EarthLBRReader.earthLBRBinaryReader(t, earthB3)
+        val b4 = EarthLBRReader.earthLBRBinaryReader(t, earthB4)
         
         val eartHeliocentricLatitude = b0 + b1 * t + b2 * t.pow(2) + b3 * t.pow(3) + b4 * t.pow(4)
         
@@ -111,21 +111,21 @@ object EarthPosition {
     */
     fun earthRadiusVector(jd: Double, deltaT: Double = 0.0, distanceType: DistanceType): Double {
     
-        val earthR0 = "EARTH-R0.csv"
-        val earthR1 = "EARTH-R1.csv"
-        val earthR2 = "EARTH-R2.csv"
-        val earthR3 = "EARTH-R3.csv"
-        val earthR4 = "EARTH-R4.csv"
-        val earthR5 = "EARTH-R5.csv"
+        val earthR0 = "/EARTH-R0.bin"
+        val earthR1 = "/EARTH-R1.bin"
+        val earthR2 = "/EARTH-R2.bin"
+        val earthR3 = "/EARTH-R3.bin"
+        val earthR4 = "/EARTH-R4.bin"
+        val earthR5 = "/EARTH-R5.bin"
         
         val t = TimeUtil.julianType(jd, deltaT, JulianType.JME)
         
-        val r0 = EarthLBRReader.earthLBRTermsReader(t, earthR0)
-        val r1 = EarthLBRReader.earthLBRTermsReader(t, earthR1)
-        val r2 = EarthLBRReader.earthLBRTermsReader(t, earthR2)
-        val r3 = EarthLBRReader.earthLBRTermsReader(t, earthR3)
-        val r4 = EarthLBRReader.earthLBRTermsReader(t, earthR4)
-        val r5 = EarthLBRReader.earthLBRTermsReader(t, earthR5)
+        val r0 = EarthLBRReader.earthLBRBinaryReader(t, earthR0)
+        val r1 = EarthLBRReader.earthLBRBinaryReader(t, earthR1)
+        val r2 = EarthLBRReader.earthLBRBinaryReader(t, earthR2)
+        val r3 = EarthLBRReader.earthLBRBinaryReader(t, earthR3)
+        val r4 = EarthLBRReader.earthLBRBinaryReader(t, earthR4)
+        val r5 = EarthLBRReader.earthLBRBinaryReader(t, earthR5)
         
         val _earthRadiusVector = r0 + r1 * t + r2 * t.pow(2) + r3 * t.pow(3) + r4 * t.pow(4) + r5 * t.pow(5)
         

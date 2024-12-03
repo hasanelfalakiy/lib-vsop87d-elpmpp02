@@ -47,7 +47,7 @@ object Nutation {
     */
     fun nutationInLonAndObliquity(jd: Double, deltaT: Double = 0.0): DoubleArray {
         
-        val path = "nutation-2000b.csv"
+        val path = "/nutation-2000b.bin"
         
         // t is the same as jce
         val t = TimeUtil.julianType(jd, deltaT, JulianType.JCE)
@@ -103,7 +103,7 @@ object Nutation {
         */
         val omegaRad = Math.toRadians((omegaDeg).mod(360.0))
         
-        val deltaPsi = NutationReader.readNutationInLongitude(
+        val deltaPsi = NutationReader.nutationInLongitudeBinaryReader(
             t,
             lRad,
             l1Rad,
@@ -113,7 +113,7 @@ object Nutation {
             path
         ) / 36000000000.0
         
-        val deltaEpsilon = NutationReader.readNutationInObliquity(
+        val deltaEpsilon = NutationReader.nutationInObliquityBinaryReader(
             t,
             lRad,
             l1Rad,

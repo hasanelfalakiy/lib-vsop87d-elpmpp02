@@ -23,48 +23,38 @@
  
 package com.andihasan7.lib.vsop87d.elpmpp02.readerutil
 
+import com.andihasan7.lib.vsop87d.elpmpp02.dataclass.Vsop87dCsvRow
+import com.esotericsoftware.kryo.kryo5.Kryo
+import com.esotericsoftware.kryo.kryo5.io.Input
 import kotlin.math.cos
-import java.io.BufferedReader
-import java.io.InputStreamReader
+
 
 object EarthLBRReader {
-    
+
     /**
-    * LBR periodic table reader for earth
-    *
-    * @param t is the same as jme Julian Millenium Ephemeris
-    * @param path periodic table .csv file path
-    *
-    * @return totalCoefficient: Double
-    *
-    */
-    fun earthLBRTermsReader(t: Double, path: String): Double {
-        
-        val inputStream = this::class.java.classLoader.getResourceAsStream(path)
-        
-        // Reading files with bufferedReader and UTF-8 encoding
-        return inputStream.bufferedReader(Charsets.UTF_8).use { reader ->
+     * function to read earth lbr binary file and calculate the coefficients
+     *
+     * @param t is the same as jme Julian Millenium Ephemeris
+     * @param resourcePath path of binary periodic term file
+     *
+     * @return totalCoefficients
+     */
+    fun earthLBRBinaryReader(t: Double, resourcePath: String): Double {
 
-            var totalCoefficient = 0.0 // Variable to store total coefficients
+        val inputStream = this::class.java.getResourceAsStream(resourcePath) ?: throw IllegalArgumentException("Resource $resourcePath not found")
 
-            // Skip the first line (header)
-            reader.readLine() // Skip header
+        val kryo = Kryo()
+        kryo.register(Vsop87dCsvRow::class.java)
+        var totalCoefficients = 0.0
 
-            // Loop to read CSV rows and calculate coefficients
-            reader.lineSequence().forEach { line ->
-                val columns = line.split(",")
-                val vA = columns[1].toDouble()
-                val vB = columns[2].toDouble()
-                val vC = columns[3].toDouble()
-
-                // Calculate the coefficient and add it to the total.
-                val coefficient = vA * cos(vB + vC * t)
-        
-                totalCoefficient += coefficient
+        Input(inputStream).use { input ->
+            while (input.available() > 0) {
+                val row = kryo.readObject(input, Vsop87dCsvRow::class.java)
+                val coefficient = row.vA * cos(row.vB + row.vC * t)
+                totalCoefficients += coefficient
             }
-
-            totalCoefficient // Return total coefficients
         }
+        return totalCoefficients
     }
     
 }
