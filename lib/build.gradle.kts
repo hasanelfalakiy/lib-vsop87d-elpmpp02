@@ -47,6 +47,8 @@ dependencies {
     testImplementation(libs.junit.jupiter.engine)
 
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+
+    implementation(libs.kryo5)
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
