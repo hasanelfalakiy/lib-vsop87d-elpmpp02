@@ -23,6 +23,36 @@ $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.correction/Correction/dip/#k
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.correction/Correction/termU/#kotlin.Double/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.correction/-correction/term-u.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.correction/Correction/termX/#kotlin.Double#kotlin.Double/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.correction/-correction/term-x.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.correction/Correction/termY/#kotlin.Double#kotlin.Double/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.correction/-correction/term-y.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass////PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/index.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Elpmpp02CsvRow///PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-elpmpp02-csv-row/index.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Elpmpp02CsvRow/Elpmpp02CsvRow/#kotlin.Int#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-elpmpp02-csv-row/-elpmpp02-csv-row.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Elpmpp02CsvRow/i/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-elpmpp02-csv-row/i.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Elpmpp02CsvRow/vA0/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-elpmpp02-csv-row/v-a0.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Elpmpp02CsvRow/vA1/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-elpmpp02-csv-row/v-a1.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Elpmpp02CsvRow/vA2/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-elpmpp02-csv-row/v-a2.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Elpmpp02CsvRow/vA3/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-elpmpp02-csv-row/v-a3.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Elpmpp02CsvRow/vA4/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-elpmpp02-csv-row/v-a4.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Elpmpp02CsvRow/vVN/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-elpmpp02-csv-row/v-v-n.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Nutation2000bCsvRow///PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-nutation2000b-csv-row/index.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Nutation2000bCsvRow/Nutation2000bCsvRow/#kotlin.Int#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-nutation2000b-csv-row/-nutation2000b-csv-row.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Nutation2000bCsvRow/i/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-nutation2000b-csv-row/i.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Nutation2000bCsvRow/vA/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-nutation2000b-csv-row/v-a.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Nutation2000bCsvRow/vA1/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-nutation2000b-csv-row/v-a1.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Nutation2000bCsvRow/vA2/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-nutation2000b-csv-row/v-a2.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Nutation2000bCsvRow/vB/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-nutation2000b-csv-row/v-b.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Nutation2000bCsvRow/vB1/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-nutation2000b-csv-row/v-b1.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Nutation2000bCsvRow/vB2/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-nutation2000b-csv-row/v-b2.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Nutation2000bCsvRow/vD/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-nutation2000b-csv-row/v-d.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Nutation2000bCsvRow/vF/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-nutation2000b-csv-row/v-f.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Nutation2000bCsvRow/vL/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-nutation2000b-csv-row/v-l.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Nutation2000bCsvRow/vL1/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-nutation2000b-csv-row/v-l1.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Nutation2000bCsvRow/vOmega/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-nutation2000b-csv-row/v-omega.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Vsop87dCsvRow///PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-vsop87d-csv-row/index.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Vsop87dCsvRow/Vsop87dCsvRow/#kotlin.Int#kotlin.Double#kotlin.Double#kotlin.Double/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-vsop87d-csv-row/-vsop87d-csv-row.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Vsop87dCsvRow/i/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-vsop87d-csv-row/i.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Vsop87dCsvRow/vA/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-vsop87d-csv-row/v-a.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Vsop87dCsvRow/vB/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-vsop87d-csv-row/v-b.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Vsop87dCsvRow/vC/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-vsop87d-csv-row/v-c.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.earthposition////PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.earthposition/index.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.earthposition/EarthPosition///PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.earthposition/-earth-position/index.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.earthposition/EarthPosition/earthHeliocentricLatitude/#kotlin.Double#kotlin.Double#com.andihasan7.lib.vsop87d.elpmpp02.enum.UnitType/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.earthposition/-earth-position/earth-heliocentric-latitude.html
@@ -129,12 +159,12 @@ $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.moonposition/MoonPosition/pa
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.moonposition/MoonPosition/parallaxInTheMoonRightAscension/#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double#com.andihasan7.lib.vsop87d.elpmpp02.enum.UnitType/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.moonposition/-moon-position/parallax-in-the-moon-right-ascension.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.readerutil////PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.readerutil/index.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.readerutil/EarthLBRReader///PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.readerutil/-earth-l-b-r-reader/index.html
-$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.readerutil/EarthLBRReader/earthLBRTermsReader/#kotlin.Double#kotlin.String/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.readerutil/-earth-l-b-r-reader/earth-l-b-r-terms-reader.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.readerutil/EarthLBRReader/earthLBRBinaryReader/#kotlin.Double#kotlin.String/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.readerutil/-earth-l-b-r-reader/earth-l-b-r-binary-reader.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.readerutil/MoonLBRReader///PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.readerutil/-moon-l-b-r-reader/index.html
-$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.readerutil/MoonLBRReader/moonLBRTermsReader/#kotlin.Double#kotlin.String/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.readerutil/-moon-l-b-r-reader/moon-l-b-r-terms-reader.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.readerutil/MoonLBRReader/moonLBRBinaryReader/#kotlin.Double#kotlin.String/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.readerutil/-moon-l-b-r-reader/moon-l-b-r-binary-reader.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.readerutil/NutationReader///PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.readerutil/-nutation-reader/index.html
-$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.readerutil/NutationReader/readNutationInLongitude/#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.String/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.readerutil/-nutation-reader/read-nutation-in-longitude.html
-$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.readerutil/NutationReader/readNutationInObliquity/#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.String/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.readerutil/-nutation-reader/read-nutation-in-obliquity.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.readerutil/NutationReader/nutationInLongitudeBinaryReader/#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.String/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.readerutil/-nutation-reader/nutation-in-longitude-binary-reader.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.readerutil/NutationReader/nutationInObliquityBinaryReader/#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.String/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.readerutil/-nutation-reader/nutation-in-obliquity-binary-reader.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.sunposition////PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.sunposition/index.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.sunposition/SunPosition///PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.sunposition/-sun-position/index.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.sunposition/SunPosition/equationOfTime/#kotlin.Double#kotlin.Double#com.andihasan7.lib.vsop87d.elpmpp02.enum.UnitType/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.sunposition/-sun-position/equation-of-time.html
@@ -296,6 +326,7 @@ $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87DELPMPP02/trueObliquit
 com.andihasan7.lib.vsop87d.elpmpp02
 com.andihasan7.lib.vsop87d.elpmpp02.convertutil
 com.andihasan7.lib.vsop87d.elpmpp02.correction
+com.andihasan7.lib.vsop87d.elpmpp02.dataclass
 com.andihasan7.lib.vsop87d.elpmpp02.earthposition
 com.andihasan7.lib.vsop87d.elpmpp02.enum
 com.andihasan7.lib.vsop87d.elpmpp02.moonposition
