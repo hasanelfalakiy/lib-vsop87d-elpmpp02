@@ -30,6 +30,7 @@ import kotlin.math.cos
 import kotlin.math.sin
 import java.io.BufferedReader
 import java.io.InputStreamReader
+import kotlin.math.pow
 
 object NutationReader {
     
@@ -64,6 +65,25 @@ object NutationReader {
         return totalCoefficients
     }
 
+    fun nutationInLongitudeReader(t: Double, l: Double, l1: Double, f: Double, d: Double, omega: Double, resourcePath: String): Double {
+
+        val dataArray = ReadBinaryAsArray.readBinaryAsArray(resourcePath)
+
+        var totalCoefficients = 0.0
+        for (row in dataArray) {
+            val vL = row[0]
+            val vL1 = row[1]
+            val vF = row[2]
+            val vD = row[3]
+            val vOmega = row[4]
+            val vA = row[5]
+            val vA1 = row[6]
+            val vA2 = row[7]
+            totalCoefficients += (vA + vA1 * t) * sin(vL * l + vL1 * l1 + vF * f + vD * d + vOmega * omega) + vA2 * cos(vL * l + vL1 * l1 + vF * f + vD * d + vOmega * omega)
+        }
+        return totalCoefficients
+    }
+
     /**
     * function to read nutation in obliquity terms for model IAU 2000B
     *
@@ -91,6 +111,25 @@ object NutationReader {
                 val coefficient = (row.vB + row.vB1 * t) * cos(row.vL * l + row.vL1 * l1 + row.vF * f + row.vD * d + row.vOmega * omega) + row.vB2 * sin(row.vL * l + row.vL1 * l1 + row.vF * f + row.vD * d + row.vOmega * omega)
                 totalCoefficients += coefficient
             }
+        }
+        return totalCoefficients
+    }
+
+    fun nutationInObliquityReader(t: Double, l: Double, l1: Double, f: Double, d: Double, omega: Double, resourcePath: String): Double {
+
+        val dataArray = ReadBinaryAsArray.readBinaryAsArray(resourcePath)
+
+        var totalCoefficients = 0.0
+        for (row in dataArray) {
+            val vL = row[0]
+            val vL1 = row[1]
+            val vF = row[2]
+            val vD = row[3]
+            val vOmega = row[4]
+            val vB = row[8]
+            val vB1 = row[9]
+            val vB2 = row[10]
+            totalCoefficients += (vB + vB1 * t) * cos(vL * l + vL1 * l1 + vF * f + vD * d + vOmega * omega) + vB2 * sin(vL * l + vL1 * l1 + vF * f + vD * d + vOmega * omega)
         }
         return totalCoefficients
     }

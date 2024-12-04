@@ -26,6 +26,7 @@ package com.andihasan7.lib.vsop87d.elpmpp02.readerutil
 import com.andihasan7.lib.vsop87d.elpmpp02.dataclass.Elpmpp02CsvRow
 import com.esotericsoftware.kryo.kryo5.Kryo
 import com.esotericsoftware.kryo.kryo5.io.Input
+import kotlin.math.cos
 import kotlin.math.sin
 import kotlin.math.pow
 
@@ -53,6 +54,31 @@ object MoonLBRReader {
                 val coefficient = row.vVN * sin(row.vA0 + row.vA1 * t + row.vA2 * t.pow(2) + row.vA3 * t.pow(3) + row.vA4 * t.pow(4))
                 totalCoefficients += coefficient
             }
+        }
+        return totalCoefficients
+    }
+
+    /**
+     * function to read moon lbr and calculate the coefficients
+     *
+     * @param t is the same as jme Julian Millenium Ephemeris
+     * @param resourcePath path of binary periodic term file
+     *
+     * @return totalCoefficients
+     */
+    fun moonLBRReader(t: Double, resourcePath: String): Double {
+
+        val dataArray = ReadBinaryAsArray.readBinaryAsArray(resourcePath)
+
+        var totalCoefficients = 0.0
+        for (row in dataArray) {
+            val vVN = row[0]
+            val vA0 = row[1]
+            val vA1 = row[2]
+            val vA2 = row[3]
+            val vA3 = row[4]
+            val vA4 = row[5]
+            totalCoefficients += vVN * sin(vA0 + vA1 * t + vA2 * t.pow(2) + vA3 * t.pow(3) + vA4 * t.pow(4))
         }
         return totalCoefficients
     }

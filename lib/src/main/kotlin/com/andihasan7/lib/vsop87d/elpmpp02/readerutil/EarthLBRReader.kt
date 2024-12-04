@@ -56,5 +56,28 @@ object EarthLBRReader {
         }
         return totalCoefficients
     }
-    
+
+    /**
+     * function to read earth lbr and calculate the coefficients
+     *
+     * @param t is the same as jme Julian Millenium Ephemeris
+     * @param resourcePath path of binary periodic term file
+     *
+     * @return totalCoefficients
+     */
+    fun earthLBRReader(t: Double, resourcePath: String): Double {
+
+        val dataArray = ReadBinaryAsArray.readBinaryAsArray(resourcePath)
+
+        var totalCoefficients = 0.0
+        for (row in dataArray) {
+            val a = row[0]
+            val b = row[1]
+            val c = row[2]
+            totalCoefficients += a * cos(b + c * t)
+        }
+        return totalCoefficients
+    }
+
 }
+
