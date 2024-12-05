@@ -2,12 +2,14 @@
 # https://docs.gradle.org/current/userguide/platforms.html#sub::toml-dependencies-format
 
 [versions]
+coroutines = "1.9.0"
 kryo5 = "5.6.2"
 junit-jupiter-engine = "5.10.2"
 
 [libraries]
+coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines"}
 kryo5 = { module = "com.esotericsoftware.kryo:kryo5", version.ref = "kryo5" }
 junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit-jupiter-engine" }
 
 [plugins]
-jvm = { id = "org.jetbrains.kotlin.jvm", version = "1.9.23" }
+jvm = { id = "org.jetbrains.kotlin.jvm", version = "2.0.0" }

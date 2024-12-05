@@ -48,6 +48,7 @@ dependencies {
 
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
+    implementation(libs.coroutines)
     implementation(libs.kryo5)
 }
 

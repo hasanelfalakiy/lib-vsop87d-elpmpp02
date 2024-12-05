@@ -60,7 +60,19 @@ object MoonPosition {
     */
     fun moonGeocentricLongitude(jd: Double, deltaT: Double = 0.0, positionType: PositionType = PositionType.TRUE, unitType: UnitType = UnitType.DEGREES): Double {
         
-        val moonL0 = "MOON-L0.bin"
+        val moonL000 = "MOON-L0-00.bin"
+        val moonL001 = "MOON-L0-01.bin"
+        val moonL002 = "MOON-L0-02.bin"
+        val moonL003 = "MOON-L0-03.bin"
+        val moonL004 = "MOON-L0-04.bin"
+        val moonL005 = "MOON-L0-05.bin"
+        val moonL006 = "MOON-L0-06.bin"
+        val moonL007 = "MOON-L0-07.bin"
+        val moonL008 = "MOON-L0-08.bin"
+        val moonL009 = "MOON-L0-09.bin"
+        val moonL010 = "MOON-L0-10.bin"
+        val moonL011 = "MOON-L0-11.bin"
+        val moonL012 = "MOON-L0-12.bin"
         val moonL1 = "MOON-L1.bin"
         val moonL2 = "MOON-L2.bin"
         val moonL3 = "MOON-L3.bin"
@@ -68,7 +80,20 @@ object MoonPosition {
         val t = TimeUtil.julianType(jd, deltaT, JulianType.JCE)
         val deltaPsi = Nutation.nutationInLonAndObliquity(jd, deltaT)[0]
         
-        val l0 = MoonLBRReader.moonLBRReader(t, moonL0)
+        val l000 = MoonLBRReader.moonLBRReader(t, moonL000)
+        val l001 = MoonLBRReader.moonLBRReader(t, moonL001)
+        val l002 = MoonLBRReader.moonLBRReader(t, moonL002)
+        val l003 = MoonLBRReader.moonLBRReader(t, moonL003)
+        val l004 = MoonLBRReader.moonLBRReader(t, moonL004)
+        val l005 = MoonLBRReader.moonLBRReader(t, moonL005)
+        val l006 = MoonLBRReader.moonLBRReader(t, moonL006)
+        val l007 = MoonLBRReader.moonLBRReader(t, moonL007)
+        val l008 = MoonLBRReader.moonLBRReader(t, moonL008)
+        val l009 = MoonLBRReader.moonLBRReader(t, moonL009)
+        val l010 = MoonLBRReader.moonLBRReader(t, moonL010)
+        val l011 = MoonLBRReader.moonLBRReader(t, moonL011)
+        val l012 = MoonLBRReader.moonLBRReader(t, moonL012)
+        val l0 = l000 + l001 + l002 + l003 + l004 + l005 + l006 + l007 + l008 + l009 + l010 + l011 + l012
         val l1 = MoonLBRReader.moonLBRReader(t, moonL1)
         val l2 = MoonLBRReader.moonLBRReader(t, moonL2)
         val l3 = MoonLBRReader.moonLBRReader(t, moonL3)
@@ -120,13 +145,28 @@ object MoonPosition {
     */
     fun moonGeocentricLatitude(jd: Double, deltaT: Double = 0.0, positionType: PositionType = PositionType.TRUE, unitType: UnitType = UnitType.DEGREES): Double {
         
-        val moonB0 = "MOON-B0.bin"
+        val moonB000 = "MOON-B0-00.bin"
+        val moonB001 = "MOON-B0-01.bin"
+        val moonB002 = "MOON-B0-02.bin"
+        val moonB003 = "MOON-B0-03.bin"
+        val moonB004 = "MOON-B0-04.bin"
+        val moonB005 = "MOON-B0-05.bin"
+        val moonB006 = "MOON-B0-06.bin"
+        val moonB007 = "MOON-B0-07.bin"
         val moonB1 = "MOON-B1.bin"
         val moonB2 = "MOON-B2.bin"
         
         val t = TimeUtil.julianType(jd, deltaT, JulianType.JCE)
         
-        val b0 = MoonLBRReader.moonLBRReader(t, moonB0)
+        val b000 = MoonLBRReader.moonLBRReader(t, moonB000)
+        val b001 = MoonLBRReader.moonLBRReader(t, moonB001)
+        val b002 = MoonLBRReader.moonLBRReader(t, moonB002)
+        val b003 = MoonLBRReader.moonLBRReader(t, moonB003)
+        val b004 = MoonLBRReader.moonLBRReader(t, moonB004)
+        val b005 = MoonLBRReader.moonLBRReader(t, moonB005)
+        val b006 = MoonLBRReader.moonLBRReader(t, moonB006)
+        val b007 = MoonLBRReader.moonLBRReader(t, moonB007)
+        val b0 = b000 + b001 + b002 + b003 + b004 + b005 + b006 + b007
         val b1 = MoonLBRReader.moonLBRReader(t, moonB1)
         val b2 = MoonLBRReader.moonLBRReader(t, moonB2)
         
@@ -162,14 +202,39 @@ object MoonPosition {
     */
     fun moonGeocentricDistance(jd: Double, deltaT: Double = 0.0, positionType: PositionType = PositionType.TRUE, distanceType: DistanceType = DistanceType.KM): Double {
         
-        val moonR0 = "MOON-R0.bin"
+        val moonR000 = "MOON-R0-00.bin"
+        val moonR001 = "MOON-R0-01.bin"
+        val moonR002 = "MOON-R0-02.bin"
+        val moonR003 = "MOON-R0-03.bin"
+        val moonR004 = "MOON-R0-04.bin"
+        val moonR005 = "MOON-R0-05.bin"
+        val moonR006 = "MOON-R0-06.bin"
+        val moonR007 = "MOON-R0-07.bin"
+        val moonR008 = "MOON-R0-08.bin"
+        val moonR009 = "MOON-R0-09.bin"
+        val moonR010 = "MOON-R0-10.bin"
+        val moonR011 = "MOON-R0-11.bin"
+        val moonR012 = "MOON-R0-12.bin"
         val moonR1 = "MOON-R1.bin"
         val moonR2 = "MOON-R2.bin"
         val moonR3 = "MOON-R3.bin"
         
         val t = TimeUtil.julianType(jd, deltaT, JulianType.JCE)
         
-        val r0 = MoonLBRReader.moonLBRReader(t, moonR0)
+        val r000 = MoonLBRReader.moonLBRReader(t, moonR000)
+        val r001 = MoonLBRReader.moonLBRReader(t, moonR001)
+        val r002 = MoonLBRReader.moonLBRReader(t, moonR002)
+        val r003 = MoonLBRReader.moonLBRReader(t, moonR003)
+        val r004 = MoonLBRReader.moonLBRReader(t, moonR004)
+        val r005 = MoonLBRReader.moonLBRReader(t, moonR005)
+        val r006 = MoonLBRReader.moonLBRReader(t, moonR006)
+        val r007 = MoonLBRReader.moonLBRReader(t, moonR007)
+        val r008 = MoonLBRReader.moonLBRReader(t, moonR008)
+        val r009 = MoonLBRReader.moonLBRReader(t, moonR009)
+        val r010 = MoonLBRReader.moonLBRReader(t, moonR010)
+        val r011 = MoonLBRReader.moonLBRReader(t, moonR011)
+        val r012 = MoonLBRReader.moonLBRReader(t, moonR012)
+        val r0 = r000 + r001 + r002 + r003 + r004 + r005 + r006 + r007 + r008 + r009 + r010 + r011 + r012
         val r1 = MoonLBRReader.moonLBRReader(t, moonR1)
         val r2 = MoonLBRReader.moonLBRReader(t, moonR2)
         val r3 = MoonLBRReader.moonLBRReader(t, moonR3)
