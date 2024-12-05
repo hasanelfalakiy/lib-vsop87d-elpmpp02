@@ -23,9 +23,6 @@
  
 package com.andihasan7.lib.vsop87d.elpmpp02.readerutil
 
-import com.andihasan7.lib.vsop87d.elpmpp02.dataclass.Vsop87dCsvRow
-import com.esotericsoftware.kryo.kryo5.Kryo
-import com.esotericsoftware.kryo.kryo5.io.Input
 import kotlin.math.cos
 
 
@@ -35,47 +32,18 @@ object EarthLBRReader {
      * function to read earth lbr binary file and calculate the coefficients
      *
      * @param t is the same as jme Julian Millenium Ephemeris
-     * @param resourcePath path of binary periodic term file
+     * @param arrayDoubleArray object of array
      *
      * @return totalCoefficients
      */
-    fun earthLBRBinaryReader(t: Double, resourcePath: String): Double {
-
-        val inputStream = this::class.java.getResourceAsStream(resourcePath) ?: throw IllegalArgumentException("Resource $resourcePath not found")
-
-        val kryo = Kryo()
-        kryo.register(Vsop87dCsvRow::class.java)
-        var totalCoefficients = 0.0
-
-        Input(inputStream).use { input ->
-            while (input.available() > 0) {
-                val row = kryo.readObject(input, Vsop87dCsvRow::class.java)
-                val coefficient = row.vA * cos(row.vB + row.vC * t)
-                totalCoefficients += coefficient
-            }
-        }
-        return totalCoefficients
-    }
-
-    /**
-     * function to read earth lbr and calculate the coefficients
-     *
-     * @param t is the same as jme Julian Millenium Ephemeris
-     * @param resourcePath path of binary periodic term file
-     *
-     * @return totalCoefficients
-     */
-    fun earthLBRReader(t: Double, resourcePath: String): Double {
-
-        val dataArray = ReadBinaryAsArray.readBinaryAsArray(resourcePath)
+    fun earthLBRReader(t: Double, arrayDoubleArray: Array<DoubleArray>): Double {
 
         var totalCoefficients = 0.0
-        for (row in dataArray) {
-            val a = row[0]
-            val b = row[1]
-            val c = row[2]
-            totalCoefficients += a * cos(b + c * t)
+
+        for (row in arrayDoubleArray) {
+            totalCoefficients += row[0] * cos(row[1] + row[2] * t)
         }
+
         return totalCoefficients
     }
 

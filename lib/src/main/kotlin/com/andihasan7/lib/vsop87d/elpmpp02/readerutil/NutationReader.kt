@@ -23,14 +23,8 @@
  
 package com.andihasan7.lib.vsop87d.elpmpp02.readerutil
 
-import com.andihasan7.lib.vsop87d.elpmpp02.dataclass.Nutation2000bCsvRow
-import com.esotericsoftware.kryo.kryo5.Kryo
-import com.esotericsoftware.kryo.kryo5.io.Input
 import kotlin.math.cos
 import kotlin.math.sin
-import java.io.BufferedReader
-import java.io.InputStreamReader
-import kotlin.math.pow
 
 object NutationReader {
     
@@ -43,44 +37,18 @@ object NutationReader {
     * @param f Mean argument of the latitude of the Moon, F in radian
     * @param d Mean Elongation of the Moon from the Sun, D in radian
     * @param omega Mean Longitude of the Ascending Node of the Moon, omega in radian
-    * @param path nutation .bin file path string
+    * @param arrayDoubleArray object of array
     *
     * @return nutationInLongitude the unit is 0.0000001s
     */
-    fun nutationInLongitudeBinaryReader(t: Double, l: Double, l1: Double, f: Double, d: Double, omega: Double, resourcePath: String): Double {
-
-        val inputStream = this::class.java.getResourceAsStream(resourcePath) ?: throw IllegalArgumentException("Resource $resourcePath not found")
-
-        val kryo = Kryo()
-        kryo.register(Nutation2000bCsvRow::class.java)
-        var totalCoefficients = 0.0
-
-        Input(inputStream).use { input ->
-            while (input.available() > 0) {
-                val row = kryo.readObject(input, Nutation2000bCsvRow::class.java)
-                val coefficient = (row.vA + row.vA1 * t) * sin(row.vL * l + row.vL1 * l1 + row.vF * f + row.vD * d + row.vOmega * omega) + row.vA2 * cos(row.vL * l + row.vL1 * l1 + row.vF * f + row.vD * d + row.vOmega * omega)
-                totalCoefficients += coefficient
-            }
-        }
-        return totalCoefficients
-    }
-
-    fun nutationInLongitudeReader(t: Double, l: Double, l1: Double, f: Double, d: Double, omega: Double, resourcePath: String): Double {
-
-        val dataArray = ReadBinaryAsArray.readBinaryAsArray(resourcePath)
+    fun nutationInLongitudeReader(t: Double, l: Double, l1: Double, f: Double, d: Double, omega: Double, arrayDoubleArray: Array<DoubleArray>): Double {
 
         var totalCoefficients = 0.0
-        for (row in dataArray) {
-            val vL = row[0]
-            val vL1 = row[1]
-            val vF = row[2]
-            val vD = row[3]
-            val vOmega = row[4]
-            val vA = row[5]
-            val vA1 = row[6]
-            val vA2 = row[7]
-            totalCoefficients += (vA + vA1 * t) * sin(vL * l + vL1 * l1 + vF * f + vD * d + vOmega * omega) + vA2 * cos(vL * l + vL1 * l1 + vF * f + vD * d + vOmega * omega)
+
+        for (row in arrayDoubleArray) {
+            totalCoefficients += (row[5] + row[6] * t) * sin(row[0] * l + row[1] * l1 + row[2] * f + row[3] * d + row[4] * omega) + row[7] * cos(row[0] * l + row[1] * l1 + row[2] * f + row[3] * d + row[4] * omega)
         }
+
         return totalCoefficients
     }
 
@@ -93,44 +61,18 @@ object NutationReader {
     * @param f Mean argument of the latitude of the Moon, F in radian
     * @param d Mean Elongation of the Moon from the Sun, D in radian
     * @param omega Mean Longitude of the Ascending Node of the Moon, omega in radian
-    * @param path nutation .bin file path string
+    * @param arrayDoubleArray object of array
     *
     * @return nutationInObliquity the unit is 0.0000001s
     */
-    fun nutationInObliquityBinaryReader(t: Double, l: Double, l1: Double, f: Double, d: Double, omega: Double, resourcePath: String): Double {
-
-        val inputStream = this::class.java.getResourceAsStream(resourcePath) ?: throw IllegalArgumentException("Resource $resourcePath not found")
-
-        val kryo = Kryo()
-        kryo.register(Nutation2000bCsvRow::class.java)
-        var totalCoefficients = 0.0
-
-        Input(inputStream).use { input ->
-            while (input.available() > 0) {
-                val row = kryo.readObject(input, Nutation2000bCsvRow::class.java)
-                val coefficient = (row.vB + row.vB1 * t) * cos(row.vL * l + row.vL1 * l1 + row.vF * f + row.vD * d + row.vOmega * omega) + row.vB2 * sin(row.vL * l + row.vL1 * l1 + row.vF * f + row.vD * d + row.vOmega * omega)
-                totalCoefficients += coefficient
-            }
-        }
-        return totalCoefficients
-    }
-
-    fun nutationInObliquityReader(t: Double, l: Double, l1: Double, f: Double, d: Double, omega: Double, resourcePath: String): Double {
-
-        val dataArray = ReadBinaryAsArray.readBinaryAsArray(resourcePath)
+    fun nutationInObliquityReader(t: Double, l: Double, l1: Double, f: Double, d: Double, omega: Double, arrayDoubleArray: Array<DoubleArray>): Double {
 
         var totalCoefficients = 0.0
-        for (row in dataArray) {
-            val vL = row[0]
-            val vL1 = row[1]
-            val vF = row[2]
-            val vD = row[3]
-            val vOmega = row[4]
-            val vB = row[8]
-            val vB1 = row[9]
-            val vB2 = row[10]
-            totalCoefficients += (vB + vB1 * t) * cos(vL * l + vL1 * l1 + vF * f + vD * d + vOmega * omega) + vB2 * sin(vL * l + vL1 * l1 + vF * f + vD * d + vOmega * omega)
+
+        for (row in arrayDoubleArray) {
+            totalCoefficients += (row[8] + row[9] * t) * cos(row[0] * l + row[1] * l1 + row[2] * f + row[3] * d + row[4] * omega) + row[10] * sin(row[0] * l + row[1] * l1 + row[2] * f + row[3] * d + row[4] * omega)
         }
+
         return totalCoefficients
     }
 }

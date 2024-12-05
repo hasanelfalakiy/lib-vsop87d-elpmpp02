@@ -23,63 +23,27 @@
  
 package com.andihasan7.lib.vsop87d.elpmpp02.readerutil
 
-import com.andihasan7.lib.vsop87d.elpmpp02.dataclass.Elpmpp02CsvRow
-import com.esotericsoftware.kryo.kryo5.Kryo
-import com.esotericsoftware.kryo.kryo5.io.Input
-import kotlin.math.cos
-import kotlin.math.sin
 import kotlin.math.pow
+import kotlin.math.sin
 
 object MoonLBRReader {
 
     /**
-     * function to read moon lbr binary file and calculate the coefficients
-     *
-     * @param t is the same as jce Julian Century Ephemeris
-     * @param resourcePath path of binary file
-     *
-     * @return totalCoefficients
-     */
-    fun moonLBRBinaryReader(t: Double, resourcePath: String): Double {
-
-        val inputStream = this::class.java.getResourceAsStream(resourcePath) ?: throw IllegalArgumentException("Resource $resourcePath not found")
-
-        val kryo = Kryo()
-        kryo.register(Elpmpp02CsvRow::class.java)
-        var totalCoefficients = 0.0
-
-        Input(inputStream).use { input ->
-            while (input.available() > 0) {
-                val row = kryo.readObject(input, Elpmpp02CsvRow::class.java)
-                val coefficient = row.vVN * sin(row.vA0 + row.vA1 * t + row.vA2 * t.pow(2) + row.vA3 * t.pow(3) + row.vA4 * t.pow(4))
-                totalCoefficients += coefficient
-            }
-        }
-        return totalCoefficients
-    }
-
-    /**
-     * function to read moon lbr and calculate the coefficients
+     * function to read earth lbr binary file and calculate the coefficients
      *
      * @param t is the same as jme Julian Millenium Ephemeris
-     * @param resourcePath path of binary periodic term file
+     * @param arrayDoubleArray object of array
      *
      * @return totalCoefficients
      */
-    fun moonLBRReader(t: Double, resourcePath: String): Double {
-
-        val dataArray = ReadBinaryAsArray.readBinaryAsArray(resourcePath)
+    fun moonLBRReader(t: Double, arrayDoubleArray: Array<DoubleArray>): Double {
 
         var totalCoefficients = 0.0
-        for (row in dataArray) {
-            val vVN = row[0]
-            val vA0 = row[1]
-            val vA1 = row[2]
-            val vA2 = row[3]
-            val vA3 = row[4]
-            val vA4 = row[5]
-            totalCoefficients += vVN * sin(vA0 + vA1 * t + vA2 * t.pow(2) + vA3 * t.pow(3) + vA4 * t.pow(4))
+
+        for (row in arrayDoubleArray) {
+            totalCoefficients += row[0] * sin(row[1] + row[2] * t + row[3] * t.pow(2) + row[4] * t.pow(3) + row[5] * t.pow(4))
         }
+
         return totalCoefficients
     }
 }

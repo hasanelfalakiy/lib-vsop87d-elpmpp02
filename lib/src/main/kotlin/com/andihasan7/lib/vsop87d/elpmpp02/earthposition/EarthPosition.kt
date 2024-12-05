@@ -23,6 +23,7 @@
  
 package com.andihasan7.lib.vsop87d.elpmpp02.earthposition
 
+import com.andihasan7.lib.vsop87d.elpmpp02.earthterms.*
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.JulianType
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.DistanceType
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.UnitType
@@ -44,12 +45,12 @@ object EarthPosition {
     */
     fun earthHeliocentricLongitude(jd: Double, deltaT: Double = 0.0, unitType: UnitType = UnitType.DEGREES): Double {
     
-        val earthL0 = "EARTH-L0.bin"
-        val earthL1 = "EARTH-L1.bin"
-        val earthL2 = "EARTH-L2.bin"
-        val earthL3 = "EARTH-L3.bin"
-        val earthL4 = "EARTH-L4.bin"
-        val earthL5 = "EARTH-L5.bin"
+        val earthL0 = EARTH_L0.earth_L0
+        val earthL1 = EARTH_L1.earth_L1
+        val earthL2 = EARTH_L2.earth_L2
+        val earthL3 = EARTH_L3.earth_L3
+        val earthL4 = EARTH_L4.earth_L4
+        val earthL5 = EARTH_L5.earth_L5
         
         val t = TimeUtil.julianType(jd, deltaT, JulianType.JME)
         
@@ -79,11 +80,11 @@ object EarthPosition {
     */
     fun earthHeliocentricLatitude(jd: Double, deltaT: Double = 0.0, unitType: UnitType = UnitType.DEGREES): Double {
     
-        val earthB0 = "EARTH-B0.bin"
-        val earthB1 = "EARTH-B1.bin"
-        val earthB2 = "EARTH-B2.bin"
-        val earthB3 = "EARTH-B3.bin"
-        val earthB4 = "EARTH-B4.bin"
+        val earthB0 = EARTH_B0.earth_B0
+        val earthB1 = EARTH_B1.earth_B1
+        val earthB2 = EARTH_B2.earth_B2
+        val earthB3 = EARTH_B3.earth_B3
+        val earthB4 = EARTH_B4.earth_B4
         
         val t = TimeUtil.julianType(jd, deltaT, JulianType.JME)
         
@@ -111,12 +112,12 @@ object EarthPosition {
     */
     fun earthRadiusVector(jd: Double, deltaT: Double = 0.0, distanceType: DistanceType): Double {
     
-        val earthR0 = "EARTH-R0.bin"
-        val earthR1 = "EARTH-R1.bin"
-        val earthR2 = "EARTH-R2.bin"
-        val earthR3 = "EARTH-R3.bin"
-        val earthR4 = "EARTH-R4.bin"
-        val earthR5 = "EARTH-R5.bin"
+        val earthR0 = EARTH_R0.earth_R0
+        val earthR1 = EARTH_R1.earth_R1
+        val earthR2 = EARTH_R2.earth_R2
+        val earthR3 = EARTH_R3.earth_R3
+        val earthR4 = EARTH_R4.earth_R4
+        val earthR5 = EARTH_R5.earth_R5
         
         val t = TimeUtil.julianType(jd, deltaT, JulianType.JME)
         

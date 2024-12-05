@@ -1,5 +1,5 @@
 package com.andihasan7.lib.vsop87d.elpmpp02.readerutil
-
+/*
 import com.esotericsoftware.kryo.kryo5.Kryo
 import com.esotericsoftware.kryo.kryo5.io.Input
 
@@ -25,3 +25,4 @@ object ReadBinaryAsArray {
         }
     }
 }
+*/

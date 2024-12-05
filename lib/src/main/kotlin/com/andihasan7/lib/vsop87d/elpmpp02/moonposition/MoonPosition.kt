@@ -40,6 +40,7 @@ import com.andihasan7.lib.vsop87d.elpmpp02.enum.MoonAltType
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.PositionType
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.UnitType
 import com.andihasan7.lib.vsop87d.elpmpp02.Nutation
+import com.andihasan7.lib.vsop87d.elpmpp02.moonterms.*
 import com.andihasan7.lib.vsop87d.elpmpp02.readerutil.MoonLBRReader
 import com.andihasan7.lib.vsop87d.elpmpp02.sunposition.SunPosition
 import com.andihasan7.lib.vsop87d.elpmpp02.timeutil.TimeUtil
@@ -60,22 +61,22 @@ object MoonPosition {
     */
     fun moonGeocentricLongitude(jd: Double, deltaT: Double = 0.0, positionType: PositionType = PositionType.TRUE, unitType: UnitType = UnitType.DEGREES): Double {
         
-        val moonL000 = "MOON-L0-00.bin"
-        val moonL001 = "MOON-L0-01.bin"
-        val moonL002 = "MOON-L0-02.bin"
-        val moonL003 = "MOON-L0-03.bin"
-        val moonL004 = "MOON-L0-04.bin"
-        val moonL005 = "MOON-L0-05.bin"
-        val moonL006 = "MOON-L0-06.bin"
-        val moonL007 = "MOON-L0-07.bin"
-        val moonL008 = "MOON-L0-08.bin"
-        val moonL009 = "MOON-L0-09.bin"
-        val moonL010 = "MOON-L0-10.bin"
-        val moonL011 = "MOON-L0-11.bin"
-        val moonL012 = "MOON-L0-12.bin"
-        val moonL1 = "MOON-L1.bin"
-        val moonL2 = "MOON-L2.bin"
-        val moonL3 = "MOON-L3.bin"
+        val moonL000 = MOON_L0_00.moon_L0_00
+        val moonL001 = MOON_L0_01.moon_L0_01
+        val moonL002 = MOON_L0_02.moon_L0_02
+        val moonL003 = MOON_L0_03.moon_L0_03
+        val moonL004 = MOON_L0_04.moon_L0_04
+        val moonL005 = MOON_L0_05.moon_L0_05
+        val moonL006 = MOON_L0_06.moon_L0_06
+        val moonL007 = MOON_L0_07.moon_L0_07
+        val moonL008 = MOON_L0_08.moon_L0_08
+        val moonL009 = MOON_L0_09.moon_L0_09
+        val moonL010 = MOON_L0_10.moon_L0_10
+        val moonL011 = MOON_L0_11.moon_L0_11
+        val moonL012 = MOON_L0_12.moon_L0_12
+        val moonL1 = MOON_L1.moon_L1
+        val moonL2 = MOON_L2.moon_L2
+        val moonL3 = MOON_L3.moon_L3
         
         val t = TimeUtil.julianType(jd, deltaT, JulianType.JCE)
         val deltaPsi = Nutation.nutationInLonAndObliquity(jd, deltaT)[0]
@@ -145,16 +146,16 @@ object MoonPosition {
     */
     fun moonGeocentricLatitude(jd: Double, deltaT: Double = 0.0, positionType: PositionType = PositionType.TRUE, unitType: UnitType = UnitType.DEGREES): Double {
         
-        val moonB000 = "MOON-B0-00.bin"
-        val moonB001 = "MOON-B0-01.bin"
-        val moonB002 = "MOON-B0-02.bin"
-        val moonB003 = "MOON-B0-03.bin"
-        val moonB004 = "MOON-B0-04.bin"
-        val moonB005 = "MOON-B0-05.bin"
-        val moonB006 = "MOON-B0-06.bin"
-        val moonB007 = "MOON-B0-07.bin"
-        val moonB1 = "MOON-B1.bin"
-        val moonB2 = "MOON-B2.bin"
+        val moonB000 = MOON_B0_00.moon_B0_00
+        val moonB001 = MOON_B0_01.moon_B0_01
+        val moonB002 = MOON_B0_02.moon_B0_02
+        val moonB003 = MOON_B0_03.moon_B0_03
+        val moonB004 = MOON_B0_04.moon_B0_04
+        val moonB005 = MOON_B0_05.moon_B0_05
+        val moonB006 = MOON_B0_06.moon_B0_06
+        val moonB007 = MOON_B0_07.moon_B0_07
+        val moonB1 = MOON_B1.moon_B1
+        val moonB2 = MOON_B2.moon_B2
         
         val t = TimeUtil.julianType(jd, deltaT, JulianType.JCE)
         
@@ -202,22 +203,22 @@ object MoonPosition {
     */
     fun moonGeocentricDistance(jd: Double, deltaT: Double = 0.0, positionType: PositionType = PositionType.TRUE, distanceType: DistanceType = DistanceType.KM): Double {
         
-        val moonR000 = "MOON-R0-00.bin"
-        val moonR001 = "MOON-R0-01.bin"
-        val moonR002 = "MOON-R0-02.bin"
-        val moonR003 = "MOON-R0-03.bin"
-        val moonR004 = "MOON-R0-04.bin"
-        val moonR005 = "MOON-R0-05.bin"
-        val moonR006 = "MOON-R0-06.bin"
-        val moonR007 = "MOON-R0-07.bin"
-        val moonR008 = "MOON-R0-08.bin"
-        val moonR009 = "MOON-R0-09.bin"
-        val moonR010 = "MOON-R0-10.bin"
-        val moonR011 = "MOON-R0-11.bin"
-        val moonR012 = "MOON-R0-12.bin"
-        val moonR1 = "MOON-R1.bin"
-        val moonR2 = "MOON-R2.bin"
-        val moonR3 = "MOON-R3.bin"
+        val moonR000 = MOON_R0_00.moon_R0_00
+        val moonR001 = MOON_R0_01.moon_R0_01
+        val moonR002 = MOON_R0_02.moon_R0_02
+        val moonR003 = MOON_R0_03.moon_R0_03
+        val moonR004 = MOON_R0_04.moon_R0_04
+        val moonR005 = MOON_R0_05.moon_R0_05
+        val moonR006 = MOON_R0_06.moon_R0_06
+        val moonR007 = MOON_R0_07.moon_R0_07
+        val moonR008 = MOON_R0_08.moon_R0_08
+        val moonR009 = MOON_R0_09.moon_R0_09
+        val moonR010 = MOON_R0_10.moon_R0_10
+        val moonR011 = MOON_R0_11.moon_R0_11
+        val moonR012 = MOON_R0_12.moon_R0_12
+        val moonR1 = MOON_R1.moon_R1
+        val moonR2 = MOON_R2.moon_R2
+        val moonR3 = MOON_R3.moon_R3
         
         val t = TimeUtil.julianType(jd, deltaT, JulianType.JCE)
         
