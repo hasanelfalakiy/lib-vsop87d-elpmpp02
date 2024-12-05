@@ -48,8 +48,8 @@ dependencies {
 
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
-    implementation(libs.coroutines)
-    implementation(libs.kryo5)
+    // implementation(libs.coroutines)
+    // implementation(libs.kryo5)
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
@@ -76,8 +76,8 @@ tasks.withType<org.jetbrains.dokka.gradle.DokkaTask>().configureEach {
     )
 }
 
-tasks.withType<Jar> {
-    from(sourceSets.main.get().resources) {
-        into("resources") // Menambahkan resource ke dalam JAR di folder resources
-    }
-}
+//tasks.withType<Jar> {
+//    from(sourceSets.main.get().resources) {
+//        into("resources") // Menambahkan resource ke dalam JAR di folder resources
+//    }
+//}
