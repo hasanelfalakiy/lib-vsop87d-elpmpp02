@@ -26,7 +26,7 @@ package com.andihasan7.lib.vsop87d.elpmpp02
 
 import com.andihasan7.lib.vsop87d.elpmpp02.timeutil.TimeUtil
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.JulianType
-import com.andihasan7.lib.vsop87d.elpmpp02.nutationterms.Nutation2000b
+import com.andihasan7.lib.vsop87d.elpmpp02.nutationterms.Nutation_2000b
 import kotlin.math.pow
 import com.andihasan7.lib.vsop87d.elpmpp02.readerutil.NutationReader
 
@@ -48,7 +48,7 @@ object Nutation {
     */
     fun nutationInLonAndObliquity(jd: Double, deltaT: Double = 0.0): DoubleArray {
         
-        val nut = Nutation2000b.nutation2000b
+        val nut = Nutation_2000b.nutation_2000b
         
         // t is the same as jce
         val t = TimeUtil.julianType(jd, deltaT, JulianType.JCE)
