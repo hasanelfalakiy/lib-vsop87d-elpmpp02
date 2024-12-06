@@ -80,8 +80,7 @@ object MoonPosition {
         
         val t = TimeUtil.julianType(jd, deltaT, JulianType.JCE)
         val deltaPsi = Nutation.nutationInLonAndObliquity(jd, deltaT)[0]
-        
-        /*
+
         val l000 = MoonLBRReader.moonLBRReader(t, moonL000)
         val l001 = MoonLBRReader.moonLBRReader(t, moonL001)
         val l002 = MoonLBRReader.moonLBRReader(t, moonL002)
@@ -95,95 +94,10 @@ object MoonPosition {
         val l010 = MoonLBRReader.moonLBRReader(t, moonL010)
         val l011 = MoonLBRReader.moonLBRReader(t, moonL011)
         val l012 = MoonLBRReader.moonLBRReader(t, moonL012)
+        val l0 = l000 + l001 + l002 + l003 + l004 + l005 + l006 + l007 + l008 + l009 + l010 + l011 + l012
         val l1 = MoonLBRReader.moonLBRReader(t, moonL1)
         val l2 = MoonLBRReader.moonLBRReader(t, moonL2)
         val l3 = MoonLBRReader.moonLBRReader(t, moonL3)
-        */
-
-        var l000 = 0.0
-        var l001 = 0.0
-        var l002 = 0.0
-        var l003 = 0.0
-        var l004 = 0.0
-        var l005 = 0.0
-        var l006 = 0.0
-        var l007 = 0.0
-        var l008 = 0.0
-        var l009 = 0.0
-        var l010 = 0.0
-        var l011 = 0.0
-        var l012 = 0.0
-        var l1 = 0.0
-        var l2 = 0.0
-        var l3 = 0.0
-
-        for (row in moonL000) {
-            l000 += row[0] * sin(row[1] + row[2] * t + row[3] * t.pow(2) + row[4] * t.pow(3) + row[5] * t.pow(4))
-        }
-
-        for (row in moonL001) {
-            l001 += row[0] * sin(row[1] + row[2] * t + row[3] * t.pow(2) + row[4] * t.pow(3) + row[5] * t.pow(4))
-        }
-
-        for (row in moonL002) {
-            l002 += row[0] * sin(row[1] + row[2] * t + row[3] * t.pow(2) + row[4] * t.pow(3) + row[5] * t.pow(4))
-        }
-
-        for (row in moonL003) {
-            l003 += row[0] * sin(row[1] + row[2] * t + row[3] * t.pow(2) + row[4] * t.pow(3) + row[5] * t.pow(4))
-        }
-
-        for (row in moonL004) {
-            l004 += row[0] * sin(row[1] + row[2] * t + row[3] * t.pow(2) + row[4] * t.pow(3) + row[5] * t.pow(4))
-        }
-
-        for (row in moonL005) {
-            l005 += row[0] * sin(row[1] + row[2] * t + row[3] * t.pow(2) + row[4] * t.pow(3) + row[5] * t.pow(4))
-        }
-
-        for (row in moonL006) {
-            l006 += row[0] * sin(row[1] + row[2] * t + row[3] * t.pow(2) + row[4] * t.pow(3) + row[5] * t.pow(4))
-        }
-
-        for (row in moonL007) {
-            l007 += row[0] * sin(row[1] + row[2] * t + row[3] * t.pow(2) + row[4] * t.pow(3) + row[5] * t.pow(4))
-        }
-
-        for (row in moonL008) {
-            l008 += row[0] * sin(row[1] + row[2] * t + row[3] * t.pow(2) + row[4] * t.pow(3) + row[5] * t.pow(4))
-        }
-
-        for (row in moonL009) {
-            l009 += row[0] * sin(row[1] + row[2] * t + row[3] * t.pow(2) + row[4] * t.pow(3) + row[5] * t.pow(4))
-        }
-
-        for (row in moonL010) {
-            l010 += row[0] * sin(row[1] + row[2] * t + row[3] * t.pow(2) + row[4] * t.pow(3) + row[5] * t.pow(4))
-        }
-
-        for (row in moonL011) {
-            l011 += row[0] * sin(row[1] + row[2] * t + row[3] * t.pow(2) + row[4] * t.pow(3) + row[5] * t.pow(4))
-        }
-
-        for (row in moonL012) {
-            l012 += row[0] * sin(row[1] + row[2] * t + row[3] * t.pow(2) + row[4] * t.pow(3) + row[5] * t.pow(4))
-        }
-
-        for (row in moonL1) {
-            l1 += row[0] * sin(row[1] + row[2] * t + row[3] * t.pow(2) + row[4] * t.pow(3) + row[5] * t.pow(4))
-        }
-
-        for (row in moonL2) {
-            l2 += row[0] * sin(row[1] + row[2] * t + row[3] * t.pow(2) + row[4] * t.pow(3) + row[5] * t.pow(4))
-        }
-
-        for (row in moonL3) {
-            l3 += row[0] * sin(row[1] + row[2] * t + row[3] * t.pow(2) + row[4] * t.pow(3) + row[5] * t.pow(4))
-        }
-
-
-
-        val l0 = l000 + l001 + l002 + l003 + l004 + l005 + l006 + l007 + l008 + l009 + l010 + l011 + l012
 
         val l = l0 + l1 * t + l2 * t.pow(2) + l3 * t.pow(3)
         val w0 = 3.81034409083088
@@ -244,8 +158,7 @@ object MoonPosition {
         val moonB2 = MOON_B2.moon_B2
         
         val t = TimeUtil.julianType(jd, deltaT, JulianType.JCE)
-        
-        /*
+
         val b000 = MoonLBRReader.moonLBRReader(t, moonB000)
         val b001 = MoonLBRReader.moonLBRReader(t, moonB001)
         val b002 = MoonLBRReader.moonLBRReader(t, moonB002)
@@ -254,62 +167,9 @@ object MoonPosition {
         val b005 = MoonLBRReader.moonLBRReader(t, moonB005)
         val b006 = MoonLBRReader.moonLBRReader(t, moonB006)
         val b007 = MoonLBRReader.moonLBRReader(t, moonB007)
+        val b0 = b000 + b001 + b002 + b003 + b004 + b005 + b006 + b007
         val b1 = MoonLBRReader.moonLBRReader(t, moonB1)
         val b2 = MoonLBRReader.moonLBRReader(t, moonB2)
-        */
-
-        var b000 = 0.0
-        var b001 = 0.0
-        var b002 = 0.0
-        var b003 = 0.0
-        var b004 = 0.0
-        var b005 = 0.0
-        var b006 = 0.0
-        var b007 = 0.0
-        var b1 = 0.0
-        var b2 = 0.0
-
-        for (row in moonB000) {
-            b000 += row[0] * sin(row[1] + row[2] * t + row[3] * t.pow(2) + row[4] * t.pow(3) + row[5] * t.pow(4))
-        }
-
-        for (row in moonB001) {
-            b001 += row[0] * sin(row[1] + row[2] * t + row[3] * t.pow(2) + row[4] * t.pow(3) + row[5] * t.pow(4))
-        }
-
-        for (row in moonB002) {
-            b002 += row[0] * sin(row[1] + row[2] * t + row[3] * t.pow(2) + row[4] * t.pow(3) + row[5] * t.pow(4))
-        }
-
-        for (row in moonB003) {
-            b003 += row[0] * sin(row[1] + row[2] * t + row[3] * t.pow(2) + row[4] * t.pow(3) + row[5] * t.pow(4))
-        }
-
-        for (row in moonB004) {
-            b004 += row[0] * sin(row[1] + row[2] * t + row[3] * t.pow(2) + row[4] * t.pow(3) + row[5] * t.pow(4))
-        }
-
-        for (row in moonB005) {
-            b005 += row[0] * sin(row[1] + row[2] * t + row[3] * t.pow(2) + row[4] * t.pow(3) + row[5] * t.pow(4))
-        }
-
-        for (row in moonB006) {
-            b006 += row[0] * sin(row[1] + row[2] * t + row[3] * t.pow(2) + row[4] * t.pow(3) + row[5] * t.pow(4))
-        }
-
-        for (row in moonB007) {
-            b007 += row[0] * sin(row[1] + row[2] * t + row[3] * t.pow(2) + row[4] * t.pow(3) + row[5] * t.pow(4))
-        }
-
-        for (row in moonB1) {
-            b1 += row[0] * sin(row[1] + row[2] * t + row[3] * t.pow(2) + row[4] * t.pow(3) + row[5] * t.pow(4))
-        }
-
-        for (row in moonB2) {
-            b2 += row[0] * sin(row[1] + row[2] * t + row[3] * t.pow(2) + row[4] * t.pow(3) + row[5] * t.pow(4))
-        }
-
-        val b0 = b000 + b001 + b002 + b003 + b004 + b005 + b006 + b007
 
         val betaAp = (b0 + b1 * t + b2 * t.pow(2)) / 3600
         val betaApRad = Math.toRadians(betaAp)
@@ -361,8 +221,7 @@ object MoonPosition {
         val moonR3 = MOON_R3.moon_R3
         
         val t = TimeUtil.julianType(jd, deltaT, JulianType.JCE)
-        
-        /*
+
         val r000 = MoonLBRReader.moonLBRReader(t, moonR000)
         val r001 = MoonLBRReader.moonLBRReader(t, moonR001)
         val r002 = MoonLBRReader.moonLBRReader(t, moonR002)
@@ -376,93 +235,10 @@ object MoonPosition {
         val r010 = MoonLBRReader.moonLBRReader(t, moonR010)
         val r011 = MoonLBRReader.moonLBRReader(t, moonR011)
         val r012 = MoonLBRReader.moonLBRReader(t, moonR012)
+        val r0 = r000 + r001 + r002 + r003 + r004 + r005 + r006 + r007 + r008 + r009 + r010 + r011 + r012
         val r1 = MoonLBRReader.moonLBRReader(t, moonR1)
         val r2 = MoonLBRReader.moonLBRReader(t, moonR2)
         val r3 = MoonLBRReader.moonLBRReader(t, moonR3)
-        */
-
-        var r000 = 0.0
-        var r001 = 0.0
-        var r002 = 0.0
-        var r003 = 0.0
-        var r004 = 0.0
-        var r005 = 0.0
-        var r006 = 0.0
-        var r007 = 0.0
-        var r008 = 0.0
-        var r009 = 0.0
-        var r010 = 0.0
-        var r011 = 0.0
-        var r012 = 0.0
-        var r1 = 0.0
-        var r2 = 0.0
-        var r3 = 0.0
-
-        for (row in moonR000) {
-            r000 += row[0] * sin(row[1] + row[2] * t + row[3] * t.pow(2) + row[4] * t.pow(3) + row[5] * t.pow(4))
-        }
-
-        for (row in moonR001) {
-            r001 += row[0] * sin(row[1] + row[2] * t + row[3] * t.pow(2) + row[4] * t.pow(3) + row[5] * t.pow(4))
-        }
-
-        for (row in moonR002) {
-            r002 += row[0] * sin(row[1] + row[2] * t + row[3] * t.pow(2) + row[4] * t.pow(3) + row[5] * t.pow(4))
-        }
-
-        for (row in moonR003) {
-            r003 += row[0] * sin(row[1] + row[2] * t + row[3] * t.pow(2) + row[4] * t.pow(3) + row[5] * t.pow(4))
-        }
-
-        for (row in moonR004) {
-            r004 += row[0] * sin(row[1] + row[2] * t + row[3] * t.pow(2) + row[4] * t.pow(3) + row[5] * t.pow(4))
-        }
-
-        for (row in moonR005) {
-            r005 += row[0] * sin(row[1] + row[2] * t + row[3] * t.pow(2) + row[4] * t.pow(3) + row[5] * t.pow(4))
-        }
-
-        for (row in moonR006) {
-            r006 += row[0] * sin(row[1] + row[2] * t + row[3] * t.pow(2) + row[4] * t.pow(3) + row[5] * t.pow(4))
-        }
-
-        for (row in moonR007) {
-            r007 += row[0] * sin(row[1] + row[2] * t + row[3] * t.pow(2) + row[4] * t.pow(3) + row[5] * t.pow(4))
-        }
-
-        for (row in moonR008) {
-            r008 += row[0] * sin(row[1] + row[2] * t + row[3] * t.pow(2) + row[4] * t.pow(3) + row[5] * t.pow(4))
-        }
-
-        for (row in moonR009) {
-            r009 += row[0] * sin(row[1] + row[2] * t + row[3] * t.pow(2) + row[4] * t.pow(3) + row[5] * t.pow(4))
-        }
-
-        for (row in moonR010) {
-            r010 += row[0] * sin(row[1] + row[2] * t + row[3] * t.pow(2) + row[4] * t.pow(3) + row[5] * t.pow(4))
-        }
-
-        for (row in moonR011) {
-            r011 += row[0] * sin(row[1] + row[2] * t + row[3] * t.pow(2) + row[4] * t.pow(3) + row[5] * t.pow(4))
-        }
-
-        for (row in moonR012) {
-            r012 += row[0] * sin(row[1] + row[2] * t + row[3] * t.pow(2) + row[4] * t.pow(3) + row[5] * t.pow(4))
-        }
-
-        for (row in moonR1) {
-            r1 += row[0] * sin(row[1] + row[2] * t + row[3] * t.pow(2) + row[4] * t.pow(3) + row[5] * t.pow(4))
-        }
-
-        for (row in moonR2) {
-            r2 += row[0] * sin(row[1] + row[2] * t + row[3] * t.pow(2) + row[4] * t.pow(3) + row[5] * t.pow(4))
-        }
-
-        for (row in moonR3) {
-            r3 += row[0] * sin(row[1] + row[2] * t + row[3] * t.pow(2) + row[4] * t.pow(3) + row[5] * t.pow(4))
-        }
-
-        val r0 = r000 + r001 + r002 + r003 + r004 + r005 + r006 + r007 + r008 + r009 + r010 + r011 + r012
 
         // r true km
         val rTrueKM = r0 + r1 * t + r2 * t.pow(2) + r3 * t.pow(3)
