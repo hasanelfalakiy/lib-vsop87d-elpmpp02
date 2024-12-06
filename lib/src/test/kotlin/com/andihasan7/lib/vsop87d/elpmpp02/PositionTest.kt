@@ -43,7 +43,7 @@ class LibraryTest {
         val hourD = (17 + 51.0 / 60 + 27.0 / 3600)
         
         val ephe = VSOP87DELPMPP02(
-            date = 20,
+            date = 30,
             month = 4,
             year = 2023,
             latitude = -7.029055555556,

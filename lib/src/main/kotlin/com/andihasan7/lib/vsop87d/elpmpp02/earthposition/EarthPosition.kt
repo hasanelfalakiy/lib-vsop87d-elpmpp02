@@ -29,6 +29,7 @@ import com.andihasan7.lib.vsop87d.elpmpp02.enum.DistanceType
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.UnitType
 import com.andihasan7.lib.vsop87d.elpmpp02.timeutil.TimeUtil
 import com.andihasan7.lib.vsop87d.elpmpp02.readerutil.EarthLBRReader
+import kotlin.math.cos
 import kotlin.math.pow
 import kotlin.mod
 
@@ -54,16 +55,47 @@ object EarthPosition {
         
         val t = TimeUtil.julianType(jd, deltaT, JulianType.JME)
         
-        val l0 = EarthLBRReader.earthLBRReader(t, earthL0)
+        /*val l0 = EarthLBRReader.earthLBRReader(t, earthL0)
         val l1 = EarthLBRReader.earthLBRReader(t, earthL1)
         val l2 = EarthLBRReader.earthLBRReader(t, earthL2)
         val l3 = EarthLBRReader.earthLBRReader(t, earthL3)
         val l4 = EarthLBRReader.earthLBRReader(t, earthL4)
-        val l5 = EarthLBRReader.earthLBRReader(t, earthL5)
-        
+        val l5 = EarthLBRReader.earthLBRReader(t, earthL5)*/
+        var l0 = 0.0
+        var l1 = 0.0
+        var l2 = 0.0
+        var l3 = 0.0
+        var l4 = 0.0
+        var l5 = 0.0
+
+        for (row in earthL0) {
+            l0 += row[0] * cos(row[1] + row[2] * t)
+        }
+
+        for (row in earthL1) {
+            l1 += row[0] * cos(row[1] + row[2] * t)
+        }
+
+        for (row in earthL2) {
+            l2 += row[0] * cos(row[1] + row[2] * t)
+        }
+
+        for (row in earthL3) {
+            l3 += row[0] * cos(row[1] + row[2] * t)
+        }
+
+        for (row in earthL4) {
+            l4 += row[0] * cos(row[1] + row[2] * t)
+        }
+
+        for (row in earthL5) {
+            l5 += row[0] * cos(row[1] + row[2] * t)
+        }
+
         val eartHeliocentricLongitude = (l0 + l1 * t + l2 * t.pow(2) + l3 * t.pow(3) + l4 * t.pow(4) + l5 * t.pow(5)).mod(360.0)
-        
+
         return when (unitType) {
+
             UnitType.DEGREES -> (Math.toDegrees(eartHeliocentricLongitude)).mod(360.0)
             UnitType.RADIANS -> eartHeliocentricLongitude
         }
@@ -88,11 +120,37 @@ object EarthPosition {
         
         val t = TimeUtil.julianType(jd, deltaT, JulianType.JME)
         
-        val b0 = EarthLBRReader.earthLBRReader(t, earthB0)
+        /*val b0 = EarthLBRReader.earthLBRReader(t, earthB0)
         val b1 = EarthLBRReader.earthLBRReader(t, earthB1)
         val b2 = EarthLBRReader.earthLBRReader(t, earthB2)
         val b3 = EarthLBRReader.earthLBRReader(t, earthB3)
-        val b4 = EarthLBRReader.earthLBRReader(t, earthB4)
+        val b4 = EarthLBRReader.earthLBRReader(t, earthB4)*/
+
+        var b0 = 0.0
+        var b1 = 0.0
+        var b2 = 0.0
+        var b3 = 0.0
+        var b4 = 0.0
+
+        for (row in earthB0) {
+            b0 += row[0] * cos(row[1] + row[2] * t)
+        }
+
+        for (row in earthB1) {
+            b1 += row[0] * cos(row[1] + row[2] * t)
+        }
+
+        for (row in earthB2) {
+            b2 += row[0] * cos(row[1] + row[2] * t)
+        }
+
+        for (row in earthB3) {
+            b3 += row[0] * cos(row[1] + row[2] * t)
+        }
+
+        for (row in earthB4) {
+            b4 += row[0] * cos(row[1] + row[2] * t)
+        }
         
         val eartHeliocentricLatitude = b0 + b1 * t + b2 * t.pow(2) + b3 * t.pow(3) + b4 * t.pow(4)
         
@@ -121,12 +179,43 @@ object EarthPosition {
         
         val t = TimeUtil.julianType(jd, deltaT, JulianType.JME)
         
-        val r0 = EarthLBRReader.earthLBRReader(t, earthR0)
+        /*val r0 = EarthLBRReader.earthLBRReader(t, earthR0)
         val r1 = EarthLBRReader.earthLBRReader(t, earthR1)
         val r2 = EarthLBRReader.earthLBRReader(t, earthR2)
         val r3 = EarthLBRReader.earthLBRReader(t, earthR3)
         val r4 = EarthLBRReader.earthLBRReader(t, earthR4)
-        val r5 = EarthLBRReader.earthLBRReader(t, earthR5)
+        val r5 = EarthLBRReader.earthLBRReader(t, earthR5)*/
+        var r0 = 0.0
+        var r1 = 0.0
+        var r2 = 0.0
+        var r3 = 0.0
+        var r4 = 0.0
+        var r5 = 0.0
+
+        for (row in earthR0) {
+            r0 += row[0] * cos(row[1] + row[2] * t)
+        }
+
+        for (row in earthR1) {
+            r1 += row[0] * cos(row[1] + row[2] * t)
+        }
+
+        for (row in earthR2) {
+            r2 += row[0] * cos(row[1] + row[2] * t)
+        }
+
+        for (row in earthR3) {
+            r3 += row[0] * cos(row[1] + row[2] * t)
+        }
+
+        for (row in earthR4) {
+            r4 += row[0] * cos(row[1] + row[2] * t)
+        }
+
+        for (row in earthR5) {
+            r5 += row[0] * cos(row[1] + row[2] * t)
+        }
+
         
         val _earthRadiusVector = r0 + r1 * t + r2 * t.pow(2) + r3 * t.pow(3) + r4 * t.pow(4) + r5 * t.pow(5)
         
