@@ -23,6 +23,9 @@
  
 package com.andihasan7.lib.vsop87d.elpmpp02.readerutil
 
+import io.deephaven.csv.CsvSpecs
+import io.deephaven.csv.reading.CsvReader
+import io.deephaven.csv.sinks.SinkFactory
 import kotlin.math.cos
 
 
@@ -45,6 +48,44 @@ object EarthLBRReader {
         }
 
         return totalCoefficients
+    }
+
+    /**
+     * function to read earth lbr csv file and calculate the coefficients with deephaven
+     *
+     * @param t is the same as jme Julian Millenium Ephemeris
+     * @param resourcePath path of csv file
+     *
+     * @return totalCoefficients
+     */
+    fun earthLBRDeephavenReader(t: Double, resourcePath: String): Double {
+
+        val inputStream = this::class.java.classLoader.getResourceAsStream(resourcePath) ?: throw IllegalArgumentException("File not found: $resourcePath")
+
+        // configure csv specs
+        val specs = CsvSpecs.csv()
+        // read csv using Deephaven
+        val result = CsvReader.read(specs, inputStream, SinkFactory.arrays())
+        val numRows = result.numRows()
+
+        var totalCoefficients = 0.0
+
+        // find the columns by name
+        val aColumn = result.columns()[1].data() as? DoubleArray ?: throw IllegalStateException("Column 1 (A) not found or invalid type")
+        val bColumn = result.columns()[2].data() as? DoubleArray ?: throw IllegalStateException("Column 2 (B) not found or invalid type")
+        val cColumn = result.columns()[3].data() as? DoubleArray ?: throw IllegalStateException("Column 3 (C) not found or invalid type")
+
+        // proses each row
+        for (rowIndex in 0 until numRows.toInt()) {
+            val vA = aColumn[rowIndex]
+            val vB = bColumn[rowIndex]
+            val vC = cColumn[rowIndex]
+
+            totalCoefficients += vA * cos(vB + vC * t)
+        }
+
+        return totalCoefficients
+
     }
 
 }

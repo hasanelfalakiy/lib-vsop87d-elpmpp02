@@ -61,7 +61,7 @@ object MoonPosition {
     */
     fun moonGeocentricLongitude(jd: Double, deltaT: Double = 0.0, positionType: PositionType = PositionType.TRUE, unitType: UnitType = UnitType.DEGREES): Double {
         
-        val moonL000 = MOON_L0_00.moon_L0_00
+        /*val moonL000 = MOON_L0_00.moon_L0_00
         val moonL001 = MOON_L0_01.moon_L0_01
         val moonL002 = MOON_L0_02.moon_L0_02
         val moonL003 = MOON_L0_03.moon_L0_03
@@ -76,28 +76,44 @@ object MoonPosition {
         val moonL012 = MOON_L0_12.moon_L0_12
         val moonL1 = MOON_L1.moon_L1
         val moonL2 = MOON_L2.moon_L2
-        val moonL3 = MOON_L3.moon_L3
+        val moonL3 = MOON_L3.moon_L3*/
+        val moonL000 = "MOON-L0-00.csv"
+        val moonL001 = "MOON-L0-01.csv"
+        val moonL002 = "MOON-L0-02.csv"
+        val moonL003 = "MOON-L0-03.csv"
+        val moonL004 = "MOON-L0-04.csv"
+        val moonL005 = "MOON-L0-05.csv"
+        val moonL006 = "MOON-L0-06.csv"
+        val moonL007 = "MOON-L0-07.csv"
+        val moonL008 = "MOON-L0-08.csv"
+        val moonL009 = "MOON-L0-09.csv"
+        val moonL010 = "MOON-L0-10.csv"
+        val moonL011 = "MOON-L0-11.csv"
+        val moonL012 = "MOON-L0-12.csv"
+        val moonL1 = "MOON-L1.csv"
+        val moonL2 = "MOON-L2.csv"
+        val moonL3 = "MOON-L3.csv"
         
         val t = TimeUtil.julianType(jd, deltaT, JulianType.JCE)
         val deltaPsi = Nutation.nutationInLonAndObliquity(jd, deltaT)[0]
 
-        val l000 = MoonLBRReader.moonLBRReader(t, moonL000)
-        val l001 = MoonLBRReader.moonLBRReader(t, moonL001)
-        val l002 = MoonLBRReader.moonLBRReader(t, moonL002)
-        val l003 = MoonLBRReader.moonLBRReader(t, moonL003)
-        val l004 = MoonLBRReader.moonLBRReader(t, moonL004)
-        val l005 = MoonLBRReader.moonLBRReader(t, moonL005)
-        val l006 = MoonLBRReader.moonLBRReader(t, moonL006)
-        val l007 = MoonLBRReader.moonLBRReader(t, moonL007)
-        val l008 = MoonLBRReader.moonLBRReader(t, moonL008)
-        val l009 = MoonLBRReader.moonLBRReader(t, moonL009)
-        val l010 = MoonLBRReader.moonLBRReader(t, moonL010)
-        val l011 = MoonLBRReader.moonLBRReader(t, moonL011)
-        val l012 = MoonLBRReader.moonLBRReader(t, moonL012)
+        val l000 = MoonLBRReader.moonLBRDeephavenReader(t, moonL000)
+        val l001 = MoonLBRReader.moonLBRDeephavenReader(t, moonL001)
+        val l002 = MoonLBRReader.moonLBRDeephavenReader(t, moonL002)
+        val l003 = MoonLBRReader.moonLBRDeephavenReader(t, moonL003)
+        val l004 = MoonLBRReader.moonLBRDeephavenReader(t, moonL004)
+        val l005 = MoonLBRReader.moonLBRDeephavenReader(t, moonL005)
+        val l006 = MoonLBRReader.moonLBRDeephavenReader(t, moonL006)
+        val l007 = MoonLBRReader.moonLBRDeephavenReader(t, moonL007)
+        val l008 = MoonLBRReader.moonLBRDeephavenReader(t, moonL008)
+        val l009 = MoonLBRReader.moonLBRDeephavenReader(t, moonL009)
+        val l010 = MoonLBRReader.moonLBRDeephavenReader(t, moonL010)
+        val l011 = MoonLBRReader.moonLBRDeephavenReader(t, moonL011)
+        val l012 = MoonLBRReader.moonLBRDeephavenReader(t, moonL012)
         val l0 = l000 + l001 + l002 + l003 + l004 + l005 + l006 + l007 + l008 + l009 + l010 + l011 + l012
-        val l1 = MoonLBRReader.moonLBRReader(t, moonL1)
-        val l2 = MoonLBRReader.moonLBRReader(t, moonL2)
-        val l3 = MoonLBRReader.moonLBRReader(t, moonL3)
+        val l1 = MoonLBRReader.moonLBRDeephavenReader(t, moonL1)
+        val l2 = MoonLBRReader.moonLBRDeephavenReader(t, moonL2)
+        val l3 = MoonLBRReader.moonLBRDeephavenReader(t, moonL3)
 
         val l = l0 + l1 * t + l2 * t.pow(2) + l3 * t.pow(3)
         val w0 = 3.81034409083088
@@ -146,7 +162,7 @@ object MoonPosition {
     */
     fun moonGeocentricLatitude(jd: Double, deltaT: Double = 0.0, positionType: PositionType = PositionType.TRUE, unitType: UnitType = UnitType.DEGREES): Double {
         
-        val moonB000 = MOON_B0_00.moon_B0_00
+        /*val moonB000 = MOON_B0_00.moon_B0_00
         val moonB001 = MOON_B0_01.moon_B0_01
         val moonB002 = MOON_B0_02.moon_B0_02
         val moonB003 = MOON_B0_03.moon_B0_03
@@ -155,21 +171,31 @@ object MoonPosition {
         val moonB006 = MOON_B0_06.moon_B0_06
         val moonB007 = MOON_B0_07.moon_B0_07
         val moonB1 = MOON_B1.moon_B1
-        val moonB2 = MOON_B2.moon_B2
+        val moonB2 = MOON_B2.moon_B2*/
+        val moonB000 = "MOON-B0-00.csv"
+        val moonB001 = "MOON-B0-01.csv"
+        val moonB002 = "MOON-B0-02.csv"
+        val moonB003 = "MOON-B0-03.csv"
+        val moonB004 = "MOON-B0-04.csv"
+        val moonB005 = "MOON-B0-05.csv"
+        val moonB006 = "MOON-B0-06.csv"
+        val moonB007 = "MOON-B0-07.csv"
+        val moonB1 = "MOON-B1.csv"
+        val moonB2 = "MOON-B2.csv"
         
         val t = TimeUtil.julianType(jd, deltaT, JulianType.JCE)
 
-        val b000 = MoonLBRReader.moonLBRReader(t, moonB000)
-        val b001 = MoonLBRReader.moonLBRReader(t, moonB001)
-        val b002 = MoonLBRReader.moonLBRReader(t, moonB002)
-        val b003 = MoonLBRReader.moonLBRReader(t, moonB003)
-        val b004 = MoonLBRReader.moonLBRReader(t, moonB004)
-        val b005 = MoonLBRReader.moonLBRReader(t, moonB005)
-        val b006 = MoonLBRReader.moonLBRReader(t, moonB006)
-        val b007 = MoonLBRReader.moonLBRReader(t, moonB007)
+        val b000 = MoonLBRReader.moonLBRDeephavenReader(t, moonB000)
+        val b001 = MoonLBRReader.moonLBRDeephavenReader(t, moonB001)
+        val b002 = MoonLBRReader.moonLBRDeephavenReader(t, moonB002)
+        val b003 = MoonLBRReader.moonLBRDeephavenReader(t, moonB003)
+        val b004 = MoonLBRReader.moonLBRDeephavenReader(t, moonB004)
+        val b005 = MoonLBRReader.moonLBRDeephavenReader(t, moonB005)
+        val b006 = MoonLBRReader.moonLBRDeephavenReader(t, moonB006)
+        val b007 = MoonLBRReader.moonLBRDeephavenReader(t, moonB007)
         val b0 = b000 + b001 + b002 + b003 + b004 + b005 + b006 + b007
-        val b1 = MoonLBRReader.moonLBRReader(t, moonB1)
-        val b2 = MoonLBRReader.moonLBRReader(t, moonB2)
+        val b1 = MoonLBRReader.moonLBRDeephavenReader(t, moonB1)
+        val b2 = MoonLBRReader.moonLBRDeephavenReader(t, moonB2)
 
         val betaAp = (b0 + b1 * t + b2 * t.pow(2)) / 3600
         val betaApRad = Math.toRadians(betaAp)
@@ -203,7 +229,7 @@ object MoonPosition {
     */
     fun moonGeocentricDistance(jd: Double, deltaT: Double = 0.0, positionType: PositionType = PositionType.TRUE, distanceType: DistanceType = DistanceType.KM): Double {
         
-        val moonR000 = MOON_R0_00.moon_R0_00
+        /*val moonR000 = MOON_R0_00.moon_R0_00
         val moonR001 = MOON_R0_01.moon_R0_01
         val moonR002 = MOON_R0_02.moon_R0_02
         val moonR003 = MOON_R0_03.moon_R0_03
@@ -218,27 +244,43 @@ object MoonPosition {
         val moonR012 = MOON_R0_12.moon_R0_12
         val moonR1 = MOON_R1.moon_R1
         val moonR2 = MOON_R2.moon_R2
-        val moonR3 = MOON_R3.moon_R3
+        val moonR3 = MOON_R3.moon_R3*/
+        val moonR000 = "MOON-R0-00.csv"
+        val moonR001 = "MOON-R0-01.csv"
+        val moonR002 = "MOON-R0-02.csv"
+        val moonR003 = "MOON-R0-03.csv"
+        val moonR004 = "MOON-R0-04.csv"
+        val moonR005 = "MOON-R0-05.csv"
+        val moonR006 = "MOON-R0-06.csv"
+        val moonR007 = "MOON-R0-07.csv"
+        val moonR008 = "MOON-R0-08.csv"
+        val moonR009 = "MOON-R0-09.csv"
+        val moonR010 = "MOON-R0-10.csv"
+        val moonR011 = "MOON-R0-11.csv"
+        val moonR012 = "MOON-R0-12.csv"
+        val moonR1 = "MOON-R1.csv"
+        val moonR2 = "MOON-R2.csv"
+        val moonR3 = "MOON-R3.csv"
         
         val t = TimeUtil.julianType(jd, deltaT, JulianType.JCE)
 
-        val r000 = MoonLBRReader.moonLBRReader(t, moonR000)
-        val r001 = MoonLBRReader.moonLBRReader(t, moonR001)
-        val r002 = MoonLBRReader.moonLBRReader(t, moonR002)
-        val r003 = MoonLBRReader.moonLBRReader(t, moonR003)
-        val r004 = MoonLBRReader.moonLBRReader(t, moonR004)
-        val r005 = MoonLBRReader.moonLBRReader(t, moonR005)
-        val r006 = MoonLBRReader.moonLBRReader(t, moonR006)
-        val r007 = MoonLBRReader.moonLBRReader(t, moonR007)
-        val r008 = MoonLBRReader.moonLBRReader(t, moonR008)
-        val r009 = MoonLBRReader.moonLBRReader(t, moonR009)
-        val r010 = MoonLBRReader.moonLBRReader(t, moonR010)
-        val r011 = MoonLBRReader.moonLBRReader(t, moonR011)
-        val r012 = MoonLBRReader.moonLBRReader(t, moonR012)
+        val r000 = MoonLBRReader.moonLBRDeephavenReader(t, moonR000)
+        val r001 = MoonLBRReader.moonLBRDeephavenReader(t, moonR001)
+        val r002 = MoonLBRReader.moonLBRDeephavenReader(t, moonR002)
+        val r003 = MoonLBRReader.moonLBRDeephavenReader(t, moonR003)
+        val r004 = MoonLBRReader.moonLBRDeephavenReader(t, moonR004)
+        val r005 = MoonLBRReader.moonLBRDeephavenReader(t, moonR005)
+        val r006 = MoonLBRReader.moonLBRDeephavenReader(t, moonR006)
+        val r007 = MoonLBRReader.moonLBRDeephavenReader(t, moonR007)
+        val r008 = MoonLBRReader.moonLBRDeephavenReader(t, moonR008)
+        val r009 = MoonLBRReader.moonLBRDeephavenReader(t, moonR009)
+        val r010 = MoonLBRReader.moonLBRDeephavenReader(t, moonR010)
+        val r011 = MoonLBRReader.moonLBRDeephavenReader(t, moonR011)
+        val r012 = MoonLBRReader.moonLBRDeephavenReader(t, moonR012)
         val r0 = r000 + r001 + r002 + r003 + r004 + r005 + r006 + r007 + r008 + r009 + r010 + r011 + r012
-        val r1 = MoonLBRReader.moonLBRReader(t, moonR1)
-        val r2 = MoonLBRReader.moonLBRReader(t, moonR2)
-        val r3 = MoonLBRReader.moonLBRReader(t, moonR3)
+        val r1 = MoonLBRReader.moonLBRDeephavenReader(t, moonR1)
+        val r2 = MoonLBRReader.moonLBRDeephavenReader(t, moonR2)
+        val r3 = MoonLBRReader.moonLBRDeephavenReader(t, moonR3)
 
         // r true km
         val rTrueKM = r0 + r1 * t + r2 * t.pow(2) + r3 * t.pow(3)
