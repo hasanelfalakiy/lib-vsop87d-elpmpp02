@@ -2,11 +2,14 @@
 # https://docs.gradle.org/current/userguide/platforms.html#sub::toml-dependencies-format
 
 [versions]
+deephaven = "0.15.0"
 coroutines = "1.9.0"
 kryo5 = "5.6.2"
 junit-jupiter-engine = "5.10.2"
 
 [libraries]
+deephaven = { module = "io.deephaven:deephaven-csv", version.ref = "deephaven" }
+deephaven-double-parser = { module = "io.deephaven:deephaven-csv-fast-double-parser", version.ref = "deephaven" }
 coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines"}
 kryo5 = { module = "com.esotericsoftware.kryo:kryo5", version.ref = "kryo5" }
 junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit-jupiter-engine" }

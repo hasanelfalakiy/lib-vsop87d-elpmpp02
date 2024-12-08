@@ -48,6 +48,8 @@ dependencies {
 
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
+    implementation(libs.deephaven)
+    runtimeOnly(libs.deephaven.double.parser)
     // implementation(libs.coroutines)
     // implementation(libs.kryo5)
 }
