@@ -22,11 +22,11 @@
 # Tentang lib-vsop87d-elpmpp02
 
 VSOP87D merupakan Model teori planet (Planetary Theory) semi analitis matematika yang menggambarkan perubahan jangka panjang ( variasi sekuler ) dalam orbit planet Merkurius hingga Neptunus,
-seri D merepresentasikan koordinat Heliocentric ecliptic spherical coordinates for the equinox of the day.
+seri D merepresentasikan koordinat Heliocentric ecliptic spherical coordinates for the equinox of the day. Total suku koreksi VSOP87D: 2.425
 
-ELPMPP02 adalah Model teori semi analitis pergerakan bulan yang dikembangkan oleh Jean Chapront, Michelle Chapront-Touzé, G. Francou dan lainnya di Bureau des Longitudes pada tahun 1970an hingga 1990an, ELPMPP02 merupakan peningkatan dari model ELP sebelumnya seperti ELP2000-82, ELP2000-85, ELP2000-82B.
+ELPMPP02 adalah Model teori semi analitis pergerakan bulan yang dikembangkan oleh Jean Chapront, Michelle Chapront-Touzé, G. Francou dan lainnya di Bureau des Longitudes pada tahun 1970an hingga 1990an, ELPMPP02 merupakan peningkatan dari model ELP sebelumnya seperti ELP2000-82, ELP2000-85, ELP2000-82B. Total suku koreksi ELPMPP02: 35.901
 
-dengan itu lib-vsop87d-elpmpp02 dimaksudkan untuk mengetahui posisi matahari dan bulan secara presisi untuk keperluan falak hisab, rukyatul hilal, waktu sholat, arah qiblat, dll.
+lib-vsop87d-elpmpp02 menggunakan 2 model tersebut untuk mengetahui posisi matahari dan bulan secara presisi untuk keperluan falak hisab, rukyatul hilal, waktu sholat, arah qiblat, dll. Suku koreksi lengkap sebanyak 38.326 buah
 
 ## Dokumentasi penggunaan
 
