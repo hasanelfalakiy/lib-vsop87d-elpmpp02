@@ -26,6 +26,8 @@ seri D merepresentasikan koordinat Heliocentric ecliptic spherical coordinates f
 
 ELPMPP02 adalah Model teori semi analitis pergerakan bulan yang dikembangkan oleh Jean Chapront, Michelle Chapront-Touzé, G. Francou dan lainnya di Bureau des Longitudes pada tahun 1970an hingga 1990an, ELPMPP02 merupakan peningkatan dari model ELP sebelumnya seperti ELP2000-82, ELP2000-85, ELP2000-82B.
 
+dengan itu lib-vsop87d-elpmpp02 dimaksudkan untuk mengetahui posisi matahari dan bulan secara presisi untuk keperluan falak hisab, rukyatul hilal, waktu sholat, arah qiblat, dll.
+
 ## Dokumentasi penggunaan
 
 - [Dokumentasi](https://hasanelfalakiy.github.io/lib-vsop87d-elpmpp02/)
@@ -35,6 +37,36 @@ ELPMPP02 adalah Model teori semi analitis pergerakan bulan yang dikembangkan ole
 - [x] Posisi Matahari dan Bulan
 - [ ] Arah Qiblat & Rashdul Qiblat
 - [ ] Waktu Sholat
+
+## Konfigurasi pertama
+
+1. Masukkan kode ini ke settings.gradle.kts (root kotlin dsl) di blok ```repositories```
+```kotlin.kts
+  dependencyResolutionManagement {
+    repositories {
+      // contoh
+      maven {
+        url = uri("https://jitpack.io")
+      }
+    }
+  }
+```
+Jika menggunakan groovy dsl
+```groovy
+  repositories {
+    maven { url 'https://jitpack.io' }
+  }
+```
+2. Masukkan dependensi ke build.gradle.kts (app/build.gradle.kts kotlin dsl)
+di dalam blok ```dependencies``` 
+
+```kotlin.kts
+implementation("com.github.hasanelfalakiy:lib-vsop87d-elpmpp02:${versi}")
+```
+jika menggunakan groovy dsl
+```groovy
+implementation 'com.github.hasanelfalakiy:lib-vsop87d-elpmpp02:${versi}'
+```
 
 ## Ingin berkontribusi?
 > Jika Anda ingin berkontribusi, silahkan menggarpu (Fork) repositori ini, clone ke local machine, buat perubahan, push ke repositori fork, kirim pull request ke repositori ini
