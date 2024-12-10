@@ -37,7 +37,7 @@ object MoonPhase {
      */
     fun moonPhase(monthOfHijri: Int, yearOfHijri: Int, phaseType: PhaseType): Double {
 
-        // this formula (vHY and k) which modifies the gragorian input to hijri is taken from hisab-astronomis dev: Abu Sabda
+        // this formula (vHY and k) which modifies the gragorian input to hijri is taken from hisab-astronomis dev: Ust Abu Sabda
         val vHY = monthOfHijri.toDouble() + 12 * yearOfHijri.toDouble() - 17050
         val type = when (phaseType) {
             PhaseType.NEWMOON -> 0.0
