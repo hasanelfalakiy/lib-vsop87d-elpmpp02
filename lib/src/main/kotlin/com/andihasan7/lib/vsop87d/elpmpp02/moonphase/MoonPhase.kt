@@ -22,10 +22,7 @@
 package com.andihasan7.lib.vsop87d.elpmpp02.moonphase
 
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.PhaseType
-import kotlin.math.cos
-import kotlin.math.floor
-import kotlin.math.pow
-import kotlin.math.sin
+import kotlin.math.*
 import kotlin.mod
 
 object MoonPhase {
@@ -40,7 +37,8 @@ object MoonPhase {
      */
     fun moonPhase(monthOfHijri: Int, yearOfHijri: Int, phaseType: PhaseType): Double {
 
-        val vHY = yearOfHijri.toDouble() + ((monthOfHijri.toDouble() * 29.53) / 354.3671)
+        // this formula (vHY and k) which modifies the gragorian input to hijri is taken from hisab-astronomis dev: Abu Sabda
+        val vHY = monthOfHijri.toDouble() + 12 * yearOfHijri.toDouble() - 17050
         val type = when (phaseType) {
             PhaseType.NEWMOON -> 0.0
             PhaseType.FIRSTQUARTER -> 0.25
