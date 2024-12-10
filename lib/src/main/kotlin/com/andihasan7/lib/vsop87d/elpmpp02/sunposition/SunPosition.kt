@@ -177,7 +177,7 @@ object SunPosition {
         val beta = sunTrueGeocentricLatitude(jd, deltaT)
         val epsilon = Nutation.trueObliquityOfEcliptic(jd, deltaT)
         
-        val sunDecDeg = (Math.toDegrees(asin(sin(Math.toRadians(beta)) * cos(Math.toRadians(epsilon)) + cos(Math.toRadians(beta)) * sin(Math.toRadians(epsilon)) * sin(Math.toRadians(lambda))))).mod(360.0)
+        val sunDecDeg = Math.toDegrees(asin(sin(Math.toRadians(beta)) * cos(Math.toRadians(epsilon)) + cos(Math.toRadians(beta)) * sin(Math.toRadians(epsilon)) * sin(Math.toRadians(lambda))))
         val sunDecRad = Math.toRadians(sunDecDeg)
         
         return when (unitType) {
