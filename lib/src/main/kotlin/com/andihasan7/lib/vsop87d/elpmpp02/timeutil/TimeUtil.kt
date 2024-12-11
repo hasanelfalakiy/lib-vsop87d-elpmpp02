@@ -126,7 +126,11 @@ object TimeUtil {
         val namePasaran = ConvertUtil.toNamePasaran(numbPasaran)
         // name of month
         val nameMonth = ConvertUtil.toNameMonth(blnGreg.toInt())
-        
+        // DPDDMMYY format eq. Rabu Pon, 1 Januari 2025
+        val dpddmmyy = "$nameDay $namePasaran, ${(tglGreg).toInt()} $nameMonth ${(thnGreg).toInt()}"
+        // DPDDMMYY format eq. Rabu Pon, 1 Januari 2025 M
+        val dpddmmyym = "$nameDay $namePasaran, ${(tglGreg).toInt()} $nameMonth ${(thnGreg).toInt()} M"
+
         return when (dateFormat) {
             DateFormat.DATE -> (tglGreg).toInt() as? T
             DateFormat.MONTH_INT -> (blnGreg).toInt() as? T
@@ -136,6 +140,8 @@ object TimeUtil {
             DateFormat.DAY_NAME -> nameDay as? T
             DateFormat.PASARAN_INT -> numbPasaran as? T
             DateFormat.PASARAN_NAME -> namePasaran as? T
+            DateFormat.DPDDMMYY -> dpddmmyy as? T
+            DateFormat.DPDDMMYYM -> dpddmmyym as? T
             DateFormat.HOUR_DOUBLE -> hourDouble as? T
             DateFormat.FRAC_DAY -> fracD as? T
         }
