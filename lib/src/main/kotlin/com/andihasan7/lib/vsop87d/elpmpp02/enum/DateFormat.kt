@@ -32,6 +32,8 @@ enum class DateFormat {
     DAY_NAME,
     PASARAN_INT,
     PASARAN_NAME,
+    DPDDMMYY,
+    DPDDMMYYM,
     HOUR_DOUBLE,
     FRAC_DAY
 }
