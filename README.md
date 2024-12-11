@@ -34,9 +34,11 @@ lib-vsop87d-elpmpp02 menggunakan 2 model tersebut untuk mengetahui posisi mataha
 
 ## Fitur
 
-- [x] Posisi Matahari dan Bulan
-- [ ] Arah Qiblat & Rashdul Qiblat
-- [ ] Waktu Sholat
+- [x] Ephemeris posisi matahari dan bulan
+- [x] Arah qiblat & rashdul qiblat
+- [x] Waktu sholat
+- [x] Fase-fase bulan
+- [ ] Awal bulan hijriyah
 
 ## Konfigurasi pertama
 
