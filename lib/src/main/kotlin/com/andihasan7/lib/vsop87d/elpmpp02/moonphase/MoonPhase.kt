@@ -99,7 +99,7 @@ object MoonPhase {
 
             PhaseType.FULLMOON -> -0.40614 * sin(m1) +
                     0.17302 * e * sin(m) +
-                    0.01614 * sin(2 * m) +
+                    0.01614 * sin(2 * m1) +
                     0.01043 * sin(2 * f) +
                     0.00734 * e * sin(m1 - m) -
                     0.00515 * e * sin(m1 + m) +
