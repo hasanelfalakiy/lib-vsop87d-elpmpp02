@@ -43,14 +43,14 @@ class LibraryTest {
         val hourD = (17 + 51.0 / 60 + 27.0 / 3600)
         
         val ephe = VSOP87DELPMPP02(
-            date = 20,
-            month = 4,
-            year = 2023,
-            latitude = -7.029055555556,
-            longitude = 106.557722222222,
-            elevation = 52.685,
+            date = 28,
+            month = 2,
+            year = 2025,
+            latitude = -7.43333333334, // -7.029055555556,
+            longitude = 111.433333333334, // 106.557722222222,
+            elevation = 150.0, // 52.685,
             timeZone = 7.0,
-            hourDouble = 17.8575,
+            hourDouble = 17.94671437500343, // 17.8575,
             checkDeltaT = true
         )
         
