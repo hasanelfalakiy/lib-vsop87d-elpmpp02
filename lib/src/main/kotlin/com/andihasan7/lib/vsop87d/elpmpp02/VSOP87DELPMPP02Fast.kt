@@ -28,8 +28,8 @@ import com.andihasan7.lib.vsop87d.elpmpp02.earthposition.EarthPosition
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.*
 import com.andihasan7.lib.vsop87d.elpmpp02.moonposition.MoonPosition
 import com.andihasan7.lib.vsop87d.elpmpp02.sunposition.SunPosition
+import com.andihasan7.lib.vsop87d.elpmpp02.timeutil.DeltaT
 import com.andihasan7.lib.vsop87d.elpmpp02.timeutil.TimeUtil
-import com.andihasan7.lib.vsop87d.elpmpp02.timeutil.deltaT
 import kotlin.math.*
 
 /**
@@ -72,7 +72,7 @@ class VSOP87DELPMPP02Fast(
      * Delta T
      */
     val deltaT: Double = if (checkDeltaT == true) {
-        deltaT(jd)
+        DeltaT.deltaT(jd)
     } else {
         0.0
     }

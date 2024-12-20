@@ -23,15 +23,6 @@
  
 package com.andihasan7.lib.vsop87d.elpmpp02.sunposition
 
-import kotlin.math.abs
-import kotlin.math.asin
-import kotlin.math.atan
-import kotlin.math.atan2
-import kotlin.math.sin
-import kotlin.math.cos
-import kotlin.math.tan
-import kotlin.math.pow
-import kotlin.math.sqrt
 import kotlin.mod
 import com.andihasan7.lib.vsop87d.elpmpp02.earthposition.EarthPosition
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.DistanceType
@@ -41,6 +32,8 @@ import com.andihasan7.lib.vsop87d.elpmpp02.enum.SunAltType
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.UnitType
 import com.andihasan7.lib.vsop87d.elpmpp02.Nutation
 import com.andihasan7.lib.vsop87d.elpmpp02.correction.Correction
+import com.andihasan7.lib.vsop87d.elpmpp02.timeutil.DeltaT
+import kotlin.math.*
 
 object SunPosition {
     
@@ -734,6 +727,46 @@ object SunPosition {
             UnitType.DEGREES -> equationOfTimeHour
             UnitType.RADIANS -> eqRad
         }
+    }
+
+    /**
+     * function to calc jd when maghrib, this formula is taken from hisab astronomis that developed by Ust. Abu Sabda
+     *
+     * @param jdNewMoon is julian day when new moon
+     * @param lon is longitude of observer
+     * @param lat is latitude of observer
+     * @param elev is elevation of observer
+     * @param timeZone is time zone of observer
+     *
+     * @return jdMaghribFinal
+     */
+    fun jdMaghrib(jdNewMoon: Double, lon: Double, lat: Double, elev: Double, timeZone: Double): Double {
+
+        var set = 17.0
+        var haMghrb: Double
+        var kwd: Double
+        val cjdn = floor(jdNewMoon + 0.5 + (timeZone / 24.0))
+        for (i in 1..3) {
+            var jdMghrb = cjdn - 0.5 + ((set - timeZone) / 24.0)
+            var jdeMghrb = jdMghrb + (DeltaT.deltaT(jdMghrb) / 86400.0)
+            var dekMghrb = sunApparentGeoDeclination(jdeMghrb)
+            var semiMghrb = sunApparentGeoSemidiameter(jdeMghrb)
+            var eotMghrb = equationOfTime(jdeMghrb)
+            var refMghrb = 34.16 / 60.0
+            var dip = Correction.dip(elev)
+            var altMghrb = 0 - semiMghrb - refMghrb - dip + 0.0024
+            var coshaMghrb = (sin(Math.toRadians(altMghrb)) - sin(Math.toRadians(lat)) * sin(Math.toRadians(dekMghrb))) / (cos(Math.toRadians(lat)) * cos(Math.toRadians(dekMghrb)))
+            if (abs(coshaMghrb) < 1) {
+                haMghrb = Math.toDegrees(acos(coshaMghrb))
+                kwd = lon / 15.0 - timeZone
+                set = haMghrb / 15.0 + 12.0 - eotMghrb - kwd
+            } else {
+                set = Double.NaN
+            }
+        }
+
+        val jdMaghribFinal = cjdn - 0.5 + (set - timeZone) / 24.0
+        return jdMaghribFinal
     }
 
 }

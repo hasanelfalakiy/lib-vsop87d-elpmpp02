@@ -23,7 +23,6 @@
 package com.andihasan7.lib.vsop87d.elpmpp02
 
 import com.andihasan7.lib.vsop87d.elpmpp02.convertutil.ConvertUtil
-import com.andihasan7.lib.vsop87d.elpmpp02.timeutil.deltaT
 import com.andihasan7.lib.vsop87d.elpmpp02.timeutil.TimeUtil
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.JulianType
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.DateFormat
@@ -36,6 +35,7 @@ import com.andihasan7.lib.vsop87d.elpmpp02.earthposition.EarthPosition
 import com.andihasan7.lib.vsop87d.elpmpp02.sunposition.SunPosition
 import com.andihasan7.lib.vsop87d.elpmpp02.correction.Correction
 import com.andihasan7.lib.vsop87d.elpmpp02.moonposition.MoonPosition
+import com.andihasan7.lib.vsop87d.elpmpp02.timeutil.DeltaT
 
 /**
 * VSOP87DELPMPP02
@@ -77,7 +77,7 @@ class VSOP87DELPMPP02(
     * Delta T
     */
     val deltaT: Double = if (checkDeltaT == true) {
-        deltaT(jd)
+        DeltaT.deltaT(jd)
     } else {
         0.0
     }

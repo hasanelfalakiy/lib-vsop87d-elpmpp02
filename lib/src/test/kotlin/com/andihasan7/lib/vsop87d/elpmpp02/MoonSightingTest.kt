@@ -20,26 +20,40 @@ class MoonSightingTest {
             checkDeltaT = true
         )
 
-        val jdNewMoon = ms.jdNewMoon
+        val jdNewMoon = ms.jdGeoNewMoonCor
         val dateNewMoon = ms.dateNewMoon
-        val hourNewMoon = ms.hourNewMoon
-        val utcHourNewMoon = ms.utcHourNewMoon
+        val dateNewMoonAA = ms.dateNewMoonAA
+        val hourNewMoon = ms.hourGeoNewMoon
+        val hourNewMoonAA = ms.hourGeoNewMoonAA
+        val utcHourNewMoon = ms.utcGeoHourNewMoon
         val dateIntNM = ms.dateNMInt
         val monthIntNM = ms.monthNMInt
         val yearIntNM = ms.yearNMInt
-        val maghribNM = ms.maghribDateNewMoon
+        val maghribNM = ms.maghribLocalDateNewMoon ?: 0.0
         val moonGeoAltitudeDMS = ms.moonGeoAltitudeDMS
         val moonAirlessTopoAltUpperDMS = ms.moonAirlessTopoAltitudeUpperLimbDMS
         val moonAirlessTopoAltCenterDMS = ms.moonAirlessTopoAltitudeCenterLimbDMS
         val moonAirlessTopoAltLowerDMS = ms.moonAirlessTopoAltitudeLowerLimbDMS
+        val moonAppaTopoAltUpperDMS = ms.moonAppaTopoAltUpperLimbDMS
+        val moonAppaTopoAltCenterDMS = ms.moonAppaTopoAltCenterLimbDMS
+        val moonAppaTopoAltLowerDMS = ms.moonAppaTopoAltLowerLimbDMS
+
+        println("jd astronomical algorithm: ${ms.jdNewMoonAstronomicalAlgorithm}")
+        println("")
         println("JD New Moon/Ijtima: $jdNewMoon")
         println("New Moon/Ijtima': $dateNewMoon, ${ConvertUtil.toTimeFullRound2(hourNewMoon ?: 0.0)} LT, ${ConvertUtil.toTimeFullRound2(utcHourNewMoon ?: 0.0)} UTC")
+        println("New Moon/Ijtima' AA: $dateNewMoonAA, ${ConvertUtil.toTimeFullRound2(hourNewMoonAA ?: 0.0)} LT, ${ConvertUtil.toTimeFullRound2(utcHourNewMoon ?: 0.0)} UTC")
         println("date month year NM: $dateIntNM $monthIntNM $yearIntNM")
         println("maghrib NM: $maghribNM, ${ConvertUtil.toTimeFullRound2(maghribNM)}")
         println("")
         println("moon geo alt: $moonGeoAltitudeDMS")
-        println("moon airless topo upper: $moonAirlessTopoAltUpperDMS")
-        println("moon airless topo center: $moonAirlessTopoAltCenterDMS")
-        println("moon airless topo lower: $moonAirlessTopoAltLowerDMS")
+        println("moon airless topo alt upper: $moonAirlessTopoAltUpperDMS")
+        println("moon airless topo alt center: $moonAirlessTopoAltCenterDMS")
+        println("moon airless topo alt lower: $moonAirlessTopoAltLowerDMS")
+        println("")
+        println("moon appa topo alt upper: $moonAppaTopoAltUpperDMS")
+        println("moon appa topo alt center: $moonAppaTopoAltCenterDMS")
+        println("moon appa topo alt lower: $moonAppaTopoAltLowerDMS")
+
     }
 }

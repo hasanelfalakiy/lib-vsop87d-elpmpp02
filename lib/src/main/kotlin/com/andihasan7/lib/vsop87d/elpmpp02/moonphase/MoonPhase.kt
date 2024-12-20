@@ -21,7 +21,9 @@
  */
 package com.andihasan7.lib.vsop87d.elpmpp02.moonphase
 
-import com.andihasan7.lib.vsop87d.elpmpp02.enum.PhaseType
+import com.andihasan7.lib.vsop87d.elpmpp02.enum.*
+import com.andihasan7.lib.vsop87d.elpmpp02.moonposition.MoonPosition
+import com.andihasan7.lib.vsop87d.elpmpp02.sunposition.SunPosition
 import kotlin.math.*
 import kotlin.mod
 
@@ -47,12 +49,25 @@ object MoonPhase {
         }
         val k = floor(vHY) + type
         val t = k / 1236.85
-        val jdeMoonPhase = 2451550.09766 + 29.530588861 * k + 0.00015437 * t.pow(2) - 0.000000150 * t.pow(3) + 0.00000000073 * t.pow(4)
+        val jdeMoonPhase = 2451550.09766 + 29.530588861 * k +
+                0.00015437 * t.pow(2) -
+                0.00000015 * t.pow(3) +
+                0.00000000073 * t.pow(4)
         val e = 1 - 0.002516 * t - 0.0000074 * t.pow(2)
-        val m = Math.toRadians((2.5534 + 29.10535670 * k - 0.0000014 * t.pow(2) - 0.00000011 * t.pow(3)).mod(360.0))
-        val m1 = Math.toRadians((201.5643 + 385.81693528 * k + 0.0107582 * t.pow(2) + 0.00001238 * t.pow(3) - 0.000000058 * t.pow(4)).mod(360.0))
-        val f = Math.toRadians((160.7108 + 390.67050284 * k - 0.0016118 * t.pow(2) - 0.00000227 * t.pow(3) + 0.000000011 * t.pow(4)).mod(360.0))
-        val omega = Math.toRadians((124.7746 - 1.56375588 * k + 0.0020672 * t.pow(2) + 0.00000215 * t.pow(3)).mod(360.0))
+        val m = Math.toRadians((2.5534 + 29.10535670 * k -
+                0.0000014 * t.pow(2) -
+                0.00000011 * t.pow(3)).mod(360.0))
+        val m1 = Math.toRadians((201.5643 + 385.81693528 * k +
+                0.0107582 * t.pow(2) +
+                0.00001238 * t.pow(3) -
+                0.000000058 * t.pow(4)).mod(360.0))
+        val f = Math.toRadians((160.7108 + 390.67050284 * k -
+                0.0016118 * t.pow(2) -
+                0.00000227 * t.pow(3) +
+                0.000000011 * t.pow(4)).mod(360.0))
+        val omega = Math.toRadians((124.7746 - 1.56375588 * k +
+                0.0020672 * t.pow(2) +
+                0.00000215 * t.pow(3)).mod(360.0))
 
         // planetary argumnets
         val a1 = Math.toRadians((299.77 + 0.107408 * k - 0.009173 * t.pow(2)).mod(360.0))
@@ -62,7 +77,7 @@ object MoonPhase {
         val a5 = Math.toRadians((84.66 + 18.206239 * k).mod(360.0))
         val a6 = Math.toRadians((141.74 + 53.303771 * k).mod(360.0))
         val a7 = Math.toRadians((207.14 + 2.453732 * k).mod(360.0))
-        val a8 = Math.toRadians((154.84 + 7.306860 * k).mod(360.0))
+        val a8 = Math.toRadians((154.84 + 7.30686 * k).mod(360.0))
         val a9 = Math.toRadians((34.52 + 27.261239 * k).mod(360.0))
         val a10 = Math.toRadians((207.19 + 0.121824 * k).mod(360.0))
         val a11 = Math.toRadians((291.34 + 1.844379 * k).mod(360.0))
@@ -71,7 +86,7 @@ object MoonPhase {
         val a14 = Math.toRadians((331.55 + 3.592518 * k).mod(360.0))
 
         val jdeCor1 = when (phaseType) {
-            PhaseType.NEWMOON -> -0.40720 * sin(m1) +
+            PhaseType.NEWMOON -> -0.4072 * sin(m1) +
                     0.17241 * e * sin(m) +
                     0.01608 * sin(2 * m1) +
                     0.01039 * sin(2 * f) +
@@ -149,7 +164,7 @@ object MoonPhase {
                     0.00002 * sin(3 * m1 + m)
         }
 
-        val w = 0.00306 - 0.00038 * cos(m) + 0.00026 * cos(m1) - 0.00002 * cos(m1 - m) + 0.00002 * cos(m1 + m) + 0.00002 * cos(2 * f)
+        val w = 0.00306 - 0.00038 * e * cos(m) + 0.00026 * cos(m1) - 0.00002 * cos(m1 - m) + 0.00002 * cos(m1 + m) + 0.00002 * cos(2 * f)
         val jdeCorrected = when (phaseType) {
             PhaseType.FIRSTQUARTER -> jdeCor1 + w
             PhaseType.LASTQUARTER -> jdeCor1 - w
@@ -171,6 +186,77 @@ object MoonPhase {
                 0.000035 * sin(a13) +
                 0.000023 * sin(a14)
 
-        return jdeMoonPhase + jdeCorrected + jdeCor2
+        return (jdeMoonPhase + jdeCorrected + jdeCor2)
     }
+
+    /**
+     * function to compute moon geocentric conjunction
+     */
+    fun moonGeoConjunction(monthOfHijri: Int, yearOfHijri: Int, deltaT: Double, conjunctionReturn: ConjunctionReturn): Double {
+
+        var jdGeoNewMoon = 0.0
+        val jdNewMoon = moonPhase(monthOfHijri, yearOfHijri, PhaseType.NEWMOON)
+
+        val x1 = jdNewMoon - (1.0 / 24.0)
+        val x2 = jdNewMoon
+        val x3 = jdNewMoon + (1.0 / 24.0)
+
+        val y1 = SunPosition.sunApparentGeocentricLongitude(x1, deltaT) - MoonPosition.moonGeocentricLongitude(x1, deltaT, PositionType.APPARENT)
+        val y2 = SunPosition.sunApparentGeocentricLongitude(x2, deltaT) - MoonPosition.moonGeocentricLongitude(x2, deltaT, PositionType.APPARENT)
+        val y3 = SunPosition.sunApparentGeocentricLongitude(x3, deltaT) - MoonPosition.moonGeocentricLongitude(x3, deltaT, PositionType.APPARENT)
+
+        val a = y2 - y1
+        val b = y3 - y2
+        val c = b - a
+
+        var vN0 = 0.0
+
+        for (i in 1..2) {
+            vN0 = -2 * y2 / (a + b + c * vN0)
+            jdGeoNewMoon = jdNewMoon + vN0 / 24.0
+        }
+
+        val geoLon = SunPosition.sunApparentGeocentricLongitude(jdGeoNewMoon, deltaT)
+
+        return when (conjunctionReturn) {
+            ConjunctionReturn.JDCONJUNCTION -> jdGeoNewMoon
+            ConjunctionReturn.LONGITUDE -> geoLon
+        }
+    }
+
+    /**
+     * function to compute moon topocentric conjunction
+     */
+    fun moonTopoConjunction(monthOfHijri: Int, yearOfHijri: Int, deltaT: Double, lon: Double, lat: Double, elev: Double, conjunctionReturn: ConjunctionReturn): Double {
+
+        val jdNewMoon = moonPhase(monthOfHijri, yearOfHijri, PhaseType.NEWMOON)
+
+        val x1 = jdNewMoon - 1 / 24
+        val x2 = jdNewMoon
+        val x3 = jdNewMoon + 1 / 24
+
+        val y1Topo = SunPosition.sunTopoLongitude(x1, lon, lat, elev, deltaT) - MoonPosition.moonTopoLongitude(x1, lon, lat, elev, deltaT)
+        val y2Topo = SunPosition.sunTopoLongitude(x2, lon, lat, elev, deltaT) - MoonPosition.moonTopoLongitude(x2, lon, lat, elev, deltaT)
+        val y3Topo = SunPosition.sunTopoLongitude(x3, lon, lat, elev, deltaT) - MoonPosition.moonTopoLongitude(x3, lon, lat, elev, deltaT)
+
+        var jdTopoNewMoon = 0.0
+        var vN0Topo = 0.0
+
+        val aTopo = y2Topo - y1Topo
+        val bTopo = y3Topo - y2Topo
+        val cTopo = aTopo - bTopo
+
+        for (i in 1..2) {
+            vN0Topo = -2 * y2Topo / (aTopo + bTopo + cTopo * vN0Topo)
+            jdTopoNewMoon = jdNewMoon + vN0Topo / 24.0
+        }
+
+        val topoLon = SunPosition.sunTopoLongitude(jdTopoNewMoon, lon, lat, elev, deltaT)
+
+        return when (conjunctionReturn) {
+            ConjunctionReturn.JDCONJUNCTION -> jdTopoNewMoon
+            ConjunctionReturn.LONGITUDE -> topoLon
+        }
+    }
+
 }

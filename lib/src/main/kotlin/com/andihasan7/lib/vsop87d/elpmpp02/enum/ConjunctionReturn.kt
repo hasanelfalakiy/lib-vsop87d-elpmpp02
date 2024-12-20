@@ -22,9 +22,7 @@
 
 package com.andihasan7.lib.vsop87d.elpmpp02.enum
 
-enum class PhaseType {
-    NEWMOON,
-    FIRSTQUARTER,
-    FULLMOON,
-    LASTQUARTER
+enum class ConjunctionReturn {
+    JDCONJUNCTION,
+    LONGITUDE
 }
