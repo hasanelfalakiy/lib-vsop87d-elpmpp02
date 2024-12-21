@@ -37,10 +37,11 @@ class MoonSightingTest {
         val moonAppaTopoAltUpperDMS = ms.moonAppaTopoAltUpperLimbDMS
         val moonAppaTopoAltCenterDMS = ms.moonAppaTopoAltCenterLimbDMS
         val moonAppaTopoAltLowerDMS = ms.moonAppaTopoAltLowerLimbDMS
-
+        
         println("jd astronomical algorithm: ${ms.jdNewMoonAstronomicalAlgorithm}")
         println("")
         println("JD New Moon/Ijtima: $jdNewMoon")
+        println("JD at New Moon: ${ms.jdGhurubSyamsPlus}")
         println("New Moon/Ijtima': $dateNewMoon, ${ConvertUtil.toTimeFullRound2(hourNewMoon ?: 0.0)} LT, ${ConvertUtil.toTimeFullRound2(utcHourNewMoon ?: 0.0)} UTC")
         println("New Moon/Ijtima' AA: $dateNewMoonAA, ${ConvertUtil.toTimeFullRound2(hourNewMoonAA ?: 0.0)} LT, ${ConvertUtil.toTimeFullRound2(utcHourNewMoon ?: 0.0)} UTC")
         println("date month year NM: $dateIntNM $monthIntNM $yearIntNM")

@@ -1,0 +1,65 @@
+{
+  "allFiles": [
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/lib-vsop87d-elpmpp02/lib/src/main/kotlin/com/andihasan7/lib/vsop87d/elpmpp02/moonphase/MoonPhase.kt",
+      "selection": {
+        "end": {
+          "column": 8,
+          "index": 2729,
+          "line": 70
+        },
+        "start": {
+          "column": 8,
+          "index": 2729,
+          "line": 70
+        }
+      }
+    },
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/lib-vsop87d-elpmpp02/lib/src/test/kotlin/com/andihasan7/lib/vsop87d/elpmpp02/MoonSightingTest.kt",
+      "selection": {
+        "end": {
+          "column": 55,
+          "index": 1735,
+          "line": 43
+        },
+        "start": {
+          "column": 55,
+          "index": 1735,
+          "line": 43
+        }
+      }
+    },
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/lib-vsop87d-elpmpp02/lib/src/main/kotlin/com/andihasan7/lib/vsop87d/elpmpp02/moonsighting/MoonSighting.kt",
+      "selection": {
+        "end": {
+          "column": 25,
+          "index": 2766,
+          "line": 70
+        },
+        "start": {
+          "column": 8,
+          "index": 2749,
+          "line": 70
+        }
+      }
+    },
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/lib-vsop87d-elpmpp02/lib/src/main/kotlin/com/andihasan7/lib/vsop87d/elpmpp02/sunposition/SunPosition.kt",
+      "selection": {
+        "end": {
+          "column": 79,
+          "index": 29282,
+          "line": 756
+        },
+        "start": {
+          "column": 79,
+          "index": 29282,
+          "line": 756
+        }
+      }
+    }
+  ],
+  "selectedFile": "/storage/emulated/0/AndroidIDEProjects/lib-vsop87d-elpmpp02/lib/src/main/kotlin/com/andihasan7/lib/vsop87d/elpmpp02/moonphase/MoonPhase.kt"
+}

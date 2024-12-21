@@ -48,23 +48,27 @@ object MoonPhase {
             PhaseType.LASTQUARTER -> 0.75
         }
         val k = floor(vHY) + type
-        val t = k / 1236.85
+        val t = k.toDouble() / 1236.85
         val jdeMoonPhase = 2451550.09766 + 29.530588861 * k +
                 0.00015437 * t.pow(2) -
                 0.00000015 * t.pow(3) +
                 0.00000000073 * t.pow(4)
         val e = 1 - 0.002516 * t - 0.0000074 * t.pow(2)
+        
         val m = Math.toRadians((2.5534 + 29.10535670 * k -
                 0.0000014 * t.pow(2) -
                 0.00000011 * t.pow(3)).mod(360.0))
+        
         val m1 = Math.toRadians((201.5643 + 385.81693528 * k +
                 0.0107582 * t.pow(2) +
                 0.00001238 * t.pow(3) -
                 0.000000058 * t.pow(4)).mod(360.0))
+        
         val f = Math.toRadians((160.7108 + 390.67050284 * k -
                 0.0016118 * t.pow(2) -
                 0.00000227 * t.pow(3) +
                 0.000000011 * t.pow(4)).mod(360.0))
+        
         val omega = Math.toRadians((124.7746 - 1.56375588 * k +
                 0.0020672 * t.pow(2) +
                 0.00000215 * t.pow(3)).mod(360.0))
@@ -168,25 +172,28 @@ object MoonPhase {
         val jdeCorrected = when (phaseType) {
             PhaseType.FIRSTQUARTER -> jdeCor1 + w
             PhaseType.LASTQUARTER -> jdeCor1 - w
-            PhaseType.NEWMOON, PhaseType.FULLMOON -> jdeCor1
+            PhaseType.NEWMOON -> jdeCor1
+            PhaseType.FULLMOON -> jdeCor1
         }
 
         val jdeCor2 = 0.000325 * sin(a1) +
                 0.000165 * sin(a2) +
                 0.000164 * sin(a3) +
                 0.000126 * sin(a4) +
-                0.000110 * sin(a5) +
+                0.00011 * sin(a5) +
                 0.000062 * sin(a6) +
-                0.000060 * sin(a7) +
+                0.00006 * sin(a7) +
                 0.000056 * sin(a8) +
                 0.000047 * sin(a9) +
                 0.000042 * sin(a10) +
-                0.000040 * sin(a11) +
+                0.00004 * sin(a11) +
                 0.000037 * sin(a12) +
                 0.000035 * sin(a13) +
                 0.000023 * sin(a14)
 
-        return (jdeMoonPhase + jdeCorrected + jdeCor2)
+        val finalJdeMoonPhase = (jdeMoonPhase + jdeCorrected + jdeCor2)
+        
+        return finalJdeMoonPhase
     }
 
     /**

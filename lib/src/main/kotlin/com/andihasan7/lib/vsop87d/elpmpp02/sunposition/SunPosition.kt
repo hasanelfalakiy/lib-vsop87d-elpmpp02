@@ -747,13 +747,14 @@ object SunPosition {
         var kwd: Double
         val cjdn = floor(jdNewMoon + 0.5 + (timeZone / 24.0))
         for (i in 1..3) {
-            var jdMghrb = cjdn - 0.5 + ((set - timeZone) / 24.0)
-            var jdeMghrb = jdMghrb + (DeltaT.deltaT(jdMghrb) / 86400.0)
+            var jdMghrb = cjdn - 0.5 + (set - timeZone) / 24.0
+            var jdeMghrb = jdMghrb + DeltaT.deltaT(jdMghrb) / 86400.0
             var dekMghrb = sunApparentGeoDeclination(jdeMghrb)
             var semiMghrb = sunApparentGeoSemidiameter(jdeMghrb)
             var eotMghrb = equationOfTime(jdeMghrb)
             var refMghrb = 34.16 / 60.0
             var dip = Correction.dip(elev)
+            // var dip = 2.1 * sqrt(elev) / 60.0 suitable for elevation in feet
             var altMghrb = 0 - semiMghrb - refMghrb - dip + 0.0024
             var coshaMghrb = (sin(Math.toRadians(altMghrb)) - sin(Math.toRadians(lat)) * sin(Math.toRadians(dekMghrb))) / (cos(Math.toRadians(lat)) * cos(Math.toRadians(dekMghrb)))
             if (abs(coshaMghrb) < 1) {
