@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>MoonSighting</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+                    <a class="library-name--link" href="../../../index.html">
+                            lib
+                    </a>
+            </div>
+            <div class="library-version">
+9.0-SNAPSHOT            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":lib:dokkaHtml/main">jvm</button>
+        </div>
+    </div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
+    </div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="lib::com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/MoonSighting///PointingToDeclaration//1440829338">
+  <div class="breadcrumbs"><a href="../../../index.html">lib</a><span class="delimiter">/</span><a href="../index.html">com.andihasan7.lib.vsop87d.elpmpp02.moonsighting</a><span class="delimiter">/</span><span class="current">MoonSighting</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Moon</span><wbr></wbr><span><span>Sighting</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">MoonSighting</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">monthOfHijri<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">1</span><span class="token punctuation">, </span></span><span class="parameter ">yearOfHijri<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">1446</span><span class="token punctuation">, </span></span><span class="parameter ">longitude<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator"> = </span><span class="token constant">0.0</span><span class="token punctuation">, </span></span><span class="parameter ">latitude<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator"> = </span><span class="token constant">0.0</span><span class="token punctuation">, </span></span><span class="parameter ">elevation<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator"> = </span><span class="token constant">0.0</span><span class="token punctuation">, </span></span><span class="parameter ">timeZone<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator"> = </span><span class="token constant">0.0</span><span class="token punctuation">, </span></span><span class="parameter ">addDate<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">0</span><span class="token punctuation">, </span></span><span class="parameter ">checkDeltaT<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">true</span><span class="token punctuation">, </span></span><span class="parameter ">temperature<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator"> = </span><span class="token constant">10.0</span><span class="token punctuation">, </span></span><span class="parameter ">pressure<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator"> = </span><span class="token constant">1010.0</span></span></span><span class="token punctuation">)</span></div><p class="paragraph">MoonSighting Warning!!! still not completed</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="">Constructors</h2>
+        <div class="table"><a data-name="1455463046%2FConstructors%2F1440829338" anchor-label="MoonSighting" id="1455463046%2FConstructors%2F1440829338" data-filterable-set=":lib:dokkaHtml/main"></a>
+          <div class="table-row" data-togglable="CONSTRUCTOR" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-moon-sighting.html"><span>Moon</span><wbr></wbr><span><span>Sighting</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1455463046%2FConstructors%2F1440829338"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">monthOfHijri<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">1</span><span class="token punctuation">, </span></span><span class="parameter ">yearOfHijri<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">1446</span><span class="token punctuation">, </span></span><span class="parameter ">longitude<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator"> = </span><span class="token constant">0.0</span><span class="token punctuation">, </span></span><span class="parameter ">latitude<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator"> = </span><span class="token constant">0.0</span><span class="token punctuation">, </span></span><span class="parameter ">elevation<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator"> = </span><span class="token constant">0.0</span><span class="token punctuation">, </span></span><span class="parameter ">timeZone<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator"> = </span><span class="token constant">0.0</span><span class="token punctuation">, </span></span><span class="parameter ">addDate<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">0</span><span class="token punctuation">, </span></span><span class="parameter ">checkDeltaT<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">true</span><span class="token punctuation">, </span></span><span class="parameter ">temperature<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator"> = </span><span class="token constant">10.0</span><span class="token punctuation">, </span></span><span class="parameter ">pressure<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator"> = </span><span class="token constant">1010.0</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="934576643%2FProperties%2F1440829338" anchor-label="dateNewMoon" id="934576643%2FProperties%2F1440829338" data-filterable-set=":lib:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="date-new-moon.html"><span>date</span><wbr></wbr><span>New</span><wbr></wbr><span><span>Moon</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="934576643%2FProperties%2F1440829338"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="date-new-moon.html">dateNewMoon</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">date when new moon DPDDMMYYM format</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="968451171%2FProperties%2F1440829338" anchor-label="dateNewMoonAA" id="968451171%2FProperties%2F1440829338" data-filterable-set=":lib:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="date-new-moon-a-a.html"><span>date</span><wbr></wbr><span>New</span><wbr></wbr><span>Moon</span><wbr></wbr><span><span>AA</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="968451171%2FProperties%2F1440829338"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="date-new-moon-a-a.html">dateNewMoonAA</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">date when new moon DPDDMMYYM format from astronomical algorithm</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1312055916%2FProperties%2F1440829338" anchor-label="dateNMInt" id="-1312055916%2FProperties%2F1440829338" data-filterable-set=":lib:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="date-n-m-int.html"><span>date</span><wbr></wbr><span><span>NMInt</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1312055916%2FProperties%2F1440829338"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="date-n-m-int.html">dateNMInt</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">date new moon int</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1605665768%2FProperties%2F1440829338" anchor-label="deltaT" id="1605665768%2FProperties%2F1440829338" data-filterable-set=":lib:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="delta-t.html"><span>delta</span><wbr></wbr><span><span>T</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1605665768%2FProperties%2F1440829338"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="delta-t.html">deltaT</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a></div><div class="brief "><p class="paragraph">deltaT</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-6530480%2FProperties%2F1440829338" anchor-label="hourGeoNewMoon" id="-6530480%2FProperties%2F1440829338" data-filterable-set=":lib:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="hour-geo-new-moon.html"><span>hour</span><wbr></wbr><span>Geo</span><wbr></wbr><span>New</span><wbr></wbr><span><span>Moon</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-6530480%2FProperties%2F1440829338"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="hour-geo-new-moon.html">hourGeoNewMoon</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">local hour when new moon geocentric</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1492361872%2FProperties%2F1440829338" anchor-label="hourGeoNewMoonAA" id="-1492361872%2FProperties%2F1440829338" data-filterable-set=":lib:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="hour-geo-new-moon-a-a.html"><span>hour</span><wbr></wbr><span>Geo</span><wbr></wbr><span>New</span><wbr></wbr><span>Moon</span><wbr></wbr><span><span>AA</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1492361872%2FProperties%2F1440829338"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="hour-geo-new-moon-a-a.html">hourGeoNewMoonAA</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">local hour when new moon geocentric from astronomical algorithm</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="783251706%2FProperties%2F1440829338" anchor-label="jdGeoNewMoon" id="783251706%2FProperties%2F1440829338" data-filterable-set=":lib:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="jd-geo-new-moon.html"><span>jd</span><wbr></wbr><span>Geo</span><wbr></wbr><span>New</span><wbr></wbr><span><span>Moon</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="783251706%2FProperties%2F1440829338"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="jd-geo-new-moon.html">jdGeoNewMoon</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a></div><div class="brief "><p class="paragraph">JD julian day when new moon/JD ijtima with tabular interpolation without deltaT</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-432955718%2FProperties%2F1440829338" anchor-label="jdGeoNewMoonCor" id="-432955718%2FProperties%2F1440829338" data-filterable-set=":lib:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="jd-geo-new-moon-cor.html"><span>jd</span><wbr></wbr><span>Geo</span><wbr></wbr><span>New</span><wbr></wbr><span>Moon</span><wbr></wbr><span><span>Cor</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-432955718%2FProperties%2F1440829338"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="jd-geo-new-moon-cor.html">jdGeoNewMoonCor</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a></div><div class="brief "><p class="paragraph">jd julian day geo when new moon/JD ijtima with deltaT</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1653678234%2FProperties%2F1440829338" anchor-label="jdGhurubSyams" id="1653678234%2FProperties%2F1440829338" data-filterable-set=":lib:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="jd-ghurub-syams.html"><span>jd</span><wbr></wbr><span>Ghurub</span><wbr></wbr><span><span>Syams</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1653678234%2FProperties%2F1440829338"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="jd-ghurub-syams.html">jdGhurubSyams</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a></div><div class="brief "><p class="paragraph">jd when maghrib with tabular interpolation without deltaT</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-982454880%2FProperties%2F1440829338" anchor-label="jdGhurubSyamsPlus" id="-982454880%2FProperties%2F1440829338" data-filterable-set=":lib:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="jd-ghurub-syams-plus.html"><span>jd</span><wbr></wbr><span>Ghurub</span><wbr></wbr><span>Syams</span><wbr></wbr><span><span>Plus</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-982454880%2FProperties%2F1440829338"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="jd-ghurub-syams-plus.html">jdGhurubSyamsPlus</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a></div><div class="brief "><p class="paragraph">jd when maghrib + addDate</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-30228082%2FProperties%2F1440829338" anchor-label="jdNewMoonAstronomicalAlgorithm" id="-30228082%2FProperties%2F1440829338" data-filterable-set=":lib:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="jd-new-moon-astronomical-algorithm.html"><span>jd</span><wbr></wbr><span>New</span><wbr></wbr><span>Moon</span><wbr></wbr><span>Astronomical</span><wbr></wbr><span><span>Algorithm</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-30228082%2FProperties%2F1440829338"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="jd-new-moon-astronomical-algorithm.html">jdNewMoonAstronomicalAlgorithm</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a></div><div class="brief "><p class="paragraph">jd New Moon from Astronomical Algorithm book without tabular interpolation</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2125621719%2FProperties%2F1440829338" anchor-label="jdTopoNewMoon" id="-2125621719%2FProperties%2F1440829338" data-filterable-set=":lib:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="jd-topo-new-moon.html"><span>jd</span><wbr></wbr><span>Topo</span><wbr></wbr><span>New</span><wbr></wbr><span><span>Moon</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2125621719%2FProperties%2F1440829338"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="jd-topo-new-moon.html">jdTopoNewMoon</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a></div><div class="brief "><p class="paragraph">jd julian day topo when new moon/jd ijtima with deltaT</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="945372187%2FProperties%2F1440829338" anchor-label="lonGeoNewMoon" id="945372187%2FProperties%2F1440829338" data-filterable-set=":lib:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="lon-geo-new-moon.html"><span>lon</span><wbr></wbr><span>Geo</span><wbr></wbr><span>New</span><wbr></wbr><span><span>Moon</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="945372187%2FProperties%2F1440829338"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="lon-geo-new-moon.html">lonGeoNewMoon</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a></div><div class="brief "><p class="paragraph">longitude new moon geocentric</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1394854104%2FProperties%2F1440829338" anchor-label="lonTopoNewMoon" id="-1394854104%2FProperties%2F1440829338" data-filterable-set=":lib:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="lon-topo-new-moon.html"><span>lon</span><wbr></wbr><span>Topo</span><wbr></wbr><span>New</span><wbr></wbr><span><span>Moon</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1394854104%2FProperties%2F1440829338"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="lon-topo-new-moon.html">lonTopoNewMoon</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a></div><div class="brief "><p class="paragraph">longitude new moon topocentric</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="326080440%2FProperties%2F1440829338" anchor-label="maghribLocalDateNewMoon" id="326080440%2FProperties%2F1440829338" data-filterable-set=":lib:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="maghrib-local-date-new-moon.html"><span>maghrib</span><wbr></wbr><span>Local</span><wbr></wbr><span>Date</span><wbr></wbr><span>New</span><wbr></wbr><span><span>Moon</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="326080440%2FProperties%2F1440829338"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="maghrib-local-date-new-moon.html">maghribLocalDateNewMoon</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">maghrib local</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2089714860%2FProperties%2F1440829338" anchor-label="monthNMInt" id="-2089714860%2FProperties%2F1440829338" data-filterable-set=":lib:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="month-n-m-int.html"><span>month</span><wbr></wbr><span><span>NMInt</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2089714860%2FProperties%2F1440829338"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="month-n-m-int.html">monthNMInt</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">month new moon int</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1198730001%2FProperties%2F1440829338" anchor-label="moonAirlessTopoAltitudeCenterLimb" id="1198730001%2FProperties%2F1440829338" data-filterable-set=":lib:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="moon-airless-topo-altitude-center-limb.html"><span>moon</span><wbr></wbr><span>Airless</span><wbr></wbr><span>Topo</span><wbr></wbr><span>Altitude</span><wbr></wbr><span>Center</span><wbr></wbr><span><span>Limb</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1198730001%2FProperties%2F1440829338"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="moon-airless-topo-altitude-center-limb.html">moonAirlessTopoAltitudeCenterLimb</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a></div><div class="brief "><p class="paragraph">moon airless topo altitude center limb</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-566305217%2FProperties%2F1440829338" anchor-label="moonAirlessTopoAltitudeCenterLimbDMS" id="-566305217%2FProperties%2F1440829338" data-filterable-set=":lib:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="moon-airless-topo-altitude-center-limb-d-m-s.html"><span>moon</span><wbr></wbr><span>Airless</span><wbr></wbr><span>Topo</span><wbr></wbr><span>Altitude</span><wbr></wbr><span>Center</span><wbr></wbr><span>Limb</span><wbr></wbr><span><span>DMS</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-566305217%2FProperties%2F1440829338"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="moon-airless-topo-altitude-center-limb-d-m-s.html">moonAirlessTopoAltitudeCenterLimbDMS</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><p class="paragraph">moon airless topo altitude center limb DMS</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2137291279%2FProperties%2F1440829338" anchor-label="moonAirlessTopoAltitudeLowerLimb" id="2137291279%2FProperties%2F1440829338" data-filterable-set=":lib:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="moon-airless-topo-altitude-lower-limb.html"><span>moon</span><wbr></wbr><span>Airless</span><wbr></wbr><span>Topo</span><wbr></wbr><span>Altitude</span><wbr></wbr><span>Lower</span><wbr></wbr><span><span>Limb</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2137291279%2FProperties%2F1440829338"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="moon-airless-topo-altitude-lower-limb.html">moonAirlessTopoAltitudeLowerLimb</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a></div><div class="brief "><p class="paragraph">moon airless topo altitude lower limb</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-124369279%2FProperties%2F1440829338" anchor-label="moonAirlessTopoAltitudeLowerLimbDMS" id="-124369279%2FProperties%2F1440829338" data-filterable-set=":lib:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="moon-airless-topo-altitude-lower-limb-d-m-s.html"><span>moon</span><wbr></wbr><span>Airless</span><wbr></wbr><span>Topo</span><wbr></wbr><span>Altitude</span><wbr></wbr><span>Lower</span><wbr></wbr><span>Limb</span><wbr></wbr><span><span>DMS</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-124369279%2FProperties%2F1440829338"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="moon-airless-topo-altitude-lower-limb-d-m-s.html">moonAirlessTopoAltitudeLowerLimbDMS</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><p class="paragraph">moon airless topo altitude lower limb DMS</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1778932750%2FProperties%2F1440829338" anchor-label="moonAirlessTopoAltitudeUpperLimb" id="1778932750%2FProperties%2F1440829338" data-filterable-set=":lib:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="moon-airless-topo-altitude-upper-limb.html"><span>moon</span><wbr></wbr><span>Airless</span><wbr></wbr><span>Topo</span><wbr></wbr><span>Altitude</span><wbr></wbr><span>Upper</span><wbr></wbr><span><span>Limb</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1778932750%2FProperties%2F1440829338"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="moon-airless-topo-altitude-upper-limb.html">moonAirlessTopoAltitudeUpperLimb</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a></div><div class="brief "><p class="paragraph">moon airless topo altitude upper limb</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1305391138%2FProperties%2F1440829338" anchor-label="moonAirlessTopoAltitudeUpperLimbDMS" id="1305391138%2FProperties%2F1440829338" data-filterable-set=":lib:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="moon-airless-topo-altitude-upper-limb-d-m-s.html"><span>moon</span><wbr></wbr><span>Airless</span><wbr></wbr><span>Topo</span><wbr></wbr><span>Altitude</span><wbr></wbr><span>Upper</span><wbr></wbr><span>Limb</span><wbr></wbr><span><span>DMS</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1305391138%2FProperties%2F1440829338"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="moon-airless-topo-altitude-upper-limb-d-m-s.html">moonAirlessTopoAltitudeUpperLimbDMS</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><p class="paragraph">moon airless topo altitude upper limb DMS</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="625278977%2FProperties%2F1440829338" anchor-label="moonAppaTopoAltCenterLimb" id="625278977%2FProperties%2F1440829338" data-filterable-set=":lib:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="moon-appa-topo-alt-center-limb.html"><span>moon</span><wbr></wbr><span>Appa</span><wbr></wbr><span>Topo</span><wbr></wbr><span>Alt</span><wbr></wbr><span>Center</span><wbr></wbr><span><span>Limb</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="625278977%2FProperties%2F1440829338"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="moon-appa-topo-alt-center-limb.html">moonAppaTopoAltCenterLimb</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a></div><div class="brief "><p class="paragraph">moon apparent topo alt center limb</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1134142287%2FProperties%2F1440829338" anchor-label="moonAppaTopoAltCenterLimbDMS" id="1134142287%2FProperties%2F1440829338" data-filterable-set=":lib:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="moon-appa-topo-alt-center-limb-d-m-s.html"><span>moon</span><wbr></wbr><span>Appa</span><wbr></wbr><span>Topo</span><wbr></wbr><span>Alt</span><wbr></wbr><span>Center</span><wbr></wbr><span>Limb</span><wbr></wbr><span><span>DMS</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1134142287%2FProperties%2F1440829338"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="moon-appa-topo-alt-center-limb-d-m-s.html">moonAppaTopoAltCenterLimbDMS</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><p class="paragraph">moon apparent topo alt center limb DMS</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2037627105%2FProperties%2F1440829338" anchor-label="moonAppaTopoAltLowerLimb" id="-2037627105%2FProperties%2F1440829338" data-filterable-set=":lib:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="moon-appa-topo-alt-lower-limb.html"><span>moon</span><wbr></wbr><span>Appa</span><wbr></wbr><span>Topo</span><wbr></wbr><span>Alt</span><wbr></wbr><span>Lower</span><wbr></wbr><span><span>Limb</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2037627105%2FProperties%2F1440829338"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="moon-appa-topo-alt-lower-limb.html">moonAppaTopoAltLowerLimb</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a></div><div class="brief "><p class="paragraph">moon apparent topo alt lower limb</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1454989455%2FProperties%2F1440829338" anchor-label="moonAppaTopoAltLowerLimbDMS" id="-1454989455%2FProperties%2F1440829338" data-filterable-set=":lib:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="moon-appa-topo-alt-lower-limb-d-m-s.html"><span>moon</span><wbr></wbr><span>Appa</span><wbr></wbr><span>Topo</span><wbr></wbr><span>Alt</span><wbr></wbr><span>Lower</span><wbr></wbr><span>Limb</span><wbr></wbr><span><span>DMS</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1454989455%2FProperties%2F1440829338"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="moon-appa-topo-alt-lower-limb-d-m-s.html">moonAppaTopoAltLowerLimbDMS</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><p class="paragraph">moon apparent topo alt lower limb DMS</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1898981662%2FProperties%2F1440829338" anchor-label="moonAppaTopoAltUpperLimb" id="1898981662%2FProperties%2F1440829338" data-filterable-set=":lib:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="moon-appa-topo-alt-upper-limb.html"><span>moon</span><wbr></wbr><span>Appa</span><wbr></wbr><span>Topo</span><wbr></wbr><span>Alt</span><wbr></wbr><span>Upper</span><wbr></wbr><span><span>Limb</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1898981662%2FProperties%2F1440829338"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="moon-appa-topo-alt-upper-limb.html">moonAppaTopoAltUpperLimb</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a></div><div class="brief "><p class="paragraph">moon apparent topo alt upper limb</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-25229038%2FProperties%2F1440829338" anchor-label="moonAppaTopoAltUpperLimbDMS" id="-25229038%2FProperties%2F1440829338" data-filterable-set=":lib:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="moon-appa-topo-alt-upper-limb-d-m-s.html"><span>moon</span><wbr></wbr><span>Appa</span><wbr></wbr><span>Topo</span><wbr></wbr><span>Alt</span><wbr></wbr><span>Upper</span><wbr></wbr><span>Limb</span><wbr></wbr><span><span>DMS</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-25229038%2FProperties%2F1440829338"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="moon-appa-topo-alt-upper-limb-d-m-s.html">moonAppaTopoAltUpperLimbDMS</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><p class="paragraph">moon apparent topo alt upper limb DMS</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1270947772%2FProperties%2F1440829338" anchor-label="moonGeoAltitude" id="-1270947772%2FProperties%2F1440829338" data-filterable-set=":lib:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="moon-geo-altitude.html"><span>moon</span><wbr></wbr><span>Geo</span><wbr></wbr><span><span>Altitude</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1270947772%2FProperties%2F1440829338"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="moon-geo-altitude.html">moonGeoAltitude</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a></div><div class="brief "><p class="paragraph">moon airless geocentric altitude</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1947060180%2FProperties%2F1440829338" anchor-label="moonGeoAltitudeDMS" id="-1947060180%2FProperties%2F1440829338" data-filterable-set=":lib:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="moon-geo-altitude-d-m-s.html"><span>moon</span><wbr></wbr><span>Geo</span><wbr></wbr><span>Altitude</span><wbr></wbr><span><span>DMS</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1947060180%2FProperties%2F1440829338"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="moon-geo-altitude-d-m-s.html">moonGeoAltitudeDMS</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><p class="paragraph">moon airless geocentric altitude DMS</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1963103661%2FProperties%2F1440829338" anchor-label="moonObserrvedTopoAltCenterLimbDMS" id="-1963103661%2FProperties%2F1440829338" data-filterable-set=":lib:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="moon-obserrved-topo-alt-center-limb-d-m-s.html"><span>moon</span><wbr></wbr><span>Obserrved</span><wbr></wbr><span>Topo</span><wbr></wbr><span>Alt</span><wbr></wbr><span>Center</span><wbr></wbr><span>Limb</span><wbr></wbr><span><span>DMS</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1963103661%2FProperties%2F1440829338"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="moon-obserrved-topo-alt-center-limb-d-m-s.html">moonObserrvedTopoAltCenterLimbDMS</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><p class="paragraph">moon observed topo alt center limb DMS</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="446175593%2FProperties%2F1440829338" anchor-label="moonObservedTopoAltCenterLimb" id="446175593%2FProperties%2F1440829338" data-filterable-set=":lib:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="moon-observed-topo-alt-center-limb.html"><span>moon</span><wbr></wbr><span>Observed</span><wbr></wbr><span>Topo</span><wbr></wbr><span>Alt</span><wbr></wbr><span>Center</span><wbr></wbr><span><span>Limb</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="446175593%2FProperties%2F1440829338"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="moon-observed-topo-alt-center-limb.html">moonObservedTopoAltCenterLimb</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a></div><div class="brief "><p class="paragraph">moon observed topo alt center limb</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1489215305%2FProperties%2F1440829338" anchor-label="moonObservedTopoAltLowerLimb" id="-1489215305%2FProperties%2F1440829338" data-filterable-set=":lib:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="moon-observed-topo-alt-lower-limb.html"><span>moon</span><wbr></wbr><span>Observed</span><wbr></wbr><span>Topo</span><wbr></wbr><span>Alt</span><wbr></wbr><span>Lower</span><wbr></wbr><span><span>Limb</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1489215305%2FProperties%2F1440829338"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="moon-observed-topo-alt-lower-limb.html">moonObservedTopoAltLowerLimb</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a></div><div class="brief "><p class="paragraph">moon observed topo alt lower limb</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1774649639%2FProperties%2F1440829338" anchor-label="moonObservedTopoAltLowerLimbDMS" id="-1774649639%2FProperties%2F1440829338" data-filterable-set=":lib:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="moon-observed-topo-alt-lower-limb-d-m-s.html"><span>moon</span><wbr></wbr><span>Observed</span><wbr></wbr><span>Topo</span><wbr></wbr><span>Alt</span><wbr></wbr><span>Lower</span><wbr></wbr><span>Limb</span><wbr></wbr><span><span>DMS</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1774649639%2FProperties%2F1440829338"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="moon-observed-topo-alt-lower-limb-d-m-s.html">moonObservedTopoAltLowerLimbDMS</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><p class="paragraph">moon observed topo alt lower limb DMS</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1847573834%2FProperties%2F1440829338" anchor-label="moonObservedTopoAltUpperLimb" id="-1847573834%2FProperties%2F1440829338" data-filterable-set=":lib:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="moon-observed-topo-alt-upper-limb.html"><span>moon</span><wbr></wbr><span>Observed</span><wbr></wbr><span>Topo</span><wbr></wbr><span>Alt</span><wbr></wbr><span>Upper</span><wbr></wbr><span><span>Limb</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1847573834%2FProperties%2F1440829338"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="moon-observed-topo-alt-upper-limb.html">moonObservedTopoAltUpperLimb</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a></div><div class="brief "><p class="paragraph">moon observed topo alt upper limb</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-344889222%2FProperties%2F1440829338" anchor-label="moonObservedTopoAltUpperLimbDMS" id="-344889222%2FProperties%2F1440829338" data-filterable-set=":lib:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="moon-observed-topo-alt-upper-limb-d-m-s.html"><span>moon</span><wbr></wbr><span>Observed</span><wbr></wbr><span>Topo</span><wbr></wbr><span>Alt</span><wbr></wbr><span>Upper</span><wbr></wbr><span>Limb</span><wbr></wbr><span><span>DMS</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-344889222%2FProperties%2F1440829338"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="moon-observed-topo-alt-upper-limb-d-m-s.html">moonObservedTopoAltUpperLimbDMS</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><p class="paragraph">moon observed topo alt upper limb DMS</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-616633818%2FProperties%2F1440829338" anchor-label="utcGeoHourNewMoon" id="-616633818%2FProperties%2F1440829338" data-filterable-set=":lib:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="utc-geo-hour-new-moon.html"><span>utc</span><wbr></wbr><span>Geo</span><wbr></wbr><span>Hour</span><wbr></wbr><span>New</span><wbr></wbr><span><span>Moon</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-616633818%2FProperties%2F1440829338"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="utc-geo-hour-new-moon.html">utcGeoHourNewMoon</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">UTC hour when new moon geocentric</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="872342054%2FProperties%2F1440829338" anchor-label="vsop" id="872342054%2FProperties%2F1440829338" data-filterable-set=":lib:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="vsop.html"><span><span>vsop</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="872342054%2FProperties%2F1440829338"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="vsop.html">vsop</a><span class="token operator">: </span><a href="../../com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d-e-l-p-m-p-p02/index.html">VSOP87DELPMPP02</a></div><div class="brief "><p class="paragraph">object of ephemeris data of moonsighting</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1593634333%2FProperties%2F1440829338" anchor-label="yearNMInt" id="-1593634333%2FProperties%2F1440829338" data-filterable-set=":lib:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="year-n-m-int.html"><span>year</span><wbr></wbr><span><span>NMInt</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1593634333%2FProperties%2F1440829338"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="year-n-m-int.html">yearNMInt</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">year new moon int</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2024 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
