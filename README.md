@@ -28,6 +28,8 @@ ELPMPP02 adalah Model teori semi analitis pergerakan bulan yang dikembangkan ole
 
 lib-vsop87d-elpmpp02 menggunakan 2 model tersebut untuk mengetahui posisi matahari dan bulan secara presisi untuk keperluan falak hisab, rukyatul hilal, waktu sholat, arah qiblat, dll. Suku koreksi lengkap sebanyak 38.326 buah
 
+Sedangkan untuk Nutation, menggunakan IAU 2000B
+
 ## Dokumentasi penggunaan
 
 - [Dokumentasi](https://hasanelfalakiy.github.io/lib-vsop87d-elpmpp02/)
