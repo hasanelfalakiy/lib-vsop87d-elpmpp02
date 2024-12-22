@@ -33,7 +33,7 @@ import com.andihasan7.lib.vsop87d.elpmpp02.timeutil.TimeUtil
 import kotlin.math.*
 
 /**
- * VSOP87DELPMPP02 Fast
+ * VSOP87DELPMPP02 Fast Warning!!! still not completed
  * Complete Sun and Moon Ephemeris Data
  *
  * ```
