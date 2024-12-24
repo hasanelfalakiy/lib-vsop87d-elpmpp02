@@ -753,8 +753,8 @@ object SunPosition {
             var semiMghrb = sunApparentGeoSemidiameter(jdeMghrb)
             var eotMghrb = equationOfTime(jdeMghrb)
             var refMghrb = 34.16 / 60.0
-            var dip = Correction.dip(elev)
-            // var dip = 2.1 * sqrt(elev) / 60.0 suitable for elevation in feet
+            // var dip = Correction.dip(elev)
+            var dip = 2.1 * sqrt(elev) / 60.0
             var altMghrb = 0 - semiMghrb - refMghrb - dip + 0.0024
             var coshaMghrb = (sin(Math.toRadians(altMghrb)) - sin(Math.toRadians(lat)) * sin(Math.toRadians(dekMghrb))) / (cos(Math.toRadians(lat)) * cos(Math.toRadians(dekMghrb)))
             if (abs(coshaMghrb) < 1) {
