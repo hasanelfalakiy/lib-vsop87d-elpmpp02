@@ -33,7 +33,7 @@ import com.andihasan7.lib.vsop87d.elpmpp02.ELPMPP02
 import com.andihasan7.lib.vsop87d.elpmpp02.convertutil.ConvertUtil
 
 
-class LibraryTest {
+class PositionTest {
 
     
     @Test
