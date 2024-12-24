@@ -28,7 +28,8 @@
 package com.andihasan7.lib.vsop87d.elpmpp02
 
 import kotlin.test.Test
-import com.andihasan7.lib.vsop87d.elpmpp02.VSOP87DELPMPP02
+import com.andihasan7.lib.vsop87d.elpmpp02.VSOP87D
+import com.andihasan7.lib.vsop87d.elpmpp02.ELPMPP02
 import com.andihasan7.lib.vsop87d.elpmpp02.convertutil.ConvertUtil
 
 
@@ -42,7 +43,19 @@ class LibraryTest {
         val lon = (106.0 + 33.0 / 60 + 27.8 / 3600)
         val hourD = (17 + 51.0 / 60 + 27.0 / 3600)
         
-        val ephe = VSOP87DELPMPP02(
+        val ephe = VSOP87D(
+            date = 28,
+            month = 2,
+            year = 2025,
+            latitude = -7.43333333334, // -7.029055555556,
+            longitude = 111.433333333334, // 106.557722222222,
+            elevation = 150.0, // 52.685,
+            timeZone = 7.0,
+            hourDouble = 17.94671437500343, // 17.8575,
+            checkDeltaT = true
+        )
+        
+        val elp = ELPMPP02(
             date = 28,
             month = 2,
             year = 2025,
@@ -108,59 +121,59 @@ class LibraryTest {
         val sunTopoSemidiameter = ephe.sunTopoSemidiameter
         val equationOfTime = ephe.equationOfTime
         
-        val moonTrueGeoLon = ephe.moonTrueGeocentricLongitude
-        val moonAppaGeoLon = ephe.moonApparentGeocentricLongitude
-        val moonTrueGeoLat = ephe.moonTrueGeocentricLatitude
-        val moonAppaGeoLat = ephe.moonApparentGeocentricLatitude
-        val moonTrueGeoDistanceKM = ephe.moonTrueGeocentricDistanceKM
-        val moonAppaGeoDistanceKM = ephe.moonAppaGeocentricDistanceKM
-        val moonAppaGeoDistanceAU = ephe.moonAppaGeocentricDistanceAU
-        val moonAppaGeoDistanceER = ephe.moonAppaGeocentricDistanceER
-        val moonAppaGeoRA = ephe.moonAppaGeocentricRightAscension
-        val moonAppaGeoDec = ephe.moonAppaGeocentricDeclination
-        val moonGeoGHA = ephe.moonGeoGreenwichHourAngle
-        val moonGeoLHA = ephe.moonGeoLocalHourAngle
-        val moonGeoAzimuth = ephe.moonGeoAzimuth
-        val moonGeoAltitude = ephe.moonGeoAltitude
-        val moonEqHorizontalParallax = ephe.moonEquatorialHorizontalParallax
-        val moonGeoSemidiameter = ephe.moonGeoSemidiameter
-        val moonSunGeoElongation = ephe.moonSunGeoElongation
-        val moonGeoPhaseAngle = ephe.moonGeoPhaseAngle
-        val moonGeoDiskIlluminatedFraction = ephe.moonGeoDiskIlluminatedFraction
-        val moonGeoDiskIlluminatedFractionPercent = ephe.moonGeoDiskIlluminatedFractionPercent
-        val moonGeoBrightLimbAngle = ephe.moonGeoBrightLimbAngle
+        val moonTrueGeoLon = elp.moonTrueGeocentricLongitude
+        val moonAppaGeoLon = elp.moonApparentGeocentricLongitude
+        val moonTrueGeoLat = elp.moonTrueGeocentricLatitude
+        val moonAppaGeoLat = elp.moonApparentGeocentricLatitude
+        val moonTrueGeoDistanceKM = elp.moonTrueGeocentricDistanceKM
+        val moonAppaGeoDistanceKM = elp.moonAppaGeocentricDistanceKM
+        val moonAppaGeoDistanceAU = elp.moonAppaGeocentricDistanceAU
+        val moonAppaGeoDistanceER = elp.moonAppaGeocentricDistanceER
+        val moonAppaGeoRA = elp.moonAppaGeocentricRightAscension
+        val moonAppaGeoDec = elp.moonAppaGeocentricDeclination
+        val moonGeoGHA = elp.moonGeoGreenwichHourAngle
+        val moonGeoLHA = elp.moonGeoLocalHourAngle
+        val moonGeoAzimuth = elp.moonGeoAzimuth
+        val moonGeoAltitude = elp.moonGeoAltitude
+        val moonEqHorizontalParallax = elp.moonEquatorialHorizontalParallax
+        val moonGeoSemidiameter = elp.moonGeoSemidiameter
+        val moonSunGeoElongation = elp.moonSunGeoElongation
+        val moonGeoPhaseAngle = elp.moonGeoPhaseAngle
+        val moonGeoDiskIlluminatedFraction = elp.moonGeoDiskIlluminatedFraction
+        val moonGeoDiskIlluminatedFractionPercent = elp.moonGeoDiskIlluminatedFractionPercent
+        val moonGeoBrightLimbAngle = elp.moonGeoBrightLimbAngle
         
-        val moonTermN = ephe.moonTermN
-        val parallaxInTheMoonRightAscension = ephe.parallaxInTheMoonRightAscension
-        val parallaxInTheMoonAltitude = ephe.parallaxInTheMoonAltitude
-        val moonTopoLongitude = ephe.moonTopoLongitude
-        val moonTopoLatitude = ephe.moonTopoLatitude
-        val moonTopoRightAscension = ephe.moonTopoRightAscension
-        val moonTopoDeclination = ephe.moonTopoDeclination
-        val moonTopoSemidiameter = ephe.moonTopoSemidiameter
-        val moonTopoGHA = ephe.moonTopoGreenwichHourAngle
-        val moonTopoLHA = ephe.moonTopoLocalHourAngle
-        val moonTopoAzimuth = ephe.moonTopoAzimuth
+        val moonTermN = elp.moonTermN
+        val parallaxInTheMoonRightAscension = elp.parallaxInTheMoonRightAscension
+        val parallaxInTheMoonAltitude = elp.parallaxInTheMoonAltitude
+        val moonTopoLongitude = elp.moonTopoLongitude
+        val moonTopoLatitude = elp.moonTopoLatitude
+        val moonTopoRightAscension = elp.moonTopoRightAscension
+        val moonTopoDeclination = elp.moonTopoDeclination
+        val moonTopoSemidiameter = elp.moonTopoSemidiameter
+        val moonTopoGHA = elp.moonTopoGreenwichHourAngle
+        val moonTopoLHA = elp.moonTopoLocalHourAngle
+        val moonTopoAzimuth = elp.moonTopoAzimuth
         
-        val moonAirlessTopoAltC = ephe.moonAirlessTopoAltitudeCenterLimb
-        val moonAppaTopoAltC = ephe.moonApparentTopoAltitudeCenterLimb
-        val moonObTopoAltC = ephe.moonObservedTopoAltitudeCenterLimb
+        val moonAirlessTopoAltC = elp.moonAirlessTopoAltitudeCenterLimb
+        val moonAppaTopoAltC = elp.moonApparentTopoAltitudeCenterLimb
+        val moonObTopoAltC = elp.moonObservedTopoAltitudeCenterLimb
         
-        val moonAirlessTopoAltU = ephe.moonAirlessTopoAltitudeUpperLimb
-        val moonAppaTopoAltU = ephe.moonApparentTopoAltitudeUpperLimb
-        val moonObTopoAltU = ephe.moonObservedTopoAltitudeUpperLimb
+        val moonAirlessTopoAltU = elp.moonAirlessTopoAltitudeUpperLimb
+        val moonAppaTopoAltU = elp.moonApparentTopoAltitudeUpperLimb
+        val moonObTopoAltU = elp.moonObservedTopoAltitudeUpperLimb
         
-        val moonAirlessTopoAltL = ephe.moonAirlessTopoAltitudeLowerLimb
-        val moonAppaTopoAltL = ephe.moonApparentTopoAltitudeLowerLimb
-        val moonObTopoAltL = ephe.moonObservedTopoAltitudeLowerLimb
+        val moonAirlessTopoAltL = elp.moonAirlessTopoAltitudeLowerLimb
+        val moonAppaTopoAltL = elp.moonApparentTopoAltitudeLowerLimb
+        val moonObTopoAltL = elp.moonObservedTopoAltitudeLowerLimb
         
-        val moonAtmosphericRefTopoAltitudeCenter = ephe.moonAtmosphericRefTopoAltitudeCenter
-        val moonAtmosphericRefTopoAltitudeUpper = ephe.moonAtmosphericRefTopoAltitudeUpper
-        val moonAtmosphericRefTopoAltitudeLower = ephe.moonAtmosphericRefTopoAltitudeLower
-        val moonSunTopoElongation = ephe.moonSunTopoElongation
-        val moonTopoPhaseAngle = ephe.moonTopoPhaseAngle
-        val moonTopoDiskIlluminatedFraction = ephe.moonTopoDiskIlluminatedFraction
-        val moonTopoBrightLimbAngle = ephe.moonTopoBrightLimbAngle
+        val moonAtmosphericRefTopoAltitudeCenter = elp.moonAtmosphericRefTopoAltitudeCenter
+        val moonAtmosphericRefTopoAltitudeUpper = elp.moonAtmosphericRefTopoAltitudeUpper
+        val moonAtmosphericRefTopoAltitudeLower = elp.moonAtmosphericRefTopoAltitudeLower
+        val moonSunTopoElongation = elp.moonSunTopoElongation
+        val moonTopoPhaseAngle = elp.moonTopoPhaseAngle
+        val moonTopoDiskIlluminatedFraction = elp.moonTopoDiskIlluminatedFraction
+        val moonTopoBrightLimbAngle = elp.moonTopoBrightLimbAngle
         
         println("Ephemeris VSOP87D & ELPMPP02 Full Periodic Terms (38.326)")
         println("")
@@ -287,11 +300,8 @@ class LibraryTest {
         println("")
         println("Moon Sun Topo Elongation: $moonSunTopoElongation, ${cv.toDegreeFullRound2(moonSunTopoElongation)}")
         println("Moon Topo Phase Angle: $moonTopoPhaseAngle, ${cv.toDegreeFullRound2(moonTopoPhaseAngle)}")
-        println("Moon Topo Disk Illuminated Fraction: $moonTopoDiskIlluminatedFraction ${ephe.moonTopoDiskIlluminatedFractionPercent} %")
+        println("Moon Topo Disk Illuminated Fraction: $moonTopoDiskIlluminatedFraction ${elp.moonTopoDiskIlluminatedFractionPercent} %")
         println("Moon Topo Bright Limb Angle: $moonTopoBrightLimbAngle, ${cv.toDegreeFullRound2(moonTopoBrightLimbAngle)}")
         
-        
-        
     }
-    
 }

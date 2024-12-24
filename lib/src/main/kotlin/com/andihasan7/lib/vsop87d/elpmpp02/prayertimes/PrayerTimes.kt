@@ -22,7 +22,7 @@ package com.andihasan7.lib.vsop87d.elpmpp02.prayertimes
  */
 package com.andihasan7.lib.vsop87d.elpmpp02.prayertimes
 
-import com.andihasan7.lib.vsop87d.elpmpp02.VSOP87DELPMPP02
+import com.andihasan7.lib.vsop87d.elpmpp02.VSOP87D
 import com.andihasan7.lib.vsop87d.elpmpp02.convertutil.ConvertUtil
 import com.andihasan7.lib.vsop87d.elpmpp02.qibla.QiblaAzimuth
 import kotlin.math.acos
@@ -63,7 +63,7 @@ class PrayerTimes(
 ) {
 
     // for dzuhur
-    private val jm = VSOP87DELPMPP02(
+    private val jm = VSOP87D(
         date = date,
         month = month,
         year = year,
@@ -115,7 +115,7 @@ class PrayerTimes(
     val dzuhurWIS_HMS = ConvertUtil.toTimeFullRound2(dzuhurWIS)
 
     // for ashar
-    private val jma = VSOP87DELPMPP02(
+    private val jma = VSOP87D(
         date = date,
         month = month,
         year = year,
@@ -154,7 +154,7 @@ class PrayerTimes(
     val asharWIS_HMS = ConvertUtil.toTimeFullRound2(asharWIS)
 
     // for maghrib
-    private val jmm = VSOP87DELPMPP02(
+    private val jmm = VSOP87D(
         date = date,
         month = month,
         year = year,
@@ -207,7 +207,7 @@ class PrayerTimes(
     val maghribWIS_HMS = ConvertUtil.toTimeFullRound2(maghribWIS)
 
     // for isya`
-    private val jmi = VSOP87DELPMPP02(
+    private val jmi = VSOP87D(
         date = date,
         month = month,
         year = year,
@@ -246,7 +246,7 @@ class PrayerTimes(
 
 
     // for shubuh
-    private val jms = VSOP87DELPMPP02(
+    private val jms = VSOP87D(
         date = date,
         month = month,
         year = year,
@@ -307,7 +307,7 @@ class PrayerTimes(
     val imsakWIS_HMS = ConvertUtil.toTimeFullRound2(imsakWIS)
 
     // for terbit
-    private val jmt = VSOP87DELPMPP02(
+    private val jmt = VSOP87D(
         date = date,
         month = month,
         year = year,
@@ -343,7 +343,7 @@ class PrayerTimes(
     val terbitWIS_HMS = ConvertUtil.toTimeFullRound2(terbitWIS)
 
     // for dluha
-    private val jmd = VSOP87DELPMPP02(
+    private val jmd = VSOP87D(
         date = date,
         month = month,
         year = year,
@@ -381,7 +381,7 @@ class PrayerTimes(
     val dluhaWIS_HMS = ConvertUtil.toTimeFullRound2(dluhaWIS)
 
     // for midnight
-    private val jmTM = VSOP87DELPMPP02(
+    private val jmTM = VSOP87D(
         date = date,
         month = month,
         year = year,

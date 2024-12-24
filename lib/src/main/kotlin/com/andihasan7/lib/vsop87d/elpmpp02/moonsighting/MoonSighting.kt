@@ -22,7 +22,7 @@
 
 package com.andihasan7.lib.vsop87d.elpmpp02.moonsighting
 
-import com.andihasan7.lib.vsop87d.elpmpp02.VSOP87DELPMPP02
+import com.andihasan7.lib.vsop87d.elpmpp02.ELPMPP02
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.ConjunctionReturn
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.DateFormat
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.PhaseType
@@ -139,7 +139,7 @@ class MoonSighting(
     /**
      * object of ephemeris data of moonsighting
      */
-    val vsop = VSOP87DELPMPP02(
+    val elp = ELPMPP02(
         date = dateNMInt ?: 0,
         month = monthNMInt ?: 0,
         year = yearNMInt ?: 0,
@@ -156,99 +156,99 @@ class MoonSighting(
     /**
      * moon airless geocentric altitude
      */
-    val moonGeoAltitude = vsop.moonGeoAltitude
+    val moonGeoAltitude = elp.moonGeoAltitude
 
     /**
      * moon airless geocentric altitude DMS
      */
-    val moonGeoAltitudeDMS = vsop.moonGeoAltitudeDMS
+    val moonGeoAltitudeDMS = elp.moonGeoAltitudeDMS
 
     // airless topocentric
     /**
      * moon airless topo altitude upper limb
      */
-    val moonAirlessTopoAltitudeUpperLimb = vsop.moonAirlessTopoAltitudeUpperLimb
+    val moonAirlessTopoAltitudeUpperLimb = elp.moonAirlessTopoAltitudeUpperLimb
     /**
      * moon airless topo altitude upper limb DMS
      */
-    val moonAirlessTopoAltitudeUpperLimbDMS = vsop.moonAirlessTopoAltitudeUpperLimbDMS
+    val moonAirlessTopoAltitudeUpperLimbDMS = elp.moonAirlessTopoAltitudeUpperLimbDMS
     /**
      * moon airless topo altitude center limb
      */
-    val moonAirlessTopoAltitudeCenterLimb = vsop.moonAirlessTopoAltitudeCenterLimb
+    val moonAirlessTopoAltitudeCenterLimb = elp.moonAirlessTopoAltitudeCenterLimb
     /**
      * moon airless topo altitude center limb DMS
      */
-    val moonAirlessTopoAltitudeCenterLimbDMS = vsop.moonAirlessTopoAltitudeCenterLimbDMS
+    val moonAirlessTopoAltitudeCenterLimbDMS = elp.moonAirlessTopoAltitudeCenterLimbDMS
     /**
      * moon airless topo altitude lower limb
      */
-    val moonAirlessTopoAltitudeLowerLimb = vsop.moonAirlessTopoAltitudeLowerLimb
+    val moonAirlessTopoAltitudeLowerLimb = elp.moonAirlessTopoAltitudeLowerLimb
     /**
      * moon airless topo altitude lower limb DMS
      */
-    val moonAirlessTopoAltitudeLowerLimbDMS = vsop.moonAirlessTopoAltitudeLowerLimbDMS
+    val moonAirlessTopoAltitudeLowerLimbDMS = elp.moonAirlessTopoAltitudeLowerLimbDMS
 
     // moon apparent topo altitude
     /**
      * moon apparent topo alt upper limb
      */
-    val moonAppaTopoAltUpperLimb = vsop.moonApparentTopoAltitudeUpperLimb
+    val moonAppaTopoAltUpperLimb = elp.moonApparentTopoAltitudeUpperLimb
 
     /**
      * moon apparent topo alt upper limb DMS
      */
-    val moonAppaTopoAltUpperLimbDMS = vsop.moonApparentTopoAltitudeUpperLimbDMS
+    val moonAppaTopoAltUpperLimbDMS = elp.moonApparentTopoAltitudeUpperLimbDMS
 
     /**
      * moon apparent topo alt center limb
      */
-    val moonAppaTopoAltCenterLimb = vsop.moonApparentTopoAltitudeCenterLimb
+    val moonAppaTopoAltCenterLimb = elp.moonApparentTopoAltitudeCenterLimb
 
     /**
      * moon apparent topo alt center limb DMS
      */
-    val moonAppaTopoAltCenterLimbDMS = vsop.moonApparentTopoAltitudeCenterLimbDMS
+    val moonAppaTopoAltCenterLimbDMS = elp.moonApparentTopoAltitudeCenterLimbDMS
 
     /**
      * moon apparent topo alt lower limb
      */
-    val moonAppaTopoAltLowerLimb = vsop.moonApparentTopoAltitudeLowerLimb
+    val moonAppaTopoAltLowerLimb = elp.moonApparentTopoAltitudeLowerLimb
 
     /**
      * moon apparent topo alt lower limb DMS
      */
-    val moonAppaTopoAltLowerLimbDMS = vsop.moonApparentTopoAltitudeLowerLimbDMS
+    val moonAppaTopoAltLowerLimbDMS = elp.moonApparentTopoAltitudeLowerLimbDMS
 
     // observed topo alt
     /**
      * moon observed topo alt upper limb
      */
-    val moonObservedTopoAltUpperLimb = vsop.moonObservedTopoAltitudeUpperLimb
+    val moonObservedTopoAltUpperLimb = elp.moonObservedTopoAltitudeUpperLimb
 
     /**
      * moon observed topo alt upper limb DMS
      */
-    val moonObservedTopoAltUpperLimbDMS = vsop.moonObservedTopoAltitudeUpperLimbDMS
+    val moonObservedTopoAltUpperLimbDMS = elp.moonObservedTopoAltitudeUpperLimbDMS
 
     /**
      * moon observed topo alt center limb
      */
-    val moonObservedTopoAltCenterLimb = vsop.moonObservedTopoAltitudeCenterLimb
+    val moonObservedTopoAltCenterLimb = elp.moonObservedTopoAltitudeCenterLimb
 
     /**
      * moon observed topo alt center limb DMS
      */
-    val moonObserrvedTopoAltCenterLimbDMS = vsop.moonObservedTopoAltitudeCenterLimbDMS
+    val moonObserrvedTopoAltCenterLimbDMS = elp.moonObservedTopoAltitudeCenterLimbDMS
 
     /**
      * moon observed topo alt lower limb
      */
-    val moonObservedTopoAltLowerLimb = vsop.moonObservedTopoAltitudeLowerLimb
+    val moonObservedTopoAltLowerLimb = elp.moonObservedTopoAltitudeLowerLimb
 
     /**
      * moon observed topo alt lower limb DMS
      */
-    val moonObservedTopoAltLowerLimbDMS = vsop.moonObservedTopoAltitudeLowerLimbDMS
+    val moonObservedTopoAltLowerLimbDMS = elp.moonObservedTopoAltitudeLowerLimbDMS
 
 }
