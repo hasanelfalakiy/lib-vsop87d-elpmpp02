@@ -97,7 +97,7 @@ object EarthPosition {
         val eartHeliocentricLatitude = b0 + b1 * t + b2 * t.pow(2) + b3 * t.pow(3) + b4 * t.pow(4)
         
         return when (unitType) {
-            UnitType.DEGREES -> (Math.toDegrees(eartHeliocentricLatitude)).mod(360.0)
+            UnitType.DEGREES -> Math.toDegrees(eartHeliocentricLatitude)
             UnitType.RADIANS -> eartHeliocentricLatitude
         }
     }
