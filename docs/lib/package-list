@@ -8,6 +8,7 @@ $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.convertutil/ConvertUtil/toCo
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.convertutil/ConvertUtil/toCounterMMSS2/#kotlin.Double/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.convertutil/-convert-util/to-counter-m-m-s-s2.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.convertutil/ConvertUtil/toDegreeFullRound2/#kotlin.Double/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.convertutil/-convert-util/to-degree-full-round2.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.convertutil/ConvertUtil/toDegreeMMSS2/#kotlin.Double/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.convertutil/-convert-util/to-degree-m-m-s-s2.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.convertutil/ConvertUtil/toDegreeSS2/#kotlin.Double/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.convertutil/-convert-util/to-degree-s-s2.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.convertutil/ConvertUtil/toNameDay/#kotlin.Int/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.convertutil/-convert-util/to-name-day.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.convertutil/ConvertUtil/toNameMonth/#kotlin.Int/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.convertutil/-convert-util/to-name-month.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.convertutil/ConvertUtil/toNamePasaran/#kotlin.Int/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.convertutil/-convert-util/to-name-pasaran.html
@@ -23,36 +24,6 @@ $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.correction/Correction/dip/#k
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.correction/Correction/termU/#kotlin.Double/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.correction/-correction/term-u.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.correction/Correction/termX/#kotlin.Double#kotlin.Double/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.correction/-correction/term-x.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.correction/Correction/termY/#kotlin.Double#kotlin.Double/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.correction/-correction/term-y.html
-$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass////PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/index.html
-$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Elpmpp02CsvRow///PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-elpmpp02-csv-row/index.html
-$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Elpmpp02CsvRow/Elpmpp02CsvRow/#kotlin.Int#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-elpmpp02-csv-row/-elpmpp02-csv-row.html
-$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Elpmpp02CsvRow/i/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-elpmpp02-csv-row/i.html
-$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Elpmpp02CsvRow/vA0/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-elpmpp02-csv-row/v-a0.html
-$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Elpmpp02CsvRow/vA1/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-elpmpp02-csv-row/v-a1.html
-$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Elpmpp02CsvRow/vA2/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-elpmpp02-csv-row/v-a2.html
-$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Elpmpp02CsvRow/vA3/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-elpmpp02-csv-row/v-a3.html
-$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Elpmpp02CsvRow/vA4/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-elpmpp02-csv-row/v-a4.html
-$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Elpmpp02CsvRow/vVN/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-elpmpp02-csv-row/v-v-n.html
-$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Nutation2000bCsvRow///PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-nutation2000b-csv-row/index.html
-$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Nutation2000bCsvRow/Nutation2000bCsvRow/#kotlin.Int#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-nutation2000b-csv-row/-nutation2000b-csv-row.html
-$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Nutation2000bCsvRow/i/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-nutation2000b-csv-row/i.html
-$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Nutation2000bCsvRow/vA/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-nutation2000b-csv-row/v-a.html
-$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Nutation2000bCsvRow/vA1/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-nutation2000b-csv-row/v-a1.html
-$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Nutation2000bCsvRow/vA2/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-nutation2000b-csv-row/v-a2.html
-$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Nutation2000bCsvRow/vB/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-nutation2000b-csv-row/v-b.html
-$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Nutation2000bCsvRow/vB1/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-nutation2000b-csv-row/v-b1.html
-$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Nutation2000bCsvRow/vB2/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-nutation2000b-csv-row/v-b2.html
-$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Nutation2000bCsvRow/vD/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-nutation2000b-csv-row/v-d.html
-$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Nutation2000bCsvRow/vF/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-nutation2000b-csv-row/v-f.html
-$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Nutation2000bCsvRow/vL/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-nutation2000b-csv-row/v-l.html
-$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Nutation2000bCsvRow/vL1/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-nutation2000b-csv-row/v-l1.html
-$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Nutation2000bCsvRow/vOmega/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-nutation2000b-csv-row/v-omega.html
-$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Vsop87dCsvRow///PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-vsop87d-csv-row/index.html
-$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Vsop87dCsvRow/Vsop87dCsvRow/#kotlin.Int#kotlin.Double#kotlin.Double#kotlin.Double/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-vsop87d-csv-row/-vsop87d-csv-row.html
-$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Vsop87dCsvRow/i/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-vsop87d-csv-row/i.html
-$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Vsop87dCsvRow/vA/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-vsop87d-csv-row/v-a.html
-$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Vsop87dCsvRow/vB/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-vsop87d-csv-row/v-b.html
-$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.dataclass/Vsop87dCsvRow/vC/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.dataclass/-vsop87d-csv-row/v-c.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.earthposition////PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.earthposition/index.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.earthposition/EarthPosition///PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.earthposition/-earth-position/index.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.earthposition/EarthPosition/earthHeliocentricLatitude/#kotlin.Double#kotlin.Double#com.andihasan7.lib.vsop87d.elpmpp02.enum.UnitType/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.earthposition/-earth-position/earth-heliocentric-latitude.html
@@ -100,12 +71,6 @@ $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.enum/ConjunctionReturn///Poi
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.enum/ConjunctionReturn/entries/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.enum/-conjunction-return/entries.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.enum/ConjunctionReturn/valueOf/#kotlin.String/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.enum/-conjunction-return/value-of.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.enum/ConjunctionReturn/values/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.enum/-conjunction-return/values.html
-$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.enum/ConjunctionType.GEOCENTRIC///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}lib/com.andihasan7.lib.vsop87d.elpmpp02.enum/-conjunction-type/-g-e-o-c-e-n-t-r-i-c/index.html
-$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.enum/ConjunctionType.TOPOCENTRIC///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}lib/com.andihasan7.lib.vsop87d.elpmpp02.enum/-conjunction-type/-t-o-p-o-c-e-n-t-r-i-c/index.html
-$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.enum/ConjunctionType///PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.enum/-conjunction-type/index.html
-$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.enum/ConjunctionType/entries/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.enum/-conjunction-type/entries.html
-$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.enum/ConjunctionType/valueOf/#kotlin.String/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.enum/-conjunction-type/value-of.html
-$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.enum/ConjunctionType/values/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.enum/-conjunction-type/values.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.enum/DateFormat.DATE///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}lib/com.andihasan7.lib.vsop87d.elpmpp02.enum/-date-format/-d-a-t-e/index.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.enum/DateFormat.DAY_INT///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}lib/com.andihasan7.lib.vsop87d.elpmpp02.enum/-date-format/-d-a-y_-i-n-t/index.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.enum/DateFormat.DAY_NAME///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}lib/com.andihasan7.lib.vsop87d.elpmpp02.enum/-date-format/-d-a-y_-n-a-m-e/index.html
@@ -464,8 +429,15 @@ $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.timeutil/TimeUtil/julianType
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02////PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/index.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/ELPMPP02///PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-e-l-p-m-p-p02/index.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/ELPMPP02/ELPMPP02/#kotlin.Int#kotlin.Int#kotlin.Int#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Boolean/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-e-l-p-m-p-p02/-e-l-p-m-p-p02.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/ELPMPP02/checkDeltaT/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-e-l-p-m-p-p02/check-delta-t.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/ELPMPP02/date/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-e-l-p-m-p-p02/date.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/ELPMPP02/deltaT/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-e-l-p-m-p-p02/delta-t.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/ELPMPP02/elevation/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-e-l-p-m-p-p02/elevation.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/ELPMPP02/hourDouble/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-e-l-p-m-p-p02/hour-double.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/ELPMPP02/jd/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-e-l-p-m-p-p02/jd.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/ELPMPP02/latitude/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-e-l-p-m-p-p02/latitude.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/ELPMPP02/longitude/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-e-l-p-m-p-p02/longitude.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/ELPMPP02/month/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-e-l-p-m-p-p02/month.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/ELPMPP02/moonAirlessTopoAltitudeCenterLimb/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-e-l-p-m-p-p02/moon-airless-topo-altitude-center-limb.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/ELPMPP02/moonAirlessTopoAltitudeCenterLimbDMS/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-e-l-p-m-p-p02/moon-airless-topo-altitude-center-limb-d-m-s.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/ELPMPP02/moonAirlessTopoAltitudeLowerLimb/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-e-l-p-m-p-p02/moon-airless-topo-altitude-lower-limb.html
@@ -513,6 +485,7 @@ $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/ELPMPP02/moonGeoPhaseAngle/#
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/ELPMPP02/moonGeoPhaseAngleDMS/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-e-l-p-m-p-p02/moon-geo-phase-angle-d-m-s.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/ELPMPP02/moonGeoSemidiameter/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-e-l-p-m-p-p02/moon-geo-semidiameter.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/ELPMPP02/moonGeoSemidiameterDMS/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-e-l-p-m-p-p02/moon-geo-semidiameter-d-m-s.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/ELPMPP02/moonGeoSemidiameterMMSS2/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-e-l-p-m-p-p02/moon-geo-semidiameter-m-m-s-s2.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/ELPMPP02/moonObservedTopoAltitudeCenterLimb/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-e-l-p-m-p-p02/moon-observed-topo-altitude-center-limb.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/ELPMPP02/moonObservedTopoAltitudeCenterLimbDMS/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-e-l-p-m-p-p02/moon-observed-topo-altitude-center-limb-d-m-s.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/ELPMPP02/moonObservedTopoAltitudeLowerLimb/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-e-l-p-m-p-p02/moon-observed-topo-altitude-lower-limb.html
@@ -546,6 +519,7 @@ $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/ELPMPP02/moonTopoRightAscens
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/ELPMPP02/moonTopoRightAscensionDMS/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-e-l-p-m-p-p02/moon-topo-right-ascension-d-m-s.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/ELPMPP02/moonTopoSemidiameter/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-e-l-p-m-p-p02/moon-topo-semidiameter.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/ELPMPP02/moonTopoSemidiameterDMS/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-e-l-p-m-p-p02/moon-topo-semidiameter-d-m-s.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/ELPMPP02/moonTopoSemidiameterMMSS2/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-e-l-p-m-p-p02/moon-topo-semidiameter-m-m-s-s2.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/ELPMPP02/moonTrueGeocentricDistanceAU/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-e-l-p-m-p-p02/moon-true-geocentric-distance-a-u.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/ELPMPP02/moonTrueGeocentricDistanceER/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-e-l-p-m-p-p02/moon-true-geocentric-distance-e-r.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/ELPMPP02/moonTrueGeocentricDistanceKM/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-e-l-p-m-p-p02/moon-true-geocentric-distance-k-m.html
@@ -557,6 +531,10 @@ $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/ELPMPP02/parallaxInTheMoonAl
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/ELPMPP02/parallaxInTheMoonAltitudeDMS/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-e-l-p-m-p-p02/parallax-in-the-moon-altitude-d-m-s.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/ELPMPP02/parallaxInTheMoonRightAscension/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-e-l-p-m-p-p02/parallax-in-the-moon-right-ascension.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/ELPMPP02/parallaxInTheMoonRightAscensionDMS/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-e-l-p-m-p-p02/parallax-in-the-moon-right-ascension-d-m-s.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/ELPMPP02/pressure/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-e-l-p-m-p-p02/pressure.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/ELPMPP02/temperature/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-e-l-p-m-p-p02/temperature.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/ELPMPP02/timeZone/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-e-l-p-m-p-p02/time-zone.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/ELPMPP02/year/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-e-l-p-m-p-p02/year.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/Nutation///PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-nutation/index.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/Nutation/meanObliquityOfEcliptic/#kotlin.Double#kotlin.Double/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-nutation/mean-obliquity-of-ecliptic.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/Nutation/nutationInLonAndObliquity/#kotlin.Double#kotlin.Double/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-nutation/nutation-in-lon-and-obliquity.html
@@ -567,6 +545,8 @@ $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/abr/#/PointingToDecl
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/abrDMS/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/abr-d-m-s.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/atmosphericRefractionFromAirlessAltitude/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/atmospheric-refraction-from-airless-altitude.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/atmosphericRefractionFromAirlessAltitudeDMS/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/atmospheric-refraction-from-airless-altitude-d-m-s.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/checkDeltaT/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/check-delta-t.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/date/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/date.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/deltaT/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/delta-t.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/earthHeliocentricLatitudeDegree/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/earth-heliocentric-latitude-degree.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/earthHeliocentricLatitudeDegreeDMS/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/earth-heliocentric-latitude-degree-d-m-s.html
@@ -574,6 +554,7 @@ $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/earthHeliocentricLat
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/earthHeliocentricLongitudeDegree/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/earth-heliocentric-longitude-degree.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/earthHeliocentricLongitudeDegreeDMS/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/earth-heliocentric-longitude-degree-d-m-s.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/earthHeliocentricLongitudeRadian/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/earth-heliocentric-longitude-radian.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/elevation/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/elevation.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/equationOfTime/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/equation-of-time.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/equationOfTimeHMS/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/equation-of-time-h-m-s.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/fracDay/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/frac-day.html
@@ -582,16 +563,20 @@ $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/greenwichApparentSid
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/greenwichMeanSiderealTime/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/greenwich-mean-sidereal-time.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/greenwichMeanSiderealTimeDMS/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/greenwich-mean-sidereal-time-d-m-s.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/hourDouble/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/hour-double.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/hourDoubleDecimal/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/hour-double-decimal.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/jc/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/jc.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/jce/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/jce.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/jd/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/jd.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/jde/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/jde.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/jm/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/jm.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/jme/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/jme.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/latitude/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/latitude.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/localApparentSiderealTime/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/local-apparent-sidereal-time.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/localApparentSiderealTimeDMS/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/local-apparent-sidereal-time-d-m-s.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/longitude/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/longitude.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/meanObliquityOfEcliptic/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/mean-obliquity-of-ecliptic.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/meanObliquityOfEclipticDMS/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/mean-obliquity-of-ecliptic-d-m-s.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/month/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/month.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/nameDay/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/name-day.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/nameMonth/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/name-month.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/namePasaran/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/name-pasaran.html
@@ -608,6 +593,7 @@ $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/parallaxInTheSunAlti
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/parallaxInTheSunAltitudeDMS/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/parallax-in-the-sun-altitude-d-m-s.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/parallaxInTheSunRightAscension/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/parallax-in-the-sun-right-ascension.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/parallaxInTheSunRightAscensionDMS/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/parallax-in-the-sun-right-ascension-d-m-s.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/pressure/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/pressure.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/sunAirlessTopoAltitude/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/sun-airless-topo-altitude.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/sunAirlessTopoAltitudeDMS/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/sun-airless-topo-altitude-d-m-s.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/sunApparentGeoDeclination/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/sun-apparent-geo-declination.html
@@ -616,6 +602,7 @@ $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/sunApparentGeoRightA
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/sunApparentGeoRightAscensionDMS/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/sun-apparent-geo-right-ascension-d-m-s.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/sunApparentGeoSemidiameter/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/sun-apparent-geo-semidiameter.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/sunApparentGeoSemidiameterDMS/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/sun-apparent-geo-semidiameter-d-m-s.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/sunApparentGeoSemidiameterMMSS2/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/sun-apparent-geo-semidiameter-m-m-s-s2.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/sunApparentGeocentricLongitude/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/sun-apparent-geocentric-longitude.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/sunApparentGeocentricLongitudeDMS/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/sun-apparent-geocentric-longitude-d-m-s.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/sunApparentTopoAltitude/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/sun-apparent-topo-altitude.html
@@ -650,15 +637,20 @@ $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/sunTopoRightAscensio
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/sunTopoRightAscensionDMS/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/sun-topo-right-ascension-d-m-s.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/sunTopoSemidiameter/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/sun-topo-semidiameter.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/sunTopoSemidiameterDMS/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/sun-topo-semidiameter-d-m-s.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/sunTopoSemidiameterMMSS2/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/sun-topo-semidiameter-m-m-s-s2.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/sunTrueGeocentricLatitude/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/sun-true-geocentric-latitude.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/sunTrueGeocentricLatitudeDMS/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/sun-true-geocentric-latitude-d-m-s.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/sunTrueGeocentricLatitudeSS2/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/sun-true-geocentric-latitude-s-s2.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/sunTrueGeocentricLongitude/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/sun-true-geocentric-longitude.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/sunTrueGeocentricLongitudeDMS/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/sun-true-geocentric-longitude-d-m-s.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/temperature/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/temperature.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/termU/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/term-u.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/termX/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/term-x.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/termY/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/term-y.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/timeZone/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/time-zone.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/trueObliquityOfEcliptic/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/true-obliquity-of-ecliptic.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/trueObliquityOfEclipticDMS/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/true-obliquity-of-ecliptic-d-m-s.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87D/year/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d/year.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87DELPMPP02Fast///PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d-e-l-p-m-p-p02-fast/index.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87DELPMPP02Fast/VSOP87DELPMPP02Fast/#kotlin.Int#kotlin.Int#kotlin.Int#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Boolean/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d-e-l-p-m-p-p02-fast/-v-s-o-p87-d-e-l-p-m-p-p02-fast.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87DELPMPP02Fast/abr/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02/-v-s-o-p87-d-e-l-p-m-p-p02-fast/abr.html
@@ -776,7 +768,6 @@ $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02/VSOP87DELPMPP02Fast/trueObli
 com.andihasan7.lib.vsop87d.elpmpp02
 com.andihasan7.lib.vsop87d.elpmpp02.convertutil
 com.andihasan7.lib.vsop87d.elpmpp02.correction
-com.andihasan7.lib.vsop87d.elpmpp02.dataclass
 com.andihasan7.lib.vsop87d.elpmpp02.earthposition
 com.andihasan7.lib.vsop87d.elpmpp02.earthterms
 com.andihasan7.lib.vsop87d.elpmpp02.enum
