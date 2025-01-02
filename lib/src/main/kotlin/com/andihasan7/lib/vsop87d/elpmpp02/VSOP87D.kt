@@ -54,27 +54,27 @@ import com.andihasan7.lib.vsop87d.elpmpp02.timeutil.DeltaT
 * ```
 */
 class VSOP87D(
-    date: Int = 1, // Gregorian date
-    month: Int = 1, // Gregorian month
-    year: Int = 2000, // Gregorian year
-    latitude: Double = 0.0, // observer latitude
-    longitude: Double = 0.0, // observer longitude
-    elevation: Double = 0.0, // observer elevation in meters
-    timeZone: Double = 0.0, // time zone
-    hourDouble: Double = 0.0, // decimal hour
-    temperature: Double = 10.0, // average annual local temperature (in °C)
-    pressure: Double = 1010.0, // annual average local air pressure (in millibars)
-    checkDeltaT: Boolean = true // choice to use deltaT or not
+    var date: Int = 1, // Gregorian date
+    var month: Int = 1, // Gregorian month
+    var year: Int = 2000, // Gregorian year
+    var latitude: Double = 0.0, // observer latitude
+    var longitude: Double = 0.0, // observer longitude
+    var elevation: Double = 0.0, // observer elevation in meters
+    var timeZone: Double = 0.0, // time zone
+    var hourDouble: Double = 0.0, // decimal hour
+    var temperature: Double = 10.0, // average annual local temperature (in °C)
+    var pressure: Double = 1010.0, // annual average local air pressure (in millibars)
+    var checkDeltaT: Boolean = true // choice to use deltaT or not
 ) {
     /**
     * Julian Day
     */
-    val jd = TimeUtil.gregorianToJD(date, month, year, hourDouble, timeZone)
+    val jd get() = TimeUtil.gregorianToJD(date, month, year, hourDouble, timeZone)
     
     /**
     * Delta T
     */
-    val deltaT: Double = if (checkDeltaT == true) {
+    val deltaT: Double get() = if (checkDeltaT == true) {
         DeltaT.deltaT(jd)
     } else {
         0.0
@@ -83,479 +83,494 @@ class VSOP87D(
     /**
     * Number of Date
     */
-    val numbDate: Int? = TimeUtil.jdToGregorian(jd, timeZone, DateFormat.DATE)
+    val numbDate: Int? get() = TimeUtil.jdToGregorian(jd, timeZone, DateFormat.DATE)
     
     /**
     * Number of Month
     */
-    val numbMonth: Int? = TimeUtil.jdToGregorian(jd, timeZone, DateFormat.MONTH_INT)
+    val numbMonth: Int? get() = TimeUtil.jdToGregorian(jd, timeZone, DateFormat.MONTH_INT)
     
     /**
     * Name of Month
     */
-    val nameMonth: String? = TimeUtil.jdToGregorian(jd, timeZone, DateFormat.MONTH_NAME)
+    val nameMonth: String? get() = TimeUtil.jdToGregorian(jd, timeZone, DateFormat.MONTH_NAME)
     
     /**
     * Number of Year
     */
-    val numbYear: Int? = TimeUtil.jdToGregorian(jd, timeZone, DateFormat.YEAR)
+    val numbYear: Int? get() = TimeUtil.jdToGregorian(jd, timeZone, DateFormat.YEAR)
     
     /**
     * Number of Day
     */
-    val numbDay: Int? = TimeUtil.jdToGregorian(jd, timeZone, DateFormat.DAY_INT)
+    val numbDay: Int? get() = TimeUtil.jdToGregorian(jd, timeZone, DateFormat.DAY_INT)
     
     /**
     * Name of Day
     */
-    val nameDay: String? = TimeUtil.jdToGregorian(jd, timeZone, DateFormat.DAY_NAME)
+    val nameDay: String? get() = TimeUtil.jdToGregorian(jd, timeZone, DateFormat.DAY_NAME)
     
     /**
     * Number of Pasaran
     */
-    val numbPasaran: Int? = TimeUtil.jdToGregorian(jd, timeZone, DateFormat.PASARAN_INT)
+    val numbPasaran: Int? get() = TimeUtil.jdToGregorian(jd, timeZone, DateFormat.PASARAN_INT)
     
     /**
     * Name of pasaran
     */
-    val namePasaran: String? = TimeUtil.jdToGregorian(jd, timeZone, DateFormat.PASARAN_NAME)
+    val namePasaran: String? get() = TimeUtil.jdToGregorian(jd, timeZone, DateFormat.PASARAN_NAME)
     
     /**
     * Hour Double or Decimal
     */
-    val hourDouble: Double? = TimeUtil.jdToGregorian(jd, timeZone, DateFormat.HOUR_DOUBLE)
+    val hourDoubleDecimal: Double? get() = TimeUtil.jdToGregorian(jd, timeZone, DateFormat.HOUR_DOUBLE)
     
     /**
     * Frac of Day
     */
-    val fracDay: Double? = TimeUtil.jdToGregorian(jd, timeZone, DateFormat.FRAC_DAY)
+    val fracDay: Double? get() = TimeUtil.jdToGregorian(jd, timeZone, DateFormat.FRAC_DAY)
     
     
     
     /**
     * Julian Day Ephemeris, JDE
     */
-    val jde = TimeUtil.julianType(jd, deltaT, JulianType.JDE)
+    val jde get() = TimeUtil.julianType(jd, deltaT, JulianType.JDE)
     
     /**
     * Julian Century (JC) for standart epoch 2000
     */
-    val jc = TimeUtil.julianType(jd, deltaT, JulianType.JC)
+    val jc get() = TimeUtil.julianType(jd, deltaT, JulianType.JC)
     
     /**
     * Julian Century Ephemeris (JCE) for standart epoch 2000
     */
-    val jce = TimeUtil.julianType(jd, deltaT, JulianType.JCE)
+    val jce get() = TimeUtil.julianType(jd, deltaT, JulianType.JCE)
     
     /**
     * Julian Millennium (JM) for standart epoch 2000
     */
-    val jm = TimeUtil.julianType(jd, deltaT, JulianType.JM)
+    val jm get() = TimeUtil.julianType(jd, deltaT, JulianType.JM)
     
     /**
     * Julian Millennium Ephemeris (JME) for standart epoch 2000
     */
-    val jme = TimeUtil.julianType(jd, deltaT, JulianType.JME)
+    val jme get() = TimeUtil.julianType(jd, deltaT, JulianType.JME)
     
     /**
     * Nutation in Longitude, deltaPsi
     * model of IAU 2000B
     */
-    val nutationInLongitude = Nutation.nutationInLonAndObliquity(jd, deltaT)[0]
+    val nutationInLongitude get() = Nutation.nutationInLonAndObliquity(jd, deltaT)[0]
 
     /**
      * Nutation in Longitude DMS, deltaPsi
      * model of IAU 2000B
      */
-    val nutationInLongitudeDMS = ConvertUtil.toDegreeFullRound2(nutationInLongitude)
+    val nutationInLongitudeDMS get() = ConvertUtil.toDegreeFullRound2(nutationInLongitude)
     
     /**
     * Nutation of Obliquity, deltaEpsilon
     * model of IAU 2000B
     */
-    val nutationInObliquity = Nutation.nutationInLonAndObliquity(jd, deltaT)[1]
+    val nutationInObliquity get() = Nutation.nutationInLonAndObliquity(jd, deltaT)[1]
 
     /**
      * Nutation of Obliquity DMS, deltaEpsilon
      * model of IAU 2000B
      */
-    val nutationInObliquityDMS = ConvertUtil.toDegreeFullRound2(nutationInObliquity)
+    val nutationInObliquityDMS get() = ConvertUtil.toDegreeFullRound2(nutationInObliquity)
     
     /**
     * Mean Obliquity of Ecliptic, epsilon zero
     */
-    val meanObliquityOfEcliptic = Nutation.meanObliquityOfEcliptic(jd, deltaT)
+    val meanObliquityOfEcliptic get() = Nutation.meanObliquityOfEcliptic(jd, deltaT)
 
     /**
      * Mean Obliquity of Ecliptic DMS, epsilon zero
      */
-    val meanObliquityOfEclipticDMS = ConvertUtil.toDegreeFullRound2(meanObliquityOfEcliptic)
+    val meanObliquityOfEclipticDMS get() = ConvertUtil.toDegreeFullRound2(meanObliquityOfEcliptic)
     
     /**
     * True Obliquity of Ecliptic, epsilon
     */
-    val trueObliquityOfEcliptic = Nutation.trueObliquityOfEcliptic(jd, deltaT)
+    val trueObliquityOfEcliptic get() = Nutation.trueObliquityOfEcliptic(jd, deltaT)
 
     /**
      * True Obliquity of EclipticDMS, epsilon
      */
-    val trueObliquityOfEclipticDMS = ConvertUtil.toDegreeFullRound2(trueObliquityOfEcliptic)
+    val trueObliquityOfEclipticDMS get() = ConvertUtil.toDegreeFullRound2(trueObliquityOfEcliptic)
     
     /**
     * Earth Heliocentric Longitude in radian
     */
-    val earthHeliocentricLongitudeRadian = EarthPosition.earthHeliocentricLongitude(jd, deltaT, UnitType.RADIANS)
+    val earthHeliocentricLongitudeRadian get() = EarthPosition.earthHeliocentricLongitude(jd, deltaT, UnitType.RADIANS)
     
     /**
     * Earth Heliocentric Longitude in degree
     */
-    val earthHeliocentricLongitudeDegree = EarthPosition.earthHeliocentricLongitude(jd, deltaT, UnitType.DEGREES)
+    val earthHeliocentricLongitudeDegree get() = EarthPosition.earthHeliocentricLongitude(jd, deltaT, UnitType.DEGREES)
 
     /**
      * Earth Heliocentric Longitude DMS in degree
      */
-    val earthHeliocentricLongitudeDegreeDMS = ConvertUtil.toDegreeFullRound2(earthHeliocentricLongitudeDegree)
+    val earthHeliocentricLongitudeDegreeDMS get() = ConvertUtil.toDegreeFullRound2(earthHeliocentricLongitudeDegree)
     
     /**
     * Earth Heliocentric Latitude in radian
     */
-    val earthHeliocentricLatitudeRadian = EarthPosition.earthHeliocentricLatitude(jd, deltaT, UnitType.RADIANS)
+    val earthHeliocentricLatitudeRadian get() = EarthPosition.earthHeliocentricLatitude(jd, deltaT, UnitType.RADIANS)
     
     /**
     * Earth Heliocentric Latitude in degree
     */
-    val earthHeliocentricLatitudeDegree = EarthPosition.earthHeliocentricLatitude(jd, deltaT, UnitType.DEGREES)
+    val earthHeliocentricLatitudeDegree get() = EarthPosition.earthHeliocentricLatitude(jd, deltaT, UnitType.DEGREES)
 
     /**
      * Earth Heliocentric Latitude DMS in degree
      */
-    val earthHeliocentricLatitudeDegreeDMS = ConvertUtil.toDegreeFullRound2(earthHeliocentricLatitudeDegree)
+    val earthHeliocentricLatitudeDegreeDMS get() = ConvertUtil.toDegreeFullRound2(earthHeliocentricLatitudeDegree)
     
     /**
     * Sun True Geocentric Longitude in degree
     */
-    val sunTrueGeocentricLongitude = SunPosition.sunTrueGeocentricLongitude(jd, deltaT, UnitType.DEGREES)
+    val sunTrueGeocentricLongitude get() = SunPosition.sunTrueGeocentricLongitude(jd, deltaT, UnitType.DEGREES)
 
     /**
      * Sun True Geocentric Longitude DMS in degree
      */
-    val sunTrueGeocentricLongitudeDMS = ConvertUtil.toDegreeFullRound2(sunTrueGeocentricLongitude)
+    val sunTrueGeocentricLongitudeDMS get() = ConvertUtil.toDegreeFullRound2(sunTrueGeocentricLongitude)
     
     /**
     * Sun True Geocentric Latitude in degree
     */
-    val sunTrueGeocentricLatitude = SunPosition.sunTrueGeocentricLatitude(jd, deltaT, UnitType.DEGREES)
+    val sunTrueGeocentricLatitude get() = SunPosition.sunTrueGeocentricLatitude(jd, deltaT, UnitType.DEGREES)
 
     /**
      * Sun True Geocentric Latitude DMS in degree
      */
-    val sunTrueGeocentricLatitudeDMS = ConvertUtil.toDegreeFullRound2(sunTrueGeocentricLatitude)
+    val sunTrueGeocentricLatitudeDMS get() = ConvertUtil.toDegreeFullRound2(sunTrueGeocentricLatitude)
+    
+    /**
+     * Sun True Geocentric Latitude SS,ss in degree
+     */
+    val sunTrueGeocentricLatitudeSS2 get() = ConvertUtil.toDegreeSS2(sunTrueGeocentricLatitude * 3600)
     
     /**
     * Abration
     */
-    val abr = Correction.abration(jd, deltaT) / 3600.0
+    val abr get() = Correction.abration(jd, deltaT) / 3600.0
 
     /**
      * Abration DMS
      */
-    val abrDMS = ConvertUtil.toDegreeFullRound2(abr)
+    val abrDMS get() = ConvertUtil.toDegreeFullRound2(abr)
     
     /**
     * Sun Apparent Geocentric Longitude in degree
     */
-    val sunApparentGeocentricLongitude = SunPosition.sunApparentGeocentricLongitude(jd, deltaT, UnitType.DEGREES)
+    val sunApparentGeocentricLongitude get() = SunPosition.sunApparentGeocentricLongitude(jd, deltaT, UnitType.DEGREES)
 
     /**
      * Sun Apparent Geocentric Longitude DMS in degree
      */
-    val sunApparentGeocentricLongitudeDMS = ConvertUtil.toDegreeFullRound2(sunApparentGeocentricLongitude)
+    val sunApparentGeocentricLongitudeDMS get() = ConvertUtil.toDegreeFullRound2(sunApparentGeocentricLongitude)
     
     /**
     * Sun True Geocentric Distance AU
     */
-    val sunGeocentricDistanceAU = EarthPosition.earthRadiusVector(jd, deltaT, DistanceType.AU)
+    val sunGeocentricDistanceAU get() = EarthPosition.earthRadiusVector(jd, deltaT, DistanceType.AU)
     
     /**
     * Sun True Geocentric Distance KM
     */
-    val sunGeocentricDistanceKM = EarthPosition.earthRadiusVector(jd, deltaT, DistanceType.KM)
+    val sunGeocentricDistanceKM get() = EarthPosition.earthRadiusVector(jd, deltaT, DistanceType.KM)
     
     /**
     * Sun True Geocentric Distance ER
     */
-    val sunGeocentricDistanceER = EarthPosition.earthRadiusVector(jd, deltaT, DistanceType.ER)
+    val sunGeocentricDistanceER get() = EarthPosition.earthRadiusVector(jd, deltaT, DistanceType.ER)
     
     /**
     * Sun Apparent Geocentric Semidiameter in degree, s
     */
-    val sunApparentGeoSemidiameter = SunPosition.sunApparentGeoSemidiameter(jd, deltaT)
+    val sunApparentGeoSemidiameter get() = SunPosition.sunApparentGeoSemidiameter(jd, deltaT)
 
     /**
      * Sun Apparent Geocentric Semidiameter DMS in degree, s
      */
-    val sunApparentGeoSemidiameterDMS = ConvertUtil.toDegreeFullRound2(sunApparentGeoSemidiameter)
+    val sunApparentGeoSemidiameterDMS get() = ConvertUtil.toDegreeFullRound2(sunApparentGeoSemidiameter)
+    
+    /**
+     * Sun Apparent Geocentric Semidiameter MM' SS,ss" in degree, s
+     */
+    val sunApparentGeoSemidiameterMMSS2 get() = ConvertUtil.toDegreeMMSS2(sunApparentGeoSemidiameter)
     
     /**
     * Sun Apparent Geocentric Right Ascension in degree, a
     */
-    val sunApparentGeoRightAscension = SunPosition.sunApparentGeoRightAscension(jd, deltaT)
+    val sunApparentGeoRightAscension get() = SunPosition.sunApparentGeoRightAscension(jd, deltaT)
 
     /**
      * Sun Apparent Geocentric Right Ascension DMS in degree, a
      */
-    val sunApparentGeoRightAscensionDMS = ConvertUtil.toDegreeFullRound2(sunApparentGeoRightAscension)
+    val sunApparentGeoRightAscensionDMS get() = ConvertUtil.toDegreeFullRound2(sunApparentGeoRightAscension)
 
     /**
      * Sun Apparent Geocentric Declination in degree, d
      */
-    val sunApparentGeoDeclination = SunPosition.sunApparentGeoDeclination(jd, deltaT)
+    val sunApparentGeoDeclination get() = SunPosition.sunApparentGeoDeclination(jd, deltaT)
 
     /**
      * Sun Apparent Geocentric Declination DMS in degree, d
      */
-    val sunApparentGeoDeclinationDMS = ConvertUtil.toDegreeFullRound2(sunApparentGeoDeclination)
+    val sunApparentGeoDeclinationDMS get() = ConvertUtil.toDegreeFullRound2(sunApparentGeoDeclination)
 
     /**
     * Greenwich Mean Sidereal Time default in degree, GMST, v0
     */
-    val greenwichMeanSiderealTime = SunPosition.greenwichMeanSiderealTime(jd, UnitType.DEGREES)
+    val greenwichMeanSiderealTime get() = SunPosition.greenwichMeanSiderealTime(jd, UnitType.DEGREES)
 
     /**
      * Greenwich Mean Sidereal Time DMS default in degree, GMST, v0
      */
-    val greenwichMeanSiderealTimeDMS = ConvertUtil.toDegreeFullRound2(greenwichMeanSiderealTime)
+    val greenwichMeanSiderealTimeDMS get() = ConvertUtil.toDegreeFullRound2(greenwichMeanSiderealTime)
 
     /**
     * Greenwich Apparent Sidereal Time, GAST, v
     */
-    val greenwichApparentSiderealTime = SunPosition.greenwichApparentSiderealTime(jd, deltaT)
+    val greenwichApparentSiderealTime get() = SunPosition.greenwichApparentSiderealTime(jd, deltaT)
 
     /**
      * Greenwich Apparent Sidereal Time DMS, GAST, v
      */
-    val greenwichApparentSiderealTimeDMS = ConvertUtil.toDegreeFullRound2(greenwichApparentSiderealTime)
+    val greenwichApparentSiderealTimeDMS get() = ConvertUtil.toDegreeFullRound2(greenwichApparentSiderealTime)
 
     /**
     * Local Apparent Sidereal Time, LAST, theta
     */
-    val localApparentSiderealTime = SunPosition.localApparentSiderealTime(jd, longitude, deltaT, UnitType.DEGREES)
+    val localApparentSiderealTime get() = SunPosition.localApparentSiderealTime(jd, longitude, deltaT, UnitType.DEGREES)
 
     /**
      * Local Apparent Sidereal Time DMS, LAST, theta
      */
-    val localApparentSiderealTimeDMS = ConvertUtil.toDegreeFullRound2(localApparentSiderealTime)
+    val localApparentSiderealTimeDMS get() = ConvertUtil.toDegreeFullRound2(localApparentSiderealTime)
     
     /**
     * Sun Geocentric Greenwich Hour Angle, GHA, Ho
     */
-    val sunGeoGreenwichHourAngle = SunPosition.sunGeoGreenwichHourAngle(jd, deltaT)
+    val sunGeoGreenwichHourAngle get() = SunPosition.sunGeoGreenwichHourAngle(jd, deltaT)
 
     /**
      * Sun Geocentric Greenwich Hour Angle DMS, GHA, Ho
      */
-    val sunGeoGreenwichHourAngleDMS = ConvertUtil.toDegreeFullRound2(sunGeoGreenwichHourAngle)
+    val sunGeoGreenwichHourAngleDMS get() = ConvertUtil.toDegreeFullRound2(sunGeoGreenwichHourAngle)
     
     /**
     * Sun Geocentric Local Hour Angle, LHA, H
     */
-    val sunGeoLocalHourAngle = SunPosition.sunGeoLocalHourAngle(jd, longitude, deltaT, UnitType.DEGREES)
+    val sunGeoLocalHourAngle get() = SunPosition.sunGeoLocalHourAngle(jd, longitude, deltaT, UnitType.DEGREES)
 
     /**
      * Sun Geocentric Local Hour Angle DMS, LHA, H
      */
-    val sunGeoLocalHourAngleDMS = ConvertUtil.toDegreeFullRound2(sunGeoLocalHourAngle)
+    val sunGeoLocalHourAngleDMS get() = ConvertUtil.toDegreeFullRound2(sunGeoLocalHourAngle)
     
     /**
     * Sun Geocentric Azimuth, A
     */
-    val sunGeoAzimuth = SunPosition.sunGeoAzimuth(jd, longitude, latitude, deltaT)
+    val sunGeoAzimuth get() = SunPosition.sunGeoAzimuth(jd, longitude, latitude, deltaT)
 
     /**
      * Sun Geocentric Azimuth DMS, A
      */
-    val sunGeoAzimuthDMS = ConvertUtil.toDegreeFullRound2(sunGeoAzimuth)
+    val sunGeoAzimuthDMS get() = ConvertUtil.toDegreeFullRound2(sunGeoAzimuth)
     
     /**
     * Sun Geocentric Altitude, h
     */
-    val sunGeoAltitude = SunPosition.sunGeoAltitude(jd, longitude, latitude, deltaT)
+    val sunGeoAltitude get() = SunPosition.sunGeoAltitude(jd, longitude, latitude, deltaT)
 
     /**
      * Sun Geocentric Altitude DMS, h
      */
-    val sunGeoAltitudeDMS = ConvertUtil.toDegreeFullRound2(sunGeoAltitude)
+    val sunGeoAltitudeDMS get() = ConvertUtil.toDegreeFullRound2(sunGeoAltitude)
     
     // Sun Topocentric Coordinate 
     
     /**
     * Sun Equatorial Horizontal Parallax, phi
     */
-    val sunEquatorialHorizontalParallax = SunPosition.sunEquatorialHorizontalParallax(jd, deltaT)
+    val sunEquatorialHorizontalParallax get() = SunPosition.sunEquatorialHorizontalParallax(jd, deltaT)
 
     /**
      * Sun Equatorial Horizontal Parallax DMS, phi
      */
-    val sunEquatorialHorizontalParallaxDMS = ConvertUtil.toDegreeFullRound2(sunEquatorialHorizontalParallax)
+    val sunEquatorialHorizontalParallaxDMS get() = ConvertUtil.toDegreeFullRound2(sunEquatorialHorizontalParallax)
     
     /**
     * term u in radian
     */
-    val termU = Correction.termU(latitude)
+    val termU get() = Correction.termU(latitude)
     
     /**
     * term x in radian
     */
-    val termX = Correction.termX(latitude, elevation)
+    val termX get() = Correction.termX(latitude, elevation)
     
     /**
     * term y in radian
     */
-    val termY = Correction.termY(latitude, elevation)
+    val termY get() = Correction.termY(latitude, elevation)
     
     /**
     * Sun term n in radian
     */
-    val sunTermN = SunPosition.sunTermN(jd, longitude, latitude, elevation, deltaT)
+    val sunTermN get() = SunPosition.sunTermN(jd, longitude, latitude, elevation, deltaT)
     
     /**
     * Parallax in the Sun Right Ascension, deltaAlpha
     */
-    val parallaxInTheSunRightAscension = SunPosition.parallaxInTheSunRightAscension(jd, longitude, latitude, elevation, deltaT, UnitType.DEGREES)
+    val parallaxInTheSunRightAscension get() = SunPosition.parallaxInTheSunRightAscension(jd, longitude, latitude, elevation, deltaT, UnitType.DEGREES)
 
     /**
      * Parallax in the Sun Right Ascension DMS, deltaAlpha
      */
-    val parallaxInTheSunRightAscensionDMS = ConvertUtil.toDegreeFullRound2(parallaxInTheSunRightAscension)
+    val parallaxInTheSunRightAscensionDMS get() = ConvertUtil.toDegreeFullRound2(parallaxInTheSunRightAscension)
 
     /**
     * Parallax in the Sun Altitude
     */
-    val parallaxInTheSunAltitude = SunPosition.parallaxInTheSunAltitude(jd, longitude, latitude, elevation, deltaT, UnitType.DEGREES)
+    val parallaxInTheSunAltitude get() = SunPosition.parallaxInTheSunAltitude(jd, longitude, latitude, elevation, deltaT, UnitType.DEGREES)
 
     /**
      * Parallax in the Sun Altitude DMS
      */
-    val parallaxInTheSunAltitudeDMS = ConvertUtil.toDegreeFullRound2(parallaxInTheSunAltitude)
+    val parallaxInTheSunAltitudeDMS get() = ConvertUtil.toDegreeFullRound2(parallaxInTheSunAltitude)
 
     /**
     * Atmospheric Refraction from Airless Altitude
     */
-    val atmosphericRefractionFromAirlessAltitude = Correction.atmosphericRefractionFromAirlessAltitude(sunGeoAltitude, temperature, pressure)
+    val atmosphericRefractionFromAirlessAltitude get() = Correction.atmosphericRefractionFromAirlessAltitude(sunGeoAltitude, temperature, pressure)
 
     /**
      * Atmospheric Refraction from Airless Altitude DMS
      */
-    val atmosphericRefractionFromAirlessAltitudeDMS = ConvertUtil.toDegreeFullRound2(atmosphericRefractionFromAirlessAltitude)
+    val atmosphericRefractionFromAirlessAltitudeDMS get() = ConvertUtil.toDegreeFullRound2(atmosphericRefractionFromAirlessAltitude)
 
     /**
     * Sun Topocentric Longitude, lambda apostrophe
     */
-    val sunTopoLongitude = SunPosition.sunTopoLongitude(jd, longitude, latitude, elevation, deltaT)
+    val sunTopoLongitude get() = SunPosition.sunTopoLongitude(jd, longitude, latitude, elevation, deltaT)
 
     /**
      * Sun Topocentric Longitude DMS, lambda apostrophe
      */
-    val sunTopoLongitudeDMS = ConvertUtil.toDegreeFullRound2(sunTopoLongitude)
+    val sunTopoLongitudeDMS get() = ConvertUtil.toDegreeFullRound2(sunTopoLongitude)
 
     /**
     * Sun Topocentric Latitude, beta apostrophe
     */
-    val sunTopoLatitude = SunPosition.sunTopoLatitude(jd, longitude, latitude, elevation, deltaT)
+    val sunTopoLatitude get() = SunPosition.sunTopoLatitude(jd, longitude, latitude, elevation, deltaT)
 
     /**
      * Sun Topocentric Latitude DMS, beta apostrophe
      */
-    val sunTopoLatitudeDMS = ConvertUtil.toDegreeFullRound2(sunTopoLatitude)
+    val sunTopoLatitudeDMS get() = ConvertUtil.toDegreeFullRound2(sunTopoLatitude)
 
     /**
     * Sun Topocentric Right Ascension, alpha apostrophe
     */
-    val sunTopoRightAscension = SunPosition.sunTopoRightAscension(jd, longitude, latitude, elevation, deltaT)
+    val sunTopoRightAscension get() = SunPosition.sunTopoRightAscension(jd, longitude, latitude, elevation, deltaT)
 
     /**
      * Sun Topocentric Right Ascension DMS, alpha apostrophe
      */
-    val sunTopoRightAscensionDMS = ConvertUtil.toDegreeFullRound2(sunTopoRightAscension)
+    val sunTopoRightAscensionDMS get() = ConvertUtil.toDegreeFullRound2(sunTopoRightAscension)
 
     /**
     * Sun Topocentric Declination, delta apostrophe
     */
-    val sunTopoDeclination = SunPosition.sunTopoDeclination(jd, longitude, latitude, elevation, deltaT)
+    val sunTopoDeclination get() = SunPosition.sunTopoDeclination(jd, longitude, latitude, elevation, deltaT)
 
     /**
      * Sun Topocentric Declination DMS, delta apostrophe
      */
-    val sunTopoDeclinationDMS = ConvertUtil.toDegreeFullRound2(sunTopoDeclination)
+    val sunTopoDeclinationDMS get() = ConvertUtil.toDegreeFullRound2(sunTopoDeclination)
 
     /**
     * Sun Topocentric Local Hour Angle default in degree, H apostrophe
     */
-    val sunTopoLocalHourAngle = SunPosition.sunTopoLocalHourAngle(jd, longitude, latitude, elevation, deltaT)
+    val sunTopoLocalHourAngle get() = SunPosition.sunTopoLocalHourAngle(jd, longitude, latitude, elevation, deltaT)
 
     /**
      * Sun Topocentric Local Hour Angle DMS default in degree, H apostrophe
      */
-    val sunTopoLocalHourAngleDMS = ConvertUtil.toDegreeFullRound2(sunTopoLocalHourAngle)
+    val sunTopoLocalHourAngleDMS get() = ConvertUtil.toDegreeFullRound2(sunTopoLocalHourAngle)
 
     /**
     * Sun Topocentric Azimuth, A apostrophe 
     */
-    val sunTopoAzimuth = SunPosition.sunTopoAzimuth(jd, longitude, latitude, elevation, deltaT)
+    val sunTopoAzimuth get() = SunPosition.sunTopoAzimuth(jd, longitude, latitude, elevation, deltaT)
 
     /**
      * Sun Topocentric Azimuth DMS, A apostrophe
      */
-    val sunTopoAzimuthDMS = ConvertUtil.toDegreeFullRound2(sunTopoAzimuth)
+    val sunTopoAzimuthDMS get() = ConvertUtil.toDegreeFullRound2(sunTopoAzimuth)
 
     /**
     * Sun Airless Topocentric Altitude, h'
     */
-    val sunAirlessTopoAltitude = SunPosition.sunTopoAltitude(jd, longitude, latitude, elevation, deltaT, SunAltType.AIRLESS, UnitType.DEGREES, temperature, pressure)
+    val sunAirlessTopoAltitude get() = SunPosition.sunTopoAltitude(jd, longitude, latitude, elevation, deltaT, SunAltType.AIRLESS, UnitType.DEGREES, temperature, pressure)
 
     /**
      * Sun Airless Topocentric Altitude DMS, h'
      */
-    val sunAirlessTopoAltitudeDMS = ConvertUtil.toDegreeFullRound2(sunAirlessTopoAltitude)
+    val sunAirlessTopoAltitudeDMS get() = ConvertUtil.toDegreeFullRound2(sunAirlessTopoAltitude)
 
     /**
     * Sun Apparent Topocentric Altitude, ha'
     */
-    val sunApparentTopoAltitude = SunPosition.sunTopoAltitude(jd, longitude, latitude, elevation, deltaT, SunAltType.APPARENT, UnitType.DEGREES, temperature, pressure)
+    val sunApparentTopoAltitude get() = SunPosition.sunTopoAltitude(jd, longitude, latitude, elevation, deltaT, SunAltType.APPARENT, UnitType.DEGREES, temperature, pressure)
 
     /**
      * Sun Apparent Topocentric Altitude DMS, ha'
      */
-    val sunApparentTopoAltitudeDMS = ConvertUtil.toDegreeFullRound2(sunApparentTopoAltitude)
+    val sunApparentTopoAltitudeDMS get() = ConvertUtil.toDegreeFullRound2(sunApparentTopoAltitude)
 
     /**
     * Sun Observer Topocentric Altitude, ho'
     */
-    val sunObserverTopoAltitude = SunPosition.sunTopoAltitude(jd, longitude, latitude, elevation, deltaT, SunAltType.OBSERVER, UnitType.DEGREES, temperature, pressure)
+    val sunObserverTopoAltitude get() = SunPosition.sunTopoAltitude(jd, longitude, latitude, elevation, deltaT, SunAltType.OBSERVER, UnitType.DEGREES, temperature, pressure)
 
     /**
      * Sun Observer Topocentric Altitude DMS, ho'
      */
-    val sunObserverTopoAltitudeDMS = ConvertUtil.toDegreeFullRound2(sunObserverTopoAltitude)
+    val sunObserverTopoAltitudeDMS get() = ConvertUtil.toDegreeFullRound2(sunObserverTopoAltitude)
 
     /**
     * Sun Topocentric Semidiameter, s apostrophe
     */
-    val sunTopoSemidiameter = SunPosition.sunTopoSemidiameter(jd, longitude, latitude, elevation, deltaT)
+    val sunTopoSemidiameter get() = SunPosition.sunTopoSemidiameter(jd, longitude, latitude, elevation, deltaT)
 
     /**
      * Sun Topocentric Semidiameter DMS, s apostrophe
      */
-    val sunTopoSemidiameterDMS = ConvertUtil.toDegreeFullRound2(sunTopoSemidiameter)
+    val sunTopoSemidiameterDMS get() = ConvertUtil.toDegreeFullRound2(sunTopoSemidiameter)
+    
+    /**
+     * Sun Topocentric Semidiameter MM' SS,ss", s apostrophe
+     */
+    val sunTopoSemidiameterMMSS2 get() = ConvertUtil.toDegreeMMSS2(sunTopoSemidiameter)
 
     /**
     * Equation of Time, e
     */
-    val equationOfTime = SunPosition.equationOfTime(jd, deltaT)
+    val equationOfTime get() = SunPosition.equationOfTime(jd, deltaT)
 
     /**
-     * Equation of Time HMS, e
+     * Equation of Time MM m SS,ss s, e
      */
-    val equationOfTimeHMS = ConvertUtil.toCounterMMSS2(equationOfTime)
+    val equationOfTimeHMS get() = ConvertUtil.toCounterMMSS2(equationOfTime)
 
 }

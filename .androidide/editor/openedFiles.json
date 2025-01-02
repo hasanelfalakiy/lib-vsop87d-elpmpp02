@@ -1,0 +1,35 @@
+{
+  "allFiles": [
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/lib-vsop87d-elpmpp02/lib/src/main/kotlin/com/andihasan7/lib/vsop87d/elpmpp02/VSOP87D.kt",
+      "selection": {
+        "end": {
+          "column": 73,
+          "index": 10117,
+          "line": 306
+        },
+        "start": {
+          "column": 48,
+          "index": 10092,
+          "line": 306
+        }
+      }
+    },
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/lib-vsop87d-elpmpp02/lib/src/main/kotlin/com/andihasan7/lib/vsop87d/elpmpp02/ELPMPP02.kt",
+      "selection": {
+        "end": {
+          "column": 66,
+          "index": 13252,
+          "line": 353
+        },
+        "start": {
+          "column": 66,
+          "index": 13252,
+          "line": 353
+        }
+      }
+    }
+  ],
+  "selectedFile": "/storage/emulated/0/AndroidIDEProjects/lib-vsop87d-elpmpp02/lib/src/main/kotlin/com/andihasan7/lib/vsop87d/elpmpp02/ELPMPP02.kt"
+}

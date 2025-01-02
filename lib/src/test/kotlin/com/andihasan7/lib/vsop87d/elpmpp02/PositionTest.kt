@@ -44,14 +44,14 @@ class PositionTest {
         val hourD = (17 + 51.0 / 60 + 27.0 / 3600)
         
         val ephe = VSOP87D(
-            date = 28,
-            month = 2,
-            year = 2025,
-            latitude = -7.43333333334, // -7.029055555556,
-            longitude = 111.433333333334, // 106.557722222222,
-            elevation = 150.0, // 52.685,
-            timeZone = 7.0,
-            hourDouble = 17.94671437500343, // 17.8575,
+            date = 1,
+            month = 1,
+            year = 2024,
+            latitude = 0.0,//-7.43333333334, // -7.029055555556,
+            longitude = 0.0,//111.433333333334, // 106.557722222222,
+            elevation = 0.0,// 150.0, // 52.685,
+            timeZone = 0.0,// 7.0,
+            hourDouble = 0.0,// 17.94671437500343, // 17.8575,
             checkDeltaT = true
         )
         
@@ -208,13 +208,13 @@ class PositionTest {
         println("Sun Geocentric Coor:")
         println("")
         println("Sun True Geo Lon: $sunTrueGeoLon, ${cv.toDegreeFullRound2(sunTrueGeoLon)}")
-        println("Sun True Geo Lat: $sunTrueGeoLat, ${cv.toDegreeFullRound2(sunTrueGeoLat)}")
+        println("Sun True Geo Lat: $sunTrueGeoLat, ${cv.toDegreeFullRound2(sunTrueGeoLat)}, ${ephe.sunTrueGeocentricLatitudeSS2}")
         println("Abration: $abr, ${cv.toDegreeFullRound2(abr)}")
         println("Sun Appa Geo Lon: $sunAppaGeoLon, ${cv.toDegreeFullRound2(sunAppaGeoLon)}")
         println("Sun Geo Distance AU: $sunGeoDistanceAU")
         println("Sun Geo Distance KM: $sunGeoDistanceKM")
         println("Sun Geo Distance ER: $sunGeoDistanceER")
-        println("Sun Appa Geo Semidiameter: $sunAppaGeoSemidiameter, ${cv.toDegreeFullRound2(sunAppaGeoSemidiameter)}")
+        println("Sun Appa Geo Semidiameter: $sunAppaGeoSemidiameter, ${cv.toDegreeFullRound2(sunAppaGeoSemidiameter)}, ${ephe.sunApparentGeoSemidiameterMMSS2}")
         println("Sun Appa Geo Right Ascen: $sunAppaGeoRA, ${cv.toDegreeFullRound2(sunAppaGeoRA)}")
         println("Sun Appa Geo Declination: $sunAppaGeoDec, ${cv.toDegreeFullRound2(sunAppaGeoDec)}")
         println("Greenwich Mean Sidereal Time: $gmst")
@@ -244,7 +244,7 @@ class PositionTest {
         println("Sun Airless Topo Alt: $sunTopoAirlessAlt, ${cv.toDegreeFullRound2(sunTopoAirlessAlt)}")
         println("Sun Apparent Topo Alt: $sunTopoApparentAlt, ${cv.toDegreeFullRound2(sunTopoApparentAlt)}")
         println("Sun Observer Topo Alt: $sunTopoObserverAlt, ${cv.toDegreeFullRound2(sunTopoObserverAlt)}")
-        println("Sun Topo Semidiameter: $sunTopoSemidiameter, ${cv.toDegreeFullRound2(sunTopoSemidiameter)}")
+        println("Sun Topo Semidiameter: $sunTopoSemidiameter, ${cv.toDegreeFullRound2(sunTopoSemidiameter)}, ${ephe.sunTopoSemidiameterMMSS2}")
         println("Sun Equation of Time: $equationOfTime, ${cv.toTimeFullRound2(equationOfTime)}")
         println("")
         println("Moon Geocentric Coor:")

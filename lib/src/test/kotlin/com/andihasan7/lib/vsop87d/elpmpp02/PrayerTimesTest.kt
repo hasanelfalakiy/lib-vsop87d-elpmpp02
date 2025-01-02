@@ -11,7 +11,7 @@ class PrayerTimesTest {
 
         val ws = PrayerTimes(
             date = 10,
-            month = 12,
+            month = 1,
             year = 2024,
             latitude = -7.4333333334,
             longitude = 111.43333333334,

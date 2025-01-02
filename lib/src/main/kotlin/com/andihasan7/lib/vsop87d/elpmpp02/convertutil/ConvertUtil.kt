@@ -41,7 +41,18 @@ object ConvertUtil {
         return round(this * multiplier) / multiplier
     }
     
-    
+    // SS.ss
+    /**
+    * function to change Double data to decimal unit form SS,ss
+    * @param decimal
+    * @return hasil
+    */
+    fun toDegreeSS2(decimal: Double): String {
+        val result = decimal.round(2)
+
+        return "$result\u2033"
+    }
+
     /**
     * HH:MM:SS numbers rounded to seconds
     * function to change Double data to hours, minutes, seconds of type Int Array
