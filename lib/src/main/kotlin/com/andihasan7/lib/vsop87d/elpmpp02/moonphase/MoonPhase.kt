@@ -238,9 +238,9 @@ object MoonPhase {
 
         val jdNewMoon = moonPhase(monthOfHijri, yearOfHijri, PhaseType.NEWMOON)
 
-        val x1 = jdNewMoon - 1 / 24
+        val x1 = jdNewMoon - (1.0 / 24.0)
         val x2 = jdNewMoon
-        val x3 = jdNewMoon + 1 / 24
+        val x3 = jdNewMoon + (1.0 / 24.0)
 
         val y1Topo = SunPosition.sunTopoLongitude(x1, lon, lat, elev, deltaT) - MoonPosition.moonTopoLongitude(x1, lon, lat, elev, deltaT)
         val y2Topo = SunPosition.sunTopoLongitude(x2, lon, lat, elev, deltaT) - MoonPosition.moonTopoLongitude(x2, lon, lat, elev, deltaT)
@@ -251,8 +251,10 @@ object MoonPhase {
 
         val aTopo = y2Topo - y1Topo
         val bTopo = y3Topo - y2Topo
-        val cTopo = aTopo - bTopo
-
+        val cTopo = bTopo - aTopo
+        
+        vN0Topo = -2 * y2Topo / (aTopo + bTopo + cTopo * vN0Topo)
+        
         for (i in 1..2) {
             vN0Topo = -2 * y2Topo / (aTopo + bTopo + cTopo * vN0Topo)
             jdTopoNewMoon = jdNewMoon + vN0Topo / 24.0
