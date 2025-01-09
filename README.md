@@ -40,7 +40,7 @@ Sedangkan untuk Nutation, menggunakan IAU 2000B
 - [x] Arah qiblat & rashdul qiblat
 - [x] Waktu sholat
 - [x] Fase-fase bulan
-- [ ] Awal bulan hijriyah
+- [x] Awal bulan hijriyah
 
 ## Konfigurasi pertama
 
@@ -90,7 +90,7 @@ implementation 'com.github.hasanelfalakiy:lib-vsop87d-elpmpp02:${versi}'
 ```
 lib-vsop87d-elpmpp02
 
-Copyright (C) 2024  Andi Hasan Ashari
+Copyright (C) 2024-2025  Andi Hasan Ashari
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
