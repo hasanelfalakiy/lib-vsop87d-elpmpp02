@@ -44,26 +44,26 @@ class PositionTest {
         val hourD = (17 + 51.0 / 60 + 27.0 / 3600)
         
         val ephe = VSOP87D(
-            date = 1,
-            month = 1,
-            year = 2024,
-            latitude = 0.0,//-7.43333333334, // -7.029055555556,
-            longitude = 0.0,//111.433333333334, // 106.557722222222,
-            elevation = 0.0,// 150.0, // 52.685,
-            timeZone = 0.0,// 7.0,
-            hourDouble = 0.0,// 17.94671437500343, // 17.8575,
+            date = 20,
+            month = 4,
+            year = 2023,
+            latitude = -7.029055555556,
+            longitude = 106.557722222222,
+            elevation = 52.685,
+            timeZone = 7.0,
+            hourDouble = 17.8575,// 17.94671437500343, // 17.8575,
             checkDeltaT = true
         )
         
         val elp = ELPMPP02(
-            date = 28,
-            month = 2,
-            year = 2025,
-            latitude = -7.43333333334, // -7.029055555556,
-            longitude = 111.433333333334, // 106.557722222222,
-            elevation = 150.0, // 52.685,
+            date = 20,
+            month = 4,
+            year = 2023,
+            latitude = -7.029055555556,
+            longitude = 106.557722222222,
+            elevation = 52.685,
             timeZone = 7.0,
-            hourDouble = 17.94671437500343, // 17.8575,
+            hourDouble = 17.8575, // 17.8575,
             checkDeltaT = true
         )
         
