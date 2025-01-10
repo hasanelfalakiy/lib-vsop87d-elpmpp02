@@ -661,6 +661,25 @@ class MoonSighting(
     val qOdeh3 get() = ConvertUtil.run { (qOdeh).round(3) }
     
     /**
+    * moon topo position
+    */
+    val moonTopoPosition get() = moonTopoAzimuth - sunTopoAzimuth
+    
+    /**
+    * moon topo position DMS
+    */
+    val moonTopoPositionDMS get() = ConvertUtil.toDegreeFullRound2(moonTopoPosition)
+    
+    /**
+    * moon topo position string, - selatan (south) + utara (north)
+    */
+    val moonTopoPositionString get() = if (moonTopoPosition < 0.0) {
+        "Selatan Matahari"
+    } else {
+        "Utara Matahari"
+    }
+    
+    /**
     * altitude hilal without add date
     */
     val tHilal get() = MoonPosition.moonTopoAltitude(jdGhurubSyams, longitude, latitude, elevation, deltaT, MoonAltType.OBSERVED_CENTER, temperature, pressure)

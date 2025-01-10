@@ -81,6 +81,8 @@ class MoonSightingTest {
         val moonAge = ms.moonAgeOld
         
         val crecentWidth = ms.crecentWidthTopo
+        val moonTopoPosition = ms.moonTopoPosition
+        val moonTopoPositionString = ms.moonTopoPositionString
         //val moonDuration = ms.moonDuration
         val moonBestTime = ms.moonBestTime
         val qOdeh = ms.qOdeh3
@@ -149,6 +151,8 @@ class MoonSightingTest {
         // println("moon duration muktsul: $moonDuration, ${ConvertUtil.toDegreeFullRound2(moonDuration)}")
         println("moon best time: $moonBestTime, ${ms.moonBestTimeHMS}")
         println("range q Odeh: $qOdeh")
+        println("moon position : $moonTopoPosition, ${ms.moonTopoPositionDMS}")
+        println("moon position string: $moonTopoPositionString")
         println("prediction neo mabims: $predictionNeoMabims")
         println("")
         println("moon eq horizontal parallax: $moonHorizontalParallaxDMS")
