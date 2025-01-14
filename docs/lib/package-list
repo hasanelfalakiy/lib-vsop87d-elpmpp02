@@ -187,7 +187,6 @@ $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.moonposition/MoonPosition/pa
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.moonsighting////PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/index.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/MoonSighting///PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/-moon-sighting/index.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/MoonSighting/MoonSighting/#kotlin.Int#kotlin.Int#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Double#kotlin.Int#kotlin.Boolean#kotlin.Double#kotlin.Double/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/-moon-sighting/-moon-sighting.html
-$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/MoonSighting/_irNU/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/-moon-sighting/_ir-n-u.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/MoonSighting/_predictionIRNU/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/-moon-sighting/_prediction-i-r-n-u.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/MoonSighting/addDate/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/-moon-sighting/add-date.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/MoonSighting/checkDeltaT/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/-moon-sighting/check-delta-t.html
@@ -206,7 +205,6 @@ $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/MoonSighting/de
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/MoonSighting/diffRASunMoon/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/-moon-sighting/diff-r-a-sun-moon.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/MoonSighting/dip/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/-moon-sighting/dip.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/MoonSighting/elevation/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/-moon-sighting/elevation.html
-$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/MoonSighting/elp/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/-moon-sighting/elp.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/MoonSighting/hilalDurationOld/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/-moon-sighting/hilal-duration-old.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/MoonSighting/hilalDurationOldHMS/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/-moon-sighting/hilal-duration-old-h-m-s.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/MoonSighting/hourGeoNewMoon/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/-moon-sighting/hour-geo-new-moon.html
@@ -218,6 +216,7 @@ $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/MoonSighting/ho
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/MoonSighting/isVisibleIRNU/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/-moon-sighting/is-visible-i-r-n-u.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/MoonSighting/jdGeoNewMoon/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/-moon-sighting/jd-geo-new-moon.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/MoonSighting/jdGeoNewMoonCor/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/-moon-sighting/jd-geo-new-moon-cor.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/MoonSighting/jdGeoNewMoonCorPlus/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/-moon-sighting/jd-geo-new-moon-cor-plus.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/MoonSighting/jdGhurubSyams/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/-moon-sighting/jd-ghurub-syams.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/MoonSighting/jdGhurubSyamsPlus/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/-moon-sighting/jd-ghurub-syams-plus.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/MoonSighting/jdMoonSet/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/-moon-sighting/jd-moon-set.html
@@ -257,6 +256,7 @@ $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/MoonSighting/mo
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/MoonSighting/moonGeoDeclination/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/-moon-sighting/moon-geo-declination.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/MoonSighting/moonGeoDeclinationDMS/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/-moon-sighting/moon-geo-declination-d-m-s.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/MoonSighting/moonGeoDistanceKM/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/-moon-sighting/moon-geo-distance-k-m.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/MoonSighting/moonGeoDistanceKM2/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/-moon-sighting/moon-geo-distance-k-m2.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/MoonSighting/moonGeoSemidiameter/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/-moon-sighting/moon-geo-semidiameter.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/MoonSighting/moonGeoSemidiameterDMS/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/-moon-sighting/moon-geo-semidiameter-d-m-s.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/MoonSighting/moonHorizontalParallax/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/-moon-sighting/moon-horizontal-parallax.html
@@ -281,6 +281,7 @@ $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/MoonSighting/mo
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/MoonSighting/moonTopoDeclination/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/-moon-sighting/moon-topo-declination.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/MoonSighting/moonTopoDeclinationDMS/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/-moon-sighting/moon-topo-declination-d-m-s.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/MoonSighting/moonTopoIlluminated/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/-moon-sighting/moon-topo-illuminated.html
+$dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/MoonSighting/moonTopoIlluminatedPercent/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/-moon-sighting/moon-topo-illuminated-percent.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/MoonSighting/moonTopoIlluminatedPercent2/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/-moon-sighting/moon-topo-illuminated-percent2.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/MoonSighting/moonTopoLatitude/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/-moon-sighting/moon-topo-latitude.html
 $dokka.location:com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/MoonSighting/moonTopoLatitudeDMS/#/PointingToDeclaration/lib/com.andihasan7.lib.vsop87d.elpmpp02.moonsighting/-moon-sighting/moon-topo-latitude-d-m-s.html
