@@ -736,7 +736,7 @@ class MoonSighting(
     */
     val moonSunElo get() = MoonPosition.moonSunTopoElongation(jdGhurubSyams, longitude, latitude, elevation, deltaT)
     
-    val _irNU get() = if (tHilal >= 3.0 && moonSunElo >= 6.4) {
+    private val _irNU get() = if (tHilal >= 3.0 && moonSunElo >= 6.4) {
         1 // enter the new month
     } else {
         2 // istikmal

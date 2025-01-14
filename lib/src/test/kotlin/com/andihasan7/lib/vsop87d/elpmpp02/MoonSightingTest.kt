@@ -16,7 +16,7 @@ class MoonSightingTest {
             latitude = -7.43333333334,
             elevation = 150.0,
             timeZone = 7.0,
-            addDate = 1,
+            addDate = 0,
             checkDeltaT = true
         )
 
