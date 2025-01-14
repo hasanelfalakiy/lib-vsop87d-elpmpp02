@@ -35,8 +35,11 @@ class MoonSightingTest {
         val utcHourNewMoonGeoHMS = ms.utcGeoHourNewMoonHMS
         val utcHourNewMoonTopo = ms.utcTopoHourNewMoon
         val utcHourNewMoonTopoHMS = ms.utcTopoHourNewMoonHMS
+        val dayNewMoonGeo = ms.dayNewMoonGeo
+        val pasaranNewMoonGeo = ms.pasaranNewMoonGeo
         val dateIntNM = ms.dateNMInt
         val monthIntNM = ms.monthNMInt
+        val monthNMName = ms.monthNMName
         val yearIntNM = ms.yearNMInt
         val lonGeoNewMoon = ms.lonGeoNewMoon
         val lonGeoNewMoonDMS = ms.lonGeoNewMoonDMS
@@ -79,6 +82,10 @@ class MoonSightingTest {
         val hilalDuration = ms.hilalDurationOld
         val moonSet = ms.moonSetOld
         val moonAge = ms.moonAgeOld
+        val nurulHilal = ms.nurulHilal
+        val mrg = ms.mrg
+        val mrgString = ms.mrgString
+        val isVisibleNeoMabims = ms.isVisibleIRNU
         
         val crecentWidth = ms.crecentWidthTopo
         val moonTopoPosition = ms.moonTopoPosition
@@ -88,7 +95,7 @@ class MoonSightingTest {
         val qOdeh = ms.qOdeh3
         val moonHorizontalParallaxDMS = ms.moonHorizontalParallaxDMS
         val moonTopoAzimuthSetDMS = ms.moonTopoAzimuthSetDMS
-        val predictionNeoMabims = ms.predictionNeoMabims
+        val predictionNeoMabims = ms.predictionIRNU
         
         
         println("jd astronomical algorithm: ${ms.jdNewMoonAstronomicalAlgorithm}")
@@ -96,6 +103,10 @@ class MoonSightingTest {
         println("")
         println("JD New Moon/Ijtima: $jdNewMoon")
         println("JD New Moon with iteration: ${ms.jdGhurubSyamsPlus}")
+        println("")
+        println("day pasaran: $dayNewMoonGeo $pasaranNewMoonGeo")
+        println("month name: $monthNMName")
+        println("")
         println("New Moon/Ijtima' geo : $dateNewMoonGeo, ${ConvertUtil.toTimeFullRound2(hourNewMoonGeo ?: 0.0)} LT, ${ConvertUtil.toTimeFullRound2(utcHourNewMoonGeo ?: 0.0)} UTC")
         println("New Moon/Ijtima' topo: $dateNewMoonTopo, ${ConvertUtil.toTimeFullRound2(hourNewMoonTopo ?: 0.0)} LT, ${ConvertUtil.toTimeFullRound2(utcHourNewMoonTopo ?: 0.0)} UTC")
         println("deltaT: $deltaT, ${ms.deltaT2}")
@@ -153,10 +164,14 @@ class MoonSightingTest {
         println("range q Odeh: $qOdeh")
         println("moon position : $moonTopoPosition, ${ms.moonTopoPositionDMS}")
         println("moon position string: $moonTopoPositionString")
-        println("prediction neo mabims: $predictionNeoMabims")
+        println("prediction IRNU/neo mabims: $predictionNeoMabims")
+        println("is visible: $isVisibleNeoMabims")
+        println("${ms.dayOfIRNUPrediction} ${ms.pasaranOfIRNUPrediction}, ${ms.dateOfIRNUPrediction} ${ms.monthOfIRNUPredictionString} ${ms.yearOfIRNUPrediction}")
         println("")
         println("moon eq horizontal parallax: $moonHorizontalParallaxDMS")
         println("moon geo distance km: $moonGeoDistanceKM")
+        println("nurul hilal: $nurulHilal")
+        println("mrg: $mrg, $mrgString")
         println("")
 
     }

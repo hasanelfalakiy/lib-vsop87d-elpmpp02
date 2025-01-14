@@ -38,9 +38,11 @@ import com.andihasan7.lib.vsop87d.elpmpp02.sunposition.SunPosition
 import com.andihasan7.lib.vsop87d.elpmpp02.timeutil.DeltaT
 import com.andihasan7.lib.vsop87d.elpmpp02.timeutil.TimeUtil
 import kotlin.math.floor
+import kotlin.math.atan
 import kotlin.math.cos
 import kotlin.math.pow
 import kotlin.math.abs
+import kotlin.math.sqrt
 
 
 /**
@@ -151,7 +153,17 @@ class MoonSighting(
      * date when new moon topocentric DPDDMMYYM format
      */
     val dateNewMoonTopo get() = TimeUtil.jdToGregorian<String>(jdTopoNewMoon, timeZone, DateFormat.DPDDMMYYM)
-
+    
+    /**
+    * day when new moon
+    */
+    val dayNewMoonGeo get() = TimeUtil.jdToGregorian<String>(jdGeoNewMoonCor, timeZone, DateFormat.DAY_NAME)
+    
+    /**
+    * pasaran when new moon
+    */
+    val pasaranNewMoonGeo get() = TimeUtil.jdToGregorian<String>(jdGeoNewMoonCor, timeZone, DateFormat.PASARAN_NAME)
+    
     /**
      * local hour when new moon geocentric from astronomical algorithm
      */
@@ -210,6 +222,10 @@ class MoonSighting(
      * month new moon int
      */
     val monthNMInt get() = TimeUtil.jdToGregorian<Int>(jdGeoNewMoonCor, timeZone, DateFormat.MONTH_INT)
+    /**
+     * month name new moon
+     */
+    val monthNMName get() = TimeUtil.jdToGregorian<String>(jdGeoNewMoonCor, timeZone, DateFormat.MONTH_NAME)
     /**
      * year new moon int
      */
@@ -680,6 +696,39 @@ class MoonSighting(
     }
     
     /**
+    * nurul hilal
+    */
+    val nurulHilal get() = (sqrt((moonTopoPosition).pow(2) + (moonObservedTopoAltCenterLimb).pow(2))) / 15
+    
+    /**
+    * nurul hilal round 2
+    */
+    val nurulHilal2 get() = ConvertUtil.run { (nurulHilal).round(2) }
+    
+    /**
+    * crescent moon tilt/kemiringan hilal
+    */
+    val mrg get() = Math.toDegrees(atan(moonTopoPosition / moonObservedTopoAltCenterLimb))
+    
+    /**
+    * 
+    */
+    val mrg2 get() = ConvertUtil.run { (mrg).round(2) }
+    
+    /**
+    * crescent moon tilt string/kemiringan hilal
+    */
+    val mrgString get() = if (mrg <= 15.0) {
+        "Telentang"
+    } else if (mrg > 15.0 && moonTopoPosition > 0.0) {
+        "Miring ke Utara"
+    } else if (mrg > 15.0 && moonTopoPosition < 0.0) {
+        "Miring ke Selatan"
+    } else {
+        "Telentang"
+    }
+    
+    /**
     * altitude hilal without add date
     */
     val tHilal get() = MoonPosition.moonTopoAltitude(jdGhurubSyams, longitude, latitude, elevation, deltaT, MoonAltType.OBSERVED_CENTER, temperature, pressure)
@@ -689,21 +738,50 @@ class MoonSighting(
     */
     val moonSunElo get() = MoonPosition.moonSunTopoElongation(jdGhurubSyams, longitude, latitude, elevation, deltaT)
     
-    val _irNeoM get() = if (tHilal >= 3.0 && moonSunElo >= 6.4) {
-        1
+    val _irNU get() = if (tHilal >= 3.0 && moonSunElo >= 6.4) {
+        1 // enter the new month
     } else {
-        2
+        2 // istikmal
     }
     
     /**
-    * raw prediction based of neo mabims 3°, 6.4°
+    * raw prediction based of IRNU/neo mabims 3°, 6.4°
     */
-    val _predictionNeoMabims get() = ((floor(jdGeoNewMoonCor + 0.5 + timeZone / 24.0)) - timeZone / 24.0) + _irNeoM
+    val _predictionIRNU get() = ((floor(jdGeoNewMoonCor + 0.5 + timeZone / 24.0)) - timeZone / 24.0) + _irNU
     
     /**
-    * prediction based of neo mabims 3°, 6.4°
+    * prediction based of IRNU/neo mabims 3°, 6.4°
     */
-    val predictionNeoMabims get() = TimeUtil.jdToGregorian<String>(_predictionNeoMabims, timeZone, DateFormat.DPDDMMYYM)
+    val predictionIRNU get() = TimeUtil.jdToGregorian<String>(_predictionIRNU, timeZone, DateFormat.DPDDMMYYM)
+    /**
+    * day of prediction based of IRNU/neo mabims 3°, 6.4°
+    */
+    val dayOfIRNUPrediction get() = TimeUtil.jdToGregorian<String>(_predictionIRNU, timeZone, DateFormat.DAY_NAME)
+    /**
+    * pasaran of prediction based of IRNU/neo mabims 3°, 6.4°
+    */
+    val pasaranOfIRNUPrediction get() = TimeUtil.jdToGregorian<String>(_predictionIRNU, timeZone, DateFormat.PASARAN_NAME)
+    /**
+    * date of prediction based of IRNU/neo mabims 3°, 6.4°
+    */
+    val dateOfIRNUPrediction get() = TimeUtil.jdToGregorian<Int>(_predictionIRNU, timeZone, DateFormat.DATE)
+    /**
+    * month of prediction based of IRNU/neo mabims 3°, 6.4°
+    */
+    val monthOfIRNUPredictionString get() = TimeUtil.jdToGregorian<String>(_predictionIRNU, timeZone, DateFormat.MONTH_NAME)
+    /**
+    * year of prediction based of IRNU/neo mabims 3°, 6.4°
+    */
+    val yearOfIRNUPrediction get() = TimeUtil.jdToGregorian<Int>(_predictionIRNU, timeZone, DateFormat.YEAR)
+    
+    /**
+    * is visible IRNU/neo mabims
+    */
+    val isVisibleIRNU get() = if (tHilal >= 3.0 && moonSunElo >= 6.4) {
+        "Visible" // enter the new month
+    } else {
+        "Not Visible" // istikmal
+    } 
     
     
 
