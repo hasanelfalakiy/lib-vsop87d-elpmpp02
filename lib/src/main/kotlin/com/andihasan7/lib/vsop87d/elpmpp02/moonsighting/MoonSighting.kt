@@ -22,13 +22,14 @@
 
 package com.andihasan7.lib.vsop87d.elpmpp02.moonsighting
 
-import com.andihasan7.lib.vsop87d.elpmpp02.ELPMPP02
 import com.andihasan7.lib.vsop87d.elpmpp02.convertutil.ConvertUtil
 import com.andihasan7.lib.vsop87d.elpmpp02.correction.Correction
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.ConjunctionReturn
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.DateFormat
+import com.andihasan7.lib.vsop87d.elpmpp02.enum.DistanceType
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.MoonAltType
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.PhaseType
+import com.andihasan7.lib.vsop87d.elpmpp02.enum.PositionType
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.SunAltType
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.UnitType
 import com.andihasan7.lib.vsop87d.elpmpp02.moonphase.MoonPhase
@@ -100,9 +101,9 @@ class MoonSighting(
     val jdGhurubSyamsPlus get() = SunPosition.jdMaghrib(jdGeoNewMoon + addDate, longitude, latitude, elevation, timeZone)
     
     /**
-     * deltaT
+     * deltaT + addDate
      */
-    val deltaT get() = DeltaT.deltaT(floor(jdGeoNewMoon) + 0.5)
+    val deltaT get() = DeltaT.deltaT(floor(jdGeoNewMoon + addDate) + 0.5)
     
     /**
      * deltaT round 2
@@ -113,6 +114,9 @@ class MoonSighting(
      * jd julian day geo when new moon/JD ijtima with deltaT
      */
     val jdGeoNewMoonCor get() = MoonPhase.moonGeoConjunction(monthOfHijri, yearOfHijri, deltaT, ConjunctionReturn.JDCONJUNCTION)
+    
+    // jdGeoNewMoonCor + addDate for argumen elp
+    val jdGeoNewMoonCorPlus get() = jdGeoNewMoonCor + addDate
 
     /**
      * longitude new moon geocentric
@@ -241,22 +245,6 @@ class MoonSighting(
      */
     val maghribLocalDateNewMoonHMS get() = ConvertUtil.toTimeFullRound2(maghribLocalDateNewMoon ?: 0.0)
 
-    /**
-     * object of ephemeris data of moonsighting
-     */
-    val elp = ELPMPP02(
-        date = dateNMInt ?: 0,
-        month = monthNMInt ?: 0,
-        year = yearNMInt ?: 0,
-        longitude = longitude,
-        latitude = latitude,
-        elevation = elevation,
-        timeZone = timeZone,
-        hourDouble = maghribLocalDateNewMoon ?: 0.0,
-        checkDeltaT = checkDeltaT,
-        temperature = temperature,
-        pressure = pressure
-    )
     
     /**
     * dip/ku
@@ -266,100 +254,100 @@ class MoonSighting(
     /**
      * moon airless geocentric altitude
      */
-    val moonGeoAltitude get() = elp.moonGeoAltitude
+    val moonGeoAltitude get() = MoonPosition.moonGeoAltitude(jdGhurubSyamsPlus, longitude, latitude, deltaT)
 
     /**
      * moon airless geocentric altitude DMS, t hakiki
      */
-    val moonGeoAltitudeDMS get() = elp.moonGeoAltitudeDMS
+    val moonGeoAltitudeDMS get() = ConvertUtil.toDegreeFullRound2(moonGeoAltitude)
 
     // airless topocentric
     /**
      * moon airless topo altitude upper limb
      */
-    val moonAirlessTopoAltitudeUpperLimb get() = elp.moonAirlessTopoAltitudeUpperLimb
+    val moonAirlessTopoAltitudeUpperLimb get() = MoonPosition.moonTopoAltitude(jdGhurubSyamsPlus, longitude, latitude, elevation, deltaT, MoonAltType.AIRLESS_UPPER, temperature, pressure)
     /**
      * moon airless topo altitude upper limb DMS
      */
-    val moonAirlessTopoAltitudeUpperLimbDMS get() = elp.moonAirlessTopoAltitudeUpperLimbDMS
+    val moonAirlessTopoAltitudeUpperLimbDMS get() = ConvertUtil.toDegreeFullRound2(moonAirlessTopoAltitudeUpperLimb)
     /**
      * moon airless topo altitude center limb
      */
-    val moonAirlessTopoAltitudeCenterLimb get() = elp.moonAirlessTopoAltitudeCenterLimb
+    val moonAirlessTopoAltitudeCenterLimb get() = MoonPosition.moonTopoAltitude(jdGhurubSyamsPlus, longitude, latitude, elevation, deltaT, MoonAltType.AIRLESS_CENTER, temperature, pressure)
     /**
      * moon airless topo altitude center limb DMS
      */
-    val moonAirlessTopoAltitudeCenterLimbDMS get() = elp.moonAirlessTopoAltitudeCenterLimbDMS
+    val moonAirlessTopoAltitudeCenterLimbDMS get() = ConvertUtil.toDegreeFullRound2(moonAirlessTopoAltitudeCenterLimb)
     /**
      * moon airless topo altitude lower limb
      */
-    val moonAirlessTopoAltitudeLowerLimb get() = elp.moonAirlessTopoAltitudeLowerLimb
+    val moonAirlessTopoAltitudeLowerLimb get() = MoonPosition.moonTopoAltitude(jdGhurubSyamsPlus, longitude, latitude, elevation, deltaT, MoonAltType.AIRLESS_LOWER, temperature, pressure)
     /**
      * moon airless topo altitude lower limb DMS
      */
-    val moonAirlessTopoAltitudeLowerLimbDMS get() = elp.moonAirlessTopoAltitudeLowerLimbDMS
+    val moonAirlessTopoAltitudeLowerLimbDMS get() = ConvertUtil.toDegreeFullRound2(moonAirlessTopoAltitudeLowerLimb)
 
     // moon apparent topo altitude
     /**
      * moon apparent topo alt upper limb
      */
-    val moonAppaTopoAltUpperLimb get() = elp.moonApparentTopoAltitudeUpperLimb
+    val moonAppaTopoAltUpperLimb get() = MoonPosition.moonTopoAltitude(jdGhurubSyamsPlus, longitude, latitude, elevation, deltaT, MoonAltType.APPARENT_UPPER, temperature, pressure)
 
     /**
      * moon apparent topo alt upper limb DMS
      */
-    val moonAppaTopoAltUpperLimbDMS get() = elp.moonApparentTopoAltitudeUpperLimbDMS
+    val moonAppaTopoAltUpperLimbDMS get() = ConvertUtil.toDegreeFullRound2(moonAppaTopoAltUpperLimb)
 
     /**
      * moon apparent topo alt center limb
      */
-    val moonAppaTopoAltCenterLimb get() = elp.moonApparentTopoAltitudeCenterLimb
+    val moonAppaTopoAltCenterLimb get() = MoonPosition.moonTopoAltitude(jdGhurubSyamsPlus, longitude, latitude, elevation, deltaT, MoonAltType.APPARENT_CENTER, temperature, pressure)
 
     /**
      * moon apparent topo alt center limb DMS
      */
-    val moonAppaTopoAltCenterLimbDMS get() = elp.moonApparentTopoAltitudeCenterLimbDMS
+    val moonAppaTopoAltCenterLimbDMS get() = ConvertUtil.toDegreeFullRound2(moonAppaTopoAltCenterLimb)
 
     /**
      * moon apparent topo alt lower limb
      */
-    val moonAppaTopoAltLowerLimb get() = elp.moonApparentTopoAltitudeLowerLimb
+    val moonAppaTopoAltLowerLimb get() = MoonPosition.moonTopoAltitude(jdGhurubSyamsPlus, longitude, latitude, elevation, deltaT, MoonAltType.APPARENT_LOWER, temperature, pressure)
 
     /**
      * moon apparent topo alt lower limb DMS
      */
-    val moonAppaTopoAltLowerLimbDMS get() = elp.moonApparentTopoAltitudeLowerLimbDMS
+    val moonAppaTopoAltLowerLimbDMS get() = ConvertUtil.toDegreeFullRound2(moonAppaTopoAltLowerLimb)
 
     // observed topo alt, mar'i
     /**
      * moon observed topo alt upper limb
      */
-    val moonObservedTopoAltUpperLimb get() = elp.moonObservedTopoAltitudeUpperLimb
+    val moonObservedTopoAltUpperLimb get() = MoonPosition.moonTopoAltitude(jdGhurubSyamsPlus, longitude, latitude, elevation, deltaT, MoonAltType.OBSERVED_UPPER, temperature, pressure)
 
     /**
      * moon observed topo alt upper limb DMS
      */
-    val moonObservedTopoAltUpperLimbDMS get() = elp.moonObservedTopoAltitudeUpperLimbDMS
+    val moonObservedTopoAltUpperLimbDMS get() = ConvertUtil.toDegreeFullRound2(moonObservedTopoAltUpperLimb)
 
     /**
      * moon observed topo alt center limb
      */
-    val moonObservedTopoAltCenterLimb get() = elp.moonObservedTopoAltitudeCenterLimb
+    val moonObservedTopoAltCenterLimb get() = MoonPosition.moonTopoAltitude(jdGhurubSyamsPlus, longitude, latitude, elevation, deltaT, MoonAltType.OBSERVED_CENTER, temperature, pressure)
 
     /**
      * moon observed topo alt center limb DMS
      */
-    val moonObserrvedTopoAltCenterLimbDMS get() = elp.moonObservedTopoAltitudeCenterLimbDMS
+    val moonObserrvedTopoAltCenterLimbDMS get() = ConvertUtil.toDegreeFullRound2(moonObservedTopoAltCenterLimb)
 
     /**
      * moon observed topo alt lower limb
      */
-    val moonObservedTopoAltLowerLimb get() = elp.moonObservedTopoAltitudeLowerLimb
+    val moonObservedTopoAltLowerLimb get() = MoonPosition.moonTopoAltitude(jdGhurubSyamsPlus, longitude, latitude, elevation, deltaT, MoonAltType.OBSERVED_LOWER, temperature, pressure)
 
     /**
      * moon observed topo alt lower limb DMS
      */
-    val moonObservedTopoAltLowerLimbDMS get() = elp.moonObservedTopoAltitudeLowerLimbDMS
+    val moonObservedTopoAltLowerLimbDMS get() = ConvertUtil.toDegreeFullRound2(moonObservedTopoAltLowerLimb)
     
     /**
     * sun topocentric longitude 
@@ -384,22 +372,22 @@ class MoonSighting(
     /**
     * moon topocentric longitude
     */
-    val moonTopoLongitude get() = elp.moonTopoLongitude
+    val moonTopoLongitude get() = MoonPosition.moonTopoLongitude(jdGhurubSyamsPlus, longitude, latitude, elevation, deltaT)
     
     /**
     * moon topocentric longitude DMS
     */
-    val moonTopoLongitudeDMS get() = elp.moonTopoLongitudeDMS
+    val moonTopoLongitudeDMS get() = ConvertUtil.toDegreeFullRound2(moonTopoLongitude)
     
     /**
     * moon topocentric latitude
     */
-    val moonTopoLatitude get() = elp.moonTopoLatitude
+    val moonTopoLatitude get() = MoonPosition.moonTopoLatitude(jdGhurubSyamsPlus, longitude, latitude, elevation, deltaT)
     
     /**
     * moon topocentric latitude DMS
     */
-    val moonTopoLatitudeDMS get() = elp.moonTopoLatitudeDMS
+    val moonTopoLatitudeDMS get() = ConvertUtil.toDegreeFullRound2(moonTopoLatitude)
     
     /**
     * sun apparent topo right ascension
@@ -454,22 +442,22 @@ class MoonSighting(
     /**
     * moon geo declination
     */
-    val moonGeoDeclination get() = elp.moonAppaGeocentricDeclination
+    val moonGeoDeclination get() = MoonPosition.moonAppaGeocentricDeclination(jdGhurubSyamsPlus, deltaT)
     
     /**
     * moon geo declination DMS
     */
-    val moonGeoDeclinationDMS get() = elp.moonAppaGeocentricDeclinationDMS
+    val moonGeoDeclinationDMS get() = ConvertUtil.toDegreeFullRound2(moonGeoDeclination)
     
     /**
     * moon topo declination
     */
-    val moonTopoDeclination get() = elp.moonTopoDeclination
+    val moonTopoDeclination get() = MoonPosition.moonTopoDeclination(jdGhurubSyamsPlus, longitude, latitude, elevation, deltaT)
     
     /**
     * moon topo declination DMS
     */
-    val moonTopoDeclinationDMS get() = elp.moonTopoDeclinationDMS
+    val moonTopoDeclinationDMS get() = ConvertUtil.toDegreeFullRound2(moonTopoDeclination)
     
     /**
     * sun topo azimuth
@@ -494,67 +482,72 @@ class MoonSighting(
     /**
     * moon topo azimuth
     */
-    val moonTopoAzimuth get() = elp.moonTopoAzimuth
+    val moonTopoAzimuth get() = MoonPosition.moonTopoAzimuth(jdGhurubSyamsPlus, longitude, latitude, elevation, deltaT)
     
     /**
     * moon topo azimuth DMS
     */
-    val moonTopoAzimuthDMS get() = elp.moonTopoAzimuthDMS
+    val moonTopoAzimuthDMS get() = ConvertUtil.toDegreeFullRound2(moonTopoAzimuth)
     
     /**
     * moon illuminated
     */
-    val moonTopoIlluminated get() = elp.moonTopoDiskIlluminatedFraction
+    val moonTopoIlluminated get() = MoonPosition.moonTopoDiskIlluminatedFraction(jdGhurubSyamsPlus, longitude, latitude, elevation, deltaT)
+    
+    /**
+    * moon illuminated percent
+    */
+    val moonTopoIlluminatedPercent get() = moonTopoIlluminated * 100
     
     /**
     * moon illuminated percent round 2
     */
-    val moonTopoIlluminatedPercent2 get() = ConvertUtil.run { (elp.moonTopoDiskIlluminatedFractionPercent).round(2) }
+    val moonTopoIlluminatedPercent2 get() = ConvertUtil.run { (moonTopoIlluminatedPercent).round(2) }
     
     /**
     * moon geo semidiameter
     */
-    val moonGeoSemidiameter get() = elp.moonGeoSemidiameter
+    val moonGeoSemidiameter get() = MoonPosition.moonGeoSemidiameter(jdGhurubSyamsPlus, deltaT)
     
     /**
     * moon geo semidiameter DMS
     */
-    val moonGeoSemidiameterDMS get() = elp.moonGeoSemidiameterDMS
+    val moonGeoSemidiameterDMS get() = ConvertUtil.toDegreeFullRound2(moonGeoSemidiameter)
     
     /**
     * moon topo semidiameter
     */
-    val moonTopoSemidiameter get() = elp.moonTopoSemidiameter
+    val moonTopoSemidiameter get() = MoonPosition.moonTopoSemidiameter(jdGhurubSyamsPlus, longitude, latitude, elevation, deltaT)
     
     /**
     * moon topo semidiameter
     */
-    val moonTopoSemidiameterDMS get() = elp.moonTopoSemidiameterDMS
+    val moonTopoSemidiameterDMS get() = ConvertUtil.toDegreeFullRound2(moonTopoSemidiameter)
     
     /**
     * moon-sun geo elongation
     */
-    val moonSunGeoElongation get() = elp.moonSunGeoElongation
+    val moonSunGeoElongation get() = MoonPosition.moonSunGeoElongation(jdGhurubSyamsPlus, deltaT)
     
     /**
     * moon-sun geo elongation DMS
     */
-    val moonSunGeoElongationDMS get() = elp.moonSunGeoElongationDMS
+    val moonSunGeoElongationDMS get() = ConvertUtil.toDegreeFullRound2(moonSunGeoElongation)
     
     /**
     * moon-sun topo elongation
     */
-    val moonSunTopoElongation get() = elp.moonSunTopoElongation
+    val moonSunTopoElongation get() = MoonPosition.moonSunTopoElongation(jdGhurubSyamsPlus, longitude, latitude, elevation, deltaT)
     
     /**
     * moon-sun topo elongation DMS
     */
-    val moonSunTopoElongationDMS get() = elp.moonSunTopoElongationDMS
+    val moonSunTopoElongationDMS get() = ConvertUtil.toDegreeFullRound2(moonSunTopoElongation)
     
     /**
     * moon horizontal parallax
     */
-    val moonHorizontalParallax get() = elp.moonEquatorialHorizontalParallax
+    val moonHorizontalParallax get() = MoonPosition.moonEquatorialHorizontalParallax(jdGhurubSyamsPlus, deltaT)
     
     /**
     * moon horizontal parallax DMS
@@ -564,7 +557,12 @@ class MoonSighting(
     /**
     * moon geo distance km
     */
-    val moonGeoDistanceKM get() = ConvertUtil.run { (elp.moonAppaGeocentricDistanceKM).round(2) }
+    val moonGeoDistanceKM get() = MoonPosition.moonGeocentricDistance(jdGhurubSyamsPlus, deltaT, PositionType.APPARENT, DistanceType.KM)
+    
+    /**
+    * moon geo distance km round 2
+    */
+    val moonGeoDistanceKM2 get() = ConvertUtil.run { (moonGeoDistanceKM).round(2) }
     
     
     

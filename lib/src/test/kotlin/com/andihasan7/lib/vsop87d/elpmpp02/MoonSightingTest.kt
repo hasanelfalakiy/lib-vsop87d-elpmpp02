@@ -10,13 +10,13 @@ class MoonSightingTest {
     fun moonSightingTest() {
 
         val ms = MoonSighting(
-            monthOfHijri = 9,
+            monthOfHijri = 1,
             yearOfHijri = 1446,
             longitude = 111.4333333334,
             latitude = -7.43333333334,
             elevation = 150.0,
             timeZone = 7.0,
-            addDate = 0,
+            addDate = 1,
             checkDeltaT = true
         )
 
@@ -76,7 +76,7 @@ class MoonSightingTest {
         val moonTopoSemidiameterDMS = ms.moonTopoSemidiameterDMS
         val moonSunGeoElongationDMS = ms.moonSunGeoElongationDMS
         val moonSunTopoElongationDMS = ms.moonSunTopoElongationDMS
-        val moonGeoDistanceKM = ms.moonGeoDistanceKM
+        val moonGeoDistanceKM = ms.moonGeoDistanceKM2
         
         val diffRASunMoon = ms.diffRASunMoon
         val hilalDuration = ms.hilalDurationOld
