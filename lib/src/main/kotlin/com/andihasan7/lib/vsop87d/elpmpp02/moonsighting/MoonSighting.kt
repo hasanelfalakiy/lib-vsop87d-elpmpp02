@@ -594,7 +594,11 @@ class MoonSighting(
     /**
     * moon age/umur hilal from diff RA sun - RA moon
     */
-    val moonAgeOld get() = (maghribLocalDateNewMoon ?: 0.0) - (hourGeoNewMoon ?: 0.0)
+    val moonAgeOld get() = if (addDate == 0) {
+        (maghribLocalDateNewMoon ?: 0.0) - (hourGeoNewMoon ?: 0.0)
+    } else {
+        24.0 + ((maghribLocalDateNewMoon ?: 0.0) - (hourGeoNewMoon ?: 0.0))
+    }
     
     /**
     * moon age/umur hilal Counter HMS from diff RA sun - RA moon
@@ -732,9 +736,9 @@ class MoonSighting(
     val tHilal get() = MoonPosition.moonTopoAltitude(jdGhurubSyams, longitude, latitude, elevation, deltaT, MoonAltType.OBSERVED_CENTER, temperature, pressure)
     
     /**
-    * moon-sun topocentric elongation without add date
+    * moon-sun geocentric elongation without add date
     */
-    val moonSunElo get() = MoonPosition.moonSunTopoElongation(jdGhurubSyams, longitude, latitude, elevation, deltaT)
+    val moonSunElo get() = MoonPosition.moonSunGeoElongation(jdGhurubSyams, deltaT)
     
     private val _irNU get() = if (tHilal >= 3.0 && moonSunElo >= 6.4) {
         1 // enter the new month
