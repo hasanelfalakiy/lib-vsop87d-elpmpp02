@@ -10,11 +10,11 @@ class MoonSightingTest {
     fun moonSightingTest() {
 
         val ms = MoonSighting(
-            monthOfHijri = 1,
+            monthOfHijri = 8,
             yearOfHijri = 1446,
-            longitude = 111.4333333334,
-            latitude = -7.43333333334,
-            elevation = 150.0,
+            longitude = 111.461388888889, //111.4333333334,
+            latitude = -7.367222222222, //-7.43333333334,
+            elevation = 128.0,
             timeZone = 7.0,
             addDate = 0,
             checkDeltaT = true
@@ -80,8 +80,8 @@ class MoonSightingTest {
         
         val diffRASunMoon = ms.diffRASunMoon
         val hilalDuration = ms.hilalDurationOld
-        val moonSet = ms.moonSetOld
-        val moonAge = ms.moonAgeOld
+        val moonSet = ms.moonSet
+        val moonAge = ms.moonAge
         val nurulHilal = ms.nurulHilal
         val mrg = ms.mrg
         val mrgString = ms.mrgString
@@ -154,8 +154,8 @@ class MoonSightingTest {
         println("")
         println("diff RA: $diffRASunMoon, ${ConvertUtil.toDegreeFullRound2(diffRASunMoon)}")
         println("hilal duration: $hilalDuration, ${ms.hilalDurationOldHMS}")
-        println("moon set: $moonSet, ${ms.moonSetOldHMS}")
-        println("moon age: $moonAge, ${ms.moonAgeOldHMS}")
+        println("moon set: $moonSet, ${ms.moonSetHMS}")
+        println("moon age: $moonAge, ${ms.moonAgeHMS}")
         println("")
         println("crecent width : $crecentWidth, ${ms.crecentWidthTopoDMS}")
         println("moon topo azimuth set: $moonTopoAzimuthSetDMS")

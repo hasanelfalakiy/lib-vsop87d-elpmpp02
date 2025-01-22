@@ -27,11 +27,13 @@ import com.andihasan7.lib.vsop87d.elpmpp02.correction.Correction
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.ConjunctionReturn
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.DateFormat
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.DistanceType
+import com.andihasan7.lib.vsop87d.elpmpp02.enum.MoonActivityType
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.MoonAltType
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.PhaseType
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.PositionType
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.SunAltType
 import com.andihasan7.lib.vsop87d.elpmpp02.enum.UnitType
+import com.andihasan7.lib.vsop87d.elpmpp02.moonactivity.MoonActivity
 import com.andihasan7.lib.vsop87d.elpmpp02.moonphase.MoonPhase
 import com.andihasan7.lib.vsop87d.elpmpp02.prayertimes.PrayerTimes
 import com.andihasan7.lib.vsop87d.elpmpp02.moonposition.MoonPosition
@@ -234,6 +236,24 @@ class MoonSighting(
      * year new moon int
      */
     val yearNMInt get() = TimeUtil.jdToGregorian<Int>(jdGeoNewMoonCor, timeZone, DateFormat.YEAR)
+    
+    /**
+     * date sunset plus add date int
+     */
+    val dateSSetInt get() = TimeUtil.jdToGregorian<Int>(jdGhurubSyamsPlus, timeZone, DateFormat.DATE)
+    /**
+     * month sunset plus add date int
+     */
+    val monthSSetInt get() = TimeUtil.jdToGregorian<Int>(jdGhurubSyamsPlus, timeZone, DateFormat.MONTH_INT)
+    /**
+     * month name sunset plus add date
+     */
+    val monthSSetName get() = TimeUtil.jdToGregorian<String>(jdGhurubSyamsPlus, timeZone, DateFormat.MONTH_NAME)
+    /**
+     * year sunset plus add date int
+     */
+    val yearSSetInt get() = TimeUtil.jdToGregorian<Int>(jdGhurubSyamsPlus, timeZone, DateFormat.YEAR)
+    
 
     /**
      * maghrib local
@@ -582,19 +602,19 @@ class MoonSighting(
     val hilalDurationOldHMS get() = ConvertUtil.toCounterHHMMSS2(hilalDurationOld)
     
     /**
-    * moon set/hilal terbenam from diff RA sun - RA moon
+    * moon set/hilal terbenam from Astronomical Algorithm & Explanatory Supplement 
     */
-    val moonSetOld get() = (maghribLocalDateNewMoon ?: 0.0) + hilalDurationOld // from tsimarul murid
+    val moonSet get() = MoonActivity.moonActivity(dateSSetInt ?: 0, monthSSetInt ?: 0, yearSSetInt ?: 0, longitude, latitude, elevation, timeZone, 2, MoonActivityType.SET)
     
     /**
     * moon set/hilal terbenam HMS from diff RA sun - RA moon
     */
-    val moonSetOldHMS get() = ConvertUtil.toTimeFullRound2(moonSetOld)
+    val moonSetHMS get() = ConvertUtil.toTimeFullRound2(moonSet ?: 0.0)
     
     /**
-    * moon age/umur hilal from diff RA sun - RA moon
+    * moon age/umur hilal
     */
-    val moonAgeOld get() = if (addDate == 0) {
+    val moonAge get() = if (addDate == 0) {
         (maghribLocalDateNewMoon ?: 0.0) - (hourGeoNewMoon ?: 0.0)
     } else {
         24.0 + ((maghribLocalDateNewMoon ?: 0.0) - (hourGeoNewMoon ?: 0.0))
@@ -603,30 +623,13 @@ class MoonSighting(
     /**
     * moon age/umur hilal Counter HMS from diff RA sun - RA moon
     */
-    val moonAgeOldHMS get() = ConvertUtil.toCounterHHMMSS2(moonAgeOld)
+    val moonAgeHMS get() = ConvertUtil.toCounterHHMMSS2(moonAge)
     
-    
-    /**
-    * date of moon set with add date
-    */
-    val dateMoonSetPlus: Int? get() = TimeUtil.jdToGregorian(jdGhurubSyamsPlus, timeZone, DateFormat.DATE)
-    
-    /**
-    * month of moon set with add date
-    */
-    val monthMoonSetPlus: Int? get() = TimeUtil.jdToGregorian(jdGhurubSyamsPlus, timeZone, DateFormat.MONTH_INT)
-    
-    /**
-    * year of moon set with add date
-    */
-    val yearMoonSetPlus: Int? get() = TimeUtil.jdToGregorian(jdGhurubSyamsPlus, timeZone, DateFormat.YEAR)
-    
-    
-    
+    private val _jdMSet = TimeUtil.gregorianToJD(dateSSetInt ?: 0, monthSSetInt ?: 0, yearSSetInt ?: 0)
     /**
     * jd moon set
     */
-    val jdMoonSet get() = TimeUtil.gregorianToJD(dateMoonSetPlus ?: 0, monthMoonSetPlus ?: 0, yearMoonSetPlus ?: 0) + (moonSetOld - timeZone) / 24.0
+    val jdMoonSet get() = (_jdMSet ?: 0.0) + ((moonSet ?: 0.0) - timeZone) / 24.0
     
     /**
     * moon muktsul hilal
@@ -636,7 +639,7 @@ class MoonSighting(
     /**
     * moon best time
     */
-    val moonBestTime get() = (maghribLocalDateNewMoon ?: 0.0) + 4.0 / 9.0 * hilalDurationOld
+    val moonBestTime get() = (maghribLocalDateNewMoon ?: 0.0) + 4.0 / 9.0 * ((jdMoonSet - jdGhurubSyamsPlus) * 24.0)
     
     /**
     * moon best time HMS
