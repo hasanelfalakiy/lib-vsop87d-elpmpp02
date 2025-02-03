@@ -60,7 +60,7 @@ object EarthPosition {
         val l4 = EarthLBRReader.earthLBRReader(t, earthL4)
         val l5 = EarthLBRReader.earthLBRReader(t, earthL5)
 
-        val eartHeliocentricLongitude = (l0 + l1 * t + l2 * t.pow(2) + l3 * t.pow(3) + l4 * t.pow(4) + l5 * t.pow(5)).mod(360.0)
+        val eartHeliocentricLongitude = l0 + l1 * t + l2 * t.pow(2) + l3 * t.pow(3) + l4 * t.pow(4) + l5 * t.pow(5)
 
         return when (unitType) {
 
