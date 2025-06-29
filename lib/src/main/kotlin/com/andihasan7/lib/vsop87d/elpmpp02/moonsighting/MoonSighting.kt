@@ -594,7 +594,7 @@ class MoonSighting(
     /**
     * hilal duration/muktsu from diff RA sun - RA moon
     */
-    val hilalDurationOld get() = diffRASunMoon / 15
+    val hilalDurationOld get() = (diffRASunMoon / 15).mod(24.0)
     
     /**
     * hilal duration/muktsu Counter HMS from diff RA sun - RA moon
