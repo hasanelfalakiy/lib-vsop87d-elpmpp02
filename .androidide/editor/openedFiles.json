@@ -1,35 +1,20 @@
 {
   "allFiles": [
     {
-      "file": "/storage/emulated/0/AndroidIDEProjects/lib-vsop87d-elpmpp02/lib/src/main/kotlin/com/andihasan7/lib/vsop87d/elpmpp02/moonsighting/MoonSighting.kt",
+      "file": "/storage/emulated/0/AndroidIDEProjects/lib-vsop87d-elpmpp02/lib/build.gradle.kts",
       "selection": {
         "end": {
-          "column": 62,
-          "index": 21226,
-          "line": 596
+          "column": 17,
+          "index": 769,
+          "line": 26
         },
         "start": {
-          "column": 62,
-          "index": 21226,
-          "line": 596
-        }
-      }
-    },
-    {
-      "file": "/storage/emulated/0/AndroidIDEProjects/lib-vsop87d-elpmpp02/lib/src/test/kotlin/com/andihasan7/lib/vsop87d/elpmpp02/MoonSightingTest.kt",
-      "selection": {
-        "end": {
-          "column": 27,
-          "index": 544,
-          "line": 16
-        },
-        "start": {
-          "column": 27,
-          "index": 544,
-          "line": 16
+          "column": 17,
+          "index": 769,
+          "line": 26
         }
       }
     }
   ],
-  "selectedFile": "/storage/emulated/0/AndroidIDEProjects/lib-vsop87d-elpmpp02/lib/src/test/kotlin/com/andihasan7/lib/vsop87d/elpmpp02/MoonSightingTest.kt"
+  "selectedFile": "/storage/emulated/0/AndroidIDEProjects/lib-vsop87d-elpmpp02/lib/build.gradle.kts"
 }
