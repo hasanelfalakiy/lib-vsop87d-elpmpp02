@@ -30,6 +30,12 @@ lib-vsop87d-elpmpp02 menggunakan 2 model tersebut untuk mengetahui posisi mataha
 
 Sedangkan untuk Nutation, menggunakan IAU 2000B
 
+Referensi:
+Sabda Abu. Ilmu Falak Rumusan Syar'i dan Astronomi Seri 03, 1 ed, DIY Yogyakarta, 2024. (telah direvisi via chat whatsapp pribadi)
+
+Terinspirasi dari:
+https://github.com/abusabda/hisab-astronomis.git
+
 ## Dokumentasi penggunaan
 
 - [Dokumentasi](https://hasanelfalakiy.github.io/lib-vsop87d-elpmpp02/)
