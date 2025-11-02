@@ -410,6 +410,26 @@ class MoonSighting(
     val moonTopoLatitudeDMS get() = ConvertUtil.toDegreeFullRound2(moonTopoLatitude)
     
     /**
+    * sun appa geocentric right ascension
+    */
+    val sunGeoRightAscension get() = SunPosition.sunApparentGeoRightAscension(jdGhurubSyamsPlus, deltaT)
+    
+    /**
+    * sun apparent geo right ascension DMS
+    */
+    val sunGeoRightAscensionDMS get() = ConvertUtil.toDegreeFullRound2(sunGeoRightAscension)
+    
+    /**
+    * sun apparent geo right ascension hour
+    */
+    val sunGeoRightAscensionHour get() = sunGeoRightAscension / 15
+    
+    /**
+    * sun apparent geo right ascension HMS
+    */
+    val sunGeoRightAscensionHMS get() = ConvertUtil.toTimeFullRound2(sunGeoRightAscensionHour)
+    
+    /**
     * sun apparent topo right ascension
     */
     val sunTopoRightAscension get() = SunPosition.sunTopoRightAscension(jdGhurubSyamsPlus, longitude, latitude, elevation, deltaT)
@@ -428,6 +448,26 @@ class MoonSighting(
     * sun apparent topo right ascension HMS
     */
     val sunTopoRightAscensionHMS get() = ConvertUtil.toTimeFullRound2(sunTopoRightAscensionHour)
+    
+    /**
+    * moon geo right ascension
+    */
+    val moonGeoRightAscension get() = MoonPosition.moonAppaGeocentricRightAscension(jdGhurubSyamsPlus, deltaT)
+    
+    /**
+    * moon apparent geo right ascension DMS
+    */
+    val moonGeoRightAscensionDMS get() = ConvertUtil.toDegreeFullRound2(moonGeoRightAscension)
+    
+    /**
+    * moon apparent geo right ascension hour
+    */
+    val moonGeoRightAscensionHour get() = moonGeoRightAscension / 15
+    
+    /**
+    * moon apparent geo right ascension HMS
+    */
+    val moonGeoRightAscensionHMS get() = ConvertUtil.toTimeFullRound2(moonGeoRightAscensionHour)
     
     /**
     * moon apparent topo right ascension
@@ -589,12 +629,16 @@ class MoonSighting(
     /**
     * diff RA sun - RA moon
     */
-    val diffRASunMoon get() = moonTopoRightAscension - sunTopoRightAscension
+    val diffRASunMoon get() = (moonTopoRightAscension - sunTopoRightAscension)
     
     /**
     * hilal duration/muktsu from diff RA sun - RA moon
     */
-    val hilalDurationOld get() = (diffRASunMoon / 15).mod(24.0)
+    val hilalDurationOld get() = if (moonTopoRightAscension < sunTopoRightAscension) { // (diffRASunMoon / 15).mod(24.0)
+        0.0 - (diffRASunMoon / 15) // ((moonTopoRightAscension + 360) - sunTopoRightAscension) / 15
+    } else {
+        (diffRASunMoon / 15)
+    } 
     
     /**
     * hilal duration/muktsu Counter HMS from diff RA sun - RA moon
