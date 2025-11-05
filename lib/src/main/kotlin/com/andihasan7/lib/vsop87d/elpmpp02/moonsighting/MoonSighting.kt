@@ -635,9 +635,9 @@ class MoonSighting(
     * hilal duration/muktsu from diff RA sun - RA moon
     */
     val hilalDurationOld get() = if (moonTopoRightAscension < sunTopoRightAscension) { // (diffRASunMoon / 15).mod(24.0)
-        0.0 - (diffRASunMoon / 15) // ((moonTopoRightAscension + 360) - sunTopoRightAscension) / 15
+        (0.0 - (diffRASunMoon / 15)).mod(24.0) // ((moonTopoRightAscension + 360) - sunTopoRightAscension) / 15
     } else {
-        (diffRASunMoon / 15)
+        (diffRASunMoon / 15).mod(24.0)
     } 
     
     /**

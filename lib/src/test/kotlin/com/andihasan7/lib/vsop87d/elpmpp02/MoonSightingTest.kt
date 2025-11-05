@@ -10,13 +10,13 @@ class MoonSightingTest {
     fun moonSightingTest() {
 
         val ms = MoonSighting(
-            monthOfHijri = 1,
+            monthOfHijri = 6,
             yearOfHijri = 1447,
             longitude = 111.4333333334, // 98.67383333, // 111.461388888889,
             latitude = -7.4333333334, // 3.589666667, //-7.367222222222,
             elevation = 150.0, //  128.0,
             timeZone = 7.0,
-            addDate = 0,
+            addDate = 1,
             checkDeltaT = true
         )
 
