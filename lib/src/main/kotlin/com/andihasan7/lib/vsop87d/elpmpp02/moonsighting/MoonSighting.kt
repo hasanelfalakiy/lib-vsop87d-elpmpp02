@@ -625,6 +625,15 @@ class MoonSighting(
     val moonGeoDistanceKM2 get() = ConvertUtil.run { (moonGeoDistanceKM).round(2) }
     
     
+    /**
+    * muktsul hilal taqribi
+    */
+    val hilalDurationTaqribi = (moonGeoAltitude * (4.0 / 60))
+    
+    /**
+    * muktsul hilal taqribi DMS
+    */
+    val hilalDurationTaqribiDMS = ConvertUtil.toDegreeFullRound2(hilalDurationTaqribi)
     
     /**
     * diff RA sun - RA moon

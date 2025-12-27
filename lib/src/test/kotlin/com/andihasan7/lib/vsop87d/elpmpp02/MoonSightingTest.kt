@@ -10,13 +10,13 @@ class MoonSightingTest {
     fun moonSightingTest() {
 
         val ms = MoonSighting(
-            monthOfHijri = 6,
+            monthOfHijri = 3,
             yearOfHijri = 1447,
             longitude = 111.4333333334, // 98.67383333, // 111.461388888889,
             latitude = -7.4333333334, // 3.589666667, //-7.367222222222,
             elevation = 150.0, //  128.0,
             timeZone = 7.0,
-            addDate = 1,
+            addDate = 0,
             checkDeltaT = true
         )
 
@@ -80,6 +80,8 @@ class MoonSightingTest {
         
         val diffRASunMoon = ms.diffRASunMoon
         val hilalDuration = ms.hilalDurationOld
+        val hilalDurationTaqrib = ms.hilalDurationTaqribi
+        val hilalDurationTaqribDMS = ms.hilalDurationTaqribiDMS
         val moonSet = ms.moonSet
         val moonAge = ms.moonAge
         val nurulHilal = ms.nurulHilal
@@ -154,6 +156,8 @@ class MoonSightingTest {
         println("")
         println("diff RA: $diffRASunMoon, ${ConvertUtil.toDegreeFullRound2(diffRASunMoon)}")
         println("hilal duration: $hilalDuration, ${ms.hilalDurationOldHMS}")
+        println("hilal duration taqribi: $hilalDurationTaqrib | $hilalDurationTaqribDMS")
+        println("")
         println("moon set: $moonSet, ${ms.moonSetHMS}")
         println("moon age: $moonAge, ${ms.moonAgeHMS}")
         println("")
