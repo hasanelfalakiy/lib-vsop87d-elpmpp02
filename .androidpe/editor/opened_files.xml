@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><aml>
     
-<file path="/lib/src/main/kotlin/com/andihasan7/lib/vsop87d/elpmpp02/moonsighting/MoonSighting.kt"/>
-    <file path="/lib/src/test/kotlin/com/andihasan7/lib/vsop87d/elpmpp02/MoonSightingTest.kt"/>
+
+    
+<file path="/lib/build.gradle.kts"/>
 </aml>
